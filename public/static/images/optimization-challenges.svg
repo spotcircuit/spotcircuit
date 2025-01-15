@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="card-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#1F2937"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">
+    Transformation Journey
+  </text>
+  <text x="400" y="70" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">
+    Step-by-step optimization of your Shopify store
+  </text>
+
+  <!-- Challenge Cards -->
+  <!-- Step 1: SEO Card -->
+  <g transform="translate(50, 100)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 1: Analyze</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">1</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">Current State</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• Audit current SEO</tspan>
+      <tspan x="100" dy="20">• Review performance</tspan>
+      <tspan x="100" dy="20">• Identify gaps</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">24hr Analysis</text>
+  </g>
+
+  <!-- Step 2: Traffic Card -->
+  <g transform="translate(300, 100)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 2: Optimize</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">2</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">AI Enhancement</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• Fix meta data</tspan>
+      <tspan x="100" dy="20">• Optimize content</tspan>
+      <tspan x="100" dy="20">• Improve structure</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">48hr Process</text>
+  </g>
+
+  <!-- Step 3: Conversion Card -->
+  <g transform="translate(550, 100)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 3: Monitor</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">3</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">Track Progress</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• Monitor rankings</tspan>
+      <tspan x="100" dy="20">• Track conversions</tspan>
+      <tspan x="100" dy="20">• Analyze traffic</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Real-time Data</text>
+  </g>
+
+  <!-- Step 4: Competition Card -->
+  <g transform="translate(50, 350)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 4: Compete</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">4</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">Market Position</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• Beat competition</tspan>
+      <tspan x="100" dy="20">• Market analysis</tspan>
+      <tspan x="100" dy="20">• Stay ahead</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Weekly Updates</text>
+  </g>
+
+  <!-- Step 5: Content Card -->
+  <g transform="translate(300, 350)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 5: Enhance</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">5</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">Content Quality</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• AI copywriting</tspan>
+      <tspan x="100" dy="20">• Smart descriptions</tspan>
+      <tspan x="100" dy="20">• SEO optimization</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Daily Updates</text>
+  </g>
+
+  <!-- Step 6: Performance Card -->
+  <g transform="translate(550, 350)">
+    <rect width="200" height="220" rx="12" fill="url(#card-gradient)" filter="url(#glow)" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="100" cy="60" r="30" fill="#F59E0B" opacity="0.2"/>
+    <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Step 6: Scale</text>
+    <text x="100" y="65" text-anchor="middle" font-family="Arial" font-size="24" fill="#F59E0B" font-weight="bold">6</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="16" fill="#FCD34D">Growth & Scale</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="12" fill="#FCD34D">
+      <tspan x="100" dy="0">• Expand reach</tspan>
+      <tspan x="100" dy="20">• Increase sales</tspan>
+      <tspan x="100" dy="20">• Maximize ROI</tspan>
+    </text>
+    <text x="100" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#F59E0B">Continuous</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <g stroke="#F59E0B" stroke-width="2" opacity="0.6">
+    <path d="M250 210 L300 210" marker-end="url(#arrow)"/>
+    <path d="M500 210 L550 210" marker-end="url(#arrow)"/>
+    <path d="M650 320 L650 350" marker-end="url(#arrow)"/>
+    <path d="M500 460 L550 460" marker-end="url(#arrow)"/>
+    <path d="M250 460 L300 460" marker-end="url(#arrow)"/>
+    <path d="M150 320 L150 350" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+      markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+    </marker>
+  </defs>
+
+  <!-- Glowing Dots at Intersections -->
+  <g>
+    <circle cx="250" cy="210" r="4" fill="#F59E0B" filter="url(#glow)"/>
+    <circle cx="500" cy="210" r="4" fill="#F59E0B" filter="url(#glow)"/>
+    <circle cx="650" cy="320" r="4" fill="#F59E0B" filter="url(#glow)"/>
+    <circle cx="500" cy="460" r="4" fill="#F59E0B" filter="url(#glow)"/>
+    <circle cx="250" cy="460" r="4" fill="#F59E0B" filter="url(#glow)"/>
+    <circle cx="150" cy="320" r="4" fill="#F59E0B" filter="url(#glow)"/>
+  </g>
+</svg>

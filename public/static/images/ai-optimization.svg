@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="neural-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#22C55E"/>
+      <stop offset="100%" style="stop-color:#16A34A"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Neural Network Visualization -->
+  <!-- Input Layer -->
+  <g transform="translate(50, 50)">
+    <circle cx="0" cy="0" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="50" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="100" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <text x="-30" y="0" font-family="Arial" font-size="12" fill="#FFFFFF">SEO</text>
+    <text x="-30" y="50" font-family="Arial" font-size="12" fill="#FFFFFF">AEO</text>
+    <text x="-30" y="100" font-family="Arial" font-size="12" fill="#FFFFFF">Data</text>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g transform="translate(125, 25)">
+    <circle cx="0" cy="0" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="50" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="100" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="150" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g transform="translate(200, 50)">
+    <circle cx="0" cy="0" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="50" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="100" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Output Layer -->
+  <g transform="translate(275, 75)">
+    <circle cx="0" cy="0" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="50" r="10" fill="url(#neural-gradient)" filter="url(#glow)"/>
+    <text x="20" y="0" font-family="Arial" font-size="12" fill="#FFFFFF">Rankings</text>
+    <text x="20" y="50" font-family="Arial" font-size="12" fill="#FFFFFF">Traffic</text>
+  </g>
+
+  <!-- Connections -->
+  <g stroke="url(#neural-gradient)" stroke-width="1" opacity="0.5">
+    <!-- Input to Hidden 1 -->
+    <path d="M60 50 L125 25" />
+    <path d="M60 50 L125 75" />
+    <path d="M60 50 L125 125" />
+    <path d="M60 100 L125 75" />
+    <path d="M60 100 L125 125" />
+    <path d="M60 100 L125 175" />
+    <path d="M60 150 L125 125" />
+    <path d="M60 150 L125 175" />
+
+    <!-- Hidden 1 to Hidden 2 -->
+    <path d="M135 25 L200 50" />
+    <path d="M135 75 L200 100" />
+    <path d="M135 125 L200 150" />
+    <path d="M135 175 L200 150" />
+
+    <!-- Hidden 2 to Output -->
+    <path d="M210 50 L275 75" />
+    <path d="M210 100 L275 125" />
+    <path d="M210 150 L275 125" />
+  </g>
+
+  <!-- Animated Pulses -->
+  <circle cx="60" cy="50" r="15" fill="url(#neural-gradient)" opacity="0.3">
+    <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="210" cy="100" r="15" fill="url(#neural-gradient)" opacity="0.3">
+    <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  <circle cx="275" cy="125" r="15" fill="url(#neural-gradient)" opacity="0.3">
+    <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+
+  <!-- Title -->
+  <text x="150" y="225" text-anchor="middle" font-family="Arial" font-size="16" fill="#FFFFFF" font-weight="bold">AI Optimization Engine</text>
+  <text x="150" y="245" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">SEO + AEO Integration</text>
+</svg>
