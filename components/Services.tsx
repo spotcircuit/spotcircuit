@@ -1,46 +1,55 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/24/outline';
 
-const features = [
+const services = [
   {
-    name: 'AI-Powered SEO Optimization',
-    description: 'Our advanced AI algorithms continuously analyze and optimize your store\'s content, meta tags, and structure for maximum search visibility.',
-    icon: '/static/images/ai-optimization.svg'
+    name: 'AI-Powered Product Descriptions',
+    description: 'Our advanced AI technology generates unique, SEO-optimized product descriptions that convert. Say goodbye to generic content and hello to descriptions that rank and sell.',
+    features: [
+      'Unique content for every product',
+      'Keyword-optimized automatically',
+      'Conversion-focused copy',
+      'Brand voice consistency',
+      'Bulk generation capability'
+    ]
   },
   {
-    name: 'Real-Time Analytics',
-    description: 'Get instant insights into your store\'s performance with comprehensive analytics tracking traffic, conversions, and user behavior.',
-    icon: '/static/images/stats-card.svg'
+    name: 'Smart Category Optimization',
+    description: "Maximize your category pages' visibility with intelligent optimization. We analyze search intent and competition to structure your categories for maximum impact.",
+    features: [
+      'Category structure analysis',
+      'Search intent mapping',
+      'Competitive gap analysis',
+      'Internal linking strategy',
+      'Category meta optimization'
+    ]
   },
   {
-    name: 'Competitor Analysis',
-    description: 'Stay ahead of the competition with detailed insights into their strategies, keywords, and market positioning.',
-    icon: '/static/images/market-share.svg'
+    name: 'Technical SEO Automation',
+    description: 'Automatically identify and fix technical SEO issues before they impact your rankings. Our system monitors and optimizes your store 24/7.',
+    features: [
+      'Automated site audits',
+      'Schema markup generation',
+      'Mobile optimization',
+      'Site speed optimization',
+      'XML sitemap management'
+    ]
   }
-];
-
-const includedFeatures = [
-  'Comprehensive SEO Audit',
-  'Keyword Research & Optimization',
-  'Technical SEO Implementation',
-  'Content Strategy Development',
-  'Performance Monitoring',
-  'Monthly Progress Reports',
-  '24/7 Support',
-  'ROI Tracking'
 ];
 
 export default function Services() {
   return (
-    <div className="bg-black py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32" id="services">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-base font-semibold leading-7 text-green-500"
+            className="text-base font-semibold leading-7 text-green-600"
           >
             Our Services
           </motion.h2>
@@ -48,79 +57,64 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
           >
-            Everything you need to succeed online
+            Everything you need to scale your Shopify store's SEO
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 text-lg leading-8 text-gray-300"
+            className="mt-6 text-lg leading-8 text-gray-600"
           >
-            Comprehensive SEO solutions powered by cutting-edge AI technology to drive more traffic and sales to your Shopify store.
+            Leverage the power of AI to automate and optimize your store's SEO. Our comprehensive suite of tools handles everything from product descriptions to technical optimization.
           </motion.p>
         </div>
-
-        {/* Features Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
-        >
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                  <div className="h-12 w-12 flex-none">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.name}
-                      width={48}
-                      height={48}
-                      className="h-12 w-12"
-                    />
-                  </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
+        <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3"
+          >
+            {services.map((service, serviceIdx) => (
+              <div key={service.name} className="relative bg-white shadow-lg rounded-2xl p-8 ring-1 ring-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute -top-4 -left-4 bg-gradient-to-r from-green-500 to-green-600 w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold">
+                  {serviceIdx + 1}
+                </div>
+                <div className="relative">
+                  <h3 className="text-xl font-semibold leading-7 text-gray-900 mt-4">
+                    {service.name}
+                  </h3>
+                  <p className="mt-4 text-base leading-7 text-gray-600">
+                    {service.description}
+                  </p>
+                  <ul className="mt-8 space-y-3">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex gap-x-3">
+                        <CheckIcon className="h-6 w-5 flex-none text-green-600" aria-hidden="true" />
+                        <span className="text-sm leading-6 text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
-          </dl>
-        </motion.div>
-
-        {/* Included Features */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="mx-auto mt-16 max-w-2xl rounded-3xl bg-gray-900 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none"
-        >
-          <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-white">All-Inclusive Package</h3>
-            <p className="mt-6 text-base leading-7 text-gray-300">
-              Get everything you need to transform your Shopify store's online presence and drive sustainable growth.
-            </p>
-            <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-semibold leading-6 text-green-500">What's included</h4>
-              <div className="h-px flex-auto bg-gray-700" />
-            </div>
-            <ul
-              role="list"
-              className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-300 sm:grid-cols-2 sm:gap-6"
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-16 text-center"
+          >
+            <a
+              href="#book-demo"
+              className="rounded-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
             >
-              {includedFeatures.map((feature) => (
-                <li key={feature} className="flex gap-x-3">
-                  <CheckIcon className="h-6 w-5 flex-none text-green-500" aria-hidden="true" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
+              Get Started with AI-Powered SEO
+            </a>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
