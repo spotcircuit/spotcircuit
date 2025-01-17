@@ -40,24 +40,34 @@ const solutions = [
 
 const painPoints = [
   {
-    title: 'Poor Search Rankings',
-    description: 'Your products are buried deep in search results, making it impossible for customers to find you.',
+    title: 'Invisible to Customers',
+    description: 'Your products are buried on page 5+ of search results while competitors dominate the first page.',
     icon: MagnifyingGlassIcon
   },
   {
-    title: 'Manual SEO Struggles',
-    description: 'Hours spent on keyword research, content optimization, and technical SEO with minimal results.',
+    title: 'Wasted Time & Money',
+    description: 'Spending thousands on ads because organic traffic is non-existent, while hours are wasted on manual SEO.',
     icon: ClockIcon
   },
   {
-    title: 'Lost Sales',
-    description: 'Potential customers can\'t find your store, leading to missed opportunities and revenue loss.',
-    icon: CurrencyDollarIcon
+    title: 'Low Conversion Rates',
+    description: 'Traffic doesn\'t convert because your store lacks proper optimization and trust signals.',
+    icon: ChartBarIcon
   },
   {
-    title: 'Technical Complexity',
-    description: 'Complex SEO tools and strategies that require expertise you don\'t have time to master.',
+    title: 'Overwhelming Competition',
+    description: 'Big brands with huge budgets seem impossible to compete against in search rankings.',
     icon: BuildingStorefrontIcon
+  },
+  {
+    title: 'Complex AI Tools',
+    description: 'Existing AI tools are too complex, requiring technical expertise you don\'t have time to learn.',
+    icon: CursorArrowRaysIcon
+  },
+  {
+    title: 'Inconsistent Results',
+    description: 'Sales and traffic fluctuate wildly, making it impossible to predict or scale your business.',
+    icon: CurrencyDollarIcon
   }
 ];
 
