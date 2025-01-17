@@ -160,26 +160,9 @@ export default function Problem() {
       {/* Pain Points Section - Dark Background */}
       <div id="problem-section" className="bg-gray-900 py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="lg:flex lg:items-center lg:gap-x-16">
-            {/* SVG on the left */}
-            <div className="lg:w-1/2 flex justify-center lg:justify-start lg:order-first">
-              <div className="h-[800px] w-[700px] relative">
-                <Image
-                  src="/static/images/seochallenges.svg"
-                  alt="SEO Challenges Flow"
-                  fill
-                  className="object-contain"
-                  style={{
-                    borderRadius: '1rem',
-                    clipPath: 'inset(0 round 1rem)'
-                  }}
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Content on the right */}
-            <div className="lg:w-1/2">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-16">
+            {/* Content - Shows first on mobile */}
+            <div className="w-full lg:w-1/2 order-2 lg:order-1">
               <div className="mx-auto max-w-2xl lg:mx-0 text-center lg:text-left">
                 <h2 className="text-base font-semibold leading-7 text-green-500">The Problem</h2>
                 <p className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -210,6 +193,23 @@ export default function Problem() {
                   </motion.div>
                 ))}
               </dl>
+            </div>
+
+            {/* SVG - Shows second on mobile */}
+            <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+              <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[800px] max-w-[700px]">
+                <Image
+                  src="/static/images/seochallenges.svg"
+                  alt="SEO Challenges Flow"
+                  fill
+                  className="object-contain"
+                  style={{
+                    borderRadius: '1rem',
+                    clipPath: 'inset(0 round 1rem)'
+                  }}
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -339,7 +339,7 @@ export default function Problem() {
 
           {/* SVG centered */}
           <div className="mb-6">
-            <div className="mx-auto h-[600px] w-[800px] relative">
+            <div className="mx-auto relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] max-w-[800px]">
               <Image
                 src="/static/images/6steptransform.svg"
                 alt="6 Step Transformation Process"

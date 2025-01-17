@@ -86,16 +86,15 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none"
+            className="w-full max-w-3xl flex-none sm:max-w-5xl lg:max-w-none"
           >
-            <div className="relative w-[40rem] h-[35rem]">
+            <div className="relative w-full h-[20rem] sm:h-[25rem] lg:w-[40rem] lg:h-[35rem]">
               {/* Main Hero Image */}
               <Image
                 src="/static/images/hero.svg"
                 alt="AI SEO Dashboard"
-                width={800}
-                height={600}
-                className="relative rounded-xl bg-transparent shadow-xl ring-1 ring-white/10"
+                fill
+                className="relative rounded-xl bg-transparent shadow-xl ring-1 ring-white/10 object-contain"
                 style={{ 
                   mixBlendMode: 'screen',
                   filter: 'brightness(1.2) contrast(1.1)'
