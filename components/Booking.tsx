@@ -55,7 +55,7 @@ export default function Booking() {
                 calLink="brian-pyatt-qf6rjk/30min"
                 style={{width:"100%", height:"100%"}}
                 config={{
-                  hideEventTypeDetails: false
+                  hideEventTypeDetails: "false"
                 }}
               />
             </div>
