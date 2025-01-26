@@ -1,6 +1,6 @@
 import { getSinglePost } from '@/lib/ghost';
 import { notFound } from 'next/navigation';
-import Header from '@/components/Header';
+import BlogHeader from '@/components/BlogHeader';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +22,7 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
 
     return (
         <div className="min-h-screen bg-black">
-            <Header />
+            <BlogHeader />
             <main className="pt-24">
                 <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <Link 
