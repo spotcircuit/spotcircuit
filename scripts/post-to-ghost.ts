@@ -110,7 +110,9 @@ async function postToGhost(): Promise<void> {
         });
 
         // Convert markdown to HTML
-        const htmlContent = marked(contentWithoutTitle);
+        const htmlContent = await new Promise<string>((resolve) => {
+            resolve(marked(contentWithoutTitle));
+        });
 
         // Create draft post
         console.log('Creating draft post...');
