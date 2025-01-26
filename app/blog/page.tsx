@@ -1,5 +1,5 @@
 import { getPosts } from '@/lib/ghost';
-import BlogHeader from '~/components/BlogHeader';
+import BlogHeader from '@/components/BlogHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 
