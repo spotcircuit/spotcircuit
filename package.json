@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3006",
-    "build": "next build",
+    "build": "tsc --noEmit && next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "generate": "ts-node scripts/generate-blog-post.ts",
     "publish": "ts-node scripts/post-to-ghost.ts",
     "generate-and-publish": "ts-node scripts/generate-and-publish.ts"
