@@ -22,6 +22,7 @@ declare module '@tryghost/admin-api' {
         featured?: boolean;
         status?: string;
         visibility?: string;
+        mobiledoc?: string;
         created_at?: string;
         updated_at?: string;
         published_at?: string;
