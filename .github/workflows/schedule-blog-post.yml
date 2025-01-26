@@ -17,14 +17,25 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Create scripts directory
+      run: |
+        mkdir -p scripts
+        cp blog-templates.json scripts/
+
     - name: Install dependencies
       run: |
         npm install
-        npm install @tryghost/admin-api node-fetch
+        npm install @tryghost/admin-api node-fetch @types/node typescript ts-node
 
     - name: Generate and schedule blog post
-      run: npx ts-node scripts/generate-blog-post.ts
+      run: |
+        echo "Current directory contents:"
+        ls -la
+        echo "Scripts directory contents:"
+        ls -la scripts/
+        npx ts-node scripts/generate-blog-post.ts
       env:
         GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
         GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}

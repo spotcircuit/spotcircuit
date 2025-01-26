@@ -1,0 +1,241 @@
+{
+  "topics": [
+    {
+      "category": "SEO Strategy",
+      "templates": [
+        {
+          "title": "Local SEO Guide: How to Dominate {location_type} Search Rankings in {timeframe}",
+          "keywords": ["Local SEO", "local search", "Google Business Profile", "local rankings"],
+          "outline": [
+            "Understanding local search intent",
+            "Key local ranking factors",
+            "Google Business Profile optimization",
+            "Local content strategy",
+            "Implementation steps and tools"
+          ]
+        },
+        {
+          "title": "How to Optimize Your {product_type} Products for Better SEO Rankings",
+          "keywords": ["SEO", "product optimization", "e-commerce", "rankings"],
+          "outline": [
+            "Introduction to {product_type} SEO",
+            "Key ranking factors for e-commerce products",
+            "Optimization strategies specific to {product_type}",
+            "Best practices and examples",
+            "Implementation guide"
+          ]
+        },
+        {
+          "title": "{timeframe} SEO Trends Every Business Owner Should Know",
+          "keywords": ["SEO trends", "digital marketing", "search optimization", "business growth"],
+          "outline": [
+            "Current state of SEO",
+            "Emerging trends in {timeframe}",
+            "Impact on different business types",
+            "Implementation strategies",
+            "Future predictions"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Marketing Automation",
+      "templates": [
+        {
+          "title": "Building High-Converting Email Sequences for {industry_type} Businesses",
+          "keywords": ["email marketing", "automation", "lead nurturing", "conversions"],
+          "outline": [
+            "Email sequence fundamentals",
+            "Mapping the customer journey",
+            "Writing converting sequences",
+            "Automation setup guide",
+            "Testing and optimization"
+          ]
+        },
+        {
+          "title": "Automated Newsletter Campaigns: From Setup to Success",
+          "keywords": ["newsletter automation", "email marketing", "content distribution", "audience engagement"],
+          "outline": [
+            "Newsletter strategy basics",
+            "Content automation tools",
+            "Segmentation and personalization",
+            "Analytics and optimization",
+            "Case studies and results"
+          ]
+        },
+        {
+          "title": "The Ultimate Guide to Lead Data Enrichment Automation",
+          "keywords": ["lead enrichment", "data automation", "lead qualification", "sales intelligence"],
+          "outline": [
+            "Understanding lead enrichment",
+            "Data enrichment tools and APIs",
+            "Automation workflow setup",
+            "Data quality and compliance",
+            "Integration with CRM"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "PPC and Paid Marketing",
+      "templates": [
+        {
+          "title": "AI-Powered PPC Campaigns: Maximizing ROAS for {industry_type}",
+          "keywords": ["PPC", "paid advertising", "ROAS", "AI optimization"],
+          "outline": [
+            "PPC automation fundamentals",
+            "AI tools for campaign management",
+            "Bid optimization strategies",
+            "Creative optimization",
+            "Performance tracking"
+          ]
+        },
+        {
+          "title": "Multi-Channel Paid Marketing Strategy for {business_type} Companies",
+          "keywords": ["paid marketing", "multi-channel", "advertising", "campaign management"],
+          "outline": [
+            "Channel selection strategy",
+            "Budget allocation",
+            "Creative consistency",
+            "Cross-channel tracking",
+            "ROI optimization"
+          ]
+        },
+        {
+          "title": "From {amount} to {roi_amount}: Scaling PPC Success with Automation",
+          "keywords": ["PPC scaling", "automation", "growth strategy", "paid advertising"],
+          "outline": [
+            "Current campaign analysis",
+            "Automation opportunities",
+            "Scaling strategy",
+            "Risk management",
+            "Success metrics"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "E-commerce Growth",
+      "templates": [
+        {
+          "title": "Scaling Your {niche} Shopify Store: A Complete Guide",
+          "keywords": ["Shopify", "scaling", "growth strategy", "e-commerce"],
+          "outline": [
+            "Understanding your current position",
+            "Setting growth targets",
+            "Key scaling strategies",
+            "Tools and resources",
+            "Case studies"
+          ]
+        },
+        {
+          "title": "How {successful_store} Increased Sales by {percentage}% Using AI SEO",
+          "keywords": ["case study", "success story", "AI SEO", "sales growth"],
+          "outline": [
+            "Background and challenges",
+            "Implementation of AI SEO",
+            "Results and metrics",
+            "Key learnings",
+            "How to replicate success"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "AI and Automation",
+      "templates": [
+        {
+          "title": "AI-Powered {task_type} Automation: A Game-Changer for {industry_type} Businesses",
+          "keywords": ["AI automation", "business automation", "efficiency", "digital transformation"],
+          "outline": [
+            "Current {task_type} challenges",
+            "AI automation solutions",
+            "Implementation strategy",
+            "ROI and benefits",
+            "Future possibilities"
+          ]
+        },
+        {
+          "title": "Automating Your {task_type} Tasks: A Guide for Modern Businesses",
+          "keywords": ["automation", "efficiency", "workflows", "productivity"],
+          "outline": [
+            "Common {task_type} challenges",
+            "Automation solutions",
+            "Implementation guide",
+            "ROI analysis",
+            "Next steps"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Lead Generation",
+      "templates": [
+        {
+          "title": "AI-Powered Lead Generation: How to Get {percentage}% More Qualified Leads",
+          "keywords": ["lead generation", "AI", "sales", "marketing automation"],
+          "outline": [
+            "Traditional vs AI lead generation",
+            "AI tools and strategies",
+            "Implementation process",
+            "Success metrics",
+            "Optimization tips"
+          ]
+        },
+        {
+          "title": "The Ultimate Guide to Automated Proposal Generation for {industry_type} Companies",
+          "keywords": ["proposal generation", "automation", "sales", "business development"],
+          "outline": [
+            "Current proposal challenges",
+            "Automation solutions",
+            "Implementation steps",
+            "Templates and examples",
+            "Best practices"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "SaaS Solutions",
+      "templates": [
+        {
+          "title": "Implementing {tech_stack} for Your {industry_type} Business: A Complete Guide",
+          "keywords": ["SaaS", "technology implementation", "digital transformation", "business solutions"],
+          "outline": [
+            "Business needs assessment",
+            "Technology selection criteria",
+            "Implementation strategy",
+            "Integration steps",
+            "Success metrics"
+          ]
+        },
+        {
+          "title": "How to Automate Your {department_type} Using Modern SaaS Tools",
+          "keywords": ["SaaS", "automation", "business processes", "efficiency"],
+          "outline": [
+            "Current manual processes",
+            "SaaS solution options",
+            "Implementation guide",
+            "Integration tips",
+            "ROI calculation"
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "product_type": ["Fashion", "Electronics", "Home Decor", "Beauty", "Food", "Software", "Digital Products"],
+    "timeframe": ["2025", "Q1 2025", "Post-COVID", "Current", "2025-2026"],
+    "niche": ["Fashion", "Tech", "Beauty", "Food", "Lifestyle", "SaaS", "Professional Services"],
+    "successful_store": ["Fashion Nova", "Gymshark", "MVMT", "Dollar Shave Club", "Allbirds", "Warby Parker"],
+    "percentage": ["150", "200", "300", "400", "500"],
+    "task_type": ["SEO", "Content", "Marketing", "Inventory", "Customer Service", "Sales", "Lead Generation"],
+    "industry_type": ["E-commerce", "SaaS", "Professional Services", "Healthcare", "Real Estate", "Technology"],
+    "location_type": ["Local", "City", "Regional", "National", "Global"],
+    "tech_stack": ["AI Tools", "Marketing Automation", "CRM Systems", "ERP Solutions", "Business Intelligence"],
+    "department_type": ["Marketing", "Sales", "Operations", "Customer Service", "Finance", "HR"],
+    "business_type": ["B2B", "B2C", "D2C", "Enterprise", "Small Business", "Startup"],
+    "amount": ["$1,000", "$5,000", "$10,000", "$50,000", "$100,000"],
+    "roi_amount": ["$10,000", "$50,000", "$100,000", "$500,000", "$1,000,000"]
+  }
+}
