@@ -6,15 +6,14 @@ import Link from 'next/link';
 
 export const revalidate = 60;
 
-type Props = {
-    params: {
-        slug: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
+interface PageProps {
+    params: Promise<{ slug: string }>;
+    searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function BlogPost({ params, searchParams }: Props) {
-    const post = await getSinglePost(params.slug);
+export default async function BlogPost({ params }: PageProps) {
+    const resolvedParams = await params;
+    const post = await getSinglePost(resolvedParams.slug);
 
     if (!post) {
         notFound();
