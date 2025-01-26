@@ -109,21 +109,24 @@ async function postToGhost(): Promise<void> {
             sections: [[10, 0]]
         });
 
+        // Convert markdown to HTML
+        const htmlContent = marked(contentWithoutTitle);
+
         // Create draft post
         console.log('Creating draft post...');
-        const post = await ghost.posts.add({
+        await ghost.posts.add({
             title,
-            markdown: contentWithoutTitle, // Use content without title
+            html: htmlContent,
             mobiledoc: mobiledocContent,
             feature_image: imageUrl,
             status: 'draft',
-            tags: [tagId]
+            tags: [{ id: tagId }]
         });
 
         console.log('Post created successfully!');
-        console.log(`Title: ${post.title}`);
-        console.log(`Status: ${post.status}`);
-        console.log(`URL: ${post.url}`);
+        console.log(`Title: ${title}`);
+        console.log(`Status: draft`);
+        console.log(`URL: ${imageUrl}`);
 
     } catch (error) {
         console.error('Error:', error);
