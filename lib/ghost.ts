@@ -22,19 +22,25 @@ interface GhostResponse {
 
 export async function getPosts() {
     try {
+        if (!process.env.GHOST_API_URL || !process.env.GHOST_CONTENT_API_KEY) {
+            console.error('Ghost API URL or Content API Key not set');
+            return [];
+        }
+
         const res = await fetch(
-            `${ghostUrl}/ghost/api/content/posts/?key=${ghostKey}&include=tags,authors&limit=all`,
+            `${ghostUrl}/ghost/api/v3/content/posts/?key=${ghostKey}&include=tags,authors&limit=all`,
             { next: { revalidate: 60 } }
         );
         
         if (!res.ok) {
-            throw new Error(`Failed to fetch posts: ${res.status}`);
+            console.error(`Failed to fetch posts: ${res.status}`);
+            return [];
         }
 
-        const data: GhostResponse = await res.json();
+        const data = await res.json() as GhostResponse;
         return data.posts;
-    } catch (err) {
-        console.error('Error fetching posts:', err);
+    } catch (error) {
+        console.error('Error fetching posts:', error);
         return [];
     }
 }
@@ -42,7 +48,7 @@ export async function getPosts() {
 export async function getSinglePost(postSlug: string) {
     try {
         const res = await fetch(
-            `${ghostUrl}/ghost/api/content/posts/slug/${postSlug}/?key=${ghostKey}&include=tags,authors`,
+            `${ghostUrl}/ghost/api/v3/content/posts/slug/${postSlug}/?key=${ghostKey}&include=tags,authors`,
             { next: { revalidate: 60 } }
         );
 
@@ -54,6 +60,6 @@ export async function getSinglePost(postSlug: string) {
         return data.posts[0];
     } catch (err) {
         console.error('Error fetching post:', err);
-        return null;
+        throw err;
     }
 }
