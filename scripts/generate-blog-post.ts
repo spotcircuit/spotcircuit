@@ -1,18 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import GhostAdminAPI from '@tryghost/admin-api';
-import OpenAI from 'openai';
 
 // Initialize Ghost Admin API
 const ghost = new GhostAdminAPI({
     url: process.env.GHOST_API_URL,
     key: process.env.GHOST_ADMIN_API_KEY,
     version: 'v5.0'
-});
-
-// Initialize OpenAI
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
 });
 
 interface BlogTemplate {
@@ -47,31 +41,38 @@ async function generateBlogPost() {
             outline = outline.map(item => item.replace(pattern, randomValue));
         }
 
-        // Generate content using OpenAI
-        const prompt = `Write a detailed blog post with the following:
+        // Generate content using DeepSeek API
+        const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "deepseek-chat",
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are a professional e-commerce and SEO content writer specializing in Shopify stores and digital marketing."
+                    },
+                    {
+                        role: "user",
+                        content: `Write a detailed blog post with the following:
 Title: ${title}
 Keywords: ${template.keywords.join(', ')}
 Outline:
 ${outline.map(item => `- ${item}`).join('\n')}
 
-The blog post should be informative, engaging, and include practical examples. Format the response in markdown.`;
-
-        const completion = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [
-                {
-                    role: "system",
-                    content: "You are a professional e-commerce and SEO content writer."
-                },
-                {
-                    role: "user",
-                    content: prompt
-                }
-            ],
-            temperature: 0.7,
+The blog post should be informative, engaging, and include practical examples. Format the response in markdown.`
+                    }
+                ],
+                temperature: 0.7,
+                max_tokens: 2000
+            })
         });
 
-        const content = completion.choices[0].message.content;
+        const data = await response.json();
+        const content = data.choices[0].message.content;
 
         // Post to Ghost
         await ghost.posts.add({
