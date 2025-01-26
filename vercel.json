@@ -1,4 +1,5 @@
 {
   "ignoreCommand": "git diff --quiet HEAD^ HEAD ./portfolio/",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "buildCommand": "pnpm run build"
 }
