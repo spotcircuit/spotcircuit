@@ -25,7 +25,7 @@ async function getOrCreateTag(name: string, slug: string): Promise<string> {
     try {
         // Try to get the tag by slug
         const existingTags = await ghost.tags.browse({ filter: `slug:${slug}` });
-        if (existingTags && existingTags.length > 0) {
+        if (existingTags && existingTags.length > 0 && existingTags[0].id) {
             console.log(`Found existing tag: ${name}`);
             return existingTags[0].id;
         } else {
@@ -35,6 +35,9 @@ async function getOrCreateTag(name: string, slug: string): Promise<string> {
                 name,
                 slug
             });
+            if (!newTag.id) {
+                throw new Error(`Failed to create tag: ${name}`);
+            }
             return newTag.id;
         }
     } catch (error) {
