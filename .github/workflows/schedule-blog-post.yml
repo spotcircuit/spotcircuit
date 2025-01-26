@@ -1,0 +1,30 @@
+name: Schedule Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs at 12:00 PM UTC daily
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  generate-and-schedule:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install @tryghost/admin-api openai
+
+    - name: Generate and schedule blog post
+      run: npx ts-node scripts/generate-blog-post.ts
+      env:
+        GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
+        GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

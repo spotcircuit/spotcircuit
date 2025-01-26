@@ -1,0 +1,93 @@
+{
+  "topics": [
+    {
+      "category": "SEO Strategy",
+      "templates": [
+        {
+          "title": "How to Optimize Your {product_type} Products for Better SEO Rankings",
+          "keywords": ["SEO", "product optimization", "e-commerce", "rankings"],
+          "outline": [
+            "Introduction to {product_type} SEO",
+            "Key ranking factors for e-commerce products",
+            "Optimization strategies specific to {product_type}",
+            "Best practices and examples",
+            "Implementation guide"
+          ]
+        },
+        {
+          "title": "{timeframe} SEO Trends Every Shopify Store Owner Should Know",
+          "keywords": ["SEO trends", "Shopify", "e-commerce trends", "digital marketing"],
+          "outline": [
+            "Current state of e-commerce SEO",
+            "Emerging trends in {timeframe}",
+            "How these trends affect Shopify stores",
+            "Implementation strategies",
+            "Future predictions"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "E-commerce Growth",
+      "templates": [
+        {
+          "title": "Scaling Your {niche} Shopify Store: A Complete Guide",
+          "keywords": ["Shopify", "scaling", "growth strategy", "e-commerce"],
+          "outline": [
+            "Understanding your current position",
+            "Setting growth targets",
+            "Key scaling strategies",
+            "Tools and resources",
+            "Case studies"
+          ]
+        },
+        {
+          "title": "How {successful_store} Increased Sales by {percentage}% Using AI SEO",
+          "keywords": ["case study", "success story", "AI SEO", "sales growth"],
+          "outline": [
+            "Background and challenges",
+            "Implementation of AI SEO",
+            "Results and metrics",
+            "Key learnings",
+            "How to replicate success"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "AI and Automation",
+      "templates": [
+        {
+          "title": "AI-Powered Product Descriptions: The Future of E-commerce Content",
+          "keywords": ["AI", "product descriptions", "automation", "content generation"],
+          "outline": [
+            "Traditional vs AI-generated content",
+            "Benefits of AI product descriptions",
+            "Implementation strategies",
+            "Best practices",
+            "Future developments"
+          ]
+        },
+        {
+          "title": "Automating Your {task_type} Tasks: A Guide for Shopify Stores",
+          "keywords": ["automation", "efficiency", "workflows", "productivity"],
+          "outline": [
+            "Common {task_type} challenges",
+            "Automation solutions",
+            "Implementation guide",
+            "ROI analysis",
+            "Next steps"
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "product_type": ["Fashion", "Electronics", "Home Decor", "Beauty", "Food"],
+    "timeframe": ["2025", "Q1 2025", "Post-COVID", "Current"],
+    "niche": ["Fashion", "Tech", "Beauty", "Food", "Lifestyle"],
+    "successful_store": ["Fashion Nova", "Gymshark", "MVMT", "Dollar Shave Club"],
+    "percentage": ["150", "200", "300", "400"],
+    "task_type": ["SEO", "Content", "Marketing", "Inventory", "Customer Service"]
+  }
+}

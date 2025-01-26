@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['blog.spotcircuit.com', 'static.ghost.org', 'example.com', 'anotherdomain.com'],
+  },
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    externalDir: true
+    externalDir: true,
+    serverActions: true,
   },
   transpilePackages: ['@spotcircuit/ui'],
   webpack: (config) => {

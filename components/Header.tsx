@@ -6,12 +6,13 @@ import Image from 'next/image'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'The Problem', href: '#problem-section' },
-  { name: 'Results', href: '#real-results' },
-  { name: 'How It Works', href: '#six-steps' },
-  { name: 'Case Studies', href: '#case-studies' },
-  { name: 'FAQ', href: '#faq-section' },
-  { name: 'Contact', href: '#book-demo' },
+  { name: 'The Problem', href: '#problem-section', isScroll: true },
+  { name: 'Results', href: '#real-results', isScroll: true },
+  { name: 'How It Works', href: '#six-steps', isScroll: true },
+  { name: 'Case Studies', href: '#case-studies', isScroll: true },
+  { name: 'Blog', href: '/blog', isScroll: false },
+  { name: 'FAQ', href: '#faq-section', isScroll: true },
+  { name: 'Contact', href: '#book-demo', isScroll: true },
 ]
 
 export default function Header() {
@@ -28,9 +29,11 @@ export default function Header() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
     setMobileMenuOpen(false)
   }
@@ -65,14 +68,14 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
+              onClick={(e) => item.isScroll ? scrollToSection(e, item.href) : setMobileMenuOpen(false)}
               className="text-sm font-semibold leading-6 text-white hover:text-gray-300"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -113,14 +116,14 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
-                      onClick={(e) => scrollToSection(e, item.href)}
+                      onClick={(e) => item.isScroll ? scrollToSection(e, item.href) : setMobileMenuOpen(false)}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="py-6">
