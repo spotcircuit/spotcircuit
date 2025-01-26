@@ -1,4 +1,16 @@
 declare module '@tryghost/admin-api' {
+    interface Tag {
+        id?: string;
+        name?: string;
+        slug?: string;
+        description?: string;
+        feature_image?: string;
+        visibility?: string;
+        meta_title?: string;
+        meta_description?: string;
+        url?: string;
+    }
+
     interface PostOrPage {
         id?: string;
         uuid?: string;
@@ -18,7 +30,7 @@ declare module '@tryghost/admin-api' {
         codeinjection_foot?: string;
         custom_template?: string;
         canonical_url?: string;
-        tags?: Array<any>;
+        tags?: Array<Tag>;
         authors?: Array<any>;
         primary_author?: any;
         primary_tag?: any;
@@ -43,6 +55,13 @@ declare module '@tryghost/admin-api' {
             read: (options: { id: string } | { slug: string }) => Promise<PostOrPage>;
             delete: (options: { id: string }) => Promise<void>;
         };
+        tags: {
+            add: (tag: Tag) => Promise<Tag>;
+            edit: (tag: Tag) => Promise<Tag>;
+            browse: (options?: any) => Promise<Tag[]>;
+            read: (options: { id: string } | { slug: string }) => Promise<Tag>;
+            delete: (options: { id: string }) => Promise<void>;
+        };
     }
 
     interface GhostAdminAPIOptions {
@@ -51,8 +70,9 @@ declare module '@tryghost/admin-api' {
         version: string;
     }
 
-    export default class GhostAdminAPIClass {
+    export default class {
         constructor(options: GhostAdminAPIOptions);
         posts: GhostAdminAPI['posts'];
+        tags: GhostAdminAPI['tags'];
     }
 }
