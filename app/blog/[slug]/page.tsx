@@ -1,6 +1,6 @@
 import { getSinglePost } from '@/lib/ghost';
 import { notFound } from 'next/navigation';
-import BlogHeader from '@/components/BlogHeader';
+import BlogHeader from '~/components/BlogHeader';
 import Image from 'next/image';
 import Link from 'next/link';
 
