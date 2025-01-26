@@ -11,8 +11,12 @@ async function generateAndPublish() {
         // Step 2: Post to Ghost
         await execAsync('npx ts-node scripts/post-to-ghost.ts');
         
-    } catch (error) {
-        console.error('Error:', error);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Error:', error.message);
+        } else {
+            console.error('Unknown error:', error);
+        }
         process.exit(1);
     }
 }

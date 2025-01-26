@@ -300,7 +300,12 @@ export async function generateBlogPost() {
 
 // Only run directly if this is the main module
 if (require.main === module) {
-    generateBlogPost().catch(error => {
+    generateBlogPost().catch((error: unknown) => {
+        if (error instanceof Error) {
+            console.error('Error:', error.message);
+        } else {
+            console.error('Unknown error:', error);
+        }
         process.exit(1);
     });
 }
