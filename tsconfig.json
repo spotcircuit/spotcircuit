@@ -28,6 +28,7 @@
         "name": "next"
       }
     ],
+    "typeRoots": ["./node_modules/@types", "./types"],
     "types": ["node", "node-fetch"],
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
