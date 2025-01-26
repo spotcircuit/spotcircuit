@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+// @ts-ignore
 import GhostAdminAPI from '@tryghost/admin-api';
 
 // Initialize Ghost Admin API
 const ghost = new GhostAdminAPI({
-    url: process.env.GHOST_API_URL,
-    key: process.env.GHOST_ADMIN_API_KEY,
+    url: process.env.GHOST_API_URL || '',
+    key: process.env.GHOST_ADMIN_API_KEY || '',
     version: 'v5.0'
 });
 
@@ -15,15 +16,23 @@ interface BlogTemplate {
     outline: string[];
 }
 
-interface Variable {
-    [key: string]: string[];
+interface Category {
+    category: string;
+    templates: BlogTemplate[];
+}
+
+interface TemplateData {
+    topics: Category[];
+    variables: {
+        [key: string]: string[];
+    };
 }
 
 async function generateBlogPost() {
     try {
         // Read templates
         const templatesPath = path.join(process.cwd(), 'scripts', 'blog-templates.json');
-        const templates = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
+        const templates = JSON.parse(fs.readFileSync(templatesPath, 'utf-8')) as TemplateData;
         
         // Randomly select a category and template
         const category = templates.topics[Math.floor(Math.random() * templates.topics.length)];
@@ -34,12 +43,12 @@ async function generateBlogPost() {
         let outline = [...template.outline];
         
         // Replace variables with random values
-        for (const [key, values] of Object.entries(templates.variables)) {
+        Object.entries(templates.variables).forEach(([key, values]) => {
             const pattern = new RegExp(`{${key}}`, 'g');
             const randomValue = values[Math.floor(Math.random() * values.length)];
             title = title.replace(pattern, randomValue);
             outline = outline.map(item => item.replace(pattern, randomValue));
-        }
+        });
 
         // Generate content using DeepSeek API
         const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
@@ -71,6 +80,10 @@ The blog post should be informative, engaging, and include practical examples. F
             })
         });
 
+        if (!response.ok) {
+            throw new Error(`DeepSeek API error: ${response.statusText}`);
+        }
+
         const data = await response.json();
         const content = data.choices[0].message.content;
 
@@ -82,13 +95,14 @@ The blog post should be informative, engaging, and include practical examples. F
             published_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(), // Schedule for tomorrow
             tags: [
                 { name: category.category },
-                ...template.keywords.map(keyword => ({ name: keyword }))
+                ...template.keywords.map((keyword: string) => ({ name: keyword }))
             ]
         });
 
         console.log(`Successfully scheduled blog post: ${title}`);
     } catch (error) {
         console.error('Error generating blog post:', error);
+        process.exit(1);
     }
 }
 
