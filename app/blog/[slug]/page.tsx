@@ -8,11 +8,12 @@ export const revalidate = 60;
 
 interface PageProps {
     params: Promise<{ slug: string }>;
-    searchParams?: { [key: string]: string | string[] | undefined };
+    searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function BlogPost({ params }: PageProps) {
+export default async function BlogPost({ params, searchParams }: PageProps) {
     const resolvedParams = await params;
+    const resolvedSearchParams = searchParams ? await searchParams : {};
     const post = await getSinglePost(resolvedParams.slug);
 
     if (!post) {
