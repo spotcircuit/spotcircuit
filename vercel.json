@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build",
-  "outputDirectory": ".next",
+  "buildCommand": "cd app && pnpm run build",
+  "outputDirectory": "app/.next",
   "ignoreCommand": "git check-ignore portfolio/**/*"
 }
