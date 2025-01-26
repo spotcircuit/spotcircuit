@@ -221,8 +221,11 @@ Requirements:
         log('Content length (words): ' + content.split(/\s+/).length);
         
         return content;
-    } catch (error) {
-        throw new Error(`Failed to generate content: ${error.message}`);
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            throw new Error(`Failed to generate content: ${error.message}`);
+        }
+        throw new Error('Failed to generate content: Unknown error');
     }
 }
 

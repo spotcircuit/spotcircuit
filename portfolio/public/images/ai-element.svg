@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="12" fill="#111827"/>
+  
+  <!-- Neural Network Visualization -->
+  <!-- Nodes -->
+  <circle cx="40" cy="60" r="8" fill="#22C55E"/>
+  <circle cx="40" cy="90" r="8" fill="#22C55E"/>
+  <circle cx="40" cy="120" r="8" fill="#22C55E"/>
+  
+  <circle cx="90" cy="75" r="8" fill="#3B82F6"/>
+  <circle cx="90" cy="105" r="8" fill="#3B82F6"/>
+  
+  <circle cx="140" cy="90" r="8" fill="#8B5CF6"/>
+  
+  <!-- Connections -->
+  <path d="M48 60 L82 75" stroke="#22C55E" stroke-width="2" opacity="0.5"/>
+  <path d="M48 90 L82 75" stroke="#22C55E" stroke-width="2" opacity="0.5"/>
+  <path d="M48 90 L82 105" stroke="#22C55E" stroke-width="2" opacity="0.5"/>
+  <path d="M48 120 L82 105" stroke="#22C55E" stroke-width="2" opacity="0.5"/>
+  
+  <path d="M98 75 L132 90" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <path d="M98 105 L132 90" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Pulse Animation -->
+  <circle cx="90" cy="90" r="60" stroke="#22C55E" stroke-width="2" opacity="0.1">
+    <animate attributeName="r" values="0;60" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#374151" stroke-width="1"/>
+  </pattern>
+  <rect width="180" height="180" fill="url(#grid)" opacity="0.1"/>
+</svg>

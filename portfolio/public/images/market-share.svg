@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#111827"/>
+  
+  <!-- Market Share Comparison -->
+  <g transform="translate(50, 50)">
+    <!-- Optimized Store -->
+    <rect x="0" y="0" width="100" height="300" rx="4" fill="#22C55E" opacity="0.2"/>
+    <rect x="0" y="60" width="100" height="240" rx="4" fill="#22C55E"/>
+    <text x="50" y="150" text-anchor="middle" font-family="Arial" font-size="14" fill="#FFFFFF">80%</text>
+    <text x="50" y="320" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">Optimized</text>
+    <text x="50" y="340" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">Store</text>
+
+    <!-- Your Store -->
+    <rect x="150" y="0" width="100" height="300" rx="4" fill="#EF4444" opacity="0.2"/>
+    <rect x="150" y="240" width="100" height="60" rx="4" fill="#EF4444"/>
+    <text x="200" y="270" text-anchor="middle" font-family="Arial" font-size="14" fill="#FFFFFF">20%</text>
+    <text x="200" y="320" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">Your</text>
+    <text x="200" y="340" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">Store</text>
+  </g>
+
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#FFFFFF" font-weight="bold">
+    Market Share Comparison
+  </text>
+
+  <!-- Annotations -->
+  <g transform="translate(300, 150)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#22C55E">4x More</text>
+    <text x="0" y="20" font-family="Arial" font-size="12" fill="#9CA3AF">Market</text>
+    <text x="0" y="40" font-family="Arial" font-size="12" fill="#9CA3AF">Share</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M150,200 L250,200" stroke="#374151" stroke-width="1" opacity="0.5"/>
+  <path d="M250,200 L240,195 L240,205 L250,200" fill="#374151" opacity="0.5"/>
+</svg>
