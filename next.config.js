@@ -4,7 +4,6 @@ const nextConfig = {
     domains: ['blog.spotcircuit.com', 'static.ghost.org', 'example.com', 'anotherdomain.com', 'images.unsplash.com'],
   },
   reactStrictMode: true,
-  swcMinify: true,
   experimental: {
     externalDir: true,
     serverActions: {

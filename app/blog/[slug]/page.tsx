@@ -6,7 +6,14 @@ import Link from 'next/link';
 
 export const revalidate = 60;
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+type Props = {
+    params: {
+        slug: string;
+    };
+    searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default async function BlogPost({ params, searchParams }: Props) {
     const post = await getSinglePost(params.slug);
 
     if (!post) {
