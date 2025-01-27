@@ -1,30 +1,62 @@
-import { getPosts, GhostPost } from '@/lib/ghost';
+import { getPosts } from '@/lib/ghost';
+import { notFound } from 'next/navigation';
 import BlogHeader from '@/components/BlogHeader';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const revalidate = 60;
 
-export default async function BlogPage() {
-    const posts: GhostPost[] = await getPosts();
+interface PageProps {
+    params: Promise<{ slug: string }>;
+    searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function TagPage({ params, searchParams }: PageProps) {
+    const resolvedParams = await params;
+    const posts = await getPosts();
+    
+    // Filter posts by tag
+    const tagPosts = posts.filter(post => 
+        post.tags?.some(tag => tag.slug === resolvedParams.slug)
+    );
+
+    if (tagPosts.length === 0) {
+        notFound();
+    }
+
+    const tagName = tagPosts[0].tags.find(tag => tag.slug === resolvedParams.slug)?.name || resolvedParams.slug;
 
     return (
         <div className="min-h-screen bg-black">
             <BlogHeader />
             <main className="pt-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 className="text-4xl font-bold mb-8 text-white">Latest Posts</h1>
-                    {!posts || posts.length === 0 ? (
-                        <p className="text-gray-400">
-                            No posts found. Check back soon!
-                        </p>
-                    ) : (
-                        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            {posts.map((post) => (
-                                <article 
-                                    key={post.id} 
-                                    className="bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all"
-                                >
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <Link 
+                        href="/blog" 
+                        className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors"
+                    >
+                        <svg 
+                            className="w-5 h-5 mr-2" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                        >
+                            <path 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round" 
+                                strokeWidth={2} 
+                                d="M15 19l-7-7 7-7" 
+                            />
+                        </svg>
+                        Back to Blog
+                    </Link>
+
+                    <h1 className="text-4xl font-bold mb-8 text-white">Posts tagged with "{tagName}"</h1>
+
+                    <div className="grid gap-8">
+                        {tagPosts.map(post => (
+                            <article key={post.id} className="bg-gray-900 rounded-xl overflow-hidden">
+                                <Link href={`/blog/${post.slug}`}>
                                     {post.feature_image && (
                                         <div className="relative h-48 w-full">
                                             <Image 
@@ -77,10 +109,10 @@ export default async function BlogPage() {
                                             )}
                                         </div>
                                     </div>
-                                </article>
-                            ))}
-                        </div>
-                    )}
+                                </Link>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </main>
         </div>

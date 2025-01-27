@@ -3,7 +3,31 @@ import fetch from 'cross-fetch';
 const ghostUrl = process.env.GHOST_API_URL || 'http://localhost:2368';
 const ghostKey = process.env.GHOST_CONTENT_API_KEY || '';
 
-interface GhostPost {
+export interface GhostTag {
+    id: string;
+    name: string;
+    slug: string;
+    description?: string | null;
+    feature_image?: string | null;
+    visibility: string;
+    meta_title?: string | null;
+    meta_description?: string | null;
+    url?: string;
+}
+
+export interface GhostAuthor {
+    id: string;
+    name: string;
+    slug: string;
+    profile_image?: string | null;
+    bio?: string | null;
+    website?: string | null;
+    location?: string | null;
+    meta_title?: string | null;
+    meta_description?: string | null;
+}
+
+export interface GhostPost {
     id: string;
     slug: string;
     title: string;
@@ -12,15 +36,19 @@ interface GhostPost {
     excerpt: string;
     reading_time: number;
     published_at: string;
-    tags: any[];
-    authors: any[];
+    tags: GhostTag[];
+    authors: GhostAuthor[];
 }
 
 interface GhostResponse {
     posts: GhostPost[];
 }
 
-export async function getPosts() {
+interface GhostSinglePostResponse {
+    posts: [GhostPost];
+}
+
+export async function getPosts(): Promise<GhostPost[]> {
     try {
         if (!process.env.GHOST_API_URL || !process.env.GHOST_CONTENT_API_KEY) {
             console.error('Ghost API URL or Content API Key not set');
@@ -45,7 +73,7 @@ export async function getPosts() {
     }
 }
 
-export async function getSinglePost(postSlug: string) {
+export async function getSinglePost(postSlug: string): Promise<GhostPost | null> {
     try {
         const res = await fetch(
             `${ghostUrl}/ghost/api/v3/content/posts/slug/${postSlug}/?key=${ghostKey}&include=tags,authors`,
@@ -53,13 +81,14 @@ export async function getSinglePost(postSlug: string) {
         );
 
         if (!res.ok) {
-            throw new Error(`Failed to fetch post: ${res.status}`);
+            console.error(`Failed to fetch post: ${res.status}`);
+            return null;
         }
 
-        const data = await res.json();
-        return data.posts[0];
-    } catch (err) {
-        console.error('Error fetching post:', err);
-        throw err;
+        const data = await res.json() as GhostSinglePostResponse;
+        return data.posts[0] || null;
+    } catch (error) {
+        console.error('Error fetching post:', error);
+        return null;
     }
 }

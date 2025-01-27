@@ -2,6 +2,16 @@
 const nextConfig = {
   images: {
     domains: ['blog.spotcircuit.com', 'static.ghost.org', 'example.com', 'anotherdomain.com', 'images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'spotcircuit.ghost.io'
+      }
+    ]
   },
   reactStrictMode: true,
   experimental: {
