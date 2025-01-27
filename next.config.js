@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['blog.spotcircuit.com', 'static.ghost.org', 'example.com', 'anotherdomain.com', 'images.unsplash.com'],
+    domains: ['images.unsplash.com', 'spotcircuit.ghost.io'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -17,7 +17,12 @@ const nextConfig = {
   experimental: {
     externalDir: true,
     serverActions: {
-      allowedOrigins: ['localhost:3000', 'localhost:3006']
+      allowedOrigins: [
+        'localhost:3000',
+        'localhost:3006',
+        'spotcircuit.vercel.app',
+        '*.spotcircuit.com'
+      ]
     },
   },
   transpilePackages: ['@spotcircuit/ui'],
