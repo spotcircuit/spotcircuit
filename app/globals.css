@@ -12,3 +12,295 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-end-rgb));
 }
+
+/* Add Custom CSS Below */
+
+/* Base styles for dark mode */
+body {
+  background-color: #0a0a0a; /* Near-black */
+  color: #e0e0e0; /* Light gray text */
+  font-family: 'Inter', sans-serif; /* Or your preferred modern font */
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent; /* Standard property */
+}
+
+/* Subtle Glow Effect */
+.glow-effect {
+  box-shadow: 0 0 15px 5px rgba(255, 138, 0, 0.3), /* Orange glow */
+              0 0 20px 10px rgba(229, 46, 113, 0.2); /* Pink glow */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff8a00; /* Gradient start color */
+  border-radius: 4px;
+  border: 2px solid #1a1a1a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e52e71; /* Gradient end color */
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Adapts between 2rem and 3.5rem */
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+p {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* Modern Grid Layout */
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+  @apply py-3 px-6 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1;
+}
+
+/* Styling for specific sections if needed */
+/* Example removed as it was empty */
+
+/* Header banner image styling */
+img.w-full {
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  img.w-full {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Modern Bullet Points */
+.modern-bullet {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.modern-bullet:hover {
+  transform: translateX(5px);
+}
+
+.modern-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 198, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
+}
+
+/* Enhanced Card Styles */
+.modern-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.modern-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.modern-card:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modern-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient Backgrounds */
+.gradient-bg-blue {
+  background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #003594);
+  color: white;
+}
+
+.gradient-bg-purple {
+  background: linear-gradient(135deg, #4b0082, #663399, #8a2be2);
+  color: white;
+}
+
+.gradient-bg-dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.gradient-bg-sunset {
+  background: linear-gradient(135deg, #ff8a00, #e52e71, #ff2366);
+  color: white;
+}
+
+/* Icon Styling */
+.icon-container {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 auto 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.icon-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.icon-container:hover::after {
+  opacity: 1;
+}
+
+.icon-container svg {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.icon-container:hover svg {
+  transform: scale(1.2);
+}
+
+/* Modern Grid with even alignment */
+.staggered-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Removed the staggered effect for better alignment */
+
+/* Section dividers */
+.section-divider {
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #00c6ff, #0072ff, transparent);
+  margin: 3rem 0;
+  border-radius: 5px;
+}
+
+.faq-accordion summary {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  list-style: none; /* Remove default marker */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space out text and icon */
+  align-items: center; /* Center items vertically */
+}
+
+.faq-accordion summary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.faq-accordion details[open] summary {
+  background-color: rgba(255, 138, 0, 0.2);
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none; /* Hide default marker in Webkit browsers */
+}
+
+.faq-accordion summary::after {
+  content: '+'; /* Plus icon for closed state */
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.faq-accordion details[open] summary::after {
+  content: '−'; /* Minus icon for open state */
+  transform: rotate(180deg);
+}
+
+.faq-accordion div {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 8px 8px;
+  margin-top: -8px; /* Overlap with summary border-radius */
+}
