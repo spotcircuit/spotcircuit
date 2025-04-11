@@ -3,15 +3,19 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
+import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
+import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle, FaHome, FaEnvelope } from 'react-icons/fa';
+import { HiOutlineClock } from 'react-icons/hi';
 
 const ServicesPage = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <Header />
-      <main className="flex-grow">
+    <>
+      <div className="flex flex-col min-h-screen overflow-hidden">
+        <Header />
+        <main className="flex-grow">
         {/* Header Image Section */}
         <img
           src="/static/images/services.webp"
@@ -37,10 +41,10 @@ const ServicesPage = () => {
                 <FaBullseye className="text-2xl text-white" />
               </div>
               <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                Amplify Your Business with AI-Powered Solutions
+                Stop Drowning in Chaos: Automate & Optimize Your Home Service Business
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-                SpotCircuit delivers targeted strategies for growth, efficiency, and market leadership in the digital age.
+                SpotCircuit builds custom AI-powered automation and intelligent SEO systems specifically designed for businesses that operate in the home. Streamline scheduling, generate qualified local leads, build expert teams faster, and reclaim your time.
               </p>
               
               <motion.div
@@ -50,11 +54,164 @@ const ServicesPage = () => {
               >
                 <Link href="#services">
                   <span className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block">
-                    Discover Our Services
+                    Optimize My Service Business
                   </span>
                 </Link>
               </motion.div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* We Understand Your World Section */}
+        <section id="understand" className="py-16 md:py-24 bg-black relative">
+          <div className="section-divider absolute top-0 left-0 right-0"></div>
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Running a Home Service Business <span className="gradient-text">Isn't Easy</span>. We Get It.</h2>
+              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Managing field technicians or sales teams, juggling complex schedules, generating consistent local leads, ensuring quality service in customers' homes, and dealing with seasonal demands – it's a unique operational challenge. Manual processes and outdated marketing create bottlenecks that cost you time and money.
+              </p>
+            </motion.div>
+            
+            {/* Pain Points Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+              {/* Pain Point 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <HiOutlineClock className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Scheduling Nightmares</h3>
+                <p className="text-gray-300 flex-grow">Difficulty optimizing routes, handling emergency calls, managing technician availability? Your time is being wasted on manual scheduling.</p>
+              </motion.div>
+
+              {/* Pain Point 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <FaBullseye className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Leaky Lead Funnel</h3>
+                <p className="text-gray-300 flex-grow">Struggling to consistently generate local, qualified leads beyond word-of-mouth or basic ads? Missing out after storms or during peak seasons?</p>
+              </motion.div>
+
+              {/* Pain Point 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <FaUsers className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Field Team Friction</h3>
+                <p className="text-gray-300 flex-grow">Challenges in dispatching, communication, job documentation, and ensuring consistent service quality? Your customers notice when your team isn't in sync.</p>
+              </motion.div>
+
+              {/* Pain Point 4 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <FaStream className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Tech/Sales Talent Treadmill</h3>
+                <p className="text-gray-300 flex-grow">Difficulty finding reliable technicians or skilled in-home salespeople? Long ramp-up times for new hires? Your growth is limited by your ability to build a team.</p>
+              </motion.div>
+
+              {/* Pain Point 5 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <FaCogs className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Admin Overload</h3>
+                <p className="text-gray-300 flex-grow">Drowning in paperwork, manual follow-ups, and inefficient back-office tasks? Your business is running you instead of you running your business.</p>
+              </motion.div>
+
+              {/* Pain Point 6 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="bg-gradient-to-br from-black to-gray-900 p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
+              >
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
+                  <FaArrowRight className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 text-white">Customer Retention Struggle</h3>
+                <p className="text-gray-300 flex-grow">Difficulty maintaining consistent follow-ups and nurturing relationships after service? Your competitors are stealing your customers with better systems.</p>
+              </motion.div>
+            </div>
+
+            {/* Industry Statistics Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-8"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">The <span className="gradient-text">Numbers</span> Tell The Story</h3>
+              <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                Home service businesses face unique challenges that require specialized solutions:
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { value: "68%", label: "of home service businesses struggle with scheduling efficiency" },
+                { value: "73%", label: "report difficulty finding and retaining qualified technicians" },
+                { value: "4.6", label: "hours per week wasted on manual administrative tasks" },
+                { value: "42%", label: "of customers use voice search to find local service providers" },
+                { value: "3.2x", label: "higher conversion rate for optimized local service pages" },
+                { value: "58%", label: "of service calls could be automated or streamlined" },
+                { value: "$1,250", label: "average cost of a bad hire in the home service industry" },
+                { value: "87%", label: "of customers check online reviews before choosing a provider" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-4 md:p-6 rounded-xl border border-white/10 hover:border-blue-500/30 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 flex flex-col items-center justify-center text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                    {stat.value}
+                  </div>
+                  <p className="text-sm md:text-base text-gray-300">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -74,9 +231,9 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Our Approach: <span className="gradient-text">Strategic AI Integration</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Your Custom <span className="gradient-text">Automation Partner</span></h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-                We don't just apply AI; we integrate it strategically into your core business functions to solve specific challenges and unlock measurable value. Our process ensures solutions are tailored, effective, and scalable.
+                We don't use cookie-cutter solutions. Our process involves deep analysis of your specific home service operation, designing a tailored strategy, seamless implementation (integrating with tools you already use like GHL, ServiceTitan, Jobber where applicable), and continuous optimization based on results.
               </p>
             </motion.div>
             
@@ -125,13 +282,13 @@ const ServicesPage = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <h2 className="gradient-text text-3xl md:text-5xl font-bold mb-6">Tailored Services for Peak Performance</h2>
-              <p className="text-blue-100 text-lg max-w-3xl mx-auto">Our AI-powered solutions are designed to address your specific business challenges and drive measurable results.</p>
+              <h2 className="gradient-text text-3xl md:text-5xl font-bold mb-6">Our AI-Powered Solutions for Home Service Leaders</h2>
+              <p className="text-blue-100 text-lg max-w-3xl mx-auto">SpotCircuit applies cutting-edge AI, automation, and SEO to directly address these challenges, building systems that work for your home service business:</p>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-              {/* Service 1: AI-First SEO */}
+              {/* Service 1: Automated Local Lead Generation */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -143,29 +300,29 @@ const ServicesPage = () => {
                   <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
                     <FaBullseye className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">AI-First SEO</h3>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Get Found Locally & Fill Your Schedule</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">Problem Recap:</p>
-                    <p className="text-blue-100">Struggling to gain visibility and rank higher in competitive search landscapes?</p>
+                    <p className="text-blue-100">Not enough qualified calls? Invisible online when homeowners search? Wasting money on generic ads?</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">What We Do:</p>
-                    <p className="text-blue-100">Leverage cutting-edge AI for deep keyword analysis, predictive content optimization, technical SEO audits, and automated link-building insights.</p>
+                    <p className="text-blue-100">Dominate local search with hyperlocal SEO and Google Business Profile optimization, run targeted AI-powered ad campaigns in specific service areas, automate lead qualification & follow-up, build systems for generating reviews, and implement storm/event-triggered marketing.</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">The Outcome:</p>
-                    <p className="text-blue-100">Dominate search rankings, attract high-quality organic traffic, and establish market authority.</p>
+                    <p className="text-blue-100">Consistent flow of high-intent local leads, higher booking rates, maximized marketing ROI, and predictable scheduling.</p>
                   </div>
                   
                   <div className="pt-2">
                     <p className="font-semibold text-blue-300 mb-1">Keywords:</p>
                     <div className="flex flex-wrap gap-2">
-                      {["AI SEO", "Search Engine Optimization", "Organic Growth", "Content Strategy", "Technical SEO"].map((tag, i) => (
+                      {["Local SEO", "Home Service Leads", "Google Business Profile", "Roofing Leads", "HVAC Leads", "Plumbing Leads", "Automated Appointment Setting"].map((tag, i) => (
                         <span key={i} className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-200">{tag}</span>
                       ))}
                     </div>
@@ -173,7 +330,7 @@ const ServicesPage = () => {
                 </div>
               </motion.div>
 
-              {/* Service 2: Automated Talent Acquisition */}
+              {/* Service 2: Streamlined Field & Office Operations */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -183,31 +340,31 @@ const ServicesPage = () => {
               >
                 <div className="flex items-center mb-6">
                   <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
-                    <FaUsers className="h-6 w-6" />
+                    <FaCogs className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-purple-300 transition-all duration-300">Automated Talent Acquisition</h3>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-purple-300 transition-all duration-300">Automate Your Workflow, Boost Efficiency</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
                     <p className="font-semibold text-purple-300 mb-1">Problem Recap:</p>
-                    <p className="text-blue-100">Finding, attracting, and hiring top talent is slow, expensive, and resource-intensive?</p>
+                    <p className="text-blue-100">Chaotic scheduling? Inefficient dispatch? Communication gaps? Repetitive admin tasks?</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-purple-300 mb-1">What We Do:</p>
-                    <p className="text-blue-100">Implement AI-driven platforms for intelligent candidate sourcing, automated screening, predictive hiring analytics, and enhanced candidate experience.</p>
+                    <p className="text-blue-100">Implement workflow automation for scheduling, dispatch, customer communication (reminders, follow-ups), job documentation, invoicing, and reporting. Optimize your CRM or Field Service Management tools. Automate data entry and internal processes.</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-purple-300 mb-1">The Outcome:</p>
-                    <p className="text-blue-100">Hire better talent faster, reduce recruitment costs, and build high-performing teams efficiently.</p>
+                    <p className="text-blue-100">Reduced errors, significant time savings, smoother operations, improved team communication, better resource allocation, and scalable processes.</p>
                   </div>
                   
                   <div className="pt-2">
                     <p className="font-semibold text-purple-300 mb-1">Keywords:</p>
                     <div className="flex flex-wrap gap-2">
-                      {["AI Recruiting", "Talent Acquisition", "HR Automation", "Candidate Sourcing", "Predictive Hiring"].map((tag, i) => (
+                      {["Workflow Automation", "Service Scheduling", "Dispatch Software", "FSM Automation", "Home Service Operations", "Process Improvement"].map((tag, i) => (
                         <span key={i} className="text-xs px-3 py-1 rounded-full bg-purple-900/50 text-purple-200">{tag}</span>
                       ))}
                     </div>
@@ -215,7 +372,7 @@ const ServicesPage = () => {
                 </div>
               </motion.div>
 
-              {/* Service 3: High-Performance Lead Gen */}
+              {/* Service 3: Accelerated Talent Acquisition */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -225,31 +382,31 @@ const ServicesPage = () => {
               >
                 <div className="flex items-center mb-6">
                   <div className="p-3 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white mr-4 shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300">
-                    <FaBrain className="h-6 w-6" />
+                    <FaUsers className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-indigo-300 transition-all duration-300">High-Performance Lead Gen</h3>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-indigo-300 transition-all duration-300">Build Your Expert Team Faster</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
                     <p className="font-semibold text-indigo-300 mb-1">Problem Recap:</p>
-                    <p className="text-blue-100">Lead quality is inconsistent, sales cycles are long, and conversion rates are low?</p>
+                    <p className="text-blue-100">Can't find good techs/sales reps? New hires take too long to train? Losing valuable team knowledge?</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-indigo-300 mb-1">What We Do:</p>
-                    <p className="text-blue-100">Utilize AI algorithms to identify ideal customer profiles, predict purchase intent, qualify leads automatically, and personalize outreach at scale.</p>
+                    <p className="text-blue-100">Use AI-powered sourcing & screening to find candidates suited for field/in-home roles. Build automated onboarding specifically for technicians and sales reps (safety, service protocols, sales process). Capture veteran expertise into accessible SOPs and video training.</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-indigo-300 mb-1">The Outcome:</p>
-                    <p className="text-blue-100">Fill your sales pipeline with high-intent, qualified prospects, shorten sales cycles, and boost conversion rates.</p>
+                    <p className="text-blue-100">Hire qualified staff faster, dramatically reduce ramp-up time, ensure consistent service standards, and lower turnover costs.</p>
                   </div>
                   
                   <div className="pt-2">
                     <p className="font-semibold text-indigo-300 mb-1">Keywords:</p>
                     <div className="flex flex-wrap gap-2">
-                      {["AI Lead Generation", "Sales Automation", "Predictive Analytics", "B2B Leads", "Customer Intent"].map((tag, i) => (
+                      {["Technician Recruiting", "Home Service Sales Training", "Field Service Onboarding", "SOPs for Service Business", "AI Recruiting"].map((tag, i) => (
                         <span key={i} className="text-xs px-3 py-1 rounded-full bg-indigo-900/50 text-indigo-200">{tag}</span>
                       ))}
                     </div>
@@ -257,7 +414,7 @@ const ServicesPage = () => {
                 </div>
               </motion.div>
 
-              {/* Service 4: Streamlined Operations */}
+              {/* Service 4: AI-First SEO for Home Services */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -267,31 +424,31 @@ const ServicesPage = () => {
               >
                 <div className="flex items-center mb-6">
                   <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
-                    <FaStream className="h-6 w-6" />
+                    <FaBrain className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Streamlined Operations</h3>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Ensure Homeowners Find YOU First</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">Problem Recap:</p>
-                    <p className="text-blue-100">Manual processes, inefficient workflows, and operational bottlenecks are draining resources and hindering growth?</p>
+                    <p className="text-blue-100">Competitors dominating local search? Website not attracting the right visitors? Missing out on voice search and AI-generated answers?</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">What We Do:</p>
-                    <p className="text-blue-100">Implement AI-powered automation for repetitive tasks, optimize complex workflows, enhance data analysis, and improve resource allocation.</p>
+                    <p className="text-blue-100">Implement AI-friendly semantic structures, optimize for local voice search and "near me" queries, align content with homeowner questions answered by LLMs, and ensure technical SEO best practices for local discovery.</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-blue-300 mb-1">The Outcome:</p>
-                    <p className="text-blue-100">Boost operational efficiency, reduce costs, increase productivity, and free up your team for strategic initiatives.</p>
+                    <p className="text-blue-100">Foundational online visibility, attracts high-intent local searchers, builds long-term organic lead source, and positions you as the authority when homeowners ask AI about your services.</p>
                   </div>
                   
                   <div className="pt-2">
                     <p className="font-semibold text-blue-300 mb-1">Keywords:</p>
                     <div className="flex flex-wrap gap-2">
-                      {["AI Operations", "Process Automation", "Workflow Optimization", "Business Efficiency", "RPA"].map((tag, i) => (
+                      {["AI SEO", "Local SEO Services", "Voice Search Optimization", "Schema Markup for Services", "Home Service SEO"].map((tag, i) => (
                         <span key={i} className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-200">{tag}</span>
                       ))}
                     </div>
@@ -323,13 +480,88 @@ const ServicesPage = () => {
                 <FaIndustry className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-4xl" />
               </div>
               
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Focused Expertise, <span className="gradient-text">Broad Application</span></h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                While we possess deep expertise in sectors like E-commerce and SaaS, our AI methodologies are versatile and proven to drive results across various industries. We tailor our approach to your specific market context.
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Proven Success <span className="gradient-text">In Your Trade</span></h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+                We specialize in building custom automation and optimization systems for home service businesses, including:
               </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
+                {[
+                  { icon: FaHome, name: "Roofing" },
+                  { icon: FaCogs, name: "HVAC" },
+                  { icon: FaStream, name: "Plumbing" },
+                  { icon: FaBullseye, name: "Electrical" },
+                  { icon: FaUsers, name: "Pest Control" },
+                  { icon: FaIndustry, name: "Flooring" },
+                  { icon: FaBrain, name: "Landscaping" },
+                  { icon: FaCheckCircle, name: "Pool Services" }
+                ].map((industry, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl border border-gray-200 hover:border-blue-300 shadow-md hover:shadow-blue-100 transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center h-full"
+                  >
+                    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                      <industry.icon className="text-2xl text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800">{industry.name}</h3>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FaqAccordion 
+          title="Home Service Business <span class='gradient-text'>FAQs</span>"
+          subtitle="Common questions about our services for home service businesses."
+          faqs={[
+            {
+              question: "What types of home service businesses do you work with?",
+              answer: "We work with a wide range of home service businesses including roofing, HVAC, plumbing, electrical, pest control, landscaping, flooring, pool services, and more. Our solutions are tailored to the specific needs of each trade while addressing the common challenges all home service businesses face."
+            },
+            {
+              question: "How do you help home service businesses generate more leads?",
+              answer: "We implement a multi-channel lead generation strategy that includes local SEO optimization, Google Business Profile enhancement, targeted paid advertising, social media marketing, and automated follow-up systems. Our AI analyzes your service area demographics and competition to create the most effective approach for your specific business."
+            },
+            {
+              question: "Can you help with scheduling and dispatching optimization?",
+              answer: "Yes, we specialize in automating and optimizing scheduling and dispatching processes. Our systems can integrate with your existing field service software to optimize technician routes, reduce drive time, balance workloads, and automatically handle schedule changes or emergency calls. This typically results in 20-30% more jobs completed per day."
+            },
+            {
+              question: "How do you improve customer retention for service businesses?",
+              answer: "We implement automated communication systems that maintain contact with customers through their entire lifecycle. This includes appointment reminders, follow-up surveys, maintenance reminders, seasonal service promotions, and personalized offers based on their service history. These touchpoints significantly increase repeat business and referrals."
+            },
+            {
+              question: "What makes your approach different from other marketing agencies?",
+              answer: "Unlike general marketing agencies, we specialize exclusively in home service businesses and build custom AI systems tailored to your specific needs. We focus on the entire customer journey from acquisition to retention, not just marketing. Our solutions integrate with your operations to create a seamless experience for both your team and your customers."
+            },
+            {
+              question: "How long does implementation take?",
+              answer: "Implementation timelines vary based on the complexity of your needs, but typically range from 2-6 weeks. We use a phased approach to ensure minimal disruption to your operations. The initial setup focuses on quick wins that generate immediate ROI, while more complex systems are implemented over time as your team adapts to the new processes."
+            },
+            {
+              question: "Do I need to replace my current software systems?",
+              answer: "No, our solutions are designed to integrate with your existing systems whenever possible. We can work with popular field service management software like ServiceTitan, Jobber, Housecall Pro, and others. If your current systems have limitations, we can recommend complementary solutions that fill the gaps without requiring a complete overhaul."
+            },
+            {
+              question: "How do you help with hiring and training challenges?",
+              answer: "We implement automated recruitment funnels that attract qualified candidates, pre-screen applicants, and streamline the hiring process. For training, we create digital systems that standardize onboarding, track skill development, and provide on-demand resources for field technicians. This reduces training time and improves retention of both information and employees."
+            },
+            {
+              question: "Can you help with seasonal business fluctuations?",
+              answer: "Absolutely. We develop strategies to smooth out seasonal fluctuations through diversified service offerings, pre-booking campaigns, maintenance plans, and targeted marketing during slower periods. Our AI systems predict seasonal trends based on historical data and local factors, allowing for proactive rather than reactive business planning."
+            },
+            {
+              question: "What kind of ROI can I expect from your services?",
+              answer: "While results vary by business, our home service clients typically see a 3-5x return on investment within the first year. This comes from a combination of increased lead volume, higher conversion rates, improved operational efficiency, and enhanced customer retention. We establish clear KPIs at the beginning of our engagement and provide transparent reporting so you can track your ROI."
+            }
+          ]}
+        />
 
         {/* Process Link Section with modern styling */}
         <section id="process-link" className="gradient-bg-dark py-16 px-4 overflow-hidden relative">
@@ -371,6 +603,43 @@ const ServicesPage = () => {
           </div>
         </section>
 
+        {/* Contact Form Section */}
+        <section id="contact" className="py-20 px-4 bg-gray-900 overflow-hidden relative">
+          <div className="section-divider absolute top-0 left-0 right-0"></div>
+          {/* Decorative elements */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-1/4 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl"></div>
+          </div>
+          
+          <div className="container mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-12"
+            >
+              <div className="inline-flex items-center justify-center p-4 mb-6 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
+                <FaEnvelope className="text-white text-3xl" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="gradient-text">Transform</span> Your Home Service Business?</h2>
+              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Take the first step toward automation and optimization. Fill out the form below and our team will get back to you within 24 hours.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <ContactForm />
+            </motion.div>
+          </div>
+        </section>
+
         {/* Final CTA Section with modern styling */}
         <section id="final-cta" className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-purple-700 text-white text-center relative overflow-hidden">
           <div className="section-divider absolute top-0 left-0 right-0"></div>
@@ -397,7 +666,7 @@ const ServicesPage = () => {
                 whileTap={{ scale: 0.95 }}
                 className="inline-block"
               >
-                <Link href="/contact">
+                <Link href="/contact" className="inline-block">
                   <span className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-10 rounded-xl transition duration-300 text-lg transform hover:-translate-y-1 hover:shadow-lg inline-block">
                     Get Started Today
                   </span>
@@ -409,7 +678,8 @@ const ServicesPage = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

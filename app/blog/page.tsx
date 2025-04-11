@@ -22,7 +22,7 @@ export default function BlogPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80 z-10"></div>
                     <div 
                         className="absolute inset-0 bg-cover bg-center z-0" 
-                        style={{ backgroundImage: "url('/static/images/ai-analyzing-data.png')" }}
+                        style={{ backgroundImage: "url('/static/images/blog.webp')" }}
                     ></div>
                     <div className="container mx-auto px-4 h-full flex items-center relative z-20">
                         <div className="max-w-3xl">

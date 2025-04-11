@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header'; // Import Header
 import Footer from '@/components/Footer'; // Import Footer
+import FaqAccordion from '@/components/FaqAccordion';
 import { FaBrain, FaDollarSign, FaBullseye, FaMagic, FaRobot, FaShieldAlt, FaHome, FaHardHat, FaCar, FaStore, FaCogs, FaTrophy, FaPercentage, FaQuoteLeft, FaRocket } from 'react-icons/fa';
 import { HiOutlineClock, HiOutlineChartBar, HiOutlineTrendingUp } from 'react-icons/hi';
 import { HiOutlineMapPin, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
@@ -426,6 +427,54 @@ const HomePage: React.FC = () => {
         </section>
 
          {/* Section H: (Optional/Implied) Footer/Links - Handled below */}
+        
+        {/* FAQ Section */}
+        <FaqAccordion 
+          title="Frequently Asked Questions"
+          subtitle="Find answers to common questions about SpotCircuit and our AI-powered solutions."
+          faqs={[
+            {
+              question: "What makes SpotCircuit different from other digital marketing agencies?",
+              answer: "SpotCircuit is unique in our AI-first approach to digital marketing and business optimization. Unlike traditional agencies that apply generic strategies, we build custom AI systems tailored to your specific business needs, focusing on measurable outcomes and ROI rather than vanity metrics."
+            },
+            {
+              question: "How long does it take to see results from your services?",
+              answer: "While every business is different, most clients begin seeing measurable improvements within 30-60 days. Our AI systems continuously learn and optimize, so results typically accelerate over time. We provide transparent reporting so you can track progress from day one."
+            },
+            {
+              question: "Do I need technical knowledge to work with SpotCircuit?",
+              answer: "Not at all. We handle all the technical aspects of implementation and provide user-friendly dashboards and reports. Our team works closely with you to ensure you understand the strategies and results without needing to dive into technical details."
+            },
+            {
+              question: "How do you price your services?",
+              answer: "We offer flexible pricing models based on your business size and specific needs. After an initial consultation, we'll provide a customized quote that aligns with your budget and expected ROI. We believe in transparent pricing with no hidden fees."
+            },
+            {
+              question: "Can you integrate with my existing software and tools?",
+              answer: "Yes, our solutions are designed to integrate seamlessly with your existing tech stack. Whether you're using CRMs, marketing automation tools, or industry-specific software, we can connect with them to enhance functionality rather than replace what's working."
+            },
+            {
+              question: "What industries do you specialize in?",
+              answer: "While we have expertise across many sectors, we specialize in home service businesses including roofing, HVAC, plumbing, electrical, pest control, landscaping, and similar trades. Our solutions are particularly effective for businesses that rely on local lead generation and field service operations."
+            },
+            {
+              question: "How do you measure success and ROI?",
+              answer: "We establish clear KPIs at the beginning of our engagement based on your business goals. Typical metrics include lead quality and quantity, customer acquisition cost, conversion rates, and revenue growth. Our reporting dashboards provide full transparency into these metrics."
+            },
+            {
+              question: "What support do you provide after implementation?",
+              answer: "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
+            },
+            {
+              question: "How is AI used in your solutions?",
+              answer: "We leverage AI across all aspects of our services, from predictive analytics for lead generation to automated workflow optimization. Our AI systems analyze vast amounts of data to identify patterns and opportunities that humans might miss, enabling more precise targeting and efficient operations."
+            },
+            {
+              question: "What is the process for getting started with SpotCircuit?",
+              answer: "Getting started is simple: <ol><li>Schedule a free consultation through our website</li><li>We'll conduct a comprehensive analysis of your current situation</li><li>Our team will develop a customized strategy and proposal</li><li>Once approved, we begin implementation with regular updates</li><li>We continuously monitor, optimize, and scale based on results</li></ol>"
+            }
+          ]}
+        />
       </main>
       <Footer /> {/* Render Footer */}
     </>
