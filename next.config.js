@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'spotcircuit.ghost.io'],
     remotePatterns: [
       {
         protocol: 'https',
