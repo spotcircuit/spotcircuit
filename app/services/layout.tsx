@@ -1,10 +1,8 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
+import { servicesMetadata } from './page-metadata';
 
-export const metadata: Metadata = {
-  title: 'Home Service Business Solutions | SpotCircuit',
-  description: 'Automate and optimize your home service business with AI-powered solutions for lead generation, operations, and talent acquisition.',
-};
+export const metadata: Metadata = servicesMetadata;
 
 export default function ServicesLayout({
   children,

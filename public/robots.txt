@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas if needed
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://spotcircuit.com/sitemap.xml

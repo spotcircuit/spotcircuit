@@ -32,6 +32,13 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({
   const generateStructuredData = () => {
     if (!structuredData) return null;
     
+    // Create a temporary div to strip HTML tags for plain text version if needed
+    const stripHtml = (html: string): string => {
+      const temp = document.createElement("div");
+      temp.innerHTML = html;
+      return temp.textContent || temp.innerText || "";
+    };
+    
     const structuredDataObj = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -40,6 +47,7 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
+          // Use the HTML version for rich results
           "text": faq.answer
         }
       }))
