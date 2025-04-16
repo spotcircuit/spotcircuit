@@ -102,6 +102,23 @@ export default function RootLayout({
                 "containedInPlace": {
                   "@type": "LocalBusiness",
                   "name": "Lansdowne Town Center"
+                },
+                "potentialAction": {
+                  "@type": "ReserveAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://calendar.app.google/Lh8TY5PBrDSZvjR87",
+                    "inLanguage": "en-US",
+                    "actionPlatform": [
+                      "http://schema.org/DesktopWebPlatform",
+                      "http://schema.org/IOSPlatform",
+                      "http://schema.org/AndroidPlatform"
+                    ]
+                  },
+                  "result": {
+                    "@type": "Reservation",
+                    "name": "Book a Free Consultation"
+                  }
                 }
               },
               {
@@ -194,10 +211,66 @@ export default function RootLayout({
                   },
                   {
                     "@type": "Question",
+                    "name": "Do I need technical knowledge to work with SpotCircuit?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Not at all. We handle all the technical aspects of implementation and provide user-friendly dashboards and reports. Our team works closely with you to ensure you understand the strategies and results without needing to dive into technical details."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do you price your services?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We offer flexible pricing models based on your business size and specific needs. After an initial consultation, we'll provide a customized quote that aligns with your budget and expected ROI. We believe in transparent pricing with no hidden fees."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can you integrate with my existing software and tools?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, our solutions are designed to integrate seamlessly with your existing tech stack. Whether you're using CRMs, marketing automation tools, or industry-specific software, we can connect with them to enhance functionality rather than replace what's working."
+                    }
+                  },
+                  {
+                    "@type": "Question",
                     "name": "What industries do you specialize in?",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "While we have expertise across many sectors, we specialize in home service businesses including roofing, HVAC, plumbing, electrical, pest control, landscaping, and similar trades. Our solutions are particularly effective for businesses that rely on local lead generation and field service operations."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do you measure success and ROI?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We establish clear KPIs at the beginning of our engagement based on your business goals. Typical metrics include lead quality and quantity, customer acquisition cost, conversion rates, and revenue growth. Our reporting dashboards provide full transparency into these metrics."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What support do you provide after implementation?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How is AI used in your solutions?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We leverage AI across all aspects of our services, from predictive analytics for lead generation to automated workflow optimization. Our AI systems analyze vast amounts of data to identify patterns and opportunities that humans might miss, enabling more precise targeting and efficient operations."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the process for getting started with SpotCircuit?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Getting started is simple: <ol><li>Schedule a free consultation through our website</li><li>We'll conduct a comprehensive analysis of your current situation</li><li>Our team will develop a customized strategy and proposal</li><li>Once approved, we begin implementation with regular updates</li><li>We continuously monitor, optimize, and scale based on results</li></ol>"
                     }
                   }
                 ]
