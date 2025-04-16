@@ -57,34 +57,152 @@ export default function RootLayout({
         />
         <Script id="json-ld" type="application/ld+json" strategy="afterInteractive">
           {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "SpotCircuit",
-              "applicationCategory": "BusinessApplication",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "operatingSystem": "Web-based",
-              "description": "AI-Powered SEO Automation for Shopify stores to boost organic traffic",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "127"
-              },
-              "creator": {
-                "@type": "Organization",
+            [
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
                 "name": "SpotCircuit",
+                "image": "https://spotcircuit.com/static/images/sclogo.png",
+                "@id": "https://spotcircuit.com",
                 "url": "https://spotcircuit.com",
-                "logo": "https://spotcircuit.com/static/images/logo.png",
+                "telephone": "+15714790455",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "19309 Winmeade Dr STE 200",
+                  "addressLocality": "Leesburg",
+                  "addressRegion": "VA",
+                  "postalCode": "20176",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 39.0768,
+                  "longitude": -77.4675
+                },
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                  }
+                ],
                 "sameAs": [
                   "https://twitter.com/spotcircuit",
                   "https://www.linkedin.com/company/spotcircuit"
+                ],
+                "priceRange": "$$",
+                "servesCuisine": "Digital Marketing",
+                "containedInPlace": {
+                  "@type": "LocalBusiness",
+                  "name": "Lansdowne Town Center"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "SpotCircuit",
+                "description": "AI-powered SEO solutions for home service businesses including plumbing, HVAC, electrical, landscaping, roofing, and more.",
+                "url": "https://spotcircuit.com",
+                "logo": "https://spotcircuit.com/static/images/sclogo.png",
+                "image": "https://spotcircuit.com/static/images/headerimage.png",
+                "telephone": "+15714790455",
+                "email": "info@spotcircuit.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "19309 Winmeade Dr STE 200",
+                  "addressLocality": "Leesburg",
+                  "addressRegion": "VA",
+                  "postalCode": "20176",
+                  "addressCountry": "US"
+                },
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                  }
+                ],
+                "serviceType": [
+                  "SEO Optimization",
+                  "Local Marketing",
+                  "Content Strategy",
+                  "Technical SEO",
+                  "AI Automation",
+                  "Analytics & Reporting"
+                ],
+                "areaServed": {
+                  "@type": "GeoCircle",
+                  "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 39.0768,
+                    "longitude": -77.4675
+                  },
+                  "geoRadius": "50000"
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.8",
+                  "ratingCount": "127",
+                  "bestRating": "5"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://spotcircuit.com",
+                "name": "SpotCircuit - AI-Powered SEO for Home Service Businesses",
+                "description": "AI-powered SEO solutions that transform your online presence and drive qualified leads to your service business.",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://spotcircuit.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What makes SpotCircuit different from other digital marketing agencies?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "SpotCircuit is unique in our AI-first approach to digital marketing and business optimization. Unlike traditional agencies that apply generic strategies, we build custom AI systems tailored to your specific business needs, focusing on measurable outcomes and ROI rather than vanity metrics."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How long does it take to see results from your services?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "While every business is different, most clients begin seeing measurable improvements within 30-60 days. Our AI systems continuously learn and optimize, so results typically accelerate over time. We provide transparent reporting so you can track progress from day one."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What industries do you specialize in?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "While we have expertise across many sectors, we specialize in home service businesses including roofing, HVAC, plumbing, electrical, pest control, landscaping, and similar trades. Our solutions are particularly effective for businesses that rely on local lead generation and field service operations."
+                    }
+                  }
                 ]
               }
-            }
+            ]
           `}
         </Script>
       </body>

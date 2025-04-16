@@ -3,9 +3,42 @@ import Link from 'next/link';
 import Header from '@/components/Header'; // Import Header
 import Footer from '@/components/Footer'; // Import Footer
 import FaqAccordion from '@/components/FaqAccordion';
-import { FaBrain, FaDollarSign, FaBullseye, FaMagic, FaRobot, FaShieldAlt, FaHome, FaHardHat, FaCar, FaStore, FaCogs, FaTrophy, FaPercentage, FaQuoteLeft, FaRocket } from 'react-icons/fa';
-import { HiOutlineClock, HiOutlineChartBar, HiOutlineTrendingUp } from 'react-icons/hi';
-import { HiOutlineMapPin, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
+import { 
+  FaBrain, 
+  FaDollarSign, 
+  FaBullseye, 
+  FaMagic, 
+  FaRobot, 
+  FaShieldAlt, 
+  FaHome, 
+  FaHardHat, 
+  FaCar, 
+  FaStore, 
+  FaCogs, 
+  FaTrophy, 
+  FaPercentage, 
+  FaQuoteLeft, 
+  FaRocket, 
+  FaUsers, 
+  FaStream, 
+  FaCode, 
+  FaChartBar, 
+  FaCheck, 
+  FaCheckCircle, 
+  FaArrowRight, 
+  FaFaucet, 
+  FaSnowflake, 
+  FaBolt 
+} from 'react-icons/fa';
+import { 
+  HiOutlineClock, 
+  HiOutlineChartBar, 
+  HiOutlineTrendingUp 
+} from 'react-icons/hi';
+import { 
+  HiOutlineMapPin, 
+  HiOutlineWrenchScrewdriver 
+} from 'react-icons/hi2';
 import Image from 'next/image';
 
 const HomePage: React.FC = () => {
@@ -173,67 +206,67 @@ const HomePage: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Focus Area 1 */}
+              {/* Focus Area 1: Plumbing */}
+              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
+                <div className="icon-container mb-6 mx-auto">
+                  <FaFaucet className="text-2xl text-white" />
+                </div>
+                <h4 className="text-2xl font-semibold mb-3 text-white">Plumbing Services</h4>
+                <p className="text-gray-300 mb-4">(Emergency, Maintenance, Installation)</p>
+                <Link href="/industries#plumbing" className="inline-block">
+                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
+                    Learn More
+                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+              
+              {/* Focus Area 2: HVAC */}
+              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
+                <div className="icon-container mb-6 mx-auto">
+                  <FaSnowflake className="text-2xl text-white" />
+                </div>
+                <h4 className="text-2xl font-semibold mb-3 text-white">HVAC Services</h4>
+                <p className="text-gray-300 mb-4">(Heating, Cooling, Maintenance)</p>
+                <Link href="/industries#hvac" className="inline-block">
+                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
+                    Learn More
+                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+              
+              {/* Focus Area 3: Electrical */}
+              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
+                <div className="icon-container mb-6 mx-auto">
+                  <FaBolt className="text-2xl text-white" />
+                </div>
+                <h4 className="text-2xl font-semibold mb-3 text-white">Electrical Services</h4>
+                <p className="text-gray-300 mb-4">(Residential, Commercial, Repairs)</p>
+                <Link href="/industries#electrical" className="inline-block">
+                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
+                    Learn More
+                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+              
+              {/* Focus Area 4: Landscaping & Roofing */}
               <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
                 <div className="icon-container mb-6 mx-auto">
                   <FaHome className="text-2xl text-white" />
                 </div>
-                <h4 className="text-2xl font-semibold mb-3 text-white">Home Services</h4>
-                <p className="text-gray-300 mb-4">(HVAC, Plumbing, Electrical, Roofing)</p>
-                <Link href="/hvac" className="inline-block">
+                <h4 className="text-2xl font-semibold mb-3 text-white">Home Exteriors</h4>
+                <p className="text-gray-300 mb-4">(Landscaping, Roofing, Exteriors)</p>
+                <Link href="/industries" className="inline-block">
                   <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-              
-              {/* Focus Area 2 */}
-              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
-                <div className="icon-container mb-6 mx-auto">
-                  <FaHardHat className="text-2xl text-white" />
-                </div>
-                <h4 className="text-2xl font-semibold mb-3 text-white">Contractors</h4>
-                <p className="text-gray-300 mb-4">(Remodeling, Landscaping, Painting)</p>
-                <Link href="/contractors" className="inline-block">
-                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-              
-              {/* Focus Area 3 */}
-              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
-                <div className="icon-container mb-6 mx-auto">
-                  <FaCar className="text-2xl text-white" />
-                </div>
-                <h4 className="text-2xl font-semibold mb-3 text-white">Automotive Services</h4>
-                <p className="text-gray-300 mb-4">(Repair Shops, Detailers)</p>
-                <Link href="/automotive" className="inline-block">
-                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-              
-              {/* Focus Area 4 */}
-              <div className="modern-card group transform transition-all duration-300 hover:-translate-y-2">
-                <div className="icon-container mb-6 mx-auto">
-                  <FaStore className="text-2xl text-white" />
-                </div>
-                <h4 className="text-2xl font-semibold mb-3 text-white">Other Local Services</h4>
-                <p className="text-gray-300 mb-4">(Cleaners, Pet Care, etc.)</p>
-                <Link href="/local-services" className="inline-block">
-                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center justify-center">
-                    Learn More
+                    View All Industries
                     <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -339,7 +372,7 @@ const HomePage: React.FC = () => {
                 Don't just take our word for it. See how we've helped businesses like yours achieve significant growth.
               </p>
             </div>
-            <div className="staggered-grid">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Credibility Point 1: Case Study Snippet */}
               <div className="modern-card group">
                 <div className="icon-container mb-6 mx-auto">
@@ -384,6 +417,23 @@ const HomePage: React.FC = () => {
                 <Link href="/testimonials" className="inline-block">
                   <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center">
                     More Testimonials
+                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+              
+              {/* Credibility Point 4: Local Rankings */}
+              <div className="modern-card group">
+                <div className="icon-container mb-6 mx-auto">
+                  <HiOutlineMapPin className="text-2xl text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-white">Top 3 Local Rankings</h3>
+                <p className="text-gray-300 mb-6 text-lg">"Within 90 days, we dominated local search. Now 80% of our new customers find us through Google." - Elite Electrical</p>
+                <Link href="/local-seo" className="inline-block">
+                  <span className="text-blue-300 hover:text-blue-100 font-medium group-hover:underline transition-all duration-300 flex items-center">
+                    Local SEO Strategy
                     <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

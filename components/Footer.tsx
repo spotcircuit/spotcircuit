@@ -359,7 +359,9 @@ export default function Footer() {
               </div>
               <div className="mt-4">
                 <p className="text-sm text-blue-200/70">Email: <a href="mailto:info@spotcircuit.com" className="hover:text-white transition-colors">info@spotcircuit.com</a></p>
-                <p className="text-sm text-blue-200/70 mt-1">Phone: <a href="tel:+18005551234" className="hover:text-white transition-colors">(800) 555-1234</a></p>
+                <p className="text-sm text-blue-200/70 mt-1">Phone: <a href="tel:+15714790455" className="hover:text-white transition-colors">(571) 479-0455</a></p>
+                <p className="text-sm text-blue-200/70 mt-1">Address: <a href="https://maps.google.com/?q=19309+Winmeade+Dr+STE+200,+Leesburg,+VA+20176" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">19309 Winmeade Dr STE 200, Leesburg, VA 20176</a></p>
+                <p className="text-sm text-blue-200/70 mt-1">Located in: Lansdowne Town Center</p>
                 <p className="text-sm text-blue-200/70 mt-1">Hours: Mon-Fri 9am-6pm EST</p>
               </div>
             </div>
