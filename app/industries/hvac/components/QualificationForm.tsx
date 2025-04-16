@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaUserTie, FaBuilding, FaPhone, FaEnvelope, FaTruck, FaCalendarAlt, FaSpinner, FaCheck } from 'react-icons/fa';
+import { sendHvacLeadEmail } from '@/lib/hvac-actions';
 
 interface QualificationFormProps {
   onClose: () => void;
@@ -44,11 +45,21 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Send form data using server action
+      const result = await sendHvacLeadEmail(formData);
+      
+      if (!result.success) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+      
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error: any) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -135,7 +146,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800"
                           placeholder="John Smith"
                           required
                         />
@@ -155,7 +166,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800"
                           placeholder="Smith HVAC Services"
                           required
                         />
@@ -175,7 +186,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800"
                           placeholder="(555) 123-4567"
                           required
                         />
@@ -195,7 +206,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800"
                           placeholder="john@smithhvac.com"
                           required
                         />
@@ -233,7 +244,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="trucks"
                           value={formData.trucks}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none text-gray-800"
                           required
                         >
                           <option value="1-3">1-3 trucks</option>
@@ -256,7 +267,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           name="callVolume"
                           value={formData.callVolume}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none text-gray-800"
                           required
                         >
                           <option value="low">Less than 50 calls</option>
@@ -330,7 +341,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onClose }) => {
                           <FaCalendarAlt className="text-gray-400" />
                         </div>
                         <select
-                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                          className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none text-gray-800"
                         >
                           <option value="">Select a time...</option>
                           <option value="tomorrow-morning">Tomorrow Morning</option>
