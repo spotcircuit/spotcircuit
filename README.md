@@ -1,5 +1,28 @@
 # SpotCircuit - AI-First SEO & LLM Optimization Platform
 
+## Recent Updates
+
+### Added
+- **HVAC Business Automation Landing Page**: Created a high-conversion landing page targeting HVAC businesses, featuring:
+  - Professional hero section with call-to-action
+  - Pain points section highlighting common HVAC business challenges
+  - Solution overview with key features
+  - Implementation timeline
+  - Results section with case studies
+  - Guarantee section with booking increase promise
+  - Pricing section with transparent fee structure
+  - Multi-step qualification form
+
+### Fixed
+- Fixed build error in the booking page by properly separating client and server components
+- Updated sitemap to include all new pages
+
+### To Do
+- Create and add images for the HVAC landing page (currently showing placeholder images)
+- Implement alternative guarantee models as discussed (Google Map Pack ranking, review generation, etc.)
+- Optimize the HVAC landing page for conversion tracking
+- Consider implementing value-based or hybrid pricing models for different service offerings
+
 ## Overview
 
 SpotCircuit is transitioning from a general web services focus to **specializing in AI-First Search Engine Optimization (SEO) and Large Language Model (LLM) Optimization**. This strategic pivot recognizes the fundamental shift in how information is discovered and consumed in the age of AI.

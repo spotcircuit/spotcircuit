@@ -482,6 +482,7 @@ const HomePage: React.FC = () => {
         <FaqAccordion 
           title="Frequently Asked Questions"
           subtitle="Find answers to common questions about SpotCircuit and our AI-powered solutions."
+          structuredData={false}
           faqs={[
             {
               question: "What makes SpotCircuit different from other digital marketing agencies?",

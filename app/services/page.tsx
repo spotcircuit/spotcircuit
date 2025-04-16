@@ -359,7 +359,13 @@ const ServicesPage = () => {
                   <div className="pt-2">
                     <p className="font-semibold text-blue-300 mb-1">Keywords:</p>
                     <div className="flex flex-wrap gap-2">
-                      {["Local SEO", "Home Service Leads", "Google Business Profile", "Roofing Leads", "HVAC Leads", "Plumbing Leads", "Automated Appointment Setting"].map((tag, i) => (
+                      {["Local SEO", "Home Service Leads", "Google Business Profile", "Roofing Leads"].map((tag, i) => (
+                        <span key={i} className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-200">{tag}</span>
+                      ))}
+                      <Link href="/industries/hvac" className="text-xs px-3 py-1 rounded-full bg-green-900/50 text-green-200 hover:bg-green-800/50 transition-colors">
+                        HVAC Leads
+                      </Link>
+                      {["Plumbing Leads", "Automated Appointment Setting"].map((tag, i) => (
                         <span key={i} className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-200">{tag}</span>
                       ))}
                     </div>
@@ -874,14 +880,14 @@ const ServicesPage = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
                 {[
-                  { icon: FaHome, name: "Roofing" },
-                  { icon: FaCogs, name: "HVAC" },
-                  { icon: FaStream, name: "Plumbing" },
-                  { icon: FaBullseye, name: "Electrical" },
-                  { icon: FaUsers, name: "Pest Control" },
-                  { icon: FaIndustry, name: "Flooring" },
-                  { icon: FaBrain, name: "Landscaping" },
-                  { icon: FaCheckCircle, name: "Pool Services" }
+                  { icon: FaHome, name: "Roofing", href: "/industries#roofing" },
+                  { icon: FaCogs, name: "HVAC", href: "/industries/hvac" },
+                  { icon: FaStream, name: "Plumbing", href: "/industries#plumbing" },
+                  { icon: FaBullseye, name: "Electrical", href: "/industries#electrical" },
+                  { icon: FaUsers, name: "Pest Control", href: "/industries#pest-control" },
+                  { icon: FaIndustry, name: "Flooring", href: "/industries#flooring" },
+                  { icon: FaBrain, name: "Landscaping", href: "/industries#landscaping" },
+                  { icon: FaCheckCircle, name: "Pool Services", href: "/industries#pool-services" }
                 ].map((industry, index) => (
                   <motion.div
                     key={index}
@@ -891,10 +897,12 @@ const ServicesPage = () => {
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl border border-gray-200 hover:border-blue-300 shadow-md hover:shadow-blue-100 transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center h-full"
                   >
-                    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
-                      <industry.icon className="text-2xl text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800">{industry.name}</h3>
+                    <Link href={industry.href} className="flex flex-col items-center">
+                      <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                        <industry.icon className="text-2xl text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-800">{industry.name}</h3>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Calendar Illustration</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="calendarGradient">
+            <stop stop-color="#4F46E5" offset="0%"></stop>
+            <stop stop-color="#2563EB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Calendar Base -->
+        <rect fill="#FFFFFF" x="25" y="40" width="150" height="140" rx="8"></rect>
+        
+        <!-- Calendar Header -->
+        <rect fill="url(#calendarGradient)" x="25" y="40" width="150" height="30" rx="8 8 0 0"></rect>
+        
+        <!-- Calendar Grid Lines -->
+        <line x1="25" y1="90" x2="175" y2="90" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="25" y1="110" x2="175" y2="110" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="25" y1="130" x2="175" y2="130" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="25" y1="150" x2="175" y2="150" stroke="#E5E7EB" stroke-width="1"></line>
+        
+        <line x1="50" y1="70" x2="50" y2="180" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="75" y1="70" x2="75" y2="180" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="100" y1="70" x2="100" y2="180" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="125" y1="70" x2="125" y2="180" stroke="#E5E7EB" stroke-width="1"></line>
+        <line x1="150" y1="70" x2="150" y2="180" stroke="#E5E7EB" stroke-width="1"></line>
+        
+        <!-- Calendar Days (Mon-Sun) -->
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="34" y="60">M</text>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="59" y="60">T</text>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="84" y="60">W</text>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="109" y="60">T</text>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="134" y="60">F</text>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#FFFFFF" x="159" y="60">S</text>
+        
+        <!-- Calendar Numbers -->
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="34" y="85">1</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="59" y="85">2</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="84" y="85">3</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="109" y="85">4</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="134" y="85">5</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="159" y="85">6</text>
+        
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="34" y="105">7</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="59" y="105">8</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="84" y="105">9</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="109" y="105">10</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="134" y="105">11</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="159" y="105">12</text>
+        
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="34" y="125">13</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="59" y="125">14</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="84" y="125">15</text>
+        
+        <!-- Highlighted Date -->
+        <rect fill="#EBF5FF" stroke="#3B82F6" stroke-width="2" x="101" y="116" width="23" height="23" rx="4"></rect>
+        <text font-family="Arial" font-size="10" font-weight="bold" fill="#3B82F6" x="109" y="130">16</text>
+        
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="134" y="125">17</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="159" y="125">18</text>
+        
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="34" y="145">19</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="59" y="145">20</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="84" y="145">21</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="109" y="145">22</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="134" y="145">23</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="159" y="145">24</text>
+        
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="34" y="165">25</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="59" y="165">26</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="84" y="165">27</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="109" y="165">28</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="134" y="165">29</text>
+        <text font-family="Arial" font-size="10" fill="#6B7280" x="159" y="165">30</text>
+        
+        <!-- Calendar Tabs -->
+        <path d="M35,40 L35,30 C35,25 38,25 40,25 L45,25 C47,25 50,25 50,30 L50,40" fill="#4F46E5"></path>
+        <path d="M150,40 L150,30 C150,25 153,25 155,25 L160,25 C162,25 165,25 165,30 L165,40" fill="#4F46E5"></path>
+        
+        <!-- Check Mark Icon -->
+        <circle fill="#4F46E5" cx="110" cy="130" r="25" opacity="0.1"></circle>
+        <path d="M100,130 L107,137 L120,124" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -10)"></path>
+    </g>
+</svg>

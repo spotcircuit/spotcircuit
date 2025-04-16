@@ -99,10 +99,6 @@ export default function RootLayout({
                 ],
                 "priceRange": "$$",
                 "servesCuisine": "Digital Marketing",
-                "containedInPlace": {
-                  "@type": "LocalBusiness",
-                  "name": "Lansdowne Town Center"
-                },
                 "potentialAction": {
                   "@type": "ReserveAction",
                   "target": {

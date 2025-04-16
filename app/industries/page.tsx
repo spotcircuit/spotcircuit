@@ -343,9 +343,15 @@ const IndustriesPage = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-4">
-                    <Link href="/contact" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
-                      Get a quote <FaArrowRight className="ml-2" />
-                    </Link>
+                    {industry.title === "HVAC" ? (
+                      <Link href="/industries/hvac" className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold transition-colors duration-200">
+                        View HVAC solution <FaArrowRight className="ml-2" />
+                      </Link>
+                    ) : (
+                      <Link href="/contact" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
+                        Get a quote <FaArrowRight className="ml-2" />
+                      </Link>
+                    )}
                     <Link href="/services" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold transition-colors duration-200">
                       View services <FaArrowRight className="ml-2" />
                     </Link>

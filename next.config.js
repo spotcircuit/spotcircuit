@@ -9,6 +9,30 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'spotcircuit.ghost.io'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.carrier.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.trane.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.lennox.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.rheem.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.goodmanmfg.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.york.com'
       }
     ]
   },
