@@ -44,7 +44,8 @@ const navigation = {
     { name: 'Electrical', href: '/industries#electrical' },
     { name: 'Landscaping', href: '/industries#landscaping' },
     { name: 'Roofing', href: '/industries#roofing' },
-    { name: 'Home Services', href: '/industries#home' }
+    { name: 'Home Services', href: '/industries#general-contracting' },
+    { name: 'Pest Control', href: '/industries#pest-control' }
   ],
   resources: [
     { name: 'Case Studies', href: '/resources#case-studies' },
@@ -323,11 +324,15 @@ export default function Footer() {
             <div className="mt-4">
               <h4 className="text-sm font-semibold text-blue-300 mb-2">Trusted by service businesses across:</h4>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200">Plumbing</span>
-                <span className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200">HVAC</span>
-                <span className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200">Electrical</span>
-                <span className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200">Landscaping</span>
-                <span className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200">Roofing</span>
+                {navigation.industries.map((industry) => (
+                  <Link 
+                    key={industry.name} 
+                    href={industry.href}
+                    className="px-3 py-1 text-xs rounded-full bg-blue-900/50 text-blue-200 hover:bg-blue-800 hover:text-white transition-all duration-300"
+                  >
+                    {industry.name}
+                  </Link>
+                ))}
               </div>
             </div>
             <div className="mt-6">
@@ -522,9 +527,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} SpotCircuit. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <span className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200 cursor-pointer">Privacy Policy</span>
-            <span className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200 cursor-pointer">Terms of Service</span>
-            <span className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200 cursor-pointer">Cookies</span>
+            <Link href="/privacy" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Privacy Policy</Link>
+            <Link href="/terms" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Terms of Service</Link>
+            <Link href="/cookies" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Cookies</Link>
+            <Link href="/accessibility" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Accessibility</Link>
           </div>
         </motion.div>
       </div>

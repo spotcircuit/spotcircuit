@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
 const navigation = [
   { name: 'SEO 2.0', href: '/seo2', isScroll: false },
   { name: 'Services', href: '/services', isScroll: false },
+  { name: 'Industries', href: '/industries', isScroll: false },
   { name: 'Process', href: '/process', isScroll: false },
   { name: 'Case Studies', href: '/case-studies', isScroll: false },
   { name: 'Blog', href: '/blog', isScroll: false },

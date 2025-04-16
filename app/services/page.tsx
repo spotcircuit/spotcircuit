@@ -8,7 +8,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle, FaHome, FaEnvelope } from 'react-icons/fa';
-import { HiOutlineClock } from 'react-icons/hi';
+import { HiOutlineClock, HiOutlineChartBar } from 'react-icons/hi';
 
 const ServicesPage = () => {
   return (
@@ -286,7 +286,44 @@ const ServicesPage = () => {
               <p className="text-blue-100 text-lg max-w-3xl mx-auto">SpotCircuit applies cutting-edge AI, automation, and SEO to directly address these challenges, building systems that work for your home service business:</p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Service Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              <a href="#seo" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                SEO Optimization
+              </a>
+              <a href="#local" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                Local Marketing
+              </a>
+              <a href="#content" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                Content Strategy
+              </a>
+              <a href="#technical" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                Technical SEO
+              </a>
+              <a href="#automation" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                AI Automation
+              </a>
+              <a href="#analytics" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                Analytics & Reporting
+              </a>
+            </div>
+            
+            {/* SEO Optimization Section */}
+            <section id="seo" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">SEO Optimization</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Our AI-powered SEO optimization helps your home service business rank higher in search results, attract more qualified leads, and outperform competitors in your local market.
+                </p>
+              </motion.div>
+            
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
               {/* Service 1: Automated Local Lead Generation */}
               <motion.div 
@@ -455,8 +492,358 @@ const ServicesPage = () => {
                   </div>
                 </div>
               </motion.div>
+              </div>
+            </section>
 
-            </div>
+            {/* Local Marketing Section */}
+            <section id="local" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Local Marketing</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Dominate your local service area with targeted marketing strategies designed specifically for home service businesses operating in specific neighborhoods and communities.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
+                    <FaBullseye className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Hyperlocal Marketing Strategies</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Google Business Profile optimization for maximum local visibility</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Neighborhood-specific ad campaigns with precise geotargeting</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Local citation building and directory optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Review generation and management systems</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Dominate "near me" searches in your service area</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Increase visibility when homeowners search for emergency services</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Build trust through consistent positive reviews</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Reduce customer acquisition costs with targeted local campaigns</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Content Strategy Section */}
+            <section id="content" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Content Strategy</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Create compelling, service-specific content that converts visitors into customers and establishes your authority in your home service niche.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
+                    <FaStream className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-purple-300 transition-all duration-300">Strategic Content Creation</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-purple-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Service-specific landing pages that convert</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Seasonal content campaigns aligned with service demand</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">FAQ content that answers homeowner questions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Blog posts that establish your expertise</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-purple-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Rank for valuable service-specific keywords</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Educate customers and reduce pre-sale questions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Build trust and credibility in your service area</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Improve conversion rates with persuasive content</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Technical SEO Section */}
+            <section id="technical" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Technical SEO</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Ensure your website's technical foundation is optimized for search engines, providing a fast, secure, and accessible experience for potential customers.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
+                    <FaCogs className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Technical Optimization</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Website speed optimization for mobile and desktop</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Schema markup implementation for rich results</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Mobile-friendly design and responsive optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Site architecture and internal linking improvements</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Improved search engine rankings</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Better user experience leading to higher conversion rates</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Enhanced visibility in search results with rich snippets</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Reduced bounce rates and increased time on site</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* AI Automation Section */}
+            <section id="automation" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI Automation</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Leverage cutting-edge artificial intelligence to automate repetitive tasks, streamline operations, and create personalized customer experiences.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
+                    <FaBrain className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-purple-300 transition-all duration-300">Intelligent Automation Solutions</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-purple-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">AI-powered scheduling and dispatch optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Automated customer communication workflows</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Intelligent lead qualification and routing</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Predictive maintenance and service recommendations</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-purple-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Significant time savings on administrative tasks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Improved customer satisfaction through faster response times</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Reduced human error in scheduling and customer management</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Ability to scale operations without proportionally increasing staff</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Analytics & Reporting Section */}
+            <section id="analytics" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Analytics & Reporting</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Gain actionable insights into your business performance with custom dashboards and detailed reporting that track the metrics that matter most.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
+                    <HiOutlineChartBar className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-300 transition-all duration-300">Data-Driven Decision Making</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Custom KPI dashboards for home service businesses</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Lead tracking and attribution reporting</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Marketing ROI analysis and optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Operational efficiency metrics and benchmarking</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-blue-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Clear visibility into marketing performance and ROI</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Identify operational bottlenecks and improvement opportunities</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Make data-driven decisions about service offerings and pricing</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Track progress toward business growth goals</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
