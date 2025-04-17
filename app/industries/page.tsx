@@ -493,6 +493,7 @@ const IndustriesPage = () => {
               className="max-w-4xl mx-auto"
             >
               <FaqAccordion 
+                structuredData={false}
                 faqs={[
                   {
                     question: "How quickly can I expect to see results from your AI solutions?",
