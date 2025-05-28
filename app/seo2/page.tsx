@@ -575,6 +575,62 @@ const SEO2Page: React.FC = () => {
           }
         ]}
       />
+
+      {/* Funnel Navigation Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold mb-4">Ready to Learn More?</h3>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Discover how to implement AI search optimization for your business
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Link href="/resources/ai-search-optimization">
+              <div className="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-blue-500">
+                <div className="text-4xl mb-4">📚</div>
+                <h4 className="text-2xl font-bold mb-4 text-white">Complete AI SEO Guide</h4>
+                <p className="text-gray-300 mb-4">
+                  Deep dive into AI search optimization with step-by-step implementation, 
+                  templates, schema examples, and success metrics.
+                </p>
+                <div className="flex items-center justify-center text-blue-400 font-semibold">
+                  Learn the Full Strategy
+                  <FaArrowRight className="ml-2" />
+                </div>
+              </div>
+            </Link>
+            
+            <Link href="/answercircuit">
+              <div className="bg-gradient-to-br from-blue-900 to-purple-900 p-8 rounded-xl hover:from-blue-800 hover:to-purple-800 transition-all duration-300 transform hover:-translate-y-2 border border-blue-600">
+                <div className="text-4xl mb-4">🚀</div>
+                <h4 className="text-2xl font-bold mb-4 text-white">Get Professional Help</h4>
+                <p className="text-gray-200 mb-4">
+                  Ready to dominate AI search results? Get a free audit and see exactly 
+                  where you're losing to competitors in AI platforms.
+                </p>
+                <div className="flex items-center justify-center text-yellow-400 font-semibold">
+                  Get Your Free AI Audit
+                  <FaArrowRight className="ml-2" />
+                </div>
+              </div>
+            </Link>
+          </div>
+          
+          <div className="mt-12 bg-black/50 rounded-xl p-6 max-w-2xl mx-auto border border-gray-800">
+            <p className="text-sm text-gray-400 mb-2">
+              <strong className="text-white">The Path to AI Dominance:</strong>
+            </p>
+            <div className="flex items-center justify-center text-sm text-gray-300">
+              <span className="text-blue-400">Learn the Concepts</span>
+              <FaArrowRight className="mx-3 text-gray-500" />
+              <span className="text-purple-400">Study the Guide</span>
+              <FaArrowRight className="mx-3 text-gray-500" />
+              <span className="text-green-400">Get Professional Implementation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       </main>
       <Footer />
     </div>

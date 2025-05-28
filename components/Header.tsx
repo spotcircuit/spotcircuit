@@ -4,23 +4,49 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
-  { name: 'SEO 2.0', href: '/seo2', isScroll: false },
-  { name: 'Services', href: '/services', isScroll: false },
-  { name: 'Industries', href: '/industries', isScroll: false },
-  { name: 'Process', href: '/process', isScroll: false },
-  { name: 'Case Studies', href: '/case-studies', isScroll: false },
-  { name: 'Blog', href: '/blog', isScroll: false },
+  { name: 'Solutions', href: '#', isScroll: false, hasDropdown: true },
+  { name: 'Company', href: '#', isScroll: false, hasDropdown: true },
+  { name: 'Resources', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Contact', href: '/contact', isScroll: false },
+]
+
+const solutionsDropdown = [
+  { name: 'SEO 2.0', href: '/seo2', description: 'Next-gen AI-powered SEO strategies' },
+  { name: 'AnswerCircuit', href: '/answercircuit', description: 'AI visibility optimization platform' },
+  { name: 'Services', href: '/services', description: 'Full-service AI-SEO solutions' },
+]
+
+const companyDropdown = [
+  { name: 'Industries', href: '/industries', description: 'Specialized industry expertise' },
+  { name: 'Process', href: '/process', description: 'How we deliver results' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
+  { name: 'Blog', href: '/blog', description: 'Latest insights and trends' },
+]
+
+const resourcesDropdown = [
+  { name: 'Complete AI Search Guide', href: '/resources/ai-search-optimization', description: 'Comprehensive guide to AI-SEO' },
+  { name: 'Why Traditional SEO is Failing', href: '/resources/ai-search-optimization#traditional-seo', description: 'Understanding the shift' },
+  { name: 'Evolution of Search', href: '/resources/ai-search-optimization#evolution', description: 'SEO → AEO → AIO → LLMO → GEO' },
+  { name: 'AI Search Behavior', href: '/resources/ai-search-optimization#ai-behavior', description: 'How AI systems work' },
+  { name: 'Content Formats', href: '/resources/ai-search-optimization#content-formats', description: 'What content wins in AI' },
+  { name: 'Implementation Guide', href: '/resources/ai-search-optimization#implementation', description: 'Step-by-step optimization' },
+  { name: 'Schema Markup Examples', href: '/resources/ai-search-optimization#schema', description: 'Technical implementation' },
+  { name: 'Measuring Success', href: '/resources/ai-search-optimization#measurement', description: 'KPIs and tracking' },
+  { name: 'Tools & Resources', href: '/resources/ai-search-optimization#tools', description: 'Essential AI-SEO tools' },
+  { name: 'FAQs', href: '/resources/ai-search-optimization#faqs', description: 'Common questions answered' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeItem, setActiveItem] = useState('')
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [solutionsOpen, setSolutionsOpen] = useState(false)
+  const [companyOpen, setCompanyOpen] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
@@ -47,6 +73,9 @@ export default function Header() {
       }
     }
     setMobileMenuOpen(false)
+    setResourcesOpen(false)
+    setSolutionsOpen(false)
+    setCompanyOpen(false)
   }
 
   return (
@@ -91,38 +120,173 @@ export default function Header() {
         </div>
         
         <motion.div 
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="hidden lg:flex lg:gap-x-1"
+          className="hidden lg:flex lg:gap-x-6 xl:gap-x-8"
         >
           {navigation.map((item, index) => (
-            <motion.div
+            <motion.div 
               key={item.name}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 * index }}
-              className="relative px-1"
-              onHoverStart={() => setActiveItem(item.name)}
-              onHoverEnd={() => setActiveItem('')}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="relative"
             >
-              <a
-                href={item.href}
-                onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
-                className="relative z-10 px-4 py-2 rounded-full text-sm font-medium text-white hover:text-white transition-all duration-300 inline-block"
-              >
-                {item.name}
-                {activeItem === item.name && (
-                  <motion.span 
-                    layoutId="navHighlight"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-600/20 backdrop-blur-sm -z-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                )}
-              </a>
+              {item.hasDropdown ? (
+                <button
+                  className={`text-sm font-medium leading-6 px-3 py-2 rounded-lg transition-all duration-300 relative group flex items-center ${
+                    pathname?.startsWith(item.href) 
+                      ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30' 
+                      : 'text-gray-200 hover:text-white hover:bg-white/5'
+                  }`}
+                  onMouseEnter={() => setActiveItem(item.name)}
+                  onMouseLeave={() => setActiveItem('')}
+                  onClick={() => {
+                    if (item.name === 'Solutions') {
+                      setSolutionsOpen(!solutionsOpen)
+                    } else if (item.name === 'Company') {
+                      setCompanyOpen(!companyOpen)
+                    } else if (item.name === 'Resources') {
+                      setResourcesOpen(!resourcesOpen)
+                    }
+                  }}
+                >
+                  {item.name}
+                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${solutionsOpen || companyOpen || resourcesOpen ? 'rotate-180' : ''}`} />
+                  <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 ${
+                    activeItem === item.name || pathname?.startsWith(item.href) ? 'w-full' : 'w-0'
+                  }`} />
+                </button>
+              ) : (
+                <a
+                  href={item.href}
+                  onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
+                  className={`text-sm font-medium leading-6 px-3 py-2 rounded-lg transition-all duration-300 relative group flex items-center ${
+                    pathname === item.href 
+                      ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30' 
+                      : 'text-gray-200 hover:text-white hover:bg-white/5'
+                  }`}
+                  onMouseEnter={() => setActiveItem(item.name)}
+                  onMouseLeave={() => setActiveItem('')}
+                >
+                  {item.name}
+                  <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 ${
+                    activeItem === item.name || pathname === item.href ? 'w-full' : 'w-0'
+                  }`} />
+                </a>
+              )}
+              {item.name === 'Solutions' && (
+                <AnimatePresence>
+                  {solutionsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                    >
+                      <div className="space-y-1">
+                        {solutionsDropdown.map((item, index) => (
+                          <motion.div
+                            key={item.name}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.02 }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setSolutionsOpen(false)}
+                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
+                            >
+                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+              {item.name === 'Company' && (
+                <AnimatePresence>
+                  {companyOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                    >
+                      <div className="space-y-1">
+                        {companyDropdown.map((item, index) => (
+                          <motion.div
+                            key={item.name}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.02 }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setCompanyOpen(false)}
+                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
+                            >
+                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+              {item.name === 'Resources' && (
+                <AnimatePresence>
+                  {resourcesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                    >
+                      <div className="space-y-1">
+                        {resourcesDropdown.map((item, index) => (
+                          <motion.div
+                            key={item.name}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.02 }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setResourcesOpen(false)}
+                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
+                            >
+                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -135,13 +299,14 @@ export default function Header() {
         >
           <Link
             href="/contact"
-            className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-white rounded-full group"
+            className="text-sm font-semibold leading-6 text-white px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-500/80 to-purple-600/80 hover:from-blue-500 hover:to-purple-600 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 border border-white/10"
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300"></span>
-            <span className="relative flex items-center">Book Demo <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></span>
+            Book Demo
+            <span className="ml-2" aria-hidden="true">→</span>
           </Link>
         </motion.div>
       </nav>
+      
       <motion.div 
         initial={false}
         animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 300 }}
@@ -193,13 +358,113 @@ export default function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
-                  <a
-                    href={item.href}
-                    onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
-                    className="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
-                  >
-                    {item.name}
-                  </a>
+                  {item.hasDropdown ? (
+                    <button
+                      className="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                      onClick={() => {
+                        if (item.name === 'Solutions') {
+                          setSolutionsOpen(!solutionsOpen)
+                        } else if (item.name === 'Company') {
+                          setCompanyOpen(!companyOpen)
+                        } else if (item.name === 'Resources') {
+                          setResourcesOpen(!resourcesOpen)
+                        }
+                      }}
+                    >
+                      {item.name}
+                      <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${solutionsOpen || companyOpen || resourcesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
+                      className="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                  {item.name === 'Solutions' && (
+                    <AnimatePresence>
+                      {solutionsOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="space-y-2"
+                        >
+                          {solutionsDropdown.map((item, index) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setSolutionsOpen(false)}
+                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                            >
+                              <div className="font-medium text-white">{item.name}</div>
+                              <div className="text-xs text-gray-500">{item.description}</div>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                  {item.name === 'Company' && (
+                    <AnimatePresence>
+                      {companyOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="space-y-2"
+                        >
+                          {companyDropdown.map((item, index) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setCompanyOpen(false)}
+                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                            >
+                              <div className="font-medium text-white">{item.name}</div>
+                              <div className="text-xs text-gray-500">{item.description}</div>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                  {item.name === 'Resources' && (
+                    <AnimatePresence>
+                      {resourcesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="space-y-2"
+                        >
+                          {resourcesDropdown.slice(0, 5).map((item, index) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              onClick={() => setResourcesOpen(false)}
+                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                            >
+                              <div className="font-medium text-white">{item.name}</div>
+                              <div className="text-xs text-gray-500">{item.description}</div>
+                            </Link>
+                          ))}
+                          <Link
+                            href="/resources/ai-search-optimization"
+                            onClick={() => setResourcesOpen(false)}
+                            className="block rounded-lg px-4 py-2 text-sm text-center text-blue-400 hover:text-blue-300 transition-colors"
+                          >
+                            View Complete Guide →
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
                 </motion.div>
               ))}
               <motion.div
