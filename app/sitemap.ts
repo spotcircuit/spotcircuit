@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
     '/cookies',
     '/accessibility',
+    '/answercircuit',
+    '/resources/ai-search-optimization',
+    '/seo2',
   ];
 
   return routes.map(route => ({
