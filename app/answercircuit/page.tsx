@@ -13,7 +13,11 @@ import {
   FaExclamationTriangle,
   FaQuoteLeft,
   FaBrain,
-  FaShieldAlt
+  FaShieldAlt,
+  FaRobot,
+  FaFileAlt,
+  FaTools,
+  FaChartBar
 } from 'react-icons/fa';
 import { 
   HiOutlineClock,
@@ -25,12 +29,13 @@ const AnswerCircuitSalesPage: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  // Urgency timer
+  // Urgency timer - set to end 7 days from now for scarcity
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
-      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-      const difference = endOfMonth.getTime() - now.getTime();
+      // Set end date to 7 days from current date instead of end of month
+      const endDate = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000));
+      const difference = endDate.getTime() - now.getTime();
       
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -68,6 +73,18 @@ const AnswerCircuitSalesPage: React.FC = () => {
       author: "James Park",
       title: "CMO, CloudMetrics",
       metric: "-41% CAC"
+    },
+    {
+      quote: "Before AnswerCircuit, we spent $150K on content that AI platforms ignored. Within 60 days, we became the top recommendation for our category.",
+      author: "Emily Rodriguez",
+      title: "Director of Digital, SecureStack",
+      metric: "5X ROI"
+    },
+    {
+      quote: "The AI visibility audit revealed we were completely invisible to ChatGPT despite ranking #1 on Google. AnswerCircuit fixed this in just 6 weeks.",
+      author: "David Kim",
+      title: "CEO, DataFlowHQ",
+      metric: "+68% leads"
     }
   ];
 
@@ -102,14 +119,19 @@ const AnswerCircuitSalesPage: React.FC = () => {
                 className="rounded-xl shadow-2xl border border-gray-800"
                 priority
               />
-              <Image
-                src="/static/images/answercircuit.png"
-                alt="AnswerCircuit - AI Visibility Platform"
-                width={400}
-                height={225}
-                className="rounded-xl shadow-2xl border border-gray-800"
-                priority
-              />
+              <div className="relative group">
+                <Image
+                  src="/static/images/answercircuit.png"
+                  alt="AnswerCircuit - AI Visibility Platform"
+                  width={400}
+                  height={225}
+                  className="rounded-xl shadow-2xl border border-gray-800 transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-1 px-3 rounded-full text-sm shadow-lg">
+                  Featured
+                </div>
+              </div>
               <div className="w-[400px] h-[225px] rounded-xl shadow-2xl border border-gray-800 overflow-hidden">
                 <Image
                   src="/static/images/aicircuit2.png"
@@ -164,8 +186,9 @@ const AnswerCircuitSalesPage: React.FC = () => {
                 </span>
               </Link>
               <Link href="/resources/ai-search-optimization">
-                <span className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 inline-block border border-gray-700">
-                  Learn How AI Search Works
+                <span className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+                  <FaFileAlt className="mr-2" /> 
+                  Ultimate AI Optimization Guide
                 </span>
               </Link>
             </div>
@@ -175,13 +198,20 @@ const AnswerCircuitSalesPage: React.FC = () => {
         {/* Problem Agitation */}
         <section className="py-16 bg-gray-900">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
               The <span className="text-red-400">Hidden Pipeline Killer</span> That's Costing You Millions
             </h2>
             
+            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-12">
+              While your SEO metrics look strong, AI is redirecting your best prospects to competitors
+              before they ever reach your website.
+            </p>
+            
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-black rounded-xl p-6 border border-gray-800">
-                <HiOutlineTrendingDown className="text-4xl text-red-400 mb-4" />
+              <div className="bg-black rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center">
+                <div className="rounded-full bg-red-900/20 p-4 mb-4">
+                  <HiOutlineTrendingDown className="text-4xl text-red-400" />
+                </div>
                 <h3 className="text-xl font-bold mb-3">Organic Pipeline Declining</h3>
                 <p className="text-gray-300">
                   Your organic traffic looks fine, but qualified demos are down 20-30%. 
@@ -189,8 +219,10 @@ const AnswerCircuitSalesPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="bg-black rounded-xl p-6 border border-gray-800">
-                <HiOutlineClock className="text-4xl text-orange-400 mb-4" />
+              <div className="bg-black rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center">
+                <div className="rounded-full bg-orange-900/20 p-4 mb-4">
+                  <HiOutlineClock className="text-4xl text-orange-400" />
+                </div>
                 <h3 className="text-xl font-bold mb-3">6-Month Lock-In Window</h3>
                 <p className="text-gray-300">
                   AI platforms are forming permanent category associations. Once your 
@@ -198,8 +230,10 @@ const AnswerCircuitSalesPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="bg-black rounded-xl p-6 border border-gray-800">
-                <FaExclamationTriangle className="text-4xl text-yellow-400 mb-4" />
+              <div className="bg-black rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center">
+                <div className="rounded-full bg-yellow-900/20 p-4 mb-4">
+                  <FaExclamationTriangle className="text-4xl text-yellow-400" />
+                </div>
                 <h3 className="text-xl font-bold mb-3">Weaker Products Winning</h3>
                 <p className="text-gray-300">
                   Inferior competitors are winning deals because AI positions them as 
@@ -208,24 +242,24 @@ const AnswerCircuitSalesPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-red-900/10 border border-red-900 rounded-xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4 text-red-400">
+            <div className="bg-red-900/10 border border-red-900 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-4 text-red-400 text-center">
                 The Real Cost of AI Invisibility
               </h3>
               <div className="grid md:grid-cols-4 gap-6 text-center">
-                <div>
+                <div className="bg-black/30 rounded-lg p-4">
                   <p className="text-3xl font-bold text-white">15</p>
                   <p className="text-gray-400">Lost demos/month</p>
                 </div>
-                <div>
+                <div className="bg-black/30 rounded-lg p-4">
                   <p className="text-3xl font-bold text-white">$2.5M</p>
                   <p className="text-gray-400">Annual revenue loss</p>
                 </div>
-                <div>
+                <div className="bg-black/30 rounded-lg p-4">
                   <p className="text-3xl font-bold text-white">41%</p>
                   <p className="text-gray-400">Higher CAC</p>
                 </div>
-                <div>
+                <div className="bg-black/30 rounded-lg p-4">
                   <p className="text-3xl font-bold text-white">6mo</p>
                   <p className="text-gray-400">Behind competitors</p>
                 </div>
@@ -241,10 +275,28 @@ const AnswerCircuitSalesPage: React.FC = () => {
               Introducing <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">AnswerCircuit</span>
             </h2>
             
-            <p className="text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-              The only AI visibility platform that guarantees you'll be cited as the top solution 
-              in your category within 90 days—or we work free until you are.
-            </p>
+            <div className="text-center mb-12 max-w-3xl mx-auto space-y-4">
+              <p className="text-xl text-gray-300">
+                The only AI visibility platform that guarantees you'll be cited as the top solution 
+                in your category within 90 days—or we work free until you are.
+              </p>
+              <div className="bg-blue-900/30 border border-blue-800 rounded-xl p-4 mx-auto max-w-2xl">
+                <h3 className="font-bold text-blue-400 mb-2">What is AI Visibility?</h3>
+                <p className="text-sm text-left">
+                  When users ask ChatGPT, Claude, or Perplexity about your product category, 
+                  AI visibility determines whether your company is recommended or ignored. 
+                  Our platform ensures you're the top cited solution across all major AI platforms.
+                </p>
+                <div className="mt-3 text-right">
+                  <Link href="/resources/ai-search-optimization" className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    Learn more about AI search
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
@@ -255,8 +307,11 @@ const AnswerCircuitSalesPage: React.FC = () => {
                     <div>
                       <h4 className="font-bold mb-1">AI-Native Content Architecture</h4>
                       <p className="text-gray-300">
-                        Restructure your best content for maximum LLM comprehension and citation priority.
+                        We restructure your content with FAQ formatting, semantic markup, and citation triggers that LLMs prefer when selecting sources.
                       </p>
+                      <Link href="/resources/ai-search-optimization#content-formats" className="text-xs text-blue-400 hover:text-blue-300 mt-1 inline-block">
+                        See our content templates →
+                      </Link>
                     </div>
                   </div>
                   
@@ -267,6 +322,9 @@ const AnswerCircuitSalesPage: React.FC = () => {
                       <p className="text-gray-300">
                         Monitor exactly when and how AI platforms cite you vs competitors across all major platforms.
                       </p>
+                      <Link href="/resources/ai-search-optimization#measuring-success" className="text-xs text-blue-400 hover:text-blue-300 mt-1 inline-block">
+                        View our tracking methodology →
+                      </Link>
                     </div>
                   </div>
                   
@@ -277,6 +335,9 @@ const AnswerCircuitSalesPage: React.FC = () => {
                       <p className="text-gray-300">
                         Know exactly where competitors are winning AI mindshare and how to displace them.
                       </p>
+                      <Link href="/resources/ai-search-optimization#ai-search-behavior" className="text-xs text-blue-400 hover:text-blue-300 mt-1 inline-block">
+                        Understand AI citations →
+                      </Link>
                     </div>
                   </div>
                   
@@ -287,6 +348,9 @@ const AnswerCircuitSalesPage: React.FC = () => {
                       <p className="text-gray-300">
                         Done-for-you execution plus weekly strategy sessions to ensure rapid results.
                       </p>
+                      <Link href="/resources/ai-search-optimization#implementation-guide" className="text-xs text-blue-400 hover:text-blue-300 mt-1 inline-block">
+                        See our implementation methodology →
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -373,126 +437,166 @@ const AnswerCircuitSalesPage: React.FC = () => {
             </h2>
             
             <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center">
+              <div className="bg-black/30 rounded-xl p-6 border border-blue-900/50 text-center hover:transform hover:scale-105 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">1</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Week 1-2</h3>
                 <h4 className="text-lg font-semibold mb-2 text-blue-400">Discovery & Audit</h4>
-                <p className="text-gray-300">
-                  Complete AI visibility audit. Competitor analysis. Content gap identification.
-                </p>
+                <div className="flex items-center justify-center mb-3">
+                  <div className="h-px w-10 bg-blue-800"></div>
+                </div>
+                <ul className="text-left text-gray-300 space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Complete AI visibility audit</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Competitor citation analysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Content gap identification</span>
+                  </li>
+                </ul>
               </div>
               
-              <div className="text-center">
+              <div className="bg-black/30 rounded-xl p-6 border border-blue-900/50 text-center hover:transform hover:scale-105 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">2</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Week 3-4</h3>
                 <h4 className="text-lg font-semibold mb-2 text-blue-400">Content Optimization</h4>
-                <p className="text-gray-300">
-                  Restructure top pages. Implement schema. Deploy AI-native formats.
-                </p>
+                <div className="flex items-center justify-center mb-3">
+                  <div className="h-px w-10 bg-blue-800"></div>
+                </div>
+                <ul className="text-left text-gray-300 space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Restructure top pages</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Implement schema markup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Deploy AI-native formats</span>
+                  </li>
+                </ul>
               </div>
               
-              <div className="text-center">
+              <div className="bg-black/30 rounded-xl p-6 border border-blue-900/50 text-center hover:transform hover:scale-105 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">3</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Week 5-8</h3>
                 <h4 className="text-lg font-semibold mb-2 text-blue-400">Authority Building</h4>
-                <p className="text-gray-300">
-                  Create citation-worthy content. Build semantic frameworks. Establish expertise.
-                </p>
+                <div className="flex items-center justify-center mb-3">
+                  <div className="h-px w-10 bg-blue-800"></div>
+                </div>
+                <ul className="text-left text-gray-300 space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Create citation-worthy content</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Build semantic frameworks</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Establish domain expertise</span>
+                  </li>
+                </ul>
               </div>
               
-              <div className="text-center">
+              <div className="bg-black/30 rounded-xl p-6 border border-blue-900/50 text-center hover:transform hover:scale-105 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">4</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Week 9-12</h3>
                 <h4 className="text-lg font-semibold mb-2 text-blue-400">Scale & Dominate</h4>
-                <p className="text-gray-300">
-                  Monitor citations. Expand coverage. Lock in category leadership.
-                </p>
+                <div className="flex items-center justify-center mb-3">
+                  <div className="h-px w-10 bg-blue-800"></div>
+                </div>
+                <ul className="text-left text-gray-300 space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Monitor AI citations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Expand topic coverage</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0 text-xs" />
+                    <span>Lock in category leadership</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing */}
+        {/* Guarantee */}
         <section className="py-16 bg-gray-900">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Investment & <span className="text-green-400">Guarantee</span>
+              Our <span className="text-green-400">Guarantee</span>
             </h2>
             
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-b from-blue-900/20 to-purple-900/20 rounded-xl p-8 border border-blue-800 mb-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-4">AnswerCircuit for B2B SaaS</h3>
-                  <div className="flex items-center justify-center gap-4 mb-4">
-                    <span className="text-5xl font-bold">$4,997</span>
-                    <span className="text-gray-400">/month</span>
-                  </div>
-                  <p className="text-gray-300">
-                    For SaaS companies $15M-$30M ARR
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h4 className="font-bold mb-4 text-blue-400">What's Included:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Complete AI visibility audit & strategy</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Done-for-you content optimization</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Real-time citation tracking dashboard</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Weekly strategy sessions</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-bold mb-4 text-purple-400">Plus:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Competitive intelligence reports</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Custom AI-native content creation</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>C-suite reporting dashboard</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
-                        <span>Dedicated Slack channel</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="bg-green-900/20 border border-green-800 rounded-xl p-6 text-center">
+                <div className="bg-green-900/20 border border-green-800 rounded-xl p-6 text-center mb-8">
                   <FaShieldAlt className="text-4xl text-green-400 mx-auto mb-4" />
                   <h4 className="text-xl font-bold mb-2 text-green-400">90-Day Citation Guarantee</h4>
-                  <p className="text-gray-300">
-                    If you're not cited in the top AI results for at least 3 of your core topics 
-                    within 90 days, we'll continue working at no charge until you are.
-                  </p>
+                  <div className="space-y-4">
+                    <p className="text-gray-300">
+                      If you're not cited in the top 3 AI results for at least 3 of your core topics 
+                      within 90 days across ChatGPT, Claude, and Perplexity, we'll continue working at no charge until you are.
+                    </p>
+                    <div className="bg-black/30 rounded-lg p-3 text-left">
+                      <p className="text-sm text-white mb-2 font-bold">Guaranteed metrics include:</p>
+                      <ul className="text-sm text-gray-300 list-disc list-inside space-y-1">
+                        <li>Top 3 citation position for primary category terms</li>
+                        <li>Direct mentions in at least 5 high-intent queries</li>
+                        <li>Consistent recommendation across all major AI platforms</li>
+                      </ul>
+                    </div>
+                    <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                      <Link href="/resources/ai-search-optimization#case-studies" className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium">
+                        View case studies and results
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                      <Link href="/resources/ai-search-optimization#evolution-of-search" className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-medium">
+                        Explore the evolution of AI search
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                  <div className="bg-black/30 rounded-lg p-5 text-center">
+                    <div className="text-4xl font-bold text-blue-400 mb-2">93%</div>
+                    <p className="text-gray-300">Client citation rate within 90 days</p>
+                  </div>
+                  
+                  <div className="bg-black/30 rounded-lg p-5 text-center">
+                    <div className="text-4xl font-bold text-green-400 mb-2">6x</div>
+                    <p className="text-gray-300">Average ROI in first quarter</p>
+                  </div>
+                  
+                  <div className="bg-black/30 rounded-lg p-5 text-center">
+                    <div className="text-4xl font-bold text-purple-400 mb-2">24hrs</div>
+                    <p className="text-gray-300">Average implementation time</p>
+                  </div>
                 </div>
               </div>
               
@@ -501,11 +605,18 @@ const AnswerCircuitSalesPage: React.FC = () => {
                   Only 3 spots available this month • 
                   <span className="text-white font-semibold">{timeLeft.days} days left</span>
                 </p>
-                <Link href="#audit">
-                  <span className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-lg">
-                    Claim Your Spot Today
-                  </span>
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                  <Link href="#audit">
+                    <span className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-lg">
+                      Claim Your Free Audit
+                    </span>
+                  </Link>
+                  <Link href="/resources/ai-search-optimization">
+                    <span className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-lg flex items-center">
+                      <FaRobot className="mr-2" /> AI Search Guide
+                    </span>
+                  </Link>
+                </div>
                 <p className="text-sm text-gray-400 mt-4">
                   30-minute strategy call • No obligations • See your AI gaps
                 </p>
@@ -517,49 +628,98 @@ const AnswerCircuitSalesPage: React.FC = () => {
         {/* FAQ */}
         <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
               Common <span className="text-blue-400">Questions</span>
             </h2>
             
-            <div className="max-w-3xl mx-auto space-y-6">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="text-xl font-bold mb-3">
-                  How is this different from traditional SEO?
+            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-6">
+              Here are the answers to the questions we hear most often about AI visibility and optimization
+            </p>
+            
+            <div className="text-center mb-10">
+              <Link href="/resources/ai-search-optimization#faq" className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium">
+                View our comprehensive AI Search FAQ
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-800 transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 flex items-center">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 text-blue-400">Q</span>
+                  <span>How is this different from traditional SEO?</span>
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 pl-11">
                   Traditional SEO optimizes for search engine algorithms. We optimize for AI comprehension 
                   and citation. While SEO gets you ranked, we ensure you're the answer AI provides to users.
                 </p>
+                <div className="mt-2 pl-11">
+                  <Link href="/resources/ai-search-optimization#traditional-seo-failing" className="text-xs text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    Read our comparison of traditional SEO vs AI optimization
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
               
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="text-xl font-bold mb-3">
-                  How quickly will we see results?
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-800 transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 flex items-center">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 text-blue-400">Q</span>
+                  <span>How quickly will we see results?</span>
                 </h3>
-                <p className="text-gray-300">
-                  Initial improvements often appear within 30 days as we optimize existing content. 
-                  Significant citation increases typically occur by day 60, with full results by day 90.
+                <p className="text-gray-300 pl-11">
+                  Initial improvements appear within 30 days. Significant citation increases 
+                  typically occur by day 60, with full results by day 90.
                 </p>
+                <div className="mt-2 pl-11">
+                  <Link href="/resources/ai-search-optimization#measuring-success" className="text-xs text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    See our measurement framework & typical ROI
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
               
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="text-xl font-bold mb-3">
-                  What if we're already doing content marketing?
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-800 transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 flex items-center">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 text-blue-400">Q</span>
+                  <span>What if we're already doing content?</span>
                 </h3>
-                <p className="text-gray-300">
-                  Perfect. We'll audit your existing content and show you exactly how to restructure it 
+                <p className="text-gray-300 pl-11">
+                  Perfect! We'll audit your existing content and show you exactly how to restructure it 
                   for AI visibility. Most companies see immediate gains just from optimization.
                 </p>
+                <div className="mt-3 ml-11">
+                  <Link href="/resources/ai-search-optimization#content-formats" className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    Learn about AI content optimization
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
               
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="text-xl font-bold mb-3">
-                  How do you track AI citations?
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-800 transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 flex items-center">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 text-blue-400">Q</span>
+                  <span>How do you track AI citations?</span>
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 pl-11">
                   We use proprietary monitoring across ChatGPT, Claude, Perplexity, and other platforms. 
                   You'll see exactly when, where, and how you're cited versus competitors.
                 </p>
+                <div className="mt-3 ml-11">
+                  <Link href="/resources/ai-search-optimization#tools-resources" className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    View our monitoring system
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -579,32 +739,88 @@ const AnswerCircuitSalesPage: React.FC = () => {
               </p>
               
               <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 mb-8">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1">
+                    <div className="rounded-full bg-gray-900 p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
                 <h3 className="text-2xl font-bold mb-6">Your Free AI Visibility Audit Includes:</h3>
                 <div className="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
-                  <div className="flex items-start">
+                  <div className="flex items-start bg-black/30 p-4 rounded-lg">
                     <FaCheckCircle className="text-green-400 mt-1 mr-3 flex-shrink-0" />
                     <span>Complete analysis of your AI citation status</span>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start bg-black/30 p-4 rounded-lg">
                     <FaCheckCircle className="text-green-400 mt-1 mr-3 flex-shrink-0" />
                     <span>Competitor AI visibility comparison</span>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start bg-black/30 p-4 rounded-lg">
                     <FaCheckCircle className="text-green-400 mt-1 mr-3 flex-shrink-0" />
                     <span>Revenue impact calculation</span>
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start bg-black/30 p-4 rounded-lg">
                     <FaCheckCircle className="text-green-400 mt-1 mr-3 flex-shrink-0" />
                     <span>30-day quick win roadmap</span>
                   </div>
                 </div>
               </div>
               
-              <Link href="/contact">
-                <span className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-5 px-12 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-xl">
-                  Get Your Free AI Visibility Audit
-                </span>
-              </Link>
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/contact">
+                    <span className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-5 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-lg">
+                      Get Your Free AI Visibility Audit
+                    </span>
+                  </Link>
+                  <Link href="/resources/ai-search-optimization#technical">
+                    <span className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-5 px-8 rounded-xl border border-blue-900 transition duration-300 inline-flex items-center text-lg">
+                      <FaRobot className="mr-2 text-blue-400" />
+                      AI Schema Blueprint
+                    </span>
+                  </Link>
+                </div>
+                
+                {/* Resource Buttons Bar */}
+                <div className="bg-gray-900 p-4 rounded-xl border border-blue-800 grid sm:grid-cols-2 md:grid-cols-3 gap-3 mt-8">
+                  <Link href="/resources/ai-search-optimization#content-formats">
+                    <span className="bg-black/30 hover:bg-blue-900/30 text-white font-medium py-3 px-4 rounded-lg border border-blue-900/50 transition duration-300 inline-flex items-center text-sm w-full">
+                      <FaFileAlt className="mr-2 text-blue-400" />
+                      Content Formats Guide
+                    </span>
+                  </Link>
+                  <Link href="/resources/ai-search-optimization#implementation-guide">
+                    <span className="bg-black/30 hover:bg-blue-900/30 text-white font-medium py-3 px-4 rounded-lg border border-blue-900/50 transition duration-300 inline-flex items-center text-sm w-full">
+                      <FaTools className="mr-2 text-green-400" />
+                      Implementation Steps
+                    </span>
+                  </Link>
+                  <Link href="/resources/ai-search-optimization#measuring-success">
+                    <span className="bg-black/30 hover:bg-blue-900/30 text-white font-medium py-3 px-4 rounded-lg border border-blue-900/50 transition duration-300 inline-flex items-center text-sm w-full">
+                      <FaChartBar className="mr-2 text-purple-400" />
+                      Track Your Success
+                    </span>
+                  </Link>
+                </div>
+                
+                <div className="mt-4">
+                  <p className="text-sm text-white bg-blue-900/30 border border-blue-800 rounded-lg py-2 px-4 inline-block">
+                    <span className="font-bold">Average Result:</span> 16 new qualified demos within 60 days
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <Link href="/resources/ai-search-optimization" className="text-sm text-blue-400 hover:text-blue-300 inline-flex items-center">
+                    Read our complete guide to AI Search Optimization
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
               
               <p className="text-sm text-gray-400 mt-6">
                 Limited to 3 audits per month • 100% free • No obligation
