@@ -307,174 +307,91 @@ export default function Header() {
         </motion.div>
       </nav>
       
-      <motion.div 
-        initial={false}
-        animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 300 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`lg:hidden fixed inset-0 z-50 ${mobileMenuOpen ? '' : 'pointer-events-none'}`}
-      >
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm" 
-          onClick={() => setMobileMenuOpen(false)} 
-        />
-        <motion.div 
-          className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-b from-blue-900/90 to-black/90 backdrop-blur-xl px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
-          initial={{ x: 300 }}
-          animate={{ x: 0 }}
-          exit={{ x: 300 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-        >
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-x-2" onClick={() => setMobileMenuOpen(false)}>
-              <span className="sr-only">SpotCircuit</span>
-              <div className="relative overflow-hidden rounded-full p-1 bg-gradient-to-r from-blue-500/80 to-purple-600/80">
-                <div className="bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
-                  <Image
-                    src="/static/images/sclogo.png"
-                    alt="SpotCircuit"
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 brightness-200"
-                  />
-                </div>
-              </div>
-              <span className="text-white font-bold text-lg">SpotCircuit</span>
-            </Link>
-            <button
-              type="button"
-              className="rounded-full p-2 text-white bg-white/10 hover:bg-white/20 transition-colors duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-8 flow-root">
-            <div className="space-y-3">
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="lg:hidden absolute top-16 inset-x-0 z-40 bg-black/80 backdrop-blur-lg shadow-xl mx-4 rounded-2xl border border-white/10"
+          >
+            <div className="px-5 pt-5 pb-6 space-y-3">
               {navigation.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                >
+                <div key={item.name}>
                   {item.hasDropdown ? (
-                    <button
-                      className="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
-                      onClick={() => {
-                        if (item.name === 'Solutions') {
-                          setSolutionsOpen(!solutionsOpen)
-                        } else if (item.name === 'Company') {
-                          setCompanyOpen(!companyOpen)
-                        } else if (item.name === 'Resources') {
-                          setResourcesOpen(!resourcesOpen)
-                        }
-                      }}
-                    >
-                      {item.name}
-                      <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${solutionsOpen || companyOpen || resourcesOpen ? 'rotate-180' : ''}`} />
-                    </button>
+                    <div>
+                      <button
+                        onClick={() => {
+                          if (item.name === 'Solutions') setSolutionsOpen(!solutionsOpen);
+                          else if (item.name === 'Company') setCompanyOpen(!companyOpen);
+                          else if (item.name === 'Resources') setResourcesOpen(!resourcesOpen);
+                        }}
+                        className="w-full flex items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10 transition-colors duration-200"
+                      >
+                        {item.name}
+                        <ChevronDownIcon
+                          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
+                            (item.name === 'Solutions' && solutionsOpen) ||
+                            (item.name === 'Company' && companyOpen) ||
+                            (item.name === 'Resources' && resourcesOpen)
+                              ? 'rotate-180'
+                              : ''
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {((item.name === 'Solutions' && solutionsOpen) ||
+                          (item.name === 'Company' && companyOpen) ||
+                          (item.name === 'Resources' && resourcesOpen)) && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                            className="mt-1 space-y-1 pl-4 border-l border-white/10"
+                          >
+                            {(item.name === 'Solutions' ? solutionsDropdown : item.name === 'Company' ? companyDropdown : resourcesDropdown).map(
+                              (subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  onClick={(e) => handleNavigation(e, subItem.href, false)}
+                                  className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              )
+                            )}
+                            {item.name === 'Resources' && (
+                               <Link
+                                href="/resources/ai-search-optimization"
+                                onClick={(e) => handleNavigation(e, "/resources/ai-search-optimization", false)}
+                                className="block rounded-md px-3 py-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors duration-200"
+                              >
+                                View Complete Guide →
+                              </Link>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ) : (
                     <a
                       href={item.href}
                       onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
-                      className="block rounded-xl px-4 py-3 text-base font-medium text-white bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
+                      className="block rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10 transition-colors duration-200"
                     >
                       {item.name}
                     </a>
                   )}
-                  {item.name === 'Solutions' && (
-                    <AnimatePresence>
-                      {solutionsOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className="space-y-2"
-                        >
-                          {solutionsDropdown.map((item, index) => (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => setSolutionsOpen(false)}
-                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
-                            >
-                              <div className="font-medium text-white">{item.name}</div>
-                              <div className="text-xs text-gray-500">{item.description}</div>
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  )}
-                  {item.name === 'Company' && (
-                    <AnimatePresence>
-                      {companyOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className="space-y-2"
-                        >
-                          {companyDropdown.map((item, index) => (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => setCompanyOpen(false)}
-                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
-                            >
-                              <div className="font-medium text-white">{item.name}</div>
-                              <div className="text-xs text-gray-500">{item.description}</div>
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  )}
-                  {item.name === 'Resources' && (
-                    <AnimatePresence>
-                      {resourcesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className="space-y-2"
-                        >
-                          {resourcesDropdown.slice(0, 5).map((item, index) => (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => setResourcesOpen(false)}
-                              className="block rounded-lg px-4 py-2 text-sm text-gray-300 bg-white/5 hover:bg-white/10 transition-all duration-200 border border-white/5"
-                            >
-                              <div className="font-medium text-white">{item.name}</div>
-                              <div className="text-xs text-gray-500">{item.description}</div>
-                            </Link>
-                          ))}
-                          <Link
-                            href="/resources/ai-search-optimization"
-                            onClick={() => setResourcesOpen(false)}
-                            className="block rounded-lg px-4 py-2 text-sm text-center text-blue-400 hover:text-blue-300 transition-colors"
-                          >
-                            View Complete Guide →
-                          </Link>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  )}
-                </motion.div>
+                </div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: navigation.length * 0.05 }}
-                className="mt-6"
-              >
+              <div className="pt-4">
                 <Link
                   href="/contact"
+                  onClick={(e) => handleNavigation(e, "/contact", false)}
                   className="flex items-center justify-center w-full rounded-xl px-4 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg shadow-blue-500/20"
                 >
                   Book Demo
@@ -482,11 +399,21 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </motion.div>
+            <div className="absolute top-4 right-4">
+              <button
+                type="button"
+                className="rounded-full p-2 text-white bg-white/10 hover:bg-white/20 transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
