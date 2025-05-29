@@ -108,7 +108,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-black to-blue-950" aria-labelledby="footer-heading">
+    <footer className="relative bg-gradient-to-b from-black to-blue-950 overflow-x-hidden" aria-labelledby="footer-heading">
       <style jsx>{`
         .tech-logo-container {
           display: flex;
