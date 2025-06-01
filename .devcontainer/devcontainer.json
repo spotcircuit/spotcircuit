@@ -16,7 +16,10 @@
         "github.copilot",
         "github.copilot-chat",
         "ms-azuretools.vscode-docker",
-        "pflannery.vscode-versionlens"
+        "pflannery.vscode-versionlens",
+        "GitHub.vscode-github-actions",
+        "christian-kohler.npm-intellisense",
+        "DavidAnson.vscode-markdownlint"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -35,27 +38,14 @@
     }
   },
   "forwardPorts": [3000],
-  "postCreateCommand": "npm install && npm install -g vercel@latest",
-  "postStartCommand": "npm run dev",
-  "postAttachCommand": {
-    "vercel-login-check": "bash -c 'if [ ! -f ~/.vercel/auth.json ]; then echo \"\\033[1;33mReminder: Run 'vercel login' to authenticate with Vercel for deployments\\033[0m\"; fi'",
-    "server": "npm run dev"
-  },
+  "postCreateCommand": "npm install",
   "remoteUser": "node",
   "hostRequirements": {
     "memory": "8gb"
   },
-  "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:/home/node/.vercel/bin"
-  },
-  "containerEnv": {
-    "VERCEL_DIRECTORY_UPLOAD_CONCURRENCY": "10"
-  },
-  // Additional configuration for Vercel CI/CD
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
   },
-  // Add VS Code tasks for Vercel deployment workflows
   "portsAttributes": {
     "3000": {
       "label": "Next.js App",
