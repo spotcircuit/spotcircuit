@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FaCalendarAlt, FaClock, FaTag, FaSearch } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaTag, FaSearch, FaFolder } from 'react-icons/fa';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -23,7 +23,7 @@ const blogPosts = [
   },
   {
     slug: 'seo-isnt-dead',
-    title: 'SEO Isn\'t Dead: Take a Masterclass in Fighting Yesterday\'s War',
+    title: 'SEO Isn't Dead: Take a Masterclass in Fighting Yesterday's War',
     date: 'May 15, 2025',
     readTime: '10 min read',
     excerpt: 'As AI reshapes search, businesses clinging to outdated SEO strategies are being left behind. Here\'s how to adapt to the new landscape.',
@@ -34,40 +34,40 @@ const blogPosts = [
   }
 ];
 
-// Extract all unique tags
-const allTags = Array.from(
-  new Set(blogPosts.flatMap(post => post.tags))
+// Extract all unique categories
+const allCategories = Array.from(
+  new Set(blogPosts.flatMap(post => post.categories))
 ).sort();
 
-// Generate metadata for the tag page
+// Generate metadata for the category page
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const tagName = params.slug
+  const categoryName = params.slug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
   
   return {
-    title: `${tagName} Articles | SpotCircuit Blog`,
-    description: `Read our latest articles tagged with ${tagName}`,
+    title: `${categoryName} Articles | SpotCircuit Blog`,
+    description: `Browse our collection of articles in the ${categoryName} category`,
   };
 }
 
-export default function TagPage({ params }: { params: { slug: string } }) {
-  // Convert slug to tag name format
-  const tagSlug = params.slug.toLowerCase();
-  const tagName = tagSlug
+export default function CategoryPage({ params }: { params: { slug: string } }) {
+  // Convert slug to category name format
+  const categorySlug = params.slug.toLowerCase();
+  const categoryName = categorySlug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
   
-  // Find posts with this tag
-  const tagPosts = blogPosts.filter(post => 
-    post.tags.some(tag => tag.toLowerCase() === tagName.toLowerCase() || 
-                          tag.toLowerCase().replace(/\s+/g, '-') === tagSlug)
+  // Find posts in this category
+  const categoryPosts = blogPosts.filter(post => 
+    post.categories.some(category => category.toLowerCase() === categoryName.toLowerCase() || 
+                                    category.toLowerCase().replace(/\s+/g, '-') === categorySlug)
   );
   
-  // If no posts found with this tag, show 404
-  if (tagPosts.length === 0) {
+  // If no posts found in this category, show 404
+  if (categoryPosts.length === 0) {
     notFound();
   }
   
@@ -75,17 +75,17 @@ export default function TagPage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-black">
       <Header />
       <main className="pt-24">
-        {/* Tag Header */}
+        {/* Category Header */}
         <div className="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
           <div className="container mx-auto px-4 text-center">
-            <div className="inline-block bg-blue-500/20 rounded-full px-3 py-1 text-blue-300 text-sm font-medium mb-4">
-              Tag
+            <div className="inline-block bg-purple-500/20 rounded-full px-3 py-1 text-purple-300 text-sm font-medium mb-4">
+              Category
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {tagName}
+              {categoryName}
             </h1>
             <p className="text-xl text-blue-100">
-              {tagPosts.length} {tagPosts.length === 1 ? 'Article' : 'Articles'}
+              {categoryPosts.length} {categoryPosts.length === 1 ? 'Article' : 'Articles'}
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function TagPage({ params }: { params: { slug: string } }) {
             {/* Main Content */}
             <div className="lg:w-2/3">
               <div className="space-y-10">
-                {tagPosts.map((post, index) => (
+                {categoryPosts.map((post, index) => (
                   <div key={index} className="bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800">
                     <div className="h-60 relative">
                       <div 
@@ -140,21 +140,21 @@ export default function TagPage({ params }: { params: { slug: string } }) {
             {/* Sidebar */}
             <div className="lg:w-1/3">
               <div className="sticky top-24">
-                {/* Popular Tags */}
+                {/* All Categories */}
                 <div className="bg-gray-900 rounded-xl p-6 mb-8">
-                  <h3 className="text-xl font-bold text-white mb-4">Popular Tags</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">Categories</h3>
                   <div className="flex flex-wrap gap-2">
-                    {allTags.map((tag, index) => (
+                    {allCategories.map((category, index) => (
                       <Link 
-                        href={`/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} 
+                        href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`} 
                         key={index}
                         className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                          tag.toLowerCase() === tagName.toLowerCase() 
-                            ? 'bg-blue-600 text-white' 
+                          category.toLowerCase() === categoryName.toLowerCase() 
+                            ? 'bg-purple-600 text-white' 
                             : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
                         }`}
                       >
-                        {tag}
+                        {category}
                       </Link>
                     ))}
                   </div>
