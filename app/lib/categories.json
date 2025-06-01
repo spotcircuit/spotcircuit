@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "slug": "ai-automation-business",
+      "name": "AI & Automation in Business",
+      "description": "Practical guides for implementing AI and automation to transform business operations, increase efficiency, and drive growth",
+      "color": "yellow",
+      "icon": "FaRobot"
+    },
+    {
+      "slug": "ai-applications-industry",
+      "name": "AI Applications & Industry Solutions",
+      "description": "Industry-specific AI applications and solutions tailored for different business sectors and use cases",
+      "color": "pink",
+      "icon": "FaCogs"
+    },
+    {
+      "slug": "business-growth-scalability",
+      "name": "Business Growth & Scalability",
+      "description": "Strategic insights and frameworks for scaling operations, optimizing processes, and achieving sustainable business growth",
+      "color": "purple",
+      "icon": "FaChartLine"
+    },
+    {
+      "slug": "demystifying-ai-adoption",
+      "name": "Demystifying AI: Smart Adoption",
+      "description": "Educational content that breaks down AI concepts and provides practical adoption strategies for business leaders",
+      "color": "orange",
+      "icon": "FaLightbulb"
+    },
+    {
+      "slug": "operational-efficiency-profitability",
+      "name": "Operational Efficiency & Profitability",
+      "description": "Data-driven approaches to optimizing operations, reducing costs, and maximizing profitability through technology",
+      "color": "cyan",
+      "icon": "FaChartBar"
+    },
+    {
+      "slug": "seo-online-brand-protection",
+      "name": "SEO & Online Brand Protection",
+      "description": "Advanced SEO strategies and online reputation management in the age of AI search and digital transformation",
+      "color": "green",
+      "icon": "FaShieldAlt"
+    }
+  ]
+}

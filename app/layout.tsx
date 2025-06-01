@@ -6,6 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://spotcircuit.com'),
   title: 'SpotCircuit - AI-Powered SEO Automation for Shopify',
   description: 'Boost your Shopify store\'s organic traffic with AI-powered SEO automation',
   keywords: 'SEO automation, Shopify SEO, AI SEO, e-commerce optimization, organic traffic',

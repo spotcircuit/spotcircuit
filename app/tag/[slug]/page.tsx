@@ -15,9 +15,10 @@ const allTags = Array.from(
 ).sort();
 
 // Generate metadata for the tag page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
 	// Convert slug to tag name
-	const tagName = params.slug
+	const tagName = slug
 		.split('-')
 		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(' ');
@@ -28,9 +29,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	};
 }
 
-export default function TagPage({ params }: { params: { slug: string } }) {
+export default async function TagPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
 	// Convert slug back to tag name (approximately)
-	const tagName = params.slug
+	const tagName = slug
 		.split('-')
 		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(' ');
@@ -38,7 +40,7 @@ export default function TagPage({ params }: { params: { slug: string } }) {
 	// Find posts with this tag
 	const tagPosts = blogPosts.filter(post => 
 		post.tags.some(tag => 
-			tag.toLowerCase().replace(/\s+/g, '-') === params.slug
+			tag.toLowerCase().replace(/\s+/g, '-') === slug
 		)
 	);
 
@@ -90,7 +92,7 @@ export default function TagPage({ params }: { params: { slug: string } }) {
 												{/* Other related tags */}
 												<div className="flex flex-wrap items-center gap-2 text-blue-300 mb-3">
 													{post.tags
-														.filter(tag => tag.toLowerCase().replace(/\s+/g, '-') !== params.slug)
+														.filter(tag => tag.toLowerCase().replace(/\s+/g, '-') !== slug)
 														.slice(0, 3)
 														.map((tag, tagIndex) => (
 															<Link 
@@ -156,7 +158,7 @@ export default function TagPage({ params }: { params: { slug: string } }) {
 													href={`/tag/${tagSlug}`} 
 													key={index}
 													className={`flex items-center text-xs px-3 py-1 rounded-full transition-colors ${
-														tagSlug === params.slug
+														tagSlug === slug
 															? "bg-blue-700 text-white"
 															: "bg-gray-800 hover:bg-gray-700 text-gray-300"
 													}`}

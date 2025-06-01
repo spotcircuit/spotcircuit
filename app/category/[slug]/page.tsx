@@ -10,9 +10,10 @@ import { categories, blogPosts } from '@/app/lib/blog-data'; // Import from the 
 export const revalidate = 60;
 
 // Generate metadata for the category page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
 	// Find category from predefined list
-	const category = categories.find(cat => cat.slug === params.slug);
+	const category = categories.find(cat => cat.slug === slug);
 	
 	if (!category) {
 		return {
@@ -26,9 +27,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	};
 }
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
+export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
 	// Find category from predefined list
-	const category = categories.find(cat => cat.slug === params.slug);
+	const category = categories.find(cat => cat.slug === slug);
 	
 	if (!category) {
 		notFound();
@@ -37,7 +39,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
 	// Find posts in this category
 	const categoryPosts = blogPosts.filter(post => 
 		post.categories.some(cat => 
-			cat.toLowerCase().replace(/\s+/g, '-') === params.slug
+			cat.toLowerCase().replace(/\s+/g, '-') === slug
 		)
 	);
 
@@ -139,7 +141,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
 												href={`/category/${cat.slug}`} 
 												key={cat.slug}
 												className={`px-3 py-1 rounded-full text-sm transition-colors ${
-													cat.slug === params.slug
+													cat.slug === slug
 														? "bg-blue-700 text-white"
 														: "bg-gray-800 hover:bg-gray-700 text-gray-300"
 												}`}

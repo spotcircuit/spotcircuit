@@ -1,39 +1,26 @@
 // Shared data file for blog posts and categories
 
-// Predefined list of categories (these are the only valid categories)
-export const categories = [
-  {
-    slug: 'technology',
-    name: 'Technology',
-    description: 'Articles about AI, automation, and emerging tech trends',
-    postCount: 0, // Will be calculated dynamically
-  },
-  {
-    slug: 'business-strategy',
-    name: 'Business Strategy',
-    description: 'Strategic insights for service business growth and optimization',
-    postCount: 0,
-  },
-  {
-    slug: 'marketing',
-    name: 'Marketing',
-    description: 'Modern marketing approaches for digital and AI-first businesses',
-    postCount: 0,
-  }
-];
+import categoriesData from './categories.json';
+import { Category, BlogPost, CategoriesData } from './types';
+
+// Categories imported from JSON file
+export const categories: Category[] = (categoriesData as CategoriesData).categories.map((category: Category) => ({
+  ...category,
+  postCount: 0, // Will be calculated dynamically
+}));
 
 // Blog posts data structure
-export const blogPosts = [
+export const blogPosts: BlogPost[] = [
   {
     slug: 'seo-isnt-dead',
     title: "SEO Isn't Dead: Take a Masterclass in Fighting Yesterday's War",
-    date: 'May 15, 2025',
-    readTime: '10 min read',
-    excerpt: "As AI reshapes search, businesses clinging to outdated SEO strategies are being left behind. Here's how to adapt to the new landscape.",
-    coverImage: '/static/images/seo-cover.webp',
-    tags: ['SEO', 'AI Search', 'Content Strategy', 'Digital Marketing', 'LLM Optimization'],
-    categories: ['Marketing', 'Technology'],
-    featured: false,
+    date: 'June 1, 2025',
+    readTime: '15 min read',
+    excerpt: "Stop optimizing for 2019 while your competitors dominate the AI-first search landscape of 2025. The search revolution is here, and most businesses are fighting yesterday's war with yesterday's weapons.",
+    coverImage: '/static/images/seo20.webp',
+    tags: ['SEO 2.0', 'AI Search', 'Content Strategy', 'Digital Marketing', 'LLM Optimization', 'Search Evolution', 'Entity SEO', 'Semantic Search', 'AI Citations', 'Search Strategy'],
+    categories: ['SEO & Online Brand Protection', 'AI & Automation in Business'],
+    featured: true,
   },
   {
     slug: 'ai-transforming-service-businesses',
@@ -43,7 +30,7 @@ export const blogPosts = [
     excerpt: "In today's rapidly evolving digital landscape, service businesses face unprecedented challenges and opportunities. Artificial intelligence is no longer a futuristic concept—it's a present-day competitive advantage.",
     coverImage: '/static/images/blog.webp',
     tags: ['AI', 'Automation', 'Business Strategy', 'Digital Transformation', 'Service Business'],
-    categories: ['Technology', 'Business Strategy'],
-    featured: true,
+    categories: ['AI Applications & Industry Solutions', 'Business Growth & Scalability'],
+    featured: false,
   }
 ];
