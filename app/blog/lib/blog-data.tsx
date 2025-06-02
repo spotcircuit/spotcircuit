@@ -32,16 +32,5 @@ export const blogPosts: BlogPost[] = [
     tags: ['AI', 'Automation', 'Business Strategy', 'Digital Transformation', 'Service Business'],
     categories: ['AI Applications & Industry Solutions', 'Business Growth & Scalability'],
     featured: false,
-  },
-  {
-    slug: 'ai-automation-for-roofing-construction-lead-generation',
-    title: 'AI Automation for Lead Generation: A Game-Changer for Roofers and Construction Contractors',
-    date: 'June 2, 2025',
-    readTime: '16 min read',
-    excerpt: "Discover how AI automation is revolutionizing lead generation for roofing and construction businesses. From intelligent chatbots to automated follow-ups, learn the practical strategies that are helping contractors close more deals and scale faster.",
-    coverImage: '/static/images/blog.webp',
-    tags: ['AI Automation', 'Lead Generation', 'Construction Marketing', 'Roofing Business', 'Contractor Lead Gen', 'AI Chatbots', 'Construction Tech', 'Digital Marketing', 'Business Automation', '2025 Marketing'],
-    categories: ['AI & Automation in Business', 'AI Applications & Industry Solutions'],
-    featured: false,
   }
 ];
