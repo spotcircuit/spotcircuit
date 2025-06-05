@@ -1,0 +1,36 @@
+import Link from 'next/link';
+import { FaHome, FaCheckCircle } from 'react-icons/fa';
+
+{/* Roofing */}
+<div className="bg-black bg-opacity-60 rounded-xl p-8 border border-blue-900 hover:border-blue-700 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <FaHome className="text-5xl text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-400">
+                Roofing
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Storm damage response</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Roof replacement marketing</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Insurance claim support</span>
+                </li>
+              </ul>
+              <div className="mt-6 text-center">
+                <Link href="/industries/roofing">
+                  <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center text-sm">
+                    Roofing-specific solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>

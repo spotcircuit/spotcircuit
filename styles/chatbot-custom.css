@@ -1,0 +1,25 @@
+/* Custom styles for ChatNode.ai chatbot */
+.chatnode-widget-header {
+  background-color: #6366F1 !important; /* Indigo color to match your brand */
+}
+
+.chatnode-widget-title {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+.chatnode-widget-button {
+  background-color: #6366F1 !important;
+  color: #FFFFFF !important;
+}
+
+.chatnode-widget-message-bot {
+  background-color: #6366F1 !important;
+  color: #FFFFFF !important;
+}
+
+/* Move reCAPTCHA badge to the left */
+.grecaptcha-badge {
+  left: 0 !important;
+  right: auto !important;
+}

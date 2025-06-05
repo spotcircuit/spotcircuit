@@ -1,0 +1,981 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { 
+  FaTools, 
+  FaCheckCircle, 
+  FaMapMarkerAlt, 
+  FaStar, 
+  FaPhoneAlt,
+  FaChartLine, 
+  FaCalendarAlt, 
+  FaThumbsUp, 
+  FaUsers,
+  FaWrench,
+  FaHammer,
+  FaBolt,
+  FaSnowflake,
+  FaSearch,
+  FaMobileAlt,
+  FaRobot,
+  FaMoneyBillWave,
+  FaCommentDots,
+  FaFileAlt,
+  FaHome
+} from 'react-icons/fa';
+
+// Metadata moved to metadata.ts file
+
+const LocalServicesPage: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('plumbing');
+  
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500 rounded-full filter blur-3xl animate-pulse"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-8 max-w-7xl mx-auto px-4">
+            <div className="lg:w-1/2 mb-12 lg:mb-0">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="text-green-400">Dominate</span> Your Local Market with AI-Powered Marketing
+              </h1>
+              <p className="text-xl text-gray-300 mb-8">
+                Specialized for plumbers, HVAC pros, electricians, and contractors. 
+                Fill your schedule with high-quality jobs while you focus on what you do best.
+              </p>
+              
+              <div className="bg-gray-900 rounded-xl p-6 mb-8 border border-green-900">
+                <h3 className="text-xl font-bold mb-4 text-green-400">The SpotCircuit Advantage</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-500 mr-3 mt-1" />
+                    <span><span className="font-bold">77% more leads</span> on average compared to traditional marketing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-500 mr-3 mt-1" />
+                    <span><span className="font-bold">3X higher visibility</span> in Google Maps and local search</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheckCircle className="text-green-500 mr-3 mt-1" />
+                    <span><span className="font-bold">12+ hours saved</span> weekly through marketing automation</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact">
+                  <span className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block text-center">
+                    Get Your Free Local Audit
+                  </span>
+                </Link>
+                <Link href="#packages">
+                  <span className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl border border-gray-700 transition duration-300 inline-block text-center">
+                    View Service Packages
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="lg:w-1/2 relative">
+              <div className="bg-gradient-to-r from-blue-900/50 to-green-900/50 rounded-2xl p-1 mx-auto">
+                <div className="bg-gray-900 rounded-2xl overflow-hidden relative w-full">
+                  <img 
+                    src="/static/images/local-service-dashboard.png" 
+                    alt="SpotCircuit Local Service Dashboard" 
+                    className="w-full h-auto object-cover rounded-2xl"
+                    style={{minHeight: "450px"}}
+                  />
+                  
+                  {/* Overlay statistics */}
+                  <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm rounded-lg p-3 border border-green-500">
+                    <div className="text-green-400 font-bold">Monthly Performance</div>
+                    <div className="flex items-center mt-1">
+                      <FaPhoneAlt className="text-green-500 mr-2" />
+                      <span>37 new calls</span>
+                    </div>
+                    <div className="flex items-center mt-1">
+                      <FaMapMarkerAlt className="text-blue-500 mr-2" />
+                      <span>138 map views</span>
+                    </div>
+                    <div className="flex items-center mt-1">
+                      <FaStar className="text-yellow-500 mr-2" />
+                      <span>8 new reviews</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating badges */}
+              <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full py-2 px-4 shadow-lg">
+                <div className="flex items-center text-sm font-bold">
+                  <FaSearch className="mr-2" />
+                  <span>Local SEO Technology</span>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 right-8 bg-gradient-to-r from-green-500 to-green-600 rounded-full py-2 px-4 shadow-lg">
+                <div className="flex items-center text-sm font-bold">
+                  <FaRobot className="mr-2" />
+                  <span>AI-Powered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Pain Points Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Challenges Facing Local Service Businesses
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            If you're struggling with these common problems, our AI-powered solutions can help
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Pain Point 1 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaSearch className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Invisible in Local Search
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Your competitors dominate Google Maps and local searches, making it nearly impossible for customers to find you online.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            {/* Pain Point 2 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaPhoneAlt className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Not Enough Quality Leads
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Your schedule has gaps, or you're working with low-value customers because you're not attracting the right leads consistently.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            {/* Pain Point 3 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaCalendarAlt className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                No Time for Marketing
+              </h3>
+              <p className="text-gray-300 mb-4">
+                You're too busy working in your business to work on growing it. Marketing feels like a full-time job you don't have time for.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            {/* Pain Point 4 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaStar className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Reputation Management
+              </h3>
+              <p className="text-gray-300 mb-4">
+                You struggle to get positive reviews, respond to negative ones, and maintain a strong online reputation that inspires trust.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            {/* Pain Point 5 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaMoneyBillWave className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Wasted Ad Spend
+              </h3>
+              <p className="text-gray-300 mb-4">
+                You're spending money on ads that don't convert, or paying lead generation services for low-quality leads who never convert.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            {/* Pain Point 6 */}
+            <div className="bg-black rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all">
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaUsers className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Competing with Big Chains
+              </h3>
+              <p className="text-gray-300 mb-4">
+                National franchises and big brands have marketing resources you can't match, making it hard to compete for customers in your area.
+              </p>
+              <Link href="#solutions" className="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                How we fix this
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link href="/resources/local-seo-guide">
+              <span className="bg-blue-900/30 hover:bg-blue-900/50 text-white font-medium py-3 px-6 rounded-lg border border-blue-800 transition duration-300 inline-flex items-center">
+                <FaFileAlt className="mr-2 text-blue-400" />
+                Read our Free Guide: Overcoming Local Service Marketing Challenges
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Solutions Section */}
+      <section id="solutions" className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Our AI-Powered Solutions
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Custom-built for local service businesses to solve your biggest marketing challenges
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Solution 1 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-green-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-500 to-green-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-green-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaSearch className="text-2xl text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Local SEO Domination
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Our AI technology optimizes your Google Business Profile and local search presence to make you the top choice in your service area.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Google Maps optimization</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Location-specific content</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Competitor analysis</span>
+                </li>
+              </ul>
+              <Link href="/services#local-seo">
+                <span className="text-green-400 hover:text-green-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+            
+            {/* Solution 2 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-blue-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaRobot className="text-2xl text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                AI Lead Generation
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Automated systems that attract, qualify, and nurture high-quality leads so you only spend time on customers ready to buy.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">24/7 lead qualification</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Automated follow-up</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Smart scheduling</span>
+                </li>
+              </ul>
+              <Link href="/services#lead-generation">
+                <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+            
+            {/* Solution 3 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-purple-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-purple-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaStar className="text-2xl text-purple-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Reputation Management
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Automatically collect and showcase positive reviews while promptly addressing negative feedback to build a stellar online reputation.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Review solicitation</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Response management</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-purple-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Reputation monitoring</span>
+                </li>
+              </ul>
+              <Link href="/services#reputation">
+                <span className="text-purple-400 hover:text-purple-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+            
+            {/* Solution 4 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-yellow-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-yellow-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaMoneyBillWave className="text-2xl text-yellow-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                ROI-Focused Advertising
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Precision-targeted local ads that reach customers actively looking for your services, with transparent performance tracking.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Geo-targeted campaigns</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Performance tracking</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Conversion optimization</span>
+                </li>
+              </ul>
+              <Link href="/services#advertising">
+                <span className="text-yellow-400 hover:text-yellow-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+            
+            {/* Solution 5 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-red-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-500 to-red-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-red-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaMobileAlt className="text-2xl text-red-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Mobile Customer Experience
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Frictionless booking, instant communication, and seamless service delivery that delights customers and generates referrals.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-red-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Online booking system</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-red-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">SMS notifications</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-red-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Customer portal</span>
+                </li>
+              </ul>
+              <Link href="/services#customer-experience">
+                <span className="text-red-400 hover:text-red-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+            
+            {/* Solution 6 */}
+            <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-orange-800 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-700 opacity-20 rounded-bl-full"></div>
+              <div className="bg-orange-900/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <FaChartLine className="text-2xl text-orange-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">
+                Analytics & Reporting
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Clear, actionable insights on your marketing performance with custom dashboards that show exactly what's working and what's not.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Custom dashboards</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">ROI tracking</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-orange-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Monthly strategy calls</span>
+                </li>
+              </ul>
+              <Link href="/services#analytics">
+                <span className="text-orange-400 hover:text-orange-300 text-sm font-medium inline-flex items-center">
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link href="/contact">
+              <span className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block">
+                Schedule a Solution Consultation
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Industry-Specific Section */}
+      <section id="industry-solutions" className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Solutions For Your Industry
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            AI marketing strategies customized for your specific trade
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+            {/* Plumbing */}
+            <div className="bg-black bg-opacity-60 rounded-xl p-8 border border-blue-900 hover:border-blue-700 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <FaWrench className="text-5xl text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-400">
+                Plumbing
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Emergency service visibility</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Water system specialist targeting</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>24/7 appointment booking</span>
+                </li>
+              </ul>
+              <div className="mt-6 text-center">
+                <Link href="/industries/plumbing">
+                  <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center text-sm">
+                    Plumbing-specific solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* HVAC */}
+            <div className="bg-black bg-opacity-60 rounded-xl p-8 border border-blue-900 hover:border-blue-700 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <FaSnowflake className="text-5xl text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-400">
+                HVAC
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Seasonal campaign automation</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Maintenance plan marketing</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Local rebate promotion</span>
+                </li>
+              </ul>
+              <div className="mt-6 text-center">
+                <Link href="/industries/hvac">
+                  <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center text-sm">
+                    HVAC-specific solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Electrical */}
+            <div className="bg-black bg-opacity-60 rounded-xl p-8 border border-blue-900 hover:border-blue-700 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <FaBolt className="text-5xl text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-400">
+                Electrical
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Safety certification promotion</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Emergency service visibility</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Smart home service targeting</span>
+                </li>
+              </ul>
+              <div className="mt-6 text-center">
+                <Link href="/industries/electrical">
+                  <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center text-sm">
+                    Electrical-specific solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* General Contracting */}
+            <div className="bg-black bg-opacity-60 rounded-xl p-8 border border-blue-900 hover:border-blue-700 transition-all">
+              <div className="flex items-center justify-center mb-6">
+                <FaHammer className="text-5xl text-blue-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-400">
+                Contracting
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Project showcase marketing</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Lead qualification tools</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                  <span>Reputation management</span>
+                </li>
+              </ul>
+              <div className="mt-6 text-center">
+                <Link href="/industries/contracting">
+                  <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center text-sm">
+                    Contracting-specific solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Don't see your specific industry? We have tailored solutions for all types of local service businesses.
+            </p>
+            <Link href="/contact">
+              <span className="bg-blue-900/50 hover:bg-blue-900/70 text-white font-medium py-3 px-6 rounded-lg border border-blue-800 transition duration-300 inline-flex items-center">
+                <FaCommentDots className="mr-2 text-blue-400" />
+                Talk to a specialist about your industry
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Case Studies Section */}
+      <section id="case-studies" className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Success Stories
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Real results from local service businesses just like yours
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Case Study 1 */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-800">
+              <div className="p-1 bg-gradient-to-r from-blue-500 to-green-500"></div>
+              <div className="p-8 flex-grow">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">Apex Plumbing</h3>
+                    <p className="text-sm text-gray-400">Chicago, IL</p>
+                  </div>
+                  <div className="flex">
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-400">Leads Per Month</span>
+                    <span className="font-bold">+147%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="bg-green-500 h-2 rounded-full" style={{ width: '80%' }}></div>
+                  </div>
+                </div>
+                
+                <blockquote className="italic text-gray-300 mb-6">
+                  "SpotCircuit transformed our online presence. We're now the top-ranked plumber in our service area and getting more qualified leads than we can handle."
+                </blockquote>
+                
+                <p className="text-sm text-gray-400 mb-3">Solutions implemented:</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded">Local SEO</span>
+                  <span className="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded">Lead Generation</span>
+                  <span className="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded">Reviews</span>
+                </div>
+              </div>
+              
+              <div className="px-8 pb-8">
+                <Link href="/case-studies/apex-plumbing">
+                  <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                    Read full case study
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Case Study 2 */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-800">
+              <div className="p-1 bg-gradient-to-r from-blue-500 to-green-500"></div>
+              <div className="p-8 flex-grow">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">CoolAir HVAC</h3>
+                    <p className="text-sm text-gray-400">Dallas, TX</p>
+                  </div>
+                  <div className="flex">
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-400">Cost Per Acquisition</span>
+                    <span className="font-bold">-62%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="bg-green-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+                
+                <blockquote className="italic text-gray-300 mb-6">
+                  "We were spending a fortune on leads that rarely converted. SpotCircuit's targeting helped us slash our marketing costs while booking more high-value jobs."
+                </blockquote>
+                
+                <p className="text-sm text-gray-400 mb-3">Solutions implemented:</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded">ROI Advertising</span>
+                  <span className="bg-orange-900/30 text-orange-400 text-xs px-2 py-1 rounded">Analytics</span>
+                  <span className="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded">AI Lead Gen</span>
+                </div>
+              </div>
+              
+              <div className="px-8 pb-8">
+                <Link href="/case-studies/coolair-hvac">
+                  <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                    Read full case study
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Case Study 3 */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-800">
+              <div className="p-1 bg-gradient-to-r from-blue-500 to-green-500"></div>
+              <div className="p-8 flex-grow">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">Volt Electric</h3>
+                    <p className="text-sm text-gray-400">Denver, CO</p>
+                  </div>
+                  <div className="flex">
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                    <FaStar className="text-yellow-400" />
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-400">New Customers</span>
+                    <span className="font-bold">+94%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="bg-green-500 h-2 rounded-full" style={{ width: '65%' }}></div>
+                  </div>
+                </div>
+                
+                <blockquote className="italic text-gray-300 mb-6">
+                  "The automated booking system has been a game-changer. Customers love scheduling online, and we've reduced our admin costs while growing our business."
+                </blockquote>
+                
+                <p className="text-sm text-gray-400 mb-3">Solutions implemented:</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-red-900/30 text-red-400 text-xs px-2 py-1 rounded">Mobile CX</span>
+                  <span className="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded">Lead Generation</span>
+                  <span className="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded">Local SEO</span>
+                </div>
+              </div>
+              
+              <div className="px-8 pb-8">
+                <Link href="/case-studies/volt-electric">
+                  <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
+                    Read full case study
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link href="/case-studies">
+              <span className="bg-blue-900/30 hover:bg-blue-900/50 text-white font-medium py-3 px-6 rounded-lg border border-blue-800 transition duration-300 inline-flex items-center">
+                View all success stories
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Common questions about our AI-powered marketing solutions
+          </p>
+          
+          <div className="max-w-4xl mx-auto grid gap-6">
+            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-800 transition-all">
+              <h3 className="text-xl font-bold mb-3 flex items-center">
+                <FaSearch className="text-blue-500 mr-3 flex-shrink-0" />
+                How quickly will I see results from your local SEO services?
+              </h3>
+              <p className="text-gray-300">
+                Most clients see initial ranking improvements within 30-60 days. Local map pack results often appear faster than organic rankings. Our comprehensive strategy includes immediate optimizations to your Google Business Profile and citation cleanup, followed by ongoing content and link building for lasting results. We'll provide weekly progress reports so you can track your improvement in real-time.
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-800 transition-all">
+              <h3 className="text-xl font-bold mb-3 flex items-center">
+                <FaMoneyBillWave className="text-blue-500 mr-3 flex-shrink-0" />
+                What's your pricing structure for local service businesses?
+              </h3>
+              <p className="text-gray-300">
+                We offer flexible packages starting at $997/month for our essential local visibility services. For businesses looking for comprehensive marketing solutions, our premium packages range from $1,997-$3,997/month based on service area size and competition level. All packages include our AI-powered tools, dedicated account management, and detailed performance reporting. We also offer a 30-day satisfaction guarantee for new clients.
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-800 transition-all">
+              <h3 className="text-xl font-bold mb-3 flex items-center">
+                <FaRobot className="text-blue-500 mr-3 flex-shrink-0" />
+                How does your AI technology differ from traditional marketing agencies?
+              </h3>
+              <p className="text-gray-300">
+                Our proprietary AI technology analyzes thousands of successful local service businesses to identify what drives visibility and lead generation in your specific industry. Unlike traditional agencies that rely on manual processes and one-size-fits-all strategies, our AI constantly adapts to algorithm changes and customer behavior patterns. This allows us to implement more precise targeting, create more effective content, and optimize your marketing budget with significantly better ROI than conventional methods.
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-800 transition-all">
+              <h3 className="text-xl font-bold mb-3 flex items-center">
+                <FaCalendarAlt className="text-blue-500 mr-3 flex-shrink-0" />
+                Do I need to sign a long-term contract?
+              </h3>
+              <p className="text-gray-300">
+                No. While our most successful clients stay with us for years, we don't believe in locking you into long-term contracts. Our services are month-to-month after an initial 3-month commitment period that allows our strategies enough time to demonstrate meaningful results. We're confident in our ability to deliver value, which is why we let our results speak for themselves instead of relying on lengthy contract terms.
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-blue-800 transition-all">
+              <h3 className="text-xl font-bold mb-3 flex items-center">
+                <FaChartLine className="text-blue-500 mr-3 flex-shrink-0" />
+                How do you measure success and track ROI?
+              </h3>
+              <p className="text-gray-300">
+                We track multiple key performance indicators including search rankings, website traffic, lead volume, conversion rates, cost per acquisition, and overall ROI. You'll receive access to our client dashboard with real-time performance data and comprehensive monthly reports. We also integrate with your CRM or booking system to track leads all the way to booked jobs, giving you full visibility into how our marketing efforts directly impact your bottom line.
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <Link href="/faq">
+              <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center">
+                View more frequently asked questions
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Final CTA Section */}
+      <section id="get-started" className="py-20 bg-gradient-to-r from-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern-overlay"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              Ready to Dominate Your Local Market?<br />
+              <span className="text-gradient bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">Get Started Today</span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              Join hundreds of successful local service businesses using SpotCircuit's AI-powered marketing solutions to grow their customer base and revenue.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+              <Link href="/contact">
+                <span className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block w-full sm:w-auto">
+                  Schedule a Free Strategy Session
+                </span>
+              </Link>
+              
+              <Link href="/audit">
+                <span className="bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 rounded-xl transition duration-300 border border-white/30 hover:border-white inline-block w-full sm:w-auto">
+                  Get a Free Local SEO Audit
+                </span>
+              </Link>
+            </div>
+            
+            <div className="flex items-center justify-center space-x-6">
+              <div className="flex">
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+              </div>
+              <p className="text-gray-300">Rated 4.9/5 from 200+ local service businesses</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default LocalServicesPage;

@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import '../styles/chatbot-custom.css'
+import ChatbotWidget from '@/components/ChatbotWidget'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://spotcircuit.com'),
   title: 'SpotCircuit - AI-Powered SEO Automation for Shopify',
   description: 'Boost your Shopify store\'s organic traffic with AI-powered SEO automation',
   keywords: 'SEO automation, Shopify SEO, AI SEO, e-commerce optimization, organic traffic',
@@ -54,6 +57,14 @@ export default function RootLayout({
         <Script
           src="https://plugin.nytsys.com/api/site/0fb07629-302a-4e33-ba82-04eccb80b732/nytsys.min.js"
           strategy="afterInteractive"
+        />
+        <ChatbotWidget 
+          userData={{
+            // You can dynamically set these values based on user authentication
+            // name: 'Visitor',
+            // email: 'visitor@example.com',
+            info: 'SpotCircuit Website Visitor'
+          }}
         />
         <Script id="json-ld" type="application/ld+json" strategy="afterInteractive">
           {`

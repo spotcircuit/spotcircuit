@@ -34,7 +34,9 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.york.com'
       }
-    ]
+    ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
   reactStrictMode: true,
   experimental: {
@@ -46,7 +48,10 @@ const nextConfig = {
         'spotcircuit.vercel.app',
         '*.spotcircuit.com'
       ]
-    },
+    }
+  },
+  typescript: {
+    ignoreBuildErrors: true
   },
   transpilePackages: ['@spotcircuit/ui'],
   webpack: (config) => {

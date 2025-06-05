@@ -1,0 +1,146 @@
+          {/* Mobile menu button */}
+          <div className="lg:hidden fixed bottom-6 right-6 z-50">
+            <button 
+              onClick={() => setSidebarOpen(true)}
+              className="mobile-menu-button bg-blue-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center"
+              aria-label="Open Table of Contents"
+            >
+              <HiOutlineMenu className="text-2xl" />
+            </button>
+          </div>
+          
+          {/* Mobile sidebar */}
+          <AnimatePresence>
+            {sidebarOpen && (
+              <motion.div 
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'tween' }}
+                className="mobile-sidebar fixed inset-0 bg-black/80 z-50 lg:hidden"
+              >
+                <div className="h-full w-80 ml-auto bg-gray-900 p-5 overflow-y-auto">
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-xl font-bold">Guide Contents</h3>
+                    <button 
+                      onClick={() => setSidebarOpen(false)}
+                      className="text-gray-400 hover:text-white"
+                      aria-label="Close menu"
+                    >
+                      <HiOutlineX className="text-2xl" />
+                    </button>
+                  </div>
+                  
+                  <nav>
+                    <ul className="space-y-1">
+                      <li>
+                        <a 
+                          href="#introduction" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'introduction' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Introduction
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#local-seo-fundamentals" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'local-seo-fundamentals' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Local SEO Fundamentals
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#google-business-profile" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'google-business-profile' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Google Business Profile
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#local-content-strategy" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'local-content-strategy' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Local Content Strategy
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#citation-building" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'citation-building' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Citation Building
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#review-management" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'review-management' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Review Management
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#local-link-building" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'local-link-building' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Local Link Building
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#local-schema-markup" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'local-schema-markup' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Local Schema Markup
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#measuring-local-success" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'measuring-local-success' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Measuring Success
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#local-seo-tools" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'local-seo-tools' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          Local SEO Tools
+                        </a>
+                      </li>
+                      <li>
+                        <a 
+                          href="#faqs" 
+                          onClick={() => setSidebarOpen(false)}
+                          className={`block px-3 py-3 rounded-lg transition-colors ${activeSection === 'faqs' ? 'bg-blue-900 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
+                        >
+                          FAQs
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  
+                  <div className="mt-8 border-t border-gray-800 pt-6">
+                    <Link href="/contact" className="block text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition-colors" onClick={() => setSidebarOpen(false)}>
+                      Get Free Consultation
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
