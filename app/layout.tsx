@@ -35,6 +35,9 @@ export default function RootLayout({
         <link rel="icon" href="/spotcircuit-logo.png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        {/* Tracking Pixel */}
+        <Script async src="https://pub-64d7c9742ee54006ae9f38e02aa8539e.r2.dev/2544cee0-03a6-4807-b840-922cdd7ba178/script.min.js" data-pid="2544cee0-03a6-4807-b840-922cdd7ba178" />
+        
         {/* Google Analytics */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
         <Script id="google-analytics">
