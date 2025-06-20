@@ -878,14 +878,14 @@ const AISearchOptimizationGuide: React.FC = () => {
                   {/* Added Technical Implementation Example */}
                   <div className="mt-8 bg-black/30 rounded-lg p-4">
                     <h4 className="font-semibold text-blue-400 mb-3">Technical Implementation Example: LLMO-Ready Page</h4>
-                    <pre className="bg-gray-950 p-4 rounded text-xs text-green-300 overflow-x-auto">
+                    <pre className="bg-gray-950 p-4 rounded text-xs text-green-300 overflow-x-auto" data-nosnippet>
 {`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>AI-Optimized Product Page</title>
   <!-- Essential schema markup -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-nosnippet>
   {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -1283,7 +1283,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                           <span>{copiedCode === 'faq' ? 'Copied!' : 'Copy'}</span>
                         </button>
                       </div>
-                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
+                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto" data-nosnippet>
 {`{
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -1362,7 +1362,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                           <span>{copiedCode === 'howto' ? 'Copied!' : 'Copy'}</span>
                         </button>
                       </div>
-                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
+                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto" data-nosnippet>
 {`{
   "@context": "https://schema.org",
   "@type": "HowTo",
@@ -1460,7 +1460,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                           <span>{copiedCode === 'product' ? 'Copied!' : 'Copy'}</span>
                         </button>
                       </div>
-                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
+                      <pre className="bg-black rounded-lg p-4 text-sm text-green-400 overflow-x-auto" data-nosnippet>
 {`{
   "@context": "https://schema.org",
   "@type": "Product",
@@ -1620,7 +1620,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                     <div className="bg-blue-900/30 rounded-2xl p-6 border border-blue-700">
                       <h4 className="text-xl font-bold text-blue-400 mb-4">FAQ Template</h4>
                       <div className="bg-black/50 rounded-lg p-4">
-                        <pre className="text-sm text-blue-200 whitespace-pre-wrap">
+                        <pre className="text-sm text-blue-200 whitespace-pre-wrap" data-nosnippet>
 {`## Frequently Asked Questions
 
 ### What is [Topic]?
@@ -1642,7 +1642,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                     <div className="bg-green-900/30 rounded-2xl p-6 border border-green-700">
                       <h4 className="text-xl font-bold text-green-400 mb-4">How-to Guide Template</h4>
                       <div className="bg-black/50 rounded-lg p-4">
-                        <pre className="text-sm text-green-200 whitespace-pre-wrap">
+                        <pre className="text-sm text-green-200 whitespace-pre-wrap" data-nosnippet>
 {`# How to [Achieve Goal]
 
 ## Prerequisites
@@ -1671,7 +1671,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                     <div className="bg-purple-900/30 rounded-2xl p-6 border border-purple-700">
                       <h4 className="text-xl font-bold text-purple-400 mb-4">Comparison Framework Template</h4>
                       <div className="bg-black/50 rounded-lg p-4">
-                        <pre className="text-sm text-purple-200 whitespace-pre-wrap">
+                        <pre className="text-sm text-purple-200 whitespace-pre-wrap" data-nosnippet>
 {`## Comparing [Topic A] vs [Topic B]
 
 ### Key Differences at a Glance
@@ -1698,7 +1698,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                     <div className="bg-yellow-900/30 rounded-2xl p-6 border border-yellow-700">
                       <h4 className="text-xl font-bold text-yellow-400 mb-4">Definition Block Template</h4>
                       <div className="bg-black/50 rounded-lg p-4">
-                        <pre className="text-sm text-yellow-200 whitespace-pre-wrap">
+                        <pre className="text-sm text-yellow-200 whitespace-pre-wrap" data-nosnippet>
 {`## What is [Term/Concept]?
 
 ### Definition
@@ -1744,7 +1744,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                   <div className="grid md:grid-cols-2 gap-8 mb-6">
                     <div className="bg-black/30 p-5 rounded-lg border border-red-800">
                       <h4 className="font-semibold text-red-400 mb-3">Traditional Approach</h4>
-                      <pre className="bg-gray-950 rounded-lg p-4 mb-3 text-sm text-gray-300 border border-gray-800 whitespace-pre-wrap">
+                      <pre className="bg-gray-950 rounded-lg p-4 mb-3 text-sm text-gray-300 border border-gray-800 whitespace-pre-wrap" data-nosnippet>
 {`<meta name="title" content="AI SEO Services | SpotCircuit">
 <meta name="description" content="Professional AI SEO services to improve your rankings and increase organic traffic. Expert optimization for AI search visibility.">
 
@@ -1755,7 +1755,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                     
                     <div className="bg-black/30 p-5 rounded-lg border border-green-800">
                       <h4 className="font-semibold text-green-400 mb-3">AI-Optimized Approach</h4>
-                      <pre className="bg-gray-950 rounded-lg p-4 mb-3 text-sm text-gray-300 border border-gray-800 whitespace-pre-wrap">
+                      <pre className="bg-gray-950 rounded-lg p-4 mb-3 text-sm text-gray-300 border border-gray-800 whitespace-pre-wrap" data-nosnippet>
 {`<meta name="title" content="How to Optimize Your Website for AI Search Engines | SpotCircuit">
 <meta name="description" content="Wondering how to make your site visible to ChatGPT and Claude? Learn our proven AI SEO methodology that increases citations by 245% in 90 days. Expert implementation of schema markup, FAQ structures, and semantic HTML.">
 
@@ -2174,7 +2174,7 @@ const AISearchOptimizationGuide: React.FC = () => {
                   {/* Code snippet for tracking implementation */}
                   <div className="bg-black/30 rounded-lg p-4">
                     <h4 className="font-semibold text-blue-400 mb-3">Google Tag Manager Setup for AI Traffic Tracking</h4>
-                    <pre className="bg-gray-950 p-4 rounded text-xs text-green-300 overflow-x-auto">
+                    <pre className="bg-gray-950 p-4 rounded text-xs text-green-300 overflow-x-auto" data-nosnippet>
 {`// Custom JavaScript variable for AI traffic detection
 function() {
   // Check referrer for known AI platforms

@@ -65,7 +65,8 @@ const navigation = {
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Accessibility', href: '/accessibility' }
+    { name: 'Accessibility', href: '/accessibility' },
+    { name: 'Site Map', href: '/sitemap-visual' }
   ],
   social: [
     {
@@ -533,6 +534,7 @@ export default function Footer() {
             <Link href="/terms" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Terms of Service</Link>
             <Link href="/cookies" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Cookies</Link>
             <Link href="/accessibility" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Accessibility</Link>
+            <Link href="/sitemap-visual" className="text-sm leading-5 text-blue-200/70 hover:text-white transition-colors duration-200">Site Map</Link>
           </div>
         </motion.div>
       </div>
