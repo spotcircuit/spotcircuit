@@ -2694,4 +2694,3 @@ function() {
 };
 
 export default AISearchOptimizationGuide;
-```
