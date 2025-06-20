@@ -58,6 +58,181 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
   },
+  // Add redirects for canonical URLs and 404 fixes
+  async redirects() {
+    return [
+      // Redirect from HTTP to HTTPS
+      {
+        source: 'http://:path*',
+        destination: 'https://spotcircuit.com/:path*',
+        permanent: true,
+      },
+      // Redirect from www to non-www
+      {
+        source: 'https://www.spotcircuit.com/:path*',
+        destination: 'https://spotcircuit.com/:path*',
+        permanent: true,
+      },
+      // Redirect HTTP www to HTTPS non-www
+      {
+        source: 'http://www.spotcircuit.com/:path*',
+        destination: 'https://spotcircuit.com/:path*',
+        permanent: true,
+      },
+      // Handle tracking parameters by redirecting to clean URLs
+      {
+        source: '/:path*\\?trk=:tracking*',
+        destination: 'https://spotcircuit.com/:path*',
+        permanent: true,
+      },
+      
+      // 404 Fixes - Redirect common 404 errors to their correct pages
+      // Home page redirect
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      // Privacy policy redirect
+      {
+        source: '/privacy-policy',
+        destination: '/privacy',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy/',
+        destination: '/privacy',
+        permanent: true,
+      },
+      // Pricing page redirect
+      {
+        source: '/pricing',
+        destination: '/services',
+        permanent: true,
+      },
+      // Local SEO redirect
+      {
+        source: '/local-seo',
+        destination: '/resources/local-seo-guide',
+        permanent: true,
+      },
+      // Email subdomain redirect
+      {
+        source: '/email.mg.spotcircuit.com',
+        destination: '/contact',
+        permanent: true,
+      },
+      // Testimonials redirect
+      {
+        source: '/testimonials',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      // Integrations redirect
+      {
+        source: '/integrations',
+        destination: '/services',
+        permanent: true,
+      },
+      // Industry pages redirects
+      {
+        source: '/automotive',
+        destination: '/industries',
+        permanent: true,
+      },
+      {
+        source: '/hvac',
+        destination: '/industries/hvac',
+        permanent: true,
+      },
+      {
+        source: '/contractors',
+        destination: '/industries/contracting',
+        permanent: true,
+      },
+      // Careers redirect
+      {
+        source: '/careers',
+        destination: '/contact',
+        permanent: true,
+      },
+      // Results redirect
+      {
+        source: '/results',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      // Local services redirect (www to non-www)
+      {
+        source: '/local-services',
+        destination: '/local-services',
+        permanent: true,
+      },
+      // Case study specific redirect
+      {
+        source: '/case-studies/hvac-success',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      // Thank you page redirect
+      {
+        source: '/thank-you',
+        destination: '/',
+        permanent: true,
+      },
+      // About page redirect
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      // Plan pages redirects
+      {
+        source: '/professional-plan',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/standard-plan',
+        destination: '/services',
+        permanent: true,
+      },
+      // Old home page redirect
+      {
+        source: '/home-page261030',
+        destination: '/',
+        permanent: true,
+      },
+      // Terms redirect
+      {
+        source: '/terms-conditions',
+        destination: '/terms',
+        permanent: true,
+      },
+      {
+        source: '/terms-conditions/',
+        destination: '/terms',
+        permanent: true,
+      },
+      // RSS feed redirect
+      {
+        source: '/feed',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/feed/',
+        destination: '/blog',
+        permanent: true,
+      },
+      // Old blog post redirect
+      {
+        source: '/effective-strategies-for-local-advertising',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

@@ -39,9 +39,12 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({
       return temp.textContent || temp.innerText || "";
     };
     
+    // Using a different schema type to avoid duplication with FAQPage
     const structuredDataObj = {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
+      "@type": "QAContent",
+      "name": title,
+      "description": subtitle,
       "mainEntity": faqs.map(faq => ({
         "@type": "Question",
         "name": faq.question,

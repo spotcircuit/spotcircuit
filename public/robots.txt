@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# Disallow URLs with tracking parameters
+Disallow: /*?trk=*
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
 # Tell crawlers to check back frequently
 Crawl-delay: 1
 

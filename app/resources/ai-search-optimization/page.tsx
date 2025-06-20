@@ -262,16 +262,23 @@ const AISearchOptimizationGuide: React.FC = () => {
               "name": "SpotCircuit",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://spotcircuit.com/static/images/logo.png"
+                "url": "https://spotcircuit.com/static/images/logo.png",
+                "width": 600,
+                "height": 60
               }
             },
-            "datePublished": "2024-12-01",
-            "dateModified": "2024-12-01",
+            "datePublished": "2024-01-01T00:00:00Z",
+            "dateModified": "2024-01-01T00:00:00Z",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://spotcircuit.com/resources/ai-search-optimization"
+              "@id": "https://www.spotcircuit.com/resources/ai-search-optimization"
             },
-            "image": "https://spotcircuit.com/static/images/ai-seo-guide-og.png"
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.spotcircuit.com/static/images/ai-seo-guide-og.png",
+              "width": 1200,
+              "height": 630
+            }
           })
         }}
       />
@@ -904,7 +911,7 @@ const AISearchOptimizationGuide: React.FC = () => {
   }
   </script>
   <!-- FAQ Schema for AI citation -->
-  <script type="application/ld+json">
+  <script type="application/example+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -2394,7 +2401,9 @@ function() {
                   dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                       "@context": "https://schema.org",
-                      "@type": "FAQPage",
+                      "@type": "QAContent",
+                      "name": "AI Search Optimization FAQs",
+                      "description": "Frequently asked questions about AI Search Optimization",
                       "mainEntity": [
                         {
                           "@type": "Question",
@@ -2419,6 +2428,22 @@ function() {
                             "@type": "Answer",
                             "text": "Most businesses begin seeing measurable improvements in AI visibility within 30-60 days. Initial gains often come from content structure optimizations, while more comprehensive results typically show after 90 days as AI systems begin to recognize your content as authoritative."
                           }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "Do I need to create all new content for AI optimization?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. AI optimization begins by analyzing and optimizing your existing content. While creating some new AI-optimized content accelerates results, you can achieve significant improvements by restructuring what you already have to make it more AI-friendly."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "How do you measure AI visibility and success?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We track several key metrics: AI citation frequency (when AI systems reference your content), citation quality (how prominently you're featured), traffic from AI platforms, conversion rates from AI-sourced visitors, and ultimately, revenue attributed to AI channels."
+                          }
                         }
                       ]
                     })
@@ -2427,8 +2452,8 @@ function() {
               </div>
             </section>
 
-            {/* Measuring Success */}
-            <section id="measuring-success" className="mb-16">
+            {/* CTA Section */}
+            <section id="get-started" className="mb-16">
               <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-center border border-blue-700">
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -2478,7 +2503,7 @@ function() {
             </section>
 
             {/* Final CTA Section */}
-            <section className="mb-16">
+            <section id="contact-us" className="mb-16">
               <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-center border border-blue-700">
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -2536,7 +2561,7 @@ function() {
                 </p>
                 <div className="flex justify-center space-x-4">
                   <a 
-                    href={`https://twitter.com/intent/tweet?text=The Complete Guide to AI Search Optimization for SaaS&url=${encodeURIComponent('https://spotcircuit.com/resources/ai-search-optimization')}`}
+                    href={`https://twitter.com/intent/tweet?text=The Complete Guide to AI Search Optimization for SaaS&url=${encodeURIComponent('https://www.spotcircuit.com/resources/ai-search-optimization')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center"
@@ -2546,7 +2571,7 @@ function() {
                   </a>
                   <button 
                     onClick={() => {
-                      navigator.clipboard.writeText('https://spotcircuit.com/resources/ai-search-optimization');
+                      navigator.clipboard.writeText('https://www.spotcircuit.com/resources/ai-search-optimization');
                       alert('Link copied to clipboard!');
                     }}
                     className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-colors flex items-center"
@@ -2611,8 +2636,13 @@ function() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "SpotCircuit",
-              "url": "https://spotcircuit.com",
-              "logo": "https://spotcircuit.com/static/images/logo.png",
+              "url": "https://www.spotcircuit.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.spotcircuit.com/static/images/logo.png",
+                "width": 600,
+                "height": 60
+              },
               "sameAs": [
                 "https://twitter.com/spotcircuit",
                 "https://linkedin.com/company/spotcircuit"
@@ -2638,19 +2668,19 @@ function() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://spotcircuit.com"
+                  "item": "https://www.spotcircuit.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Resources",
-                  "item": "https://spotcircuit.com/resources"
+                  "item": "https://www.spotcircuit.com/resources"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": "AI Search Optimization Guide",
-                  "item": "https://spotcircuit.com/resources/ai-search-optimization"
+                  "item": "https://www.spotcircuit.com/resources/ai-search-optimization"
                 }
               ]
             })

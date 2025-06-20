@@ -8,7 +8,7 @@ function getStaggeredDate(daysAgo: number): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://spotcircuit.com';
+  const baseUrl = 'https://www.spotcircuit.com';
   
   // Define your main routes with priority and update frequency
   const routes = [
@@ -27,8 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/process', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(14) },
     { path: '/case-studies', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(12) },
     { path: '/launch', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(10) },
-    { path: '/resources/ai-search-optimization', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(15) },
+    { path: '/resources', priority: 0.9, changeFreq: 'weekly', lastMod: getStaggeredDate(0) },  // Resources hub page
+    { path: '/resources/ai-search-optimization', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },  // Updated recently
     { path: '/resources/local-seo-guide', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(20) },
+    { path: '/resources/technical-seo-checklist', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },  // New resource
+    { path: '/resources/content-strategy-blueprint', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },  // New resource
+    { path: '/resources/analytics-conversion-guide', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(1) },  // New resource
+    { path: '/resources/ai-marketing-tools', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(1) },  // New resource
     { path: '/booking', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(25) },
     { path: '/contact', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(30) },
     { path: '/local-services', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(35) },

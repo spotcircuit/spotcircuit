@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'ADD_YOUR_VERIFICATION_CODE_HERE',
+  },
+  alternates: {
+    canonical: 'https://spotcircuit.com',
   }
 };
 
@@ -57,6 +60,9 @@ export default function RootLayout({
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://spotcircuit.com" />
       </head>
       <body className={inter.className}>
         {children}
