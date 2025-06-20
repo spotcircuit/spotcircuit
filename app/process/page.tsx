@@ -7,6 +7,11 @@ import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaRocket, FaChartLine, FaTools, FaLightbulb, FaCogs, FaCheck, FaArrowRight } from 'react-icons/fa';
+import HowToSchema from '../components/HowToSchema';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import FaqSchema from '../components/FaqSchema';
+import EntitySchema from '../components/EntitySchema';
 
 const ProcessPage = () => {
   const processSteps = [
@@ -64,8 +69,67 @@ const ProcessPage = () => {
     }
   ];
 
+  // Convert the process steps to schema format
+  const howToSteps = processSteps.map(step => ({
+    name: step.title,
+    text: step.description
+  }));
+
+  // Convert FAQ items for schema markup
+  const faqItems = [
+    {
+      question: "How long does the entire process typically take from start to finish?",
+      answer: "The timeline varies based on the complexity of your business and the scope of implementation, but typically ranges from 8-12 weeks for full deployment. We use a phased approach that delivers value at each stage."
+    },
+    {
+      question: "How much of my time will be required during the process?",
+      answer: "We've designed our process to minimize demands on your time while ensuring you remain informed and involved in key decisions. Typically, we require 2-4 hours per week from key stakeholders during the Discovery phase."
+    },
+    {
+      question: "Will my team need technical knowledge to participate in the process?",
+      answer: "No technical expertise is required from your team. We handle all technical aspects of implementation and provide user-friendly interfaces and training for any systems your team will use."
+    },
+    {
+      question: "How do you ensure the process doesn't disrupt our daily operations?",
+      answer: "We implement changes incrementally using a parallel deployment approach, where new systems run alongside existing ones until fully tested and optimized."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      {/* Schema Markup */}
+      <HowToSchema 
+        name="Our AI Implementation Process for Home Service Businesses"
+        description="A systematic approach to implementing AI solutions that deliver measurable results for your home service business."
+        steps={howToSteps}
+      />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Process", url: "https://spotcircuit.com/process", position: 2 }
+        ]} 
+      />
+      <SpeakableSchema cssSelectors={["p.text-xl.md\\:text-2xl.text-blue-100", ".text-lg.text-blue-200"]} />
+      <FaqSchema faqs={faqItems} />
+      <EntitySchema 
+        name="AI Implementation Process"
+        description="A systematic approach to implementing AI automation solutions for home service businesses including discovery, strategy development, implementation, and optimization."
+        url="https://spotcircuit.com/process"
+        entityType="Thing"
+        relatedEntities={[
+          {
+            name: "Home Service Business Automation",
+            url: "https://spotcircuit.com/services",
+            description: "AI-powered automation solutions for home service businesses."
+          },
+          {
+            name: "AI Strategy Development",
+            url: "https://spotcircuit.com/process#strategy",
+            description: "Custom AI strategy development for service businesses."
+          }
+        ]}
+      />
+      
       <Header />
       <main className="flex-grow">
         {/* Header Image Section */}

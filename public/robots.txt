@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+# Tell crawlers to check back frequently
+Crawl-delay: 1
+
 # Disallow admin or private areas if needed
 # Disallow: /admin/
 

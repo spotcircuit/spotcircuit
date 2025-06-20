@@ -33,6 +33,7 @@ import ResultsSection from '@/app/industries/hvac/components/ResultsSection';
 import GuaranteeSection from '@/app/industries/hvac/components/GuaranteeSection';
 import PricingSection from '@/app/industries/hvac/components/PricingSection';
 import QualificationForm from '@/app/industries/hvac/components/QualificationForm';
+import HvacPageSchema from '@/app/industries/hvac/components/HvacPageSchema';
 
 const HVACLandingPage = () => {
   const [showQualificationForm, setShowQualificationForm] = useState(false);
@@ -76,6 +77,9 @@ const HVACLandingPage = () => {
   return (
     <>
       <Header />
+      
+      {/* Schema Markup */}
+      <HvacPageSchema />
       
       {/* Floating Scheduling Widget */}
       <div className="fixed bottom-6 right-6 z-50">

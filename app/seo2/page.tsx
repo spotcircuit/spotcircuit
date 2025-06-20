@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -44,6 +45,8 @@ const SEO2Page: React.FC = () => {
       clearInterval(testimonialInterval);
     };
   }, []);
+  
+  // SEO 2.0 Content and process steps are defined first before being used in schemas
 
   // Animation variants
   const fadeIn = {
@@ -178,20 +181,103 @@ const SEO2Page: React.FC = () => {
     }
   ];
 
+  // JSON-LD Schema for SEO 2.0 page
+  const seo2Schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SEO 2.0: AI-First Search Optimization",
+    "description": "AI-First search optimization services for businesses looking to dominate the new era of search with content strategies engineered for AI comprehension and visibility.",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://spotcircuit.com/#organization",
+      "name": "SpotCircuit"
+    },
+    "serviceType": "AI SEO Service",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  };
+  
+  // Speakable Schema
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".seo2-summary", ".pain-points", ".faq-section"]
+    },
+    "url": "https://spotcircuit.com/seo2"
+  };
+  
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+  
+  // How-To Schema for SEO 2.0 process
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Implement SEO 2.0",
+    "description": "A step-by-step process for implementing AI-First SEO for your business website",
+    "step": processSteps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.title,
+      "text": step.description
+    }))
+  };
+  
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />
+      
+      {/* Schema Markup */}
+      <Script id="seo2-schema" type="application/ld+json">
+        {JSON.stringify(seo2Schema)}
+      </Script>
+      
+      <Script id="faq-schema" type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </Script>
+      
+      <Script id="howto-schema" type="application/ld+json">
+        {JSON.stringify(howToSchema)}
+      </Script>
+      
+      <Script id="speakable-schema" type="application/ld+json">
+        {JSON.stringify(speakableSchema)}
+      </Script>
       
       <main className="flex-grow">
         {/* Header Image Section */}
         <Image
           src="/static/images/seo20.webp"
-          alt="SpotCircuit SEO 2.0 image"
+          alt="SEO 2.0: The AI-First Revolution - Visual representation of how AI is transforming search and content optimization"
           width={1920}
           height={150}
           className="w-full"
           unoptimized
+          aria-describedby="seo20-image-description"
         />
+        <div id="seo20-image-description" className="sr-only">
+          A visual depiction of the evolution from traditional SEO to AI-First SEO 2.0, showing how content optimization now needs to focus on AI comprehension, semantic understanding, and structured data that helps AI systems cite and reference your content.
+        </div>
         
         {/* Hero Section */}
         <section className="gradient-bg-dark py-20 md:py-32 text-center relative overflow-hidden">
@@ -213,6 +299,15 @@ const SEO2Page: React.FC = () => {
             <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 tracking-tight">
               SEO 2.0: The AI-First Revolution
             </h1>
+            
+            {/* Page Summary (Important for AI comprehension) */}
+            <div className="seo2-summary bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-4 rounded-lg max-w-3xl mx-auto mb-6">
+              <h2 className="text-xl font-bold mb-2 text-white">TL;DR: The Future of Search</h2>
+              <p className="text-blue-100">
+                SEO 2.0 is the evolution of search optimization for the AI era. Traditional SEO focuses on keyword rankings in search results pages, while SEO 2.0 optimizes content to be understood, trusted, and cited by AI platforms like ChatGPT, Claude, and Google's AI Overview. This requires structured data markup, semantic content organization, FAQ formats, and comprehensive topic clusters that demonstrate authority.
+              </p>
+            </div>
+            
             <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
               Dominate the new era of search with content strategies engineered for AI comprehension and visibility.
             </p>
@@ -249,7 +344,7 @@ const SEO2Page: React.FC = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pain-points">
             {painPoints.map((point, index) => (
               <motion.div
                 key={index}
@@ -441,7 +536,7 @@ const SEO2Page: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 md:py-24 bg-black relative">
+      <section id="faq" className="py-16 md:py-24 bg-black relative faq-section">
         <div className="section-divider absolute top-0 left-0 right-0"></div>
         <div className="container mx-auto px-4">
           <motion.div 

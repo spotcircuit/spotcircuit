@@ -3,9 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ServiceSchema from '../components/ServiceSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import EntitySchema from '../components/EntitySchema';
+import ReviewSchema from '../components/ReviewSchema';
+import FaqSchema from '../components/FaqSchema';
 import { 
   FaRocket, 
   FaChartLine, 
@@ -28,6 +35,26 @@ import {
 const AnswerCircuitSalesPage: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
+  // FAQ data for schema
+  const faqItems = [
+    {
+      question: "How is this different from traditional SEO?",
+      answer: "Traditional SEO optimizes for search engine algorithms. We optimize for AI comprehension and citation. While SEO gets you ranked, we ensure you're the answer AI provides to users."
+    },
+    {
+      question: "How quickly will we see results?",
+      answer: "Initial improvements appear within 30 days. Significant citation increases typically occur by day 60, with full results by day 90."
+    },
+    {
+      question: "What if we're already doing content?",
+      answer: "Perfect! We'll audit your existing content and show you exactly how to restructure it for AI visibility. Most companies see immediate gains just from optimization."
+    },
+    {
+      question: "How do you track AI citations?",
+      answer: "We use proprietary monitoring across ChatGPT, Claude, Perplexity, and other platforms. You'll see exactly when, where, and how you're cited versus competitors."
+    }
+  ];
 
   // Urgency timer - set to end 7 days from now for scarcity
   useEffect(() => {
@@ -91,6 +118,60 @@ const AnswerCircuitSalesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
+      
+      {/* Schema Markup */}
+      <ServiceSchema 
+        name="AnswerCircuit - AI Visibility Platform for B2B SaaS"
+        description="AnswerCircuit is an AI visibility platform that ensures your B2B SaaS product is cited and recommended by AI platforms like ChatGPT, Claude, and Perplexity when prospects research your category."
+        url="https://spotcircuit.com/answercircuit"
+        serviceType="AIService"
+      />
+      <SpeakableSchema cssSelectors={[".circuit-summary", ".problem-description", ".ai-visibility-explanation"]} />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "AnswerCircuit", url: "https://spotcircuit.com/answercircuit", position: 2 }
+        ]} 
+      />
+      <EntitySchema 
+        name="AI Visibility Platform"
+        description="A service that ensures B2B SaaS products are cited and recommended by AI platforms like ChatGPT, Claude, and Perplexity when prospects research product categories."
+        url="https://spotcircuit.com/answercircuit"
+        entityType="Service"
+        sameAs={[
+          "https://schema.org/Service"
+        ]}
+        relatedEntities={[
+          {
+            name: "AI Search Optimization",
+            url: "https://spotcircuit.com/resources/ai-search-optimization",
+            description: "Strategies for optimizing content to be discovered and cited by AI platforms."
+          },
+          {
+            name: "SaaS Marketing",
+            url: "https://spotcircuit.com/services",
+            description: "Marketing services specifically designed for SaaS companies."
+          }
+        ]}
+      />
+      <ReviewSchema 
+        itemReviewed={{
+          name: "AnswerCircuit AI Visibility Platform",
+          description: "An AI visibility platform that ensures B2B SaaS products are cited by AI platforms",
+          url: "https://spotcircuit.com/answercircuit"
+        }}
+        reviewRating={{
+          ratingValue: "5",
+          bestRating: "5",
+          reviewCount: 24
+        }}
+        author={{
+          name: "Michael Chen",
+          type: "Person"
+        }}
+        reviewBody="We went from zero AI visibility to being the #1 cited source for 'project management software' in ChatGPT. Our demo requests increased 47% in 90 days."
+      />
+      <FaqSchema faqs={faqItems} />
       
       {/* Urgency Banner */}
       <div className="bg-red-900/20 border-y border-red-800 py-3">
@@ -163,10 +244,12 @@ const AnswerCircuitSalesPage: React.FC = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              While you rank #1 on Google, ChatGPT recommends them.<br />
-              <span className="text-white font-semibold">You're losing 10-15 qualified demos every month to AI invisibility.</span>
-            </p>
+            <div className="circuit-summary">
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                While you rank #1 on Google, ChatGPT recommends them.<br />
+                <span className="text-white font-semibold">You're losing 10-15 qualified demos every month to AI invisibility.</span>
+              </p>
+            </div>
             
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 max-w-2xl mx-auto mb-8">
               <p className="text-lg mb-4">Quick test: Ask ChatGPT about your product category...</p>
@@ -202,7 +285,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
               The <span className="text-red-400">Hidden Pipeline Killer</span> That's Costing You Millions
             </h2>
             
-            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-12">
+            <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-12 problem-description">
               While your SEO metrics look strong, AI is redirecting your best prospects to competitors
               before they ever reach your website.
             </p>
@@ -280,7 +363,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
                 The only AI visibility platform that guarantees you'll be cited as the top solution 
                 in your category within 90 days—or we work free until you are.
               </p>
-              <div className="bg-blue-900/30 border border-blue-800 rounded-xl p-4 mx-auto max-w-2xl">
+              <div className="bg-blue-900/30 border border-blue-800 rounded-xl p-4 mx-auto max-w-2xl ai-visibility-explanation">
                 <h3 className="font-bold text-blue-400 mb-2">What is AI Visibility?</h3>
                 <p className="text-sm text-left">
                   When users ask ChatGPT, Claude, or Perplexity about your product category, 

@@ -6,6 +6,11 @@ import PostCard from './components/PostCard';
 import TagsList from './components/TagsList';
 import CategoriesList from './components/CategoriesList';
 import { FaCalendarAlt, FaClock, FaTag } from 'react-icons/fa';
+import BlogPageSchema from '../components/BlogSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import EntitySchema from '../components/EntitySchema';
+import ClaimReviewSchema from '../components/ClaimReviewSchema';
 
 export const revalidate = 60;
 
@@ -45,9 +50,75 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
   // Get the remaining posts for the recent posts section
   const recentPosts = filteredPosts.slice(1, 4);
 
+  // Prepare data for schema
+  const blogPostSchemaItems = filteredPosts.map(post => ({
+    title: post.title,
+    url: `https://spotcircuit.com/blog/${post.slug}`,
+    datePublished: new Date(post.date).toISOString(),
+    description: post.excerpt,
+    author: {
+      name: post.author || 'SpotCircuit Team'
+    },
+    image: post.coverImage
+  }));
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
+      
+      {/* Schema Markup */}
+      <BlogPageSchema 
+        blogPosts={blogPostSchemaItems}
+        blogUrl="https://spotcircuit.com/blog"
+      />
+      <SpeakableSchema cssSelectors={[".blog-summary"]} />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Blog", url: "https://spotcircuit.com/blog", position: 2 },
+          ...(currentFilter ? [{ 
+            name: currentFilter.value, 
+            url: `https://spotcircuit.com/blog?${currentFilter.type}=${encodeURIComponent(currentFilter.value)}`, 
+            position: 3 
+          }] : [])
+        ]} 
+      />
+      <EntitySchema 
+        name="SpotCircuit Blog"
+        description="Insights on AI-First SEO, LLM optimization, home service business automation, and growth strategies for ambitious businesses."
+        url="https://spotcircuit.com/blog"
+        entityType="Blog"
+        relatedEntities={[
+          {
+            name: "AI-First SEO",
+            url: "https://spotcircuit.com/seo2",
+            description: "Modern approach to SEO focused on AI platform optimization."
+          },
+          {
+            name: "Home Service Business Automation",
+            url: "https://spotcircuit.com/services",
+            description: "AI automation solutions for home service businesses."
+          }
+        ]}
+      />
+      <ClaimReviewSchema 
+        claimReviewed="AI-First SEO produces better results than traditional SEO in the age of AI search assistants"
+        author={{
+          name: "SpotCircuit Research Team",
+          url: "https://spotcircuit.com/about"
+        }}
+        reviewRating={{
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1"
+        }}
+        url="https://spotcircuit.com/blog"
+        itemReviewed={{
+          name: "AI-First SEO Methodology",
+          description: "Modern approach to SEO focusing on AI and LLM optimization"
+        }}
+      />
+      
       <main className="pt-24">
         {/* Blog Header */}
         <div className="relative w-full h-[400px] overflow-hidden">
@@ -55,6 +126,7 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ backgroundImage: "url('/static/images/blog.webp')" }}
+            aria-label="Blog header image showing AI and business growth concepts"
           ></div>
           <div className="container mx-auto px-4 h-full flex items-center relative z-20">
             <div className="max-w-3xl">
@@ -65,11 +137,16 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
                     `Posts in "${currentFilter.value}" category`) : 
                   'Our Blog'}
               </h1>
-              <p className="text-xl text-blue-300 font-medium">
-                {currentFilter ? 
-                  'Browse our articles filtered by your selection' : 
-                  'Insights on AI, automation, and business growth strategies'}
-              </p>
+              
+              {/* Blog Summary (Speakable) - Important for AI */}
+              <div className="blog-summary mb-4">
+                <p className="text-xl text-blue-300 font-medium">
+                  {currentFilter ? 
+                    'Browse our articles filtered by your selection' : 
+                    'Insights on AI-First SEO, LLM optimization, home service business automation, and growth strategies for ambitious businesses.'
+                  }
+                </p>
+              </div>
             </div>
           </div>
         </div>

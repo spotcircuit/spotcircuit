@@ -7,10 +7,88 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaEnvelope, FaArrowRight } from 'react-icons/fa';
+import Script from 'next/script';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import FaqSchema from '../components/FaqSchema';
+import EntitySchema from '../components/EntitySchema';
 
 const ContactPage = () => {
+  // Define FAQ items for schema markup
+  const faqItems = [
+    {
+      question: "How quickly can you implement solutions for my business?",
+      answer: "Our implementation timeline varies based on your specific needs and the complexity of the solutions required. Typically, we can begin showing results within 2-4 weeks, with full implementation completed within 1-3 months."
+    },
+    {
+      question: "Do I need technical knowledge to use your services?",
+      answer: "Not at all. We handle all the technical aspects, and our solutions are designed with user-friendly interfaces. Our team provides comprehensive training and ongoing support to ensure you can easily use and benefit from our systems."
+    },
+    {
+      question: "How do you price your services?",
+      answer: "We offer flexible pricing models based on your business size and specific needs. After an initial consultation, we'll provide a customized quote that aligns with your budget and expected ROI. We believe in transparent pricing with no hidden fees."
+    },
+    {
+      question: "Can you integrate with my existing software and tools?",
+      answer: "Yes, we specialize in integrating with popular home service business software like ServiceTitan, Jobber, Housecall Pro, and many others. Our solutions are designed to enhance your existing tech stack, not replace it."
+    },
+    {
+      question: "What kind of support do you provide after implementation?",
+      answer: "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
+    }
+  ];
+
+  // Organization schema with contactPoint
+  const organizationContactSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://spotcircuit.com/#organization",
+    "name": "SpotCircuit",
+    "url": "https://spotcircuit.com",
+    "logo": "https://spotcircuit.com/spotcircuit-logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-123-4567",
+      "contactType": "customer service",
+      "contactOption": "TollFree",
+      "areaServed": "US",
+      "availableLanguage": "English"
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      {/* Schema Markup */}
+      <Script id="organization-contact-schema" type="application/ld+json">
+        {JSON.stringify(organizationContactSchema)}
+      </Script>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Contact", url: "https://spotcircuit.com/contact", position: 2 }
+        ]} 
+      />
+      <SpeakableSchema cssSelectors={["p.text-xl.text-gray-300"]} />
+      <FaqSchema faqs={faqItems} />
+      <EntitySchema 
+        name="SpotCircuit Contact Information"
+        description="Get in touch with SpotCircuit for AI-powered automation and SEO solutions for your home service business."
+        url="https://spotcircuit.com/contact"
+        entityType="ContactPage"
+        relatedEntities={[
+          {
+            name: "Home Service Business Automation",
+            url: "https://spotcircuit.com/services",
+            description: "AI-powered automation solutions for home service businesses."
+          },
+          {
+            name: "Free Consultation",
+            url: "https://calendar.app.google/Lh8TY5PBrDSZvjR87",
+            description: "Schedule a free consultation with our team."
+          }
+        ]}
+      />
+      
       <Header />
       <main className="flex-grow">
         {/* Header Image Section */}

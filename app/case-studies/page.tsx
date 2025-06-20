@@ -6,6 +6,11 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaTrophy, FaExternalLinkAlt, FaChartLine, FaLightbulb, FaTools, FaRocket } from 'react-icons/fa';
+import Script from 'next/script';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import HowToSchema from '../components/HowToSchema';
+import EntitySchema from '../components/EntitySchema';
 
 const CaseStudiesPage = () => {
   const caseStudies = [
@@ -103,8 +108,84 @@ const CaseStudiesPage = () => {
     }
   ];
 
+  // Schema for case studies (itemList)
+  const caseStudiesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": caseStudies.map((study, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Article",
+        "name": study.title,
+        "headline": `${study.title} - ${study.subtitle}`,
+        "description": study.description,
+        "url": `https://spotcircuit.com/case-studies#${study.title.toLowerCase().replace(/\s+/g, '-')}`,
+        "mainEntityOfPage": "https://spotcircuit.com/case-studies",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://spotcircuit.com/#organization",
+          "name": "SpotCircuit"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://spotcircuit.com/#organization",
+          "name": "SpotCircuit"
+        }
+      }
+    }))
+  };
+
+  // Process steps for HowToSchema
+  const processSteps = [
+    {
+      name: "Discovery & Analysis",
+      text: "We begin by deeply understanding your business goals, challenges, and current operations to identify key opportunities."
+    },
+    {
+      name: "Strategy Development",
+      text: "Based on our analysis, we develop a customized AI implementation strategy tailored to your specific needs."
+    },
+    {
+      name: "Implementation",
+      text: "Our team of experts deploys the AI solutions seamlessly into your existing workflows, integrating with tools you already use."
+    },
+    {
+      name: "Optimization & Growth",
+      text: "We continuously monitor performance, make data-driven adjustments, and scale your AI capabilities as your business grows."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      {/* Schema Markup */}
+      <Script id="case-studies-schema" type="application/ld+json">
+        {JSON.stringify(caseStudiesSchema)}
+      </Script>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Case Studies", url: "https://spotcircuit.com/case-studies", position: 2 }
+        ]} 
+      />
+      <SpeakableSchema cssSelectors={["p.text-xl.md\\:text-2xl.text-blue-100"]} />
+      <HowToSchema 
+        name="Our Process for Delivering Results"
+        description="The systematic approach we use to consistently deliver exceptional results for our clients."
+        steps={processSteps}
+      />
+      <EntitySchema 
+        name="SpotCircuit Case Studies"
+        description="Explore how we've helped businesses achieve significant growth through AI-powered automation and intelligent SEO strategies."
+        url="https://spotcircuit.com/case-studies"
+        entityType="CollectionPage"
+        relatedEntities={caseStudies.map(study => ({
+          name: study.title,
+          url: study.url,
+          description: study.description
+        }))}
+      />
+      
       <Header />
       <main className="flex-grow">
         {/* Header Image Section */}

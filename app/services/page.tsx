@@ -9,17 +9,109 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle, FaHome, FaEnvelope } from 'react-icons/fa';
 import { HiOutlineClock, HiOutlineChartBar } from 'react-icons/hi';
+import ServiceSchema from '../components/ServiceSchema';
+import FaqSchema from '../components/FaqSchema';
+import HowToSchema from '../components/HowToSchema';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import EntitySchema from '../components/EntitySchema';
 
 const ServicesPage = () => {
+  // Define FAQ items for schema markup
+  const faqItems = [
+    {
+      question: "What types of home service businesses do you work with?",
+      answer: "We work with a wide range of home service businesses including roofing, HVAC, plumbing, electrical, pest control, landscaping, flooring, pool services, and more. Our solutions are tailored to the specific needs of each trade while addressing the common challenges all home service businesses face."
+    },
+    {
+      question: "How do you help home service businesses generate more leads?",
+      answer: "We implement a multi-channel lead generation strategy that includes local SEO optimization, Google Business Profile enhancement, targeted paid advertising, social media marketing, and automated follow-up systems. Our AI analyzes your service area demographics and competition to create the most effective approach for your specific business."
+    },
+    {
+      question: "Can you help with scheduling and dispatching optimization?",
+      answer: "Yes, we specialize in automating and optimizing scheduling and dispatching processes. Our systems can integrate with your existing field service software to optimize technician routes, reduce drive time, balance workloads, and automatically handle schedule changes or emergency calls. This typically results in 20-30% more jobs completed per day."
+    },
+    {
+      question: "How do you improve customer retention for service businesses?",
+      answer: "We implement automated communication systems that maintain contact with customers through their entire lifecycle. This includes appointment reminders, follow-up surveys, maintenance reminders, seasonal service promotions, and personalized offers based on their service history. These touchpoints significantly increase repeat business and referrals."
+    },
+    {
+      question: "What makes your approach different from other marketing agencies?",
+      answer: "Unlike general marketing agencies, we specialize exclusively in home service businesses and build custom AI systems tailored to your specific needs. We focus on the entire customer journey from acquisition to retention, not just marketing. Our solutions integrate with your operations to create a seamless experience for both your team and your customers."
+    }
+  ];
+
+  // HowTo steps for schema markup
+  const howToSteps = [
+    {
+      name: "Deep Analysis",
+      text: "Understanding your unique business landscape and objectives."
+    },
+    {
+      name: "Custom Strategy",
+      text: "Designing bespoke AI solutions aligned with your goals."
+    },
+    {
+      name: "Seamless Implementation",
+      text: "Integrating AI tools smoothly into your existing workflows."
+    },
+    {
+      name: "Continuous Optimization",
+      text: "Monitoring performance and refining strategies for ongoing success."
+    }
+  ];
+
   return (
     <>
+      {/* Schema Markup */}
+      <ServiceSchema 
+        name="Home Service Business Automation & Optimization"
+        description="Custom AI-powered automation and SEO solutions specifically designed for home service businesses like HVAC, plumbing, roofing, electrical, and more."
+        url="https://spotcircuit.com/services"
+        serviceType="AI Business Automation"
+      />
+      <FaqSchema faqs={faqItems} />
+      <HowToSchema 
+        name="How We Optimize Home Service Businesses"
+        description="Our process for implementing AI automation and optimization for home service businesses."
+        steps={howToSteps}
+      />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Services", url: "https://spotcircuit.com/services", position: 2 }
+        ]} 
+      />
+      <SpeakableSchema cssSelectors={[".page-summary"]} />
+      <EntitySchema 
+        name="Home Service Business Automation"
+        description="AI-powered automation and optimization solutions for home service businesses to streamline operations, increase leads, and improve customer retention."
+        url="https://spotcircuit.com/services"
+        entityType="Service"
+        sameAs={[
+          "https://schema.org/Service"
+        ]}
+        relatedEntities={[
+          {
+            name: "HVAC Business Solutions",
+            url: "https://spotcircuit.com/industries/hvac",
+            description: "Specialized solutions for HVAC contractors."
+          },
+          {
+            name: "Plumbing Business Solutions",
+            url: "https://spotcircuit.com/industries/plumbing",
+            description: "Specialized solutions for plumbing companies."
+          }
+        ]}
+      />
+
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Header />
         <main className="flex-grow">
         {/* Header Image Section */}
         <img
           src="/static/images/services.webp"
-          alt="SpotCircuit services image"
+          alt="SpotCircuit services for home service business automation and optimization"
           className="h-[75px] w-full object-cover overflow-hidden"
         />
         {/* Hero Section with modern styling */}
@@ -43,6 +135,15 @@ const ServicesPage = () => {
               <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 tracking-tight">
                 Stop Drowning in Chaos: Automate & Optimize Your Home Service Business
               </h1>
+
+              {/* TL;DR summary for AI comprehension (speakable) */}
+              <div className="page-summary bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-4 rounded-lg max-w-3xl mx-auto mb-6">
+                <h2 className="text-xl font-bold mb-2 text-white">TL;DR: Home Service Business Solutions</h2>
+                <p className="text-blue-100">
+                  SpotCircuit provides AI-powered automation and SEO services specifically for home service businesses like HVAC, plumbing, and roofing companies. We help optimize scheduling, generate qualified local leads, build expert teams faster, and implement operational efficiencies that save time and increase revenue.
+                </p>
+              </div>
+              
               <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
                 SpotCircuit builds custom AI-powered automation and intelligent SEO systems specifically designed for businesses that operate in the home. Streamline scheduling, generate qualified local leads, build expert teams faster, and reclaim your time.
               </p>

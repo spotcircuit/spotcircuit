@@ -3,6 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaVideo, FaPhoneAlt } from 'react-icons/fa';
+import Script from 'next/script';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import SpeakableSchema from '../components/SpeakableSchema';
+import FaqSchema from '../components/FaqSchema';
+import EntitySchema from '../components/EntitySchema';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -10,8 +15,90 @@ const fadeIn = {
 };
 
 export default function BookingPage() {
+  // Define FAQ items for schema markup
+  const faqItems = [
+    {
+      question: "Do I need to prepare anything?",
+      answer: "No preparation is required, but having your website URL and any specific questions ready will help us make the most of our time together."
+    },
+    {
+      question: "Is this really free?",
+      answer: "Yes, the consultation is completely free with no obligation. We believe in providing value first."
+    },
+    {
+      question: "What happens after the call?",
+      answer: "If we're a good fit, we'll send you a customized proposal based on your needs. If not, you'll still walk away with valuable insights."
+    },
+    {
+      question: "Can I reschedule if needed?",
+      answer: "Absolutely. You'll receive a calendar invitation with options to reschedule if your availability changes."
+    }
+  ];
+
+  // Schema for event
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "SpotCircuit Free Consultation",
+    "description": "A 30-minute consultation to discuss your specific business needs and how SpotCircuit can help with AI-powered automation and SEO solutions.",
+    "startDate": "2023-01-01T00:00:00Z", // Dynamic date will be set by calendar system
+    "endDate": "2023-01-01T00:30:00Z", // Dynamic date will be set by calendar system
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://calendar.app.google/Lh8TY5PBrDSZvjR87"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "@id": "https://spotcircuit.com/#organization",
+      "name": "SpotCircuit",
+      "url": "https://spotcircuit.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2023-01-01T00:00:00Z", // Will be dynamically updated
+      "url": "https://calendar.app.google/Lh8TY5PBrDSZvjR87"
+    }
+  };
+
   return (
-    <main className="pt-24 bg-gradient-to-b from-gray-900 to-blue-900 min-h-screen text-white">
+    <>
+      {/* Schema Markup */}
+      <Script id="event-schema" type="application/ld+json">
+        {JSON.stringify(eventSchema)}
+      </Script>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://spotcircuit.com", position: 1 },
+          { name: "Booking", url: "https://spotcircuit.com/booking", position: 2 }
+        ]} 
+      />
+      <SpeakableSchema cssSelectors={["p.text-xl.text-blue-200"]} />
+      <FaqSchema faqs={faqItems} />
+      <EntitySchema 
+        name="Free Consultation Booking"
+        description="Book a 30-minute consultation with SpotCircuit to discuss your specific needs and how we can help with AI-powered automation and SEO solutions."
+        url="https://spotcircuit.com/booking"
+        entityType="Service"
+        relatedEntities={[
+          {
+            name: "AI Implementation Process",
+            url: "https://spotcircuit.com/process",
+            description: "Learn about our implementation process."
+          },
+          {
+            name: "Home Service Business Automation",
+            url: "https://spotcircuit.com/services",
+            description: "AI-powered automation solutions for home service businesses."
+          }
+        ]}
+      />
+    
+      <main className="pt-24 bg-gradient-to-b from-gray-900 to-blue-900 min-h-screen text-white">
       <div className="container mx-auto px-4 py-16">
         <motion.div 
           initial="hidden"
@@ -171,5 +258,6 @@ export default function BookingPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RoofingPageSchema from './components/RoofingPageSchema';
 import { 
   FaHome, 
   FaCheckCircle, 
@@ -22,6 +23,7 @@ import {
 const RoofingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
+      <RoofingPageSchema />
       <Header />
       
       {/* Hero Section */}
@@ -34,7 +36,7 @@ const RoofingPage: React.FC = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 AI-Powered Marketing for <span className="text-red-500">Roofing Companies</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-300 mb-8 hero-description">
                 Grow your roofing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI.
               </p>
               
@@ -136,7 +138,7 @@ const RoofingPage: React.FC = () => {
       {/* Services Section */}
       <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 services-overview">
             Specialized Marketing for Roofing Companies
           </h2>
           <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
@@ -335,7 +337,7 @@ const RoofingPage: React.FC = () => {
                     <FaStar className="text-yellow-400" />
                   </div>
                   
-                  <blockquote className="text-xl italic text-gray-300 mb-6">
+                  <blockquote className="text-xl italic text-gray-300 mb-6 testimonial">
                     "SpotCircuit's marketing system has been a game-changer. We've doubled our roof replacement jobs and significantly increased our average project value."
                   </blockquote>
                   
@@ -360,6 +362,22 @@ const RoofingPage: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Overview Section */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 services-overview">
+                Roofing Marketing Solutions That <span className="text-red-500">Drive Growth</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                Our AI-powered marketing services are specifically designed for roofing companies looking to grow their business.
+              </p>
             </div>
           </div>
         </div>
