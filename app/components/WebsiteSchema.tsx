@@ -5,19 +5,19 @@ export default function WebsiteSchema() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://spotcircuit.com/#website',
+    '@id': 'https://www.spotcircuit.com/#website',
     name: 'SpotCircuit',
-    url: 'https://spotcircuit.com',
+    url: 'https://www.spotcircuit.com',
     description: 'AI-First SEO & LLM Optimization Platform',
     publisher: {
-      '@id': 'https://spotcircuit.com/#organization'
+      '@id': 'https://www.spotcircuit.com/#organization'
     },
     potentialAction: [
       {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://spotcircuit.com/search?q={search_term_string}'
+          urlTemplate: 'https://www.spotcircuit.com/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }

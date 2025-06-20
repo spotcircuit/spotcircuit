@@ -113,11 +113,11 @@ const ResourcesPage: React.FC = () => {
             "@type": "CollectionPage",
             "name": "Marketing Resources & Guides",
             "description": "Free marketing resources, guides, and tools for improving your SEO, content strategy, and digital marketing results.",
-            "url": "https://spotcircuit.com/resources",
+            "url": "https://www.spotcircuit.com/resources",
             "provider": {
               "@type": "Organization",
               "name": "SpotCircuit",
-              "url": "https://spotcircuit.com"
+              "url": "https://www.spotcircuit.com"
             },
             "about": {
               "@type": "Thing",

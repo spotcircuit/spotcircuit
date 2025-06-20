@@ -9,28 +9,28 @@ import SpeakableSchema from '@/app/components/SpeakableSchema';
 export default function HvacPageSchema() {
   // Define breadcrumb items
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://spotcircuit.com/' },
-    { name: 'Industries', url: 'https://spotcircuit.com/industries/' },
-    { name: 'HVAC', url: 'https://spotcircuit.com/industries/hvac/' }
+    { name: 'Home', url: 'https://www.spotcircuit.com/' },
+    { name: 'Industries', url: 'https://www.spotcircuit.com/industries/' },
+    { name: 'HVAC', url: 'https://www.spotcircuit.com/industries/hvac/' }
   ];
 
   // Define related services
   const relatedEntities = [
     {
       name: 'AI-Powered Scheduling',
-      url: 'https://spotcircuit.com/services/ai-scheduling/',
+      url: 'https://www.spotcircuit.com/services/ai-scheduling/',
       description: 'Automated scheduling system for HVAC businesses',
       type: 'Service'
     },
     {
       name: 'Technician Dispatching',
-      url: 'https://spotcircuit.com/services/dispatching/',
+      url: 'https://www.spotcircuit.com/services/dispatching/',
       description: 'Smart dispatching system for HVAC technicians',
       type: 'Service'
     },
     {
       name: 'Customer Management',
-      url: 'https://spotcircuit.com/services/customer-management/',
+      url: 'https://www.spotcircuit.com/services/customer-management/',
       description: 'Customer relationship management for HVAC businesses',
       type: 'Service'
     }
@@ -42,8 +42,8 @@ export default function HvacPageSchema() {
       <ServiceSchema
         name="HVAC Business Automation Platform"
         description="AI-Powered Scheduling & Client Management for HVAC businesses that works while you sleep. Book more jobs without adding staff."
-        url="https://spotcircuit.com/industries/hvac/"
-        image="https://spotcircuit.com/static/images/hvac-dashboard.png"
+        url="https://www.spotcircuit.com/industries/hvac/"
+        image="https://www.spotcircuit.com/static/images/hvac-dashboard.png"
         provider="SpotCircuit"
         areaServed={['United States']}
         serviceType="HVAC Business Software"
@@ -57,8 +57,8 @@ export default function HvacPageSchema() {
         type="Service"
         name="HVAC Business Automation"
         description="AI-powered platform for HVAC businesses to automate scheduling, dispatching, and customer management, helping them book more jobs without adding staff."
-        url="https://spotcircuit.com/industries/hvac/"
-        image="https://spotcircuit.com/static/images/hvac-dashboard.png"
+        url="https://www.spotcircuit.com/industries/hvac/"
+        image="https://www.spotcircuit.com/static/images/hvac-dashboard.png"
         sameAs={[
           { url: 'https://www.linkedin.com/company/spotcircuit' },
           { url: 'https://twitter.com/spotcircuit' }
@@ -87,7 +87,7 @@ export default function HvacPageSchema() {
           '.solution-overview-heading',
           '.solution-overview-description'
         ]}
-        url="https://spotcircuit.com/industries/hvac/"
+        url="https://www.spotcircuit.com/industries/hvac/"
       />
     </>
   );

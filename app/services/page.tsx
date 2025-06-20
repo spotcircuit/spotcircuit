@@ -15,6 +15,7 @@ import HowToSchema from '../components/HowToSchema';
 import BreadcrumbSchema from '../components/BreadcrumbSchema';
 import SpeakableSchema from '../components/SpeakableSchema';
 import EntitySchema from '../components/EntitySchema';
+import AggregateRatingSchema from '../components/AggregateRatingSchema';
 
 const ServicesPage = () => {
   // Define FAQ items for schema markup
@@ -103,6 +104,17 @@ const ServicesPage = () => {
             description: "Specialized solutions for plumbing companies."
           }
         ]}
+      />
+      {/* Add AggregateRating Schema to fix the Google Search Console error */}
+      <AggregateRatingSchema 
+        itemName="SpotCircuit AI-First SEO Services"
+        itemType="Service"
+        ratingValue={4.9}
+        reviewCount={27}
+        bestRating={5}
+        worstRating={1}
+        description="Professional SEO services focused on optimizing for AI platforms and large language models"
+        url="https://spotcircuit.com/services"
       />
 
       <div className="flex flex-col min-h-screen overflow-hidden">

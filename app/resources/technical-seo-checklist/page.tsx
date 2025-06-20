@@ -368,16 +368,16 @@ const TechnicalSEOChecklist: React.FC = () => {
               "name": "SpotCircuit",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://spotcircuit.com/static/images/logo.png"
+                "url": "https://www.spotcircuit.com/static/images/logo.png"
               }
             },
             "datePublished": "2025-04-01",
             "dateModified": "2025-04-01",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://spotcircuit.com/resources/technical-seo-checklist"
+              "@id": "https://www.spotcircuit.com/resources/technical-seo-checklist"
             },
-            "image": "https://spotcircuit.com/static/images/tech-seo-checklist-og.png"
+            "image": "https://www.spotcircuit.com/static/images/tech-seo-checklist-og.png"
           })
         }}
       />
@@ -810,7 +810,7 @@ const TechnicalSEOChecklist: React.FC = () => {
                   dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                       "@context": "https://schema.org",
-                      "@type": "FAQPage",
+                      "@type": "QAContent",
                       "mainEntity": faqItems.map(item => ({
                         "@type": "Question",
                         "name": item.question,
@@ -879,7 +879,7 @@ const TechnicalSEOChecklist: React.FC = () => {
                 </p>
                 <div className="flex justify-center space-x-4">
                   <a 
-                    href={`https://twitter.com/intent/tweet?text=The Complete Technical SEO Audit Checklist&url=${encodeURIComponent('https://spotcircuit.com/resources/technical-seo-checklist')}`}
+                    href={`https://twitter.com/intent/tweet?text=The Complete Technical SEO Audit Checklist&url=${encodeURIComponent('https://www.spotcircuit.com/resources/technical-seo-checklist')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center"
@@ -889,7 +889,7 @@ const TechnicalSEOChecklist: React.FC = () => {
                   </a>
                   <button 
                     onClick={() => {
-                      navigator.clipboard.writeText('https://spotcircuit.com/resources/technical-seo-checklist');
+                      navigator.clipboard.writeText('https://www.spotcircuit.com/resources/technical-seo-checklist');
                       alert('Link copied to clipboard!');
                     }}
                     className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-colors flex items-center"

@@ -5,12 +5,12 @@ export default function OrganizationSchema() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://spotcircuit.com/#organization',
+    '@id': 'https://www.spotcircuit.com/#organization',
     name: 'SpotCircuit',
-    url: 'https://spotcircuit.com',
+    url: 'https://www.spotcircuit.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://spotcircuit.com/spotcircuit-logo.png',
+      url: 'https://www.spotcircuit.com/spotcircuit-logo.png',
       width: 200,
       height: 60
     },
@@ -23,7 +23,7 @@ export default function OrganizationSchema() {
       '@type': 'ContactPoint',
       contactType: 'customer support',
       telephone: '+1-800-123-4567',
-      email: 'info@spotcircuit.com'
+      email: 'info@spotcircuit.com' // email domain remains unchanged as it's a valid email address
     },
     address: {
       '@type': 'PostalAddress',
