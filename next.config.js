@@ -74,19 +74,6 @@ const nextConfig = {
         permanent: true,
       },
       
-      // Handle tracking parameters by redirecting to clean URLs
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'query',
-            key: 'trk',
-          },
-        ],
-        destination: '/:path*',
-        permanent: true,
-      },
-      
       // 404 Fixes - Redirect common 404 errors to their correct pages
       // Home page redirect
       {
