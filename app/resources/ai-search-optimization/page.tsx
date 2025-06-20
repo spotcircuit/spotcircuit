@@ -911,7 +911,7 @@ const AISearchOptimizationGuide: React.FC = () => {
   }
   </script>
   <!-- FAQ Schema for AI citation -->
-  <script type="application/example+json">
+  <script type="text/plain" data-nosnippet>
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -2397,7 +2397,7 @@ function() {
 
                 {/* FAQ Schema for SEO */}
                 <script 
-                  type="application/ld+json"
+                  type="text/plain" data-nosnippet
                   dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                       "@context": "https://schema.org",
@@ -2694,3 +2694,4 @@ function() {
 };
 
 export default AISearchOptimizationGuide;
+```

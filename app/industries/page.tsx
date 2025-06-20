@@ -36,7 +36,8 @@ const IndustriesPage = () => {
         "Predictive maintenance scheduling",
         "Local SEO domination for 'emergency plumber' searches",
         "Customer history tracking for faster diagnostics"
-      ]
+      ],
+      link: "/industries/plumbing"
     },
     {
       title: "HVAC",
@@ -47,7 +48,8 @@ const IndustriesPage = () => {
         "Technician route optimization",
         "Equipment upgrade opportunity detection",
         "Maintenance contract conversion systems"
-      ]
+      ],
+      link: "/industries/hvac"
     },
     {
       title: "Electrical",
@@ -58,7 +60,8 @@ const IndustriesPage = () => {
         "Inventory and parts management",
         "Code compliance tracking",
         "Targeted marketing for high-value projects"
-      ]
+      ],
+      link: "/industries/electrical"
     },
     {
       title: "Landscaping",
@@ -69,7 +72,8 @@ const IndustriesPage = () => {
         "Crew and equipment optimization",
         "Recurring service automation",
         "Before/after portfolio generation"
-      ]
+      ],
+      link: "/industries/landscaping"
     },
     {
       title: "Roofing",
@@ -80,7 +84,8 @@ const IndustriesPage = () => {
         "Aerial imagery assessment",
         "Material estimation automation",
         "Insurance claim process assistance"
-      ]
+      ],
+      link: "/industries/roofing"
     },
     {
       title: "General Contracting",
@@ -91,7 +96,8 @@ const IndustriesPage = () => {
         "Subcontractor management",
         "Permit and inspection scheduling",
         "Portfolio-based lead generation"
-      ]
+      ],
+      link: "/industries/contracting"
     },
     {
       title: "Pest Control",
@@ -102,7 +108,8 @@ const IndustriesPage = () => {
         "Recurring service management",
         "Seasonal treatment marketing",
         "Technician knowledge base automation"
-      ]
+      ],
+      link: "/industries/pest-control"
     },
     {
       title: "Cleaning Services",
@@ -113,7 +120,8 @@ const IndustriesPage = () => {
         "Quality assurance automation",
         "Supply inventory management",
         "Recurring client acquisition systems"
-      ]
+      ],
+      link: "/industries/cleaning-services"
     }
   ];
 
@@ -286,7 +294,7 @@ const IndustriesPage = () => {
               {homeServiceIndustries.map((industry) => (
                 <Link 
                   key={industry.title} 
-                  href={`#${industry.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={industry.link}
                   className="px-4 py-2 rounded-full bg-blue-900/30 hover:bg-blue-700/50 text-blue-300 hover:text-white transition-all duration-300 text-sm md:text-base"
                 >
                   {industry.title}
@@ -318,45 +326,37 @@ const IndustriesPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {homeServiceIndustries.map((industry, index) => (
-                <motion.div
-                  id={industry.title.toLowerCase().replace(/\s+/g, '-')}
-                  key={industry.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index, duration: 0.5 }}
-                  className="industry-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 shadow-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 scroll-mt-32"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className="mr-4 p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
-                      {industry.icon}
+                <Link href={industry.link} key={industry.title} className="block">
+                  <motion.div
+                    id={industry.title.toLowerCase().replace(/\s+/g, '-')}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index, duration: 0.5 }}
+                    className="industry-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 shadow-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 scroll-mt-32 cursor-pointer"
+                  >
+                    <div className="flex items-center mb-6">
+                      <div className="mr-4 p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
+                        {industry.icon}
+                      </div>
+                      <h3 className="text-2xl font-bold text-white">{industry.title}</h3>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">{industry.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-6">{industry.description}</p>
-                  <ul className="space-y-3 mb-6">
-                    {industry.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start">
-                        <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-gray-300">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-4">
-                    {industry.title === "HVAC" ? (
-                      <Link href="/industries/hvac" className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold transition-colors duration-200">
-                        View HVAC solution <FaArrowRight className="ml-2" />
-                      </Link>
-                    ) : (
-                      <Link href="/contact" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
-                        Get a quote <FaArrowRight className="ml-2" />
-                      </Link>
-                    )}
-                    <Link href="/services" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold transition-colors duration-200">
-                      View services <FaArrowRight className="ml-2" />
-                    </Link>
-                  </div>
-                </motion.div>
+                    <p className="text-gray-300 mb-6">{industry.description}</p>
+                    <ul className="space-y-3 mb-6">
+                      {industry.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start">
+                          <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                          <span className="text-gray-300">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-4">
+                      <span className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
+                        View {industry.title} solution <FaArrowRight className="ml-2" />
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>

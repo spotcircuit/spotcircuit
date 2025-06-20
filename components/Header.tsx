@@ -28,16 +28,14 @@ const companyDropdown = [
 ]
 
 const resourcesDropdown = [
-  { name: 'Complete AI Search Guide', href: '/resources/ai-search-optimization', description: 'Comprehensive guide to AI-SEO' },
-  { name: 'Why Traditional SEO is Failing', href: '/resources/ai-search-optimization#traditional-seo', description: 'Understanding the shift' },
-  { name: 'Evolution of Search', href: '/resources/ai-search-optimization#evolution', description: 'SEO → AEO → AIO → LLMO → GEO' },
-  { name: 'AI Search Behavior', href: '/resources/ai-search-optimization#ai-behavior', description: 'How AI systems work' },
-  { name: 'Content Formats', href: '/resources/ai-search-optimization#content-formats', description: 'What content wins in AI' },
-  { name: 'Implementation Guide', href: '/resources/ai-search-optimization#implementation', description: 'Step-by-step optimization' },
-  { name: 'Schema Markup Examples', href: '/resources/ai-search-optimization#schema', description: 'Technical implementation' },
-  { name: 'Measuring Success', href: '/resources/ai-search-optimization#measurement', description: 'KPIs and tracking' },
-  { name: 'Tools & Resources', href: '/resources/ai-search-optimization#tools', description: 'Essential AI-SEO tools' },
-  { name: 'FAQs', href: '/resources/ai-search-optimization#faqs', description: 'Common questions answered' },
+  { name: 'Resources Hub', href: '/resources', description: 'All resources and guides' },
+  { name: 'AI Search Optimization Guide', href: '/resources/ai-search-optimization', description: 'Comprehensive guide to AI-SEO' },
+  { name: 'Local SEO Guide', href: '/resources/local-seo-guide', description: 'Dominate local search results' },
+  { name: 'Technical SEO Checklist', href: '/resources/technical-seo-checklist', description: 'Complete technical audit guide' },
+  { name: 'Content Strategy Blueprint', href: '/resources/content-strategy-blueprint', description: 'Create effective content' },
+  { name: 'Analytics & Conversion Guide', href: '/resources/analytics-conversion-guide', description: 'Measure and optimize results' },
+  { name: 'AI Marketing Tools Directory', href: '/resources/ai-marketing-tools', description: 'Curated AI tools collection' },
+  { name: 'Blog', href: '/blog', description: 'Latest insights and articles' },
 ]
 
 export default function Header() {
@@ -366,11 +364,11 @@ export default function Header() {
                             )}
                             {item.name === 'Resources' && (
                                <Link
-                                href="/resources/ai-search-optimization"
-                                onClick={(e) => handleNavigation(e, "/resources/ai-search-optimization", false)}
+                                href="/resources"
+                                onClick={(e) => handleNavigation(e, "/resources", false)}
                                 className="block rounded-md px-3 py-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors duration-200"
                               >
-                                View Complete Guide →
+                                View All Resources →
                               </Link>
                             )}
                           </motion.div>

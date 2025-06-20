@@ -61,28 +61,29 @@ const nextConfig = {
   // Add redirects for canonical URLs and 404 fixes
   async redirects() {
     return [
-      // Redirect from HTTP to HTTPS
+      // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
       {
-        source: 'http://:path*',
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.spotcircuit.com',
+          },
+        ],
         destination: 'https://spotcircuit.com/:path*',
         permanent: true,
       },
-      // Redirect from www to non-www
-      {
-        source: 'https://www.spotcircuit.com/:path*',
-        destination: 'https://spotcircuit.com/:path*',
-        permanent: true,
-      },
-      // Redirect HTTP www to HTTPS non-www
-      {
-        source: 'http://www.spotcircuit.com/:path*',
-        destination: 'https://spotcircuit.com/:path*',
-        permanent: true,
-      },
+      
       // Handle tracking parameters by redirecting to clean URLs
       {
-        source: '/:path*\\?trk=:tracking*',
-        destination: 'https://spotcircuit.com/:path*',
+        source: '/:path*',
+        has: [
+          {
+            type: 'query',
+            key: 'trk',
+          },
+        ],
+        destination: '/:path*',
         permanent: true,
       },
       
@@ -116,12 +117,7 @@ const nextConfig = {
         destination: '/resources/local-seo-guide',
         permanent: true,
       },
-      // Email subdomain redirect
-      {
-        source: '/email.mg.spotcircuit.com',
-        destination: '/contact',
-        permanent: true,
-      },
+      // Email subdomain redirect - Note: subdomain redirects need to be handled in Vercel dashboard
       // Testimonials redirect
       {
         source: '/testimonials',
@@ -160,12 +156,6 @@ const nextConfig = {
       {
         source: '/results',
         destination: '/case-studies',
-        permanent: true,
-      },
-      // Local services redirect (www to non-www)
-      {
-        source: '/local-services',
-        destination: '/local-services',
         permanent: true,
       },
       // Case study specific redirect
