@@ -58,7 +58,8 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
   },
-  // Add redirects for canonical URLs and 404 fixes
+  // TEMPORARILY DISABLED ALL REDIRECTS
+  /*
   async redirects() {
     return [
       // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
@@ -209,6 +210,10 @@ const nextConfig = {
         permanent: true,
       },
     ];
+  },
+  */
+  async redirects() {
+    return [];
   },
 };
 
