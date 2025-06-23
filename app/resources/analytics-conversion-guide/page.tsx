@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
+import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
   FaChartLine, 
   FaChartBar,
@@ -368,6 +369,8 @@ const AnalyticsConversionGuide: React.FC = () => {
       />
 
       <main className="pt-20 flex-grow">
+        <ResourceNavigation currentPage="analytics-conversion-guide" />
+        
         {/* Hero Section */}
         <section className="gradient-bg-dark py-20 md:py-32 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">

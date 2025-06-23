@@ -1,14 +1,35 @@
 import Script from 'next/script';
 
+// Define valid item types that can be reviewed according to Google's guidelines
+type ValidReviewItemType = 
+  | 'Book'
+  | 'Course'
+  | 'CreativeWorkSeason'
+  | 'CreativeWorkSeries'
+  | 'Episode'
+  | 'Event'
+  | 'Game'
+  | 'HowTo'
+  | 'LocalBusiness'
+  | 'MediaObject'
+  | 'Movie'
+  | 'MusicPlaylist'
+  | 'MusicRecording'
+  | 'Organization'
+  | 'Product'
+  | 'Recipe'
+  | 'Service'
+  | 'SoftwareApplication';
+
 interface Author {
   name: string;
-  type?: string; // 'Person' or 'Organization'
+  type?: 'Person' | 'Organization';
   url?: string;
 }
 
 interface ReviewSchemaProps {
   itemReviewed: {
-    type: string; // e.g., 'Product', 'Service', 'LocalBusiness'
+    type: ValidReviewItemType; // Using the strict type for better validation
     name: string;
     url?: string;
     image?: string;

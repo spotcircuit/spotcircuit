@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
+import RelatedResources, { ResourceItem } from '@/components/RelatedResources';
+import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
   FaRocket, 
   FaBrain, 
@@ -48,6 +50,31 @@ const AISearchOptimizationGuide: React.FC = () => {
   const [activeSection, setActiveSection] = useState('introduction');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  
+  // Define the related resources data
+  const relatedResources: ResourceItem[] = [
+    {
+      title: "Local SEO Guide",
+      description: "Master proven strategies to dominate local search for service businesses",
+      href: "/resources/local-seo-guide",
+      color: "blue",
+      ctaText: "Read the Guide"
+    },
+    {
+      title: "Content Strategy Blueprint",
+      description: "Build a comprehensive content strategy for AI-first search visibility",
+      href: "/resources/content-strategy-blueprint",
+      color: "green",
+      ctaText: "View Blueprint"
+    },
+    {
+      title: "Analytics & Conversion Guide",
+      description: "Track your AI search performance and optimize for conversions",
+      href: "/resources/analytics-conversion-guide",
+      color: "purple",
+      ctaText: "Explore Guide"
+    }
+  ];
 
   // Close sidebar when clicking outside on mobile
   useEffect(() => {
@@ -339,6 +366,9 @@ const AISearchOptimizationGuide: React.FC = () => {
             </div>
           </div>
         </section>
+        
+        {/* Resource Navigation */}
+        <ResourceNavigation currentPage="ai-search-optimization" className="mb-12" />
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden fixed top-20 right-4 z-50">
@@ -2602,10 +2632,19 @@ function() {
               </div>
             </section>
 
-            {/* Internal Linking */}
+            {/* Related Resources Section */}
+            <section className="mb-16">
+              <RelatedResources 
+                resources={relatedResources} 
+                title="Explore More SEO Resources" 
+                className="rounded-2xl"
+              />
+            </section>
+
+            {/* Internal Service Links */}
             <section className="mb-16">
               <div className="bg-gray-900 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-white">Related Resources</h3>
+                <h3 className="text-2xl font-bold mb-6 text-white">Our AI-SEO Services</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <Link href="/answercircuit" className="block p-6 bg-black/30 rounded-lg hover:bg-black/50 transition-colors">
                     <h4 className="font-bold text-blue-400 mb-2">AnswerCircuit Platform</h4>

@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import NextImage from 'next/legacy/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
+import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
   FaTools, 
   FaRobot,
@@ -73,7 +75,7 @@ const aiTools = [
     description: "Versatile AI assistant for content creation, brainstorming, and text optimization.",
     categories: ['content', 'seo'],
     url: "https://chat.openai.com/",
-    image: "/static/images/tools/chatgpt.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
     pricing: {
       hasFree: true,
       paidPlans: "$20/month for Plus with GPT-4"
@@ -110,7 +112,7 @@ const aiTools = [
     description: "AI image generation tool that creates stunning, unique visuals from text descriptions.",
     categories: ['image', 'design'],
     url: "https://www.midjourney.com/",
-    image: "/static/images/tools/midjourney.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png",
     pricing: {
       hasFree: false,
       paidPlans: "$10-$60/month depending on usage"
@@ -147,7 +149,7 @@ const aiTools = [
     description: "AI content platform specifically designed for marketing teams with templates and workflows.",
     categories: ['content', 'social'],
     url: "https://www.jasper.ai/",
-    image: "/static/images/tools/jasper.jpg",
+    image: "https://placehold.co/400x400/3a34cb/white?text=Jasper",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $49/month, billed annually"
@@ -184,7 +186,7 @@ const aiTools = [
     description: "AI-powered SEO content optimization platform with data-driven recommendations.",
     categories: ['seo', 'content'],
     url: "https://surferseo.com/",
-    image: "/static/images/tools/surfer-seo.jpg",
+    image: "https://dummyimage.com/400x400/25b57f/ffffff&text=Surfer+SEO",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $89/month, billed annually"
@@ -221,7 +223,7 @@ const aiTools = [
     description: "AI video generation platform that creates professional videos with virtual presenters.",
     categories: ['video', 'content'],
     url: "https://www.synthesia.io/",
-    image: "/static/images/tools/synthesia.jpg",
+    image: "https://dummyimage.com/400x400/0051ff/ffffff&text=Synthesia",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $30/month"
@@ -258,7 +260,7 @@ const aiTools = [
     description: "AI content optimization tool that helps create content that ranks in search engines.",
     categories: ['seo', 'content'],
     url: "https://www.clearscope.io/",
-    image: "/static/images/tools/clearscope.jpg",
+    image: "https://dummyimage.com/400x400/4a7aff/ffffff&text=Clearscope",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $170/month"
@@ -295,7 +297,7 @@ const aiTools = [
     description: "AI voice generation platform for creating lifelike voices for audio content.",
     categories: ['audio', 'content'],
     url: "https://elevenlabs.io/",
-    image: "/static/images/tools/elevenlabs.jpg",
+    image: "https://dummyimage.com/400x400/ff0049/ffffff&text=ElevenLabs",
     pricing: {
       hasFree: true,
       paidPlans: "Starting at $5/month"
@@ -332,7 +334,7 @@ const aiTools = [
     description: "AI content research and optimization platform for creating SEO-friendly content.",
     categories: ['content', 'seo'],
     url: "https://www.frase.io/",
-    image: "/static/images/tools/frase.jpg",
+    image: "https://dummyimage.com/400x400/00a389/ffffff&text=Frase",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $14.99/month"
@@ -369,7 +371,7 @@ const aiTools = [
     description: "AI video creation tool that turns text and blog posts into engaging videos.",
     categories: ['video', 'content'],
     url: "https://pictory.ai/",
-    image: "/static/images/tools/pictory.jpg",
+    image: "https://dummyimage.com/400x400/ff6b00/ffffff&text=Pictory",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $19/month"
@@ -406,7 +408,7 @@ const aiTools = [
     description: "AI copywriting tool with templates for various marketing content types.",
     categories: ['content', 'social'],
     url: "https://www.copy.ai/",
-    image: "/static/images/tools/copyai.jpg",
+    image: "https://dummyimage.com/400x400/2e63f6/ffffff&text=Copy.ai",
     pricing: {
       hasFree: true,
       paidPlans: "Starting at $36/month, billed annually"
@@ -443,7 +445,7 @@ const aiTools = [
     description: "AI content creation tool integrated with HubSpot's marketing platform.",
     categories: ['content', 'automation'],
     url: "https://www.hubspot.com/products/marketing/artificial-intelligence-tools",
-    image: "/static/images/tools/hubspot.jpg",
+    image: "https://dummyimage.com/400x400/ff7a59/ffffff&text=HubSpot",
     pricing: {
       hasFree: true,
       paidPlans: "Included with HubSpot Marketing Hub (Starting at $20/month)"
@@ -480,7 +482,7 @@ const aiTools = [
     description: "AI content planning and optimization platform focused on topical authority.",
     categories: ['seo', 'content'],
     url: "https://www.marketmuse.com/",
-    image: "/static/images/tools/marketmuse.jpg",
+    image: "https://dummyimage.com/400x400/5603ad/ffffff&text=MarketMuse",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $149/month, billed annually"
@@ -517,7 +519,7 @@ const aiTools = [
     description: "AI social media content generator that creates multiple posts from long-form content.",
     categories: ['social', 'content'],
     url: "https://www.lately.ai/",
-    image: "/static/images/tools/lately.jpg",
+    image: "https://dummyimage.com/400x400/00bf9d/ffffff&text=Lately",
     pricing: {
       hasFree: false,
       paidPlans: "Starting at $49/month"
@@ -554,7 +556,7 @@ const aiTools = [
     description: "AI writing assistant with brand tone controls and team collaboration features.",
     categories: ['content', 'automation'],
     url: "https://www.grammarly.com/business",
-    image: "/static/images/tools/grammarly.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Grammarly_logo.svg",
     pricing: {
       hasFree: true,
       paidPlans: "Business plans start at $15/member/month"
@@ -591,7 +593,7 @@ const aiTools = [
     description: "AI-powered language generation platform for creating emotionally targeted marketing content.",
     categories: ['content', 'personalization'],
     url: "https://www.persado.com/",
-    image: "/static/images/tools/persado.jpg",
+    image: "https://dummyimage.com/400x400/e51937/ffffff&text=Persado",
     pricing: {
       hasFree: false,
       paidPlans: "Enterprise pricing (contact sales)"
@@ -784,6 +786,8 @@ const AIMarketingTools: React.FC = () => {
       />
 
       <main className="pt-20 flex-grow">
+        <ResourceNavigation currentPage="ai-marketing-tools" />
+        
         {/* Hero Section */}
         <section className="gradient-bg-dark py-20 md:py-32 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -1021,11 +1025,12 @@ const AIMarketingTools: React.FC = () => {
                   whileHover={{ y: -5 }}
                 >
                   <div className="relative h-48">
-                    <Image
+                    <NextImage
                       src={tool.image}
                       alt={tool.name}
-                      fill
-                      className="object-cover"
+                      layout="fill"
+                      objectFit="contain"
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
@@ -1101,11 +1106,13 @@ const AIMarketingTools: React.FC = () => {
                   <div className="p-6">
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="relative w-full md:w-40 h-32 md:h-40 flex-shrink-0">
-                        <Image
+                        <NextImage
                           src={tool.image}
                           alt={tool.name}
-                          fill
-                          className="object-cover rounded-lg"
+                          layout="fill"
+                          objectFit="contain"
+                          unoptimized
+                          className="rounded-lg"
                         />
                       </div>
                       

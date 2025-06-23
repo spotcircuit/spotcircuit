@@ -37,7 +37,7 @@ const ResourcesPage: React.FC = () => {
       title: "AI Search Optimization Guide",
       description: "Master the strategies to get your content cited by ChatGPT, Claude, and Perplexity",
       icon: <FaBrain className="text-blue-500" />,
-      image: "/static/images/ai-seo-guide-card.jpg",
+      image: "/static/aiseooptimizationguide.png",
       link: "/resources/ai-search-optimization",
       category: "AI & SEO",
       isNew: true
@@ -46,7 +46,7 @@ const ResourcesPage: React.FC = () => {
       title: "Local SEO Guide for Service Businesses",
       description: "Dominate local search results and Google Maps with proven local optimization techniques",
       icon: <FaMapMarkerAlt className="text-green-500" />,
-      image: "/static/images/local-seo-guide-card.jpg",
+      image: "/static/localseoguide.png",
       link: "/resources/local-seo-guide",
       category: "Local SEO"
     },
@@ -54,7 +54,7 @@ const ResourcesPage: React.FC = () => {
       title: "Technical SEO Audit Checklist",
       description: "Comprehensive checklist to identify and fix technical SEO issues on your website",
       icon: <FaCode className="text-purple-500" />,
-      image: "/static/images/tech-seo-card.jpg",
+      image: "/static/technicalseochecklist.png",
       link: "/resources/technical-seo-checklist",
       category: "Technical SEO",
       isNew: true
@@ -63,7 +63,7 @@ const ResourcesPage: React.FC = () => {
       title: "Content Strategy Blueprint",
       description: "Create content that ranks in search engines and converts visitors into customers",
       icon: <FaBookOpen className="text-yellow-500" />,
-      image: "/static/images/content-strategy-card.jpg",
+      image: "/static/contentmarketingblueprint.png",
       link: "/resources/content-strategy-blueprint",
       category: "Content Marketing"
     },
@@ -71,7 +71,7 @@ const ResourcesPage: React.FC = () => {
       title: "Analytics & Conversion Guide",
       description: "Set up proper tracking and optimize your website for maximum conversions",
       icon: <FaChartLine className="text-red-500" />,
-      image: "/static/images/analytics-guide-card.jpg",
+      image: "/static/analyticsconversionguide.png",
       link: "/resources/analytics-conversion-guide",
       category: "Analytics"
     },
@@ -79,7 +79,7 @@ const ResourcesPage: React.FC = () => {
       title: "AI Marketing Tools Directory",
       description: "Explore our curated collection of AI tools to enhance your marketing efforts",
       icon: <FaTools className="text-indigo-500" />,
-      image: "/static/images/ai-tools-card.jpg",
+      image: "/static/aimarketingtools.png",
       link: "/resources/ai-marketing-tools",
       category: "AI Tools"
     }
@@ -200,50 +200,57 @@ const ResourcesPage: React.FC = () => {
             {/* Resource cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredResources.map((resource, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow border border-gray-800"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
+                <Link 
+                  href={resource.link} 
+                  key={index} 
+                  className="block h-full" 
+                  aria-label={`View ${resource.title} resource`}
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={resource.image}
-                      alt={resource.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 bg-gray-900/80 rounded-full px-3 py-1 text-sm">
-                      {resource.category}
+                  <motion.div
+                    className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-800 cursor-pointer h-full flex flex-col"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    whileHover={{ y: -5, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)' }}
+                  >
+                    <div className="relative h-72">
+                      <Image
+                        src={resource.image}
+                        alt={resource.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center"
+                        priority={index < 3}
+                        loading={index < 3 ? "eager" : "lazy"}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 bg-gray-900/80 rounded-full px-3 py-1 text-sm">
+                        {resource.category}
+                      </div>
+                      
+                      {resource.isNew && (
+                        <div className="absolute top-4 right-4 bg-blue-600 rounded-full px-3 py-1 text-xs font-bold">
+                          NEW
+                        </div>
+                      )}
                     </div>
                     
-                    {resource.isNew && (
-                      <div className="absolute top-4 right-4 bg-blue-600 rounded-full px-3 py-1 text-xs font-bold">
-                        NEW
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex items-center mb-3">
+                        <div className="p-2 bg-gray-800 rounded-full mr-3">
+                          {resource.icon}
+                        </div>
+                        <h3 className="text-xl font-bold">{resource.title}</h3>
                       </div>
-                    )}
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center mb-3">
-                      <div className="p-2 bg-gray-800 rounded-full mr-3">
-                        {resource.icon}
-                      </div>
-                      <h3 className="text-xl font-bold">{resource.title}</h3>
-                    </div>
-                    
-                    <p className="text-gray-400 mb-6">{resource.description}</p>
-                    
-                    <Link href={resource.link}>
-                      <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                      
+                      <p className="text-gray-400 mb-6 flex-grow">{resource.description}</p>
+                      
+                      <div className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
                         View Resource <FaArrowRight className="ml-2" />
-                      </span>
-                    </Link>
-                  </div>
-                </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
             
@@ -325,7 +332,7 @@ const ResourcesPage: React.FC = () => {
                 
                 <div className="md:w-1/2">
                   <Image
-                    src="/static/images/custom-resources.jpg"
+                    src="/static/customresources.png"
                     alt="Custom marketing resources"
                     width={500}
                     height={350}

@@ -16,6 +16,7 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema';
 import SpeakableSchema from '../components/SpeakableSchema';
 import EntitySchema from '../components/EntitySchema';
 import AggregateRatingSchema from '../components/AggregateRatingSchema';
+import SchemaCleanup from '../components/SchemaCleanup';
 
 const ServicesPage = () => {
   // Define FAQ items for schema markup
@@ -116,6 +117,8 @@ const ServicesPage = () => {
         description="Professional SEO services focused on optimizing for AI platforms and large language models"
         url="https://spotcircuit.com/services"
       />
+      {/* Client-side cleanup of any invalid schema markup */}
+      <SchemaCleanup />
 
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Header />

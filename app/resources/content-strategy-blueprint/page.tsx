@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
+import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
   FaBookOpen, 
   FaChartLine, 
@@ -417,6 +418,9 @@ const ContentStrategyBlueprint: React.FC = () => {
             </div>
           </div>
         </section>
+        
+        {/* Resource Navigation */}
+        <ResourceNavigation currentPage="content-strategy-blueprint" className="mb-12" />
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden fixed top-20 right-4 z-50">

@@ -19,6 +19,8 @@ import {
   CursorArrowRaysIcon,
   ChatBubbleBottomCenterTextIcon
 } from '@heroicons/react/24/outline';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function LaunchPage() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -171,45 +173,9 @@ export default function LaunchPage() {
 
   return (
     <>
-      <Head>
-        <title>SEO 2.0: The AI-First Optimization Revolution | SpotCircuit</title>
-        <meta name="description" content="Future-proof your content with AI-first optimization strategies that put you ahead of the curve." />
-      </Head>
+      <Header />
       
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-green-900 text-white overflow-hidden">
-        {/* Navigation */}
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
-            <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center">
-                <Image 
-                  src="/static/images/sclogo.png" 
-                  alt="SpotCircuit Logo" 
-                  width={40} 
-                  height={40} 
-                  className="mr-2" 
-                />
-                <span className="text-xl font-bold">SpotCircuit</span>
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="#solutions" className="hover:text-green-400 transition">Solutions</Link>
-              <Link href="#process" className="hover:text-green-400 transition">Process</Link>
-              <Link href="#testimonials" className="hover:text-green-400 transition">Results</Link>
-              <Link href="#faq" className="hover:text-green-400 transition">FAQ</Link>
-            </div>
-            <div>
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-6 py-2 rounded-full font-medium shadow-lg"
-              >
-                Get Started
-              </motion.button>
-            </div>
-          </div>
-        </nav>
-
+      <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
         <div className="relative">
           {/* Background geometric shapes */}
@@ -578,68 +544,7 @@ export default function LaunchPage() {
         </div>
         
         {/* Footer */}
-        <footer className="bg-black/50 backdrop-blur-md py-12 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center mb-8 md:mb-0">
-                <Link href="/" className="flex items-center">
-                  <Image 
-                    src="/static/images/sclogo.png" 
-                    alt="SpotCircuit Logo" 
-                    width={40} 
-                    height={40} 
-                    className="mr-2" 
-                  />
-                  <span className="text-xl font-bold">SpotCircuit</span>
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8 md:mb-0">
-                <div>
-                  <h3 className="text-white font-semibold mb-4">Services</h3>
-                  <ul className="space-y-2 text-gray-400">
-                    <li><Link href="#" className="hover:text-green-400 transition">LLM Optimization</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Content Strategy</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Data Analytics</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold mb-4">Company</h3>
-                  <ul className="space-y-2 text-gray-400">
-                    <li><Link href="#" className="hover:text-green-400 transition">About Us</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Case Studies</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Careers</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold mb-4">Resources</h3>
-                  <ul className="space-y-2 text-gray-400">
-                    <li><Link href="#" className="hover:text-green-400 transition">Blog</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Guides</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Webinars</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold mb-4">Contact</h3>
-                  <ul className="space-y-2 text-gray-400">
-                    <li><Link href="#" className="hover:text-green-400 transition">Contact Us</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Support</Link></li>
-                    <li><Link href="#" className="hover:text-green-400 transition">Partners</Link></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="pt-8 mt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">
-                2024 SpotCircuit. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
-                <Link href="#" className="text-gray-400 hover:text-white transition">Terms</Link>
-                <Link href="#" className="text-gray-400 hover:text-white transition">Privacy</Link>
-                <Link href="#" className="text-gray-400 hover:text-white transition">Cookies</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

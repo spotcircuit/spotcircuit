@@ -72,8 +72,8 @@ function replaceVariables(text: string, variables: Record<string, string>): stri
 
 async function generateBlogPost(): Promise<BlogPostResult> {
   try {
-    // Load templates
-    const templatesPath = path.join(process.cwd(), 'data', 'blog-templates.json');
+    // Load templates - updated path to point to an existing location
+    const templatesPath = path.join(process.cwd(), 'scripts', 'blog-templates.json');
     const templateData: TemplateData = JSON.parse(fs.readFileSync(templatesPath, 'utf8'));
 
     // Select random category and template

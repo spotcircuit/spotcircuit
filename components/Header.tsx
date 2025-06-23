@@ -8,34 +8,42 @@ import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outli
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
+  { name: 'Services', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Solutions', href: '#', isScroll: false, hasDropdown: true },
-  { name: 'Company', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Resources', href: '#', isScroll: false, hasDropdown: true },
+  { name: 'About', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Contact', href: '/contact', isScroll: false },
 ]
 
-const solutionsDropdown = [
-  { name: 'SEO 2.0', href: '/seo2', description: 'Next-gen AI-powered SEO strategies' },
-  { name: 'AnswerCircuit', href: '/answercircuit', description: 'AI visibility optimization platform' },
-  { name: 'Services', href: '/services', description: 'Full-service AI-SEO solutions' },
+const servicesDropdown = [
+  { name: 'AI-First SEO', href: '/services', description: 'LLM optimization for modern search' },
+  { name: 'Local Business', href: '/local-services', description: 'Location-based visibility solutions' },
+  { name: 'AI Automation', href: '/services#automation', description: 'Custom AI automation solutions' },
+  { name: 'LLM Training', href: '/services#llm-training', description: 'Custom language model training' },
+  { name: 'Workflow with n8n', href: '/services#workflow', description: 'Automated business workflows' },
 ]
 
-const companyDropdown = [
-  { name: 'Industries', href: '/industries', description: 'Specialized industry expertise' },
-  { name: 'Process', href: '/process', description: 'How we deliver results' },
+const solutionsDropdown = [
+  { name: 'AnswerCircuit', href: '/answercircuit', description: 'AI visibility optimization platform' },
+  { name: 'SEO 2.0', href: '/seo2', description: 'Next-gen AI-powered search strategies' },
+  { name: 'Process', href: '/process', description: 'Our unique optimization approach' },
+]
+
+const aboutDropdown = [
+  { name: 'Industries We Serve', href: '/industries', description: 'Specialized industry expertise' },
   { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
-  { name: 'Blog', href: '/blog', description: 'Latest insights and trends' },
+  { name: 'Booking Calendar', href: '/booking', description: 'Schedule a consultation' },
 ]
 
 const resourcesDropdown = [
-  { name: 'Resources Hub', href: '/resources', description: 'All resources and guides' },
-  { name: 'AI Search Optimization Guide', href: '/resources/ai-search-optimization', description: 'Comprehensive guide to AI-SEO' },
-  { name: 'Local SEO Guide', href: '/resources/local-seo-guide', description: 'Dominate local search results' },
-  { name: 'Technical SEO Checklist', href: '/resources/technical-seo-checklist', description: 'Complete technical audit guide' },
-  { name: 'Content Strategy Blueprint', href: '/resources/content-strategy-blueprint', description: 'Create effective content' },
-  { name: 'Analytics & Conversion Guide', href: '/resources/analytics-conversion-guide', description: 'Measure and optimize results' },
-  { name: 'AI Marketing Tools Directory', href: '/resources/ai-marketing-tools', description: 'Curated AI tools collection' },
+  { name: 'Resources Hub', href: '/resources', description: 'All guides and tools' },
   { name: 'Blog', href: '/blog', description: 'Latest insights and articles' },
+  { name: 'AI Search Optimization', href: '/resources/ai-search-optimization', description: 'Guide to AI-SEO' },
+  { name: 'Local SEO Guide', href: '/resources/local-seo-guide', description: 'Dominate local search results' },
+  { name: 'Technical SEO Checklist', href: '/resources/technical-seo-checklist', description: 'Technical audit guide' },
+  { name: 'Content Strategy', href: '/resources/content-strategy-blueprint', description: 'Effective content creation' },
+  { name: 'Analytics & Conversion', href: '/resources/analytics-conversion-guide', description: 'Measure and optimize results' },
+  { name: 'AI Marketing Tools', href: '/resources/ai-marketing-tools', description: 'Curated AI tools directory' },
 ]
 
 export default function Header() {
@@ -44,7 +52,8 @@ export default function Header() {
   const [activeItem, setActiveItem] = useState('')
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
-  const [companyOpen, setCompanyOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
@@ -73,7 +82,8 @@ export default function Header() {
     setMobileMenuOpen(false)
     setResourcesOpen(false)
     setSolutionsOpen(false)
-    setCompanyOpen(false)
+    setServicesOpen(false)
+    setAboutOpen(false)
   }
 
   return (
@@ -141,17 +151,19 @@ export default function Header() {
                   onMouseEnter={() => setActiveItem(item.name)}
                   onMouseLeave={() => setActiveItem('')}
                   onClick={() => {
-                    if (item.name === 'Solutions') {
+                    if (item.name === 'Services') {
+                      setServicesOpen(!servicesOpen)
+                    } else if (item.name === 'Solutions') {
                       setSolutionsOpen(!solutionsOpen)
-                    } else if (item.name === 'Company') {
-                      setCompanyOpen(!companyOpen)
                     } else if (item.name === 'Resources') {
                       setResourcesOpen(!resourcesOpen)
+                    } else if (item.name === 'About') {
+                      setAboutOpen(!aboutOpen)
                     }
                   }}
                 >
                   {item.name}
-                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${solutionsOpen || companyOpen || resourcesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${servicesOpen || solutionsOpen || resourcesOpen || aboutOpen ? 'rotate-180' : ''}`} />
                   <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 ${
                     activeItem === item.name || pathname?.startsWith(item.href) ? 'w-full' : 'w-0'
                   }`} />
@@ -173,6 +185,43 @@ export default function Header() {
                     activeItem === item.name || pathname === item.href ? 'w-full' : 'w-0'
                   }`} />
                 </a>
+              )}
+              {item.name === 'Services' && (
+                <AnimatePresence>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                    >
+                      <div className="space-y-1">
+                        {servicesDropdown.map((item, index) => (
+                          <motion.div
+                            key={item.name}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.02 }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setServicesOpen(false)}
+                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
+                            >
+                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               )}
               {item.name === 'Solutions' && (
                 <AnimatePresence>
@@ -211,9 +260,9 @@ export default function Header() {
                   )}
                 </AnimatePresence>
               )}
-              {item.name === 'Company' && (
+              {item.name === 'About' && (
                 <AnimatePresence>
-                  {companyOpen && (
+                  {aboutOpen && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -222,7 +271,7 @@ export default function Header() {
                       className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
                     >
                       <div className="space-y-1">
-                        {companyDropdown.map((item, index) => (
+                        {aboutDropdown.map((item, index) => (
                           <motion.div
                             key={item.name}
                             initial={{ opacity: 0, x: -10 }}
@@ -231,7 +280,7 @@ export default function Header() {
                           >
                             <Link
                               href={item.href}
-                              onClick={() => setCompanyOpen(false)}
+                              onClick={() => setAboutOpen(false)}
                               className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
                             >
                               <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
@@ -322,27 +371,30 @@ export default function Header() {
                     <div>
                       <button
                         onClick={() => {
-                          if (item.name === 'Solutions') setSolutionsOpen(!solutionsOpen);
-                          else if (item.name === 'Company') setCompanyOpen(!companyOpen);
+                          if (item.name === 'Services') setServicesOpen(!servicesOpen);
+                          else if (item.name === 'Solutions') setSolutionsOpen(!solutionsOpen);
                           else if (item.name === 'Resources') setResourcesOpen(!resourcesOpen);
+                          else if (item.name === 'About') setAboutOpen(!aboutOpen);
                         }}
                         className="w-full flex items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-white hover:bg-white/10 transition-colors duration-200"
                       >
                         {item.name}
                         <ChevronDownIcon
                           className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
+                            (item.name === 'Services' && servicesOpen) ||
                             (item.name === 'Solutions' && solutionsOpen) ||
-                            (item.name === 'Company' && companyOpen) ||
-                            (item.name === 'Resources' && resourcesOpen)
+                            (item.name === 'Resources' && resourcesOpen) ||
+                            (item.name === 'About' && aboutOpen)
                               ? 'rotate-180'
                               : ''
                           }`}
                         />
                       </button>
                       <AnimatePresence>
-                        {((item.name === 'Solutions' && solutionsOpen) ||
-                          (item.name === 'Company' && companyOpen) ||
-                          (item.name === 'Resources' && resourcesOpen)) && (
+                        {((item.name === 'Services' && servicesOpen) ||
+                          (item.name === 'Solutions' && solutionsOpen) ||
+                          (item.name === 'Resources' && resourcesOpen) ||
+                          (item.name === 'About' && aboutOpen)) && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
@@ -350,7 +402,10 @@ export default function Header() {
                             transition={{ duration: 0.2, ease: 'easeInOut' }}
                             className="mt-1 space-y-1 pl-4 border-l border-white/10"
                           >
-                            {(item.name === 'Solutions' ? solutionsDropdown : item.name === 'Company' ? companyDropdown : resourcesDropdown).map(
+                            {(item.name === 'Services' ? servicesDropdown : 
+                              item.name === 'Solutions' ? solutionsDropdown : 
+                              item.name === 'About' ? aboutDropdown : 
+                              resourcesDropdown).map(
                               (subItem) => (
                                 <Link
                                   key={subItem.name}
