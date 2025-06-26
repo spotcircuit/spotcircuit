@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Technical SEO Audit Checklist: The Complete Guide | SpotCircuit',
-  description: 'Our comprehensive technical SEO audit checklist helps you identify and fix the technical issues affecting your website\'s search visibility and performance.',
+  description: "Our comprehensive technical SEO audit checklist helps you identify and fix the technical issues affecting your website's search visibility and performance.",
   keywords: 'technical SEO checklist, technical SEO audit, site crawlability, indexation issues, mobile optimization, page speed optimization, technical SEO tools, SEO audit guide',
   authors: [{ name: 'SpotCircuit Team' }],
   creator: 'SpotCircuit',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     title: 'Technical SEO Audit Checklist: The Complete Guide',
-    description: 'A comprehensive checklist to identify and fix technical SEO issues affecting your website's search performance.',
+    description: "A comprehensive checklist to identify and fix technical SEO issues affecting your website's search performance.",
     url: 'https://spotcircuit.com/resources/technical-seo-checklist',
     images: [{
       url: '/static/images/tech-seo-checklist-og.png',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Technical SEO Audit Checklist: The Complete Guide',
-    description: 'Identify and fix technical issues affecting your website's search performance.',
+    description: "Identify and fix technical issues affecting your website's search performance.",
     images: ['/static/images/tech-seo-checklist-og.png'],
     creator: '@spotcircuit',
   },

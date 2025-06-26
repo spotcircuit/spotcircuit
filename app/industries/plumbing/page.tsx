@@ -39,7 +39,7 @@ const PlumbingPage: React.FC = () => {
                 AI-Powered Marketing for <span className="text-blue-500">Plumbing Companies</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 hero-description">
-                Grow your plumbing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI.
+                Grow your plumbing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI. Powered by our <Link href="/solutions/clientcircuit" className="text-blue-400 hover:text-blue-300 underline">ClientCircuit</Link> lead generation and <Link href="/services#local-marketing" className="text-blue-400 hover:text-blue-300 underline">local marketing services</Link>.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">

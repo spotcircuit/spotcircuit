@@ -8,58 +8,62 @@ import { FaTools, FaDatabase, FaRobot, FaEnvelope, FaCode, FaCloudUploadAlt } fr
 
 // Technology partner data
 const techPartners = [
-  { name: 'Next.js', url: 'https://nextjs.org/', icon: SiNextdotjs },
-  { name: 'React', url: 'https://reactjs.org/', icon: SiReact },
+  { name: 'n8n', url: 'https://www.n8n.io/', icon: FaRobot },
+  { name: 'Make', url: 'https://www.make.com/', icon: SiMake },
   { name: 'Zapier', url: 'https://zapier.com/', icon: SiZapier },
   { name: 'HubSpot', url: 'https://www.hubspot.com/', icon: SiHubspot },
-  { name: 'Make', url: 'https://www.make.com/', icon: SiMake },
   { name: 'Clay.com', url: 'https://www.clay.com/', icon: FaDatabase },
-  { name: 'n8n', url: 'https://www.n8n.io/', icon: FaRobot },
+  { name: 'Apollo.io', url: 'https://www.apollo.io/', icon: FaDatabase },
+  { name: 'Pabbly', url: 'https://www.pabbly.com/', icon: FaCloudUploadAlt },
   { name: 'Klaviyo', url: 'https://www.klaviyo.com/', icon: FaEnvelope },
 ];
 
 const techPartners2 = [
   { name: 'HighLevel', url: 'https://www.gohighlevel.com/', icon: FaTools },
+  { name: 'ServiceTitan', url: 'https://www.servicetitan.com/', icon: FaTools },
+  { name: 'Jobber', url: 'https://getjobber.com/', icon: FaCloudUploadAlt },
   { name: 'Lemlist', url: 'https://lemlist.com/', icon: FaEnvelope },
   { name: 'Pipedrive', url: 'https://www.pipedrive.com/', icon: FaDatabase },
   { name: 'Airtable', url: 'https://airtable.com/', icon: SiAirtable },
   { name: 'Google Workspace', url: 'https://workspace.google.com/', icon: SiGoogle },
-  { name: 'Webflow', url: 'https://webflow.com/', icon: SiWebflow },
-  { name: 'Notion', url: 'https://www.notion.so/', icon: SiNotion },
   { name: 'Salesforce', url: 'https://www.salesforce.com/', icon: SiSalesforce },
 ];
 
 const navigation = {
   solutions: [
-    { name: 'SEO Optimization', href: '/services#seo' },
-    { name: 'Local Marketing', href: '/services#local' },
-    { name: 'Content Strategy', href: '/services#content' },
-    { name: 'Technical SEO', href: '/services#technical' },
-    { name: 'AI Automation', href: '/services#automation' },
-    { name: 'Analytics & Reporting', href: '/services#analytics' }
+    { name: 'AI-Powered SEO', href: '/services' },
+    { name: 'Local Marketing', href: '/local-services' },
+    { name: 'AI-Assisted Automation', href: '/services#automation' },
+    { name: 'Content Strategy', href: '/solutions/contentcircuit' },
+    { name: 'Analytics Dashboard', href: '/solutions/analyticscircuit' },
+    { name: 'Lead Generation', href: '/solutions/clientcircuit' }
   ],
   industries: [
-    { name: 'Plumbing', href: '/industries#plumbing' },
-    { name: 'HVAC', href: '/industries#hvac' },
-    { name: 'Electrical', href: '/industries#electrical' },
-    { name: 'Landscaping', href: '/industries#landscaping' },
-    { name: 'Roofing', href: '/industries#roofing' },
-    { name: 'Home Services', href: '/industries#general-contracting' },
-    { name: 'Pest Control', href: '/industries#pest-control' }
+    { name: 'Plumbing', href: '/industries/plumbing' },
+    { name: 'HVAC', href: '/industries/hvac' },
+    { name: 'Electrical', href: '/industries/electrical' },
+    { name: 'Contracting', href: '/industries/contracting' },
+    { name: 'Roofing', href: '/industries/roofing' },
+    { name: 'Medical', href: '/industries/medical' },
+    { name: 'Legal', href: '/industries/legal' },
+    { name: 'Recruiting', href: '/industries/recruiting' }
   ],
   resources: [
-    { name: 'Case Studies', href: '/resources#case-studies' },
     { name: 'Blog', href: '/blog' },
-    { name: 'SEO Guide', href: '/resources#seo-guide' },
-    { name: 'Marketing Tips', href: '/resources#tips' },
-    { name: 'Free Tools', href: '/resources#tools' }
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'AI Marketing Tools', href: '/resources/ai-marketing-tools' },
+    { name: 'Local SEO Guide', href: '/resources/local-seo-guide' },
+    { name: 'AI Search Optimization', href: '/resources/ai-search-optimization' },
+    { name: 'Content Strategy', href: '/resources/content-strategy-blueprint' },
+    { name: 'Technical SEO Checklist', href: '/resources/technical-seo-checklist' },
+    { name: 'Analytics Guide', href: '/resources/analytics-conversion-guide' }
   ],
   company: [
-    { name: 'About Us', href: '/about' },
     { name: 'Our Process', href: '/process' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Book a Call', href: '/booking' },
+    { name: 'Answer Circuit', href: '/answercircuit' },
+    { name: 'Launch Services', href: '/launch' }
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -70,21 +74,17 @@ const navigation = {
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/spotcircuit',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
+          <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.76-1.38-1.76-.74 0-1.62.44-1.62 1.72V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.4.86 3.4 4.2z" />
         </svg>
       )
     },
     {
       name: 'Twitter',
-      href: '#',
+      href: 'https://twitter.com/spotcircuit',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -92,13 +92,13 @@ const navigation = {
       )
     },
     {
-      name: 'GitHub',
-      href: '#',
+      name: 'Facebook',
+      href: 'https://www.facebook.com/spotcircuit',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
-            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
             clipRule="evenodd"
           />
         </svg>

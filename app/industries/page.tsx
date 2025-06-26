@@ -19,7 +19,8 @@ import {
   FaSnowflake, 
   FaArrowRight, 
   FaCheckCircle, 
-  FaEnvelope 
+  FaEnvelope,
+  FaUsers 
 } from 'react-icons/fa';
 import { HiOutlineClock, HiOutlineChartBar, HiOutlineTrendingUp } from 'react-icons/hi';
 import { HiOutlineMapPin, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
@@ -64,18 +65,6 @@ const IndustriesPage = () => {
       link: "/industries/electrical"
     },
     {
-      title: "Landscaping",
-      icon: <FaLeaf className="text-3xl text-blue-400" />,
-      description: "Grow your landscaping business with seasonal scheduling, crew management, and marketing automation that keeps your calendar full year-round.",
-      benefits: [
-        "Weather-adaptive scheduling",
-        "Crew and equipment optimization",
-        "Recurring service automation",
-        "Before/after portfolio generation"
-      ],
-      link: "/industries/landscaping"
-    },
-    {
       title: "Roofing",
       icon: <FaHome className="text-3xl text-blue-400" />,
       description: "Scale your roofing company with storm-response automation, lead qualification, and marketing systems that generate qualified inspection requests.",
@@ -100,28 +89,40 @@ const IndustriesPage = () => {
       link: "/industries/contracting"
     },
     {
-      title: "Pest Control",
-      icon: <FaTools className="text-3xl text-blue-400" />,
-      description: "Optimize your pest control business with route planning, recurring service management, and seasonal marketing campaigns.",
+      title: "Medical Spas",
+      icon: <FaLeaf className="text-3xl text-blue-400" />,
+      description: "Grow your medical spa with automated appointment scheduling, patient management, and targeted marketing for aesthetic treatments and wellness services.",
       benefits: [
-        "Route density optimization",
-        "Recurring service management",
-        "Seasonal treatment marketing",
-        "Technician knowledge base automation"
+        "Automated appointment reminders",
+        "Treatment package management",
+        "Before/after photo management",
+        "Targeted social media campaigns"
       ],
-      link: "/industries/pest-control"
+      link: "/industries/medical-spas"
     },
     {
-      title: "Cleaning Services",
-      icon: <FaWrench className="text-3xl text-blue-400" />,
-      description: "Scale your cleaning business with staff scheduling, quality control systems, and marketing that targets residential and commercial clients.",
+      title: "Legal Services",
+      icon: <FaTools className="text-3xl text-blue-400" />,
+      description: "Transform your law practice with AI-powered client intake, document management, and marketing systems that attract qualified leads for your practice areas.",
       benefits: [
-        "Staff scheduling optimization",
-        "Quality assurance automation",
-        "Supply inventory management",
-        "Recurring client acquisition systems"
+        "Automated client intake workflows",
+        "Practice area-specific marketing",
+        "Document automation and management",
+        "Client communication tracking"
       ],
-      link: "/industries/cleaning-services"
+      link: "/industries/legal"
+    },
+    {
+      title: "Recruiting & Staffing",
+      icon: <FaUsers className="text-3xl text-blue-400" />,
+      description: "Scale your recruiting business with AI-powered candidate sourcing, automated screening, and placement tracking systems that fill positions faster.",
+      benefits: [
+        "AI-powered candidate matching",
+        "Automated screening workflows",
+        "Client relationship management",
+        "Performance tracking and analytics"
+      ],
+      link: "/industries/recruiting"
     }
   ];
 
@@ -155,10 +156,10 @@ const IndustriesPage = () => {
                 <FaTools className="text-2xl text-white" />
               </div>
               <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                AI-Powered Growth for Home Service Businesses
+                AI-Powered Growth for Service Businesses
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-                SpotCircuit builds custom AI solutions for plumbing, HVAC, electrical, landscaping, roofing, and other home service businesses. Generate qualified leads, optimize operations, and scale your business with intelligent automation.
+                SpotCircuit builds custom AI solutions for home service, medical spa, legal, and recruiting businesses. Generate qualified leads, optimize operations, and scale your business with intelligent automation designed for your specific industry.
               </p>
               
               <motion.div
@@ -187,9 +188,9 @@ const IndustriesPage = () => {
               transition={{ duration: 0.7 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Common Challenges Facing <span className="gradient-text">Home Service Businesses</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Common Challenges Facing <span className="gradient-text">Service Businesses</span></h2>
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                No matter what type of home service you provide, these challenges are likely holding back your growth and profitability.
+                Whether you're in home services, medical aesthetics, legal services, or recruiting, these challenges are likely holding back your growth and profitability.
               </p>
             </motion.div>
 
@@ -318,9 +319,9 @@ const IndustriesPage = () => {
               <div className="icon-container mb-6 glow-effect inline-block">
                 <FaTools className="text-2xl text-white" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">AI Solutions for <span className="gradient-text">Every Home Service</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">AI Solutions for <span className="gradient-text">Every Service Industry</span></h2>
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                SpotCircuit builds custom AI systems tailored to the unique needs of each home service industry. Find your industry below to see how we can help you grow.
+                SpotCircuit builds custom AI systems tailored to the unique needs of each service industry. Find your industry below to see how we can help you grow.
               </p>
             </motion.div>
 
@@ -373,9 +374,9 @@ const IndustriesPage = () => {
               transition={{ duration: 0.7 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">How We <span className="gradient-text">Transform</span> Your Home Service Business</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">How We <span className="gradient-text">Transform</span> Your Service Business</h2>
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                Our proven process helps home service businesses automate operations, generate qualified leads, and scale profitably.
+                Our proven process helps service businesses automate operations, generate qualified leads, and scale profitably across any industry.
               </p>
             </motion.div>
 
@@ -451,7 +452,7 @@ const IndustriesPage = () => {
               <div className="inline-flex items-center justify-center p-4 mb-6 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
                 <FaEnvelope className="text-white text-3xl" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="gradient-text">Transform</span> Your Home Service Business?</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="gradient-text">Transform</span> Your Service Business?</h2>
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
                 Take the first step toward automation and optimization. Fill out the form below and our team will get back to you within 24 hours.
               </p>
@@ -481,7 +482,7 @@ const IndustriesPage = () => {
             >
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Frequently Asked <span className="gradient-text">Questions</span></h2>
               <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                Get answers to common questions about our AI solutions for home service businesses.
+                Get answers to common questions about our AI solutions for service businesses.
               </p>
             </motion.div>
             
@@ -541,7 +542,7 @@ const IndustriesPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Ready to Transform Your Home Service Business?</h2>
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Ready to Transform Your Service Business?</h2>
               <p className="text-lg md:text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
                 Let SpotCircuit be your partner in navigating the complexities of AI and achieving sustainable growth in your specific industry.
               </p>

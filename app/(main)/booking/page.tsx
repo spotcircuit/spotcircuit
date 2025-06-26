@@ -4,10 +4,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaVideo, FaPhoneAlt } from 'react-icons/fa';
 import Script from 'next/script';
-import BreadcrumbSchema from '../components/BreadcrumbSchema';
-import SpeakableSchema from '../components/SpeakableSchema';
-import FaqSchema from '../components/FaqSchema';
-import EntitySchema from '../components/EntitySchema';
+import BreadcrumbSchema from '@/app/components/BreadcrumbSchema';
+import SpeakableSchema from '@/app/components/SpeakableSchema';
+import FaqSchema from '@/app/components/FaqSchema';
+import EntitySchema from '@/app/components/EntitySchema';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -80,20 +80,22 @@ export default function BookingPage() {
       <SpeakableSchema cssSelectors={["p.text-xl.text-blue-200"]} />
       <FaqSchema faqs={faqItems} />
       <EntitySchema 
+        type="Service"
         name="Free Consultation Booking"
         description="Book a 30-minute consultation with SpotCircuit to discuss your specific needs and how we can help with AI-powered automation and SEO solutions."
         url="https://spotcircuit.com/booking"
-        entityType="Service"
         relatedEntities={[
           {
             name: "AI Implementation Process",
             url: "https://spotcircuit.com/process",
-            description: "Learn about our implementation process."
+            description: "Learn about our implementation process.",
+            type: "WebPage"
           },
           {
             name: "Home Service Business Automation",
             url: "https://spotcircuit.com/services",
-            description: "AI-powered automation solutions for home service businesses."
+            description: "AI-powered automation solutions for home service businesses.",
+            type: "Service"
           }
         ]}
       />

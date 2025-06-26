@@ -49,6 +49,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://spotcircuit.com/privacy</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://spotcircuit.com/terms</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://spotcircuit.com/cookies</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://spotcircuit.com/accessibility</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://spotcircuit.com/tag</loc>
     <lastmod>2025-06-17</lastmod>
     <changefreq>monthly</changefreq>

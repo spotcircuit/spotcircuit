@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import RoofingPageSchema from './components/RoofingPageSchema';
+import RoofingDashboard from './components/RoofingDashboard';
 import { 
   FaHome, 
   FaCheckCircle, 
@@ -37,7 +38,7 @@ const RoofingPage: React.FC = () => {
                 AI-Powered Marketing for <span className="text-red-500">Roofing Companies</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 hero-description">
-                Grow your roofing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI.
+                Grow your roofing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI. Powered by our <Link href="/solutions/clientcircuit" className="text-red-400 hover:text-red-300 underline">ClientCircuit</Link> lead generation system.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -96,20 +97,23 @@ const RoofingPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="lg:w-1/2 mt-12 lg:mt-0">
-              <div className="relative">
-                <div className="bg-gradient-to-r from-red-600 to-red-400 rounded-lg p-1">
-                  <div className="bg-gray-900 rounded-lg p-4 relative z-10">
+            <div className="lg:w-1/2 mt-8 lg:mt-0">
+              <div className="relative max-w-xl mx-auto lg:ml-auto lg:mr-0">
+                <div className="bg-gradient-to-r from-red-600 to-red-400 rounded-lg p-0.5 shadow-2xl shadow-red-500/20">
+                  <div className="bg-gray-900 rounded-lg p-3 relative z-10">
                     <Image 
-                      src="/static/images/roofing-dashboard.jpg" 
+                      src="/static/images/roofing-dashboard.svg" 
                       alt="Roofing Business Marketing Dashboard" 
-                      width={600} 
+                      width={640} 
                       height={400}
-                      className="rounded-lg shadow-xl"
+                      className="rounded-lg shadow-xl hover:scale-102 transition-transform duration-500"
+                      priority
+                      style={{ maxHeight: '65vh', width: 'auto', objectFit: 'contain' }}
                     />
                     
-                    <div className="absolute -top-4 -right-4 bg-red-600 text-white text-sm font-bold py-2 px-4 rounded-full">
-                      +203% More Leads
+                    <div className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold py-1 px-3 rounded-full flex items-center">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1 animate-pulse"></div>
+                      LIVE
                     </div>
                     
                     <div className="absolute bottom-8 left-0 bg-gray-900/90 backdrop-blur p-4 rounded-r-lg border-l-4 border-red-500 max-w-xs">

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaCalendarAlt, FaCheckCircle } from 'react-icons/fa';
 
 interface HvacHeroProps {
@@ -65,7 +66,7 @@ const HvacHero: React.FC<HvacHeroProps> = ({ onOpenForm }) => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-blue-100 mb-8"
             >
-              AI-Powered Scheduling & Client Management That Works While You Sleep
+              AI-Powered Scheduling & Client Management That Works While You Sleep. Powered by our <Link href="/solutions/clientcircuit" className="text-orange-400 hover:text-orange-300 underline">ClientCircuit</Link> and <Link href="/services#ai-automation" className="text-orange-400 hover:text-orange-300 underline">AI automation services</Link>.
             </motion.p>
 
             <motion.div

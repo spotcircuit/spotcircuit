@@ -1,0 +1,239 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="contentBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#581c87;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="contentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b21a8;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:0.8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#a855f7" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#contentBg)"/>
+  <rect width="800" height="600" fill="url(#gridPattern)"/>
+  
+  <!-- Header -->
+  <rect x="20" y="20" width="760" height="60" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+  <text x="40" y="45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#a855f7">ContentCircuit Workflow</text>
+  <text x="40" y="65" font-family="Arial, sans-serif" font-size="12" fill="#c084fc">AI-Powered Content Generation Engine</text>
+  
+  <!-- Status -->
+  <circle cx="700" cy="45" r="4" fill="#a855f7" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="715" y="50" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Processing</text>
+  
+  <!-- Content Generation Flow -->
+  <g id="workflow">
+    <!-- Step 1: Input & Analysis -->
+    <rect x="20" y="100" width="180" height="120" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+    <circle cx="110" cy="130" r="20" fill="url(#contentPurple)"/>
+    <text x="103" y="137" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">1</text>
+    <text x="30" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">Input & Analysis</text>
+    <text x="30" y="180" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Brand voice training</text>
+    <text x="30" y="195" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Topic research</text>
+    <text x="30" y="210" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Keyword analysis</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M200 160 L220 160" stroke="#a855f7" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0 20;20 0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Step 2: AI Generation -->
+    <rect x="220" y="100" width="180" height="120" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+    <circle cx="310" cy="130" r="20" fill="url(#contentPurple)"/>
+    <text x="303" y="137" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">2</text>
+    <text x="230" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">AI Generation</text>
+    <text x="230" y="180" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Content creation</text>
+    <text x="230" y="195" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• SEO optimization</text>
+    <text x="230" y="210" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Multi-format output</text>
+    
+    <!-- Arrow 2 -->
+    <path d="M400 160 L420 160" stroke="#a855f7" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0 20;20 0" dur="1s" begin="0.3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Step 3: Review & Enhance -->
+    <rect x="420" y="100" width="180" height="120" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+    <circle cx="510" cy="130" r="20" fill="url(#contentPurple)"/>
+    <text x="503" y="137" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">3</text>
+    <text x="430" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">Review & Enhance</text>
+    <text x="430" y="180" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Quality scoring</text>
+    <text x="430" y="195" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Fact checking</text>
+    <text x="430" y="210" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Performance prediction</text>
+    
+    <!-- Arrow 3 -->
+    <path d="M600 160 L620 160" stroke="#a855f7" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0 20;20 0" dur="1s" begin="0.6s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Step 4: Publishing -->
+    <rect x="620" y="100" width="160" height="120" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+    <circle cx="700" cy="130" r="20" fill="url(#contentPurple)"/>
+    <text x="693" y="137" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">4</text>
+    <text x="630" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">Publishing</text>
+    <text x="630" y="180" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Multi-channel</text>
+    <text x="630" y="195" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Auto-scheduling</text>
+    <text x="630" y="210" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">• Performance tracking</text>
+  </g>
+  
+  <!-- Content Calendar -->
+  <rect x="20" y="240" width="380" height="200" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+  <text x="30" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">Content Calendar</text>
+  <text x="30" y="280" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Automated scheduling & publishing</text>
+  
+  <!-- Calendar Grid -->
+  <g id="calendar">
+    <!-- Week days -->
+    <text x="60" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">MON</text>
+    <text x="105" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">TUE</text>
+    <text x="150" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">WED</text>
+    <text x="195" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">THU</text>
+    <text x="240" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">FRI</text>
+    <text x="285" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">SAT</text>
+    <text x="330" y="300" font-family="Arial, sans-serif" font-size="8" fill="#c084fc" text-anchor="middle">SUN</text>
+    
+    <!-- Calendar cells with content -->
+    <rect x="40" y="310" width="40" height="30" fill="#6b21a8" opacity="0.8" rx="4"/>
+    <text x="60" y="328" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Blog</text>
+    
+    <rect x="85" y="310" width="40" height="30" fill="#a855f7" opacity="0.8" rx="4"/>
+    <text x="105" y="328" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Social</text>
+    
+    <rect x="130" y="310" width="40" height="30" fill="#6b21a8" opacity="0.8" rx="4"/>
+    <text x="150" y="328" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Email</text>
+    
+    <rect x="175" y="310" width="40" height="30" fill="#a855f7" opacity="0.8" rx="4"/>
+    <text x="195" y="328" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Video</text>
+    
+    <rect x="220" y="310" width="40" height="30" fill="#6b21a8" opacity="0.8" rx="4"/>
+    <text x="240" y="328" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">Blog</text>
+    
+    <!-- Next week preview -->
+    <rect x="40" y="345" width="40" height="30" fill="#6b21a8" opacity="0.4" rx="4"/>
+    <rect x="85" y="345" width="40" height="30" fill="#a855f7" opacity="0.4" rx="4"/>
+    <rect x="130" y="345" width="40" height="30" fill="#6b21a8" opacity="0.4" rx="4"/>
+    <rect x="175" y="345" width="40" height="30" fill="#a855f7" opacity="0.4" rx="4"/>
+    <rect x="220" y="345" width="40" height="30" fill="#6b21a8" opacity="0.4" rx="4"/>
+    
+    <!-- Scheduled content count -->
+    <rect x="40" y="390" width="340" height="35" rx="4" fill="#6b21a8" opacity="0.4"/>
+    <text x="50" y="405" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Scheduled Content:</text>
+    <text x="50" y="418" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">27 pieces</text>
+    <text x="150" y="418" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">across 5 channels</text>
+    <text x="300" y="418" font-family="Arial, sans-serif" font-size="10" fill="#10b981">✓ On track</text>
+  </g>
+  
+  <!-- Content Types Panel -->
+  <rect x="420" y="240" width="360" height="200" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+  <text x="430" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">Content Performance</text>
+  
+  <!-- Content type metrics -->
+  <g id="contentTypes">
+    <!-- Blog Posts -->
+    <rect x="430" y="280" width="340" height="35" rx="4" fill="#6b21a8" opacity="0.6"/>
+    <circle cx="445" cy="297" r="8" fill="#a855f7"/>
+    <text x="441" y="301" font-family="Arial, sans-serif" font-size="10" fill="white">📝</text>
+    <text x="465" y="295" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Blog Posts</text>
+    <text x="465" y="308" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">156</text>
+    <text x="520" y="308" font-family="Arial, sans-serif" font-size="8" fill="#c084fc">published</text>
+    <rect x="640" y="292" width="120" height="10" fill="#6b21a8" rx="5"/>
+    <rect x="640" y="292" width="85" height="10" fill="url(#contentPurple)" rx="5"/>
+    
+    <!-- Social Media -->
+    <rect x="430" y="320" width="340" height="35" rx="4" fill="#6b21a8" opacity="0.6"/>
+    <circle cx="445" cy="337" r="8" fill="#a855f7"/>
+    <text x="441" y="341" font-family="Arial, sans-serif" font-size="10" fill="white">📱</text>
+    <text x="465" y="335" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Social Media</text>
+    <text x="465" y="348" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">842</text>
+    <text x="520" y="348" font-family="Arial, sans-serif" font-size="8" fill="#c084fc">posts</text>
+    <rect x="640" y="332" width="120" height="10" fill="#6b21a8" rx="5"/>
+    <rect x="640" y="332" width="95" height="10" fill="url(#contentPurple)" rx="5"/>
+    
+    <!-- Email Campaigns -->
+    <rect x="430" y="360" width="340" height="35" rx="4" fill="#6b21a8" opacity="0.6"/>
+    <circle cx="445" cy="377" r="8" fill="#a855f7"/>
+    <text x="441" y="381" font-family="Arial, sans-serif" font-size="10" fill="white">✉️</text>
+    <text x="465" y="375" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Email Campaigns</text>
+    <text x="465" y="388" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">64</text>
+    <text x="520" y="388" font-family="Arial, sans-serif" font-size="8" fill="#c084fc">sent</text>
+    <rect x="640" y="372" width="120" height="10" fill="#6b21a8" rx="5"/>
+    <rect x="640" y="372" width="70" height="10" fill="url(#contentPurple)" rx="5"/>
+    
+    <!-- Video Scripts -->
+    <rect x="430" y="400" width="340" height="35" rx="4" fill="#6b21a8" opacity="0.6"/>
+    <circle cx="445" cy="417" r="8" fill="#a855f7"/>
+    <text x="441" y="421" font-family="Arial, sans-serif" font-size="10" fill="white">🎥</text>
+    <text x="465" y="415" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Video Scripts</text>
+    <text x="465" y="428" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#a855f7">28</text>
+    <text x="520" y="428" font-family="Arial, sans-serif" font-size="8" fill="#c084fc">created</text>
+    <rect x="640" y="412" width="120" height="10" fill="#6b21a8" rx="5"/>
+    <rect x="640" y="412" width="60" height="10" fill="url(#contentPurple)" rx="5"/>
+  </g>
+  
+  <!-- AI Writing Assistant -->
+  <rect x="20" y="460" width="760" height="120" rx="8" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1" opacity="0.9"/>
+  <text x="30" y="485" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">AI Writing Assistant</text>
+  <text x="30" y="500" font-family="Arial, sans-serif" font-size="10" fill="#c084fc">Real-time content generation</text>
+  
+  <!-- Writing interface mockup -->
+  <rect x="40" y="510" width="340" height="50" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1"/>
+  <text x="50" y="525" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">Topic: "10 Ways AI is Transforming Home Services"</text>
+  <text x="50" y="540" font-family="Arial, sans-serif" font-size="8" fill="#9ca3af">AI is generating content based on your brand voice...</text>
+  <text x="50" y="553" font-family="Arial, sans-serif" font-size="8" fill="#a855f7">█</text>
+  <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  
+  <!-- Content metrics -->
+  <rect x="400" y="510" width="100" height="50" rx="4" fill="#6b21a8" opacity="0.6"/>
+  <text x="410" y="525" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">SEO Score</text>
+  <text x="410" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#a855f7">94%</text>
+  <text x="470" y="545" font-family="Arial, sans-serif" font-size="8" fill="#10b981">↗</text>
+  
+  <rect x="510" y="510" width="100" height="50" rx="4" fill="#6b21a8" opacity="0.6"/>
+  <text x="520" y="525" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">Readability</text>
+  <text x="520" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#a855f7">A+</text>
+  
+  <rect x="620" y="510" width="140" height="50" rx="4" fill="#6b21a8" opacity="0.6"/>
+  <text x="630" y="525" font-family="Arial, sans-serif" font-size="9" fill="#c084fc">Est. Engagement</text>
+  <text x="630" y="545" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#a855f7">8.2%</text>
+  <text x="710" y="545" font-family="Arial, sans-serif" font-size="8" fill="#c084fc">High</text>
+  
+  <!-- Animated elements -->
+  <g id="animations">
+    <!-- Content flow indicator -->
+    <circle r="3" fill="#c084fc">
+      <animateMotion dur="6s" repeatCount="indefinite">
+        <path d="M110 160 L310 160 L510 160 L700 160"/>
+      </animateMotion>
+    </circle>
+    
+    <!-- Pulsing generation indicator -->
+    <circle cx="310" cy="130" r="25" fill="#a855f7" opacity="0.2">
+      <animate attributeName="r" values="25;30;25" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.1;0.2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,21 +1,43 @@
 "use client";
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaLock } from 'react-icons/fa';
+import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 const PrivacyPage = () => {
+  const pageUrl = 'https://spotcircuit.com/privacy';
+  const pageTitle = 'Privacy Policy | SpotCircuit';
+  const pageDescription = 'Learn how SpotCircuit collects, uses, and protects your personal information in compliance with privacy regulations.';
+
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href={pageUrl} />
+      </Head>
+      <LegalPageSchema 
+        title={pageTitle}
+        description={pageDescription}
+        datePublished="2023-01-01"
+        dateModified="2023-12-31"
+        url={pageUrl}
+      />
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Header />
         <main className="flex-grow">
           {/* Header Image Section */}
           <img
-            src="/static/images/services.webp"
+            src="/static/images/hero.svg"
             alt="SpotCircuit privacy image"
             className="h-[75px] w-full object-cover overflow-hidden"
           />

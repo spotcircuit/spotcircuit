@@ -6,8 +6,9 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle, FaHome, FaEnvelope } from 'react-icons/fa';
+import { FaBrain, FaUsers, FaBullseye, FaStream, FaIndustry, FaCogs, FaArrowRight, FaCheckCircle, FaHome, FaEnvelope, FaChartLine, FaStar, FaClipboardCheck } from 'react-icons/fa';
 import { HiOutlineClock, HiOutlineChartBar } from 'react-icons/hi';
 import ServiceSchema from '../components/ServiceSchema';
 import FaqSchema from '../components/FaqSchema';
@@ -130,52 +131,163 @@ const ServicesPage = () => {
           className="h-[75px] w-full object-cover overflow-hidden"
         />
         {/* Hero Section with modern styling */}
-        <section id="hero" className="gradient-bg-dark py-20 md:py-32 text-center relative overflow-hidden">
-          {/* Animated background elements */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+          {/* Animated gradient background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-shift"></div>
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
           </div>
+
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-[url('/static/images/grid.svg')] opacity-10"></div>
           
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Enhanced Icon */}
-              <div className="icon-container mb-6 glow-effect">
-                <FaBullseye className="text-2xl text-white" />
-              </div>
-              <h1 className="gradient-text text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                Stop Drowning in Chaos: Automate & Optimize Your Home Service Business
-              </h1>
-
-              {/* TL;DR summary for AI comprehension (speakable) */}
-              <div className="page-summary bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-4 rounded-lg max-w-3xl mx-auto mb-6">
-                <h2 className="text-xl font-bold mb-2 text-white">TL;DR: Home Service Business Solutions</h2>
-                <p className="text-blue-100">
-                  SpotCircuit provides AI-powered automation and SEO services specifically for home service businesses like HVAC, plumbing, and roofing companies. We help optimize scheduling, generate qualified local leads, build expert teams faster, and implement operational efficiencies that save time and increase revenue.
-                </p>
-              </div>
-              
-              <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-                SpotCircuit builds custom AI-powered automation and intelligent SEO systems specifically designed for businesses that operate in the home. Streamline scheduling, generate qualified local leads, build expert teams faster, and reclaim your time.
-              </p>
-              
+            <div className="max-w-5xl mx-auto">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-center"
               >
-                <Link href="#services">
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block">
-                    Optimize My Service Business
+                {/* Badge */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8"
+                >
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-blue-300">AI-Powered Solutions for Service Businesses</span>
+                </motion.div>
+
+                {/* Main Headline */}
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1]">
+                  <span className="block text-white">Transform Your</span>
+                  <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient-x">
+                    Service Business
                   </span>
-                </Link>
+                  <span className="block mt-2 text-white">With AI-Assisted Automation</span>
+                </h1>
+                
+                {/* Subheadline */}
+                <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                  Stop losing <span className="text-blue-400 font-semibold">$50K+ annually</span> to inefficient scheduling, 
+                  missed leads, and manual processes. Our AI systems help service businesses 
+                  <span className="text-purple-400 font-semibold"> 3x their revenue</span> in 12 months.
+                </p>
+
+                {/* Stats Row */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12"
+                >
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-1">312%</div>
+                    <div className="text-sm text-gray-400">Avg Revenue Growth</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">89%</div>
+                    <div className="text-sm text-gray-400">Lead Conversion</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-pink-400 mb-1">4.6hrs</div>
+                    <div className="text-sm text-gray-400">Saved Weekly</div>
+                  </div>
+                </motion.div>
+
+                {/* CTA Buttons */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+                >
+                  <Link href="/contact">
+                    <motion.span 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:shadow-2xl group"
+                    >
+                      See If You Qualify
+                      <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </motion.span>
+                  </Link>
+                  <Link href="#services">
+                    <motion.span 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300"
+                    >
+                      Explore Solutions
+                    </motion.span>
+                  </Link>
+                </motion.div>
+
+                {/* Trust Indicators */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400"
+                >
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-green-400" />
+                    <span>200+ Service Businesses Transformed</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-green-400" />
+                    <span>$2.4M+ Revenue Generated</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-green-400" />
+                    <span>4.9/5 Client Rating</span>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+
+              {/* Floating Elements Animation */}
+              <div className="absolute top-20 left-10 animate-float">
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-lg p-4 border border-blue-500/20">
+                  <FaUsers className="text-blue-400 text-2xl mb-2" />
+                  <div className="text-xs text-gray-300">Lead Generated</div>
+                  <div className="text-sm font-bold text-white">+147 This Week</div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-20 right-10 animate-float animation-delay-2000">
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-lg p-4 border border-purple-500/20">
+                  <FaChartLine className="text-purple-400 text-2xl mb-2" />
+                  <div className="text-xs text-gray-300">Revenue Growth</div>
+                  <div className="text-sm font-bold text-white">+312% YoY</div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Scroll Indicator */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          >
+            <div className="flex flex-col items-center gap-2 text-gray-400">
+              <span className="text-xs">Scroll to explore</span>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </motion.div>
+            </div>
+          </motion.div>
         </section>
 
         {/* We Understand Your World Section */}
@@ -378,6 +490,36 @@ const ServicesPage = () => {
                 </motion.div>
               ))}
             </div>
+            
+            {/* Process Methodology Visualization */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="mt-16 w-full overflow-hidden"
+            >
+              <div className="relative w-full max-w-6xl mx-auto h-auto min-h-[500px] md:min-h-[700px] lg:min-h-[800px] bg-gray-50 rounded-xl flex items-center justify-center">
+                <object
+                  data="/process-methodology-fixed.svg"
+                  type="image/svg+xml"
+                  className="w-full h-full max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl mx-auto block"
+                  aria-label="SpotCircuit 6-Step Process Methodology"
+                >
+                  <div className="text-center p-8">
+                    <p className="text-lg text-gray-600 mb-4">Unable to load the process methodology diagram.</p>
+                    <a 
+                      href="/process-methodology-fixed.svg" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Open image in new tab
+                    </a>
+                  </div>
+                </object>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -405,7 +547,7 @@ const ServicesPage = () => {
             {/* Service Navigation */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a href="#seo" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                SEO Optimization
+                AI Search Optimization
               </a>
               <a href="#local" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
                 Local Marketing
@@ -417,14 +559,20 @@ const ServicesPage = () => {
                 Technical SEO
               </a>
               <a href="#automation" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                AI Automation
+                AI-Assisted Automation
               </a>
               <a href="#analytics" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
                 Analytics & Reporting
               </a>
+              <a href="#conversion" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                AI Conversion Optimization
+              </a>
+              <a href="#chatbots" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                AI Chatbot Development
+              </a>
             </div>
             
-            {/* SEO Optimization Section */}
+            {/* AI Search Optimization Section */}
             <section id="seo" className="mb-20">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -433,10 +581,54 @@ const ServicesPage = () => {
                 transition={{ duration: 0.5 }}
                 className="text-center mb-10"
               >
-                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">SEO Optimization</h3>
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI Search Optimization</h3>
                 <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
                   Our AI-powered SEO optimization helps your home service business rank higher in search results, attract more qualified leads, and outperform competitors in your local market.
                 </p>
+              </motion.div>
+              
+              {/* Lead Generation Funnel Visualization */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="mb-16 md:mb-20 lg:mb-24 w-full overflow-hidden"
+              >
+                <div className="relative w-full max-w-6xl mx-auto">
+                  <img 
+                    src="/static/images/lead-generation-funnel.svg" 
+                    alt="AI-Optimized Lead Generation Funnel" 
+                    className="w-full h-auto mx-auto rounded-xl shadow-2xl border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 transform hover:scale-[1.01]"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      maxHeight: '90vh',
+                      objectFit: 'contain'
+                    }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.innerHTML = `
+                        <div class="text-center p-8 bg-blue-50 rounded-xl border-2 border-dashed border-blue-200">
+                          <h3 class="text-xl font-semibold text-blue-800 mb-2">Lead Generation Funnel</h3>
+                          <p class="text-blue-700 mb-4">Unable to load the funnel visualization.</p>
+                          <a 
+                            href="/static/images/lead-generation-funnel.svg" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                          >
+                            <span>View Image Directly</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      `;
+                    }}
+                  />
+                </div>
               </motion.div>
             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -628,7 +820,7 @@ const ServicesPage = () => {
               >
                 <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Local Marketing</h3>
                 <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
-                  Dominate your local service area with targeted marketing strategies designed specifically for home service businesses operating in specific neighborhoods and communities.
+                  Dominate your local service area with targeted marketing strategies designed specifically for home service businesses operating in specific neighborhoods and communities. Powered by our <Link href="/solutions/clientcircuit" className="text-blue-300 hover:text-blue-200 underline">ClientCircuit</Link> lead generation system.
                 </p>
               </motion.div>
 
@@ -698,7 +890,7 @@ const ServicesPage = () => {
               >
                 <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Content Strategy</h3>
                 <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
-                  Create compelling, service-specific content that converts visitors into customers and establishes your authority in your home service niche.
+                  Create compelling, service-specific content that converts visitors into customers and establishes your authority in your home service niche. Enhanced by our <Link href="/solutions/contentcircuit" className="text-purple-300 hover:text-purple-200 underline">ContentCircuit</Link> AI content generation platform.
                 </p>
               </motion.div>
 
@@ -827,7 +1019,7 @@ const ServicesPage = () => {
               </div>
             </section>
 
-            {/* AI Automation Section */}
+            {/* AI-Assisted Automation Section */}
             <section id="automation" className="mb-20">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -836,65 +1028,280 @@ const ServicesPage = () => {
                 transition={{ duration: 0.5 }}
                 className="text-center mb-10"
               >
-                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI Automation</h3>
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI-Assisted Automation Workflows</h3>
                 <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
-                  Leverage cutting-edge artificial intelligence to automate repetitive tasks, streamline operations, and create personalized customer experiences.
+                  Transform your service business with intelligent automation workflows powered by industry-leading platforms. We build custom workflows that connect your entire tech stack, automate repetitive tasks, and scale your operations without scaling your headcount.
                 </p>
               </motion.div>
 
-              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group mb-8">
-                <div className="flex items-center mb-6">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
-                    <FaBrain className="h-6 w-6" />
+              {/* Platform Badges */}
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
+                {[
+                  { name: "n8n", color: "orange" },
+                  { name: "Make", color: "purple" },
+                  { name: "Zapier", color: "orange" },
+                  { name: "Pabbly", color: "blue" },
+                  { name: "HubSpot", color: "orange" },
+                  { name: "Clay", color: "purple" },
+                  { name: "Apollo", color: "blue" }
+                ].map((platform) => (
+                  <div key={platform.name} className={`px-4 py-2 bg-${platform.color}-500/20 border border-${platform.color}-500/40 rounded-full text-${platform.color}-300 font-medium text-sm`}>
+                    {platform.name}
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-purple-300 transition-all duration-300">Intelligent Automation Solutions</h3>
-                </div>
+                ))}
+              </div>
+
+              {/* Core Workflow Categories */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                {/* Lead Generation & Enrichment */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white mr-4 shadow-lg shadow-purple-500/20">
+                      <FaUsers className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Lead Generation & Enrichment Workflows</h3>
+                  </div>
+                  
+                  <p className="text-purple-100 mb-6">
+                    Automate your entire lead generation pipeline from discovery to qualification using Apollo, Clay, and AI-powered enrichment.
+                  </p>
+                  
+                  <h4 className="text-lg font-semibold text-purple-300 mb-4">Popular Workflows We Build:</h4>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Apollo → Clay → CRM:</strong> Find ideal prospects, enrich with 50+ data points, and auto-sync to your CRM</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Website Visitor Identification:</strong> Unmask anonymous visitors and trigger personalized outreach sequences</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Local Market Scraping:</strong> Auto-discover businesses in your service area needing your services</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Review Mining:</strong> Find competitors' unhappy customers and reach out with better solutions</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="bg-purple-900/30 rounded-lg p-4">
+                    <p className="text-sm text-purple-200"><strong>Average Results:</strong> 3-5x more qualified leads, 78% reduction in research time, 250% increase in meeting bookings</p>
+                  </div>
+                </motion.div>
+
+                {/* Sales & Outreach Automation */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 backdrop-blur-sm p-8 rounded-xl border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white mr-4 shadow-lg shadow-blue-500/20">
+                      <FaEnvelope className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Sales & Outreach Automation</h3>
+                  </div>
+                  
+                  <p className="text-blue-100 mb-6">
+                    Build intelligent outreach sequences that adapt based on prospect behavior and engagement, maximizing conversion rates.
+                  </p>
+                  
+                  <h4 className="text-lg font-semibold text-blue-300 mb-4">Game-Changing Workflows:</h4>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Multi-Channel Sequences:</strong> Coordinate email, LinkedIn, SMS, and calls in perfect harmony</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>AI Personalization:</strong> Generate hyper-personalized messages using GPT-4 and prospect data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Intent-Based Triggers:</strong> Launch campaigns when prospects show buying signals</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-blue-100"><strong>Automated Follow-ups:</strong> Never miss a follow-up with smart reminder workflows</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="bg-blue-900/30 rounded-lg p-4">
+                    <p className="text-sm text-blue-200"><strong>Typical Impact:</strong> 40% reply rates, 65% less time on outreach, 3x more sales meetings booked</p>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Service Business Specific Workflows */}
+              <div className="bg-gradient-to-br from-green-900/20 to-green-800/10 backdrop-blur-sm p-8 rounded-xl border border-green-500/30 mb-12">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Service Business Power Workflows</h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold text-purple-300">What We Offer:</h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">AI-powered scheduling and dispatch optimization</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Automated customer communication workflows</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Intelligent lead qualification and routing</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Predictive maintenance and service recommendations</span>
-                      </li>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Workflow 1 */}
+                  <div className="bg-black/30 rounded-lg p-6">
+                    <div className="flex items-center mb-4">
+                      <FaCogs className="text-green-400 text-xl mr-3" />
+                      <h4 className="text-lg font-semibold text-green-300">Quote-to-Cash Automation</h4>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4">
+                      Streamline your entire sales process from initial inquiry to payment collection.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="text-gray-400">→ Auto-generate quotes based on service type</li>
+                      <li className="text-gray-400">→ Send contracts via DocuSign</li>
+                      <li className="text-gray-400">→ Schedule jobs automatically</li>
+                      <li className="text-gray-400">→ Trigger invoice & payment collection</li>
                     </ul>
                   </div>
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold text-purple-300">Benefits:</h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Significant time savings on administrative tasks</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Improved customer satisfaction through faster response times</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Reduced human error in scheduling and customer management</span>
-                      </li>
-                      <li className="flex items-start">
-                        <FaCheckCircle className="text-purple-400 mt-1 mr-2 flex-shrink-0" />
-                        <span className="text-blue-100">Ability to scale operations without proportionally increasing staff</span>
-                      </li>
+                  
+                  {/* Workflow 2 */}
+                  <div className="bg-black/30 rounded-lg p-6">
+                    <div className="flex items-center mb-4">
+                      <FaStar className="text-green-400 text-xl mr-3" />
+                      <h4 className="text-lg font-semibold text-green-300">Review Generation Machine</h4>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4">
+                      Automatically request and manage reviews to build your online reputation.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="text-gray-400">→ Send review requests at optimal times</li>
+                      <li className="text-gray-400">→ Route happy customers to Google/Yelp</li>
+                      <li className="text-gray-400">→ Intercept unhappy feedback privately</li>
+                      <li className="text-gray-400">→ Auto-respond to reviews with AI</li>
+                    </ul>
+                  </div>
+                  
+                  {/* Workflow 3 */}
+                  <div className="bg-black/30 rounded-lg p-6">
+                    <div className="flex items-center mb-4">
+                      <FaClipboardCheck className="text-green-400 text-xl mr-3" />
+                      <h4 className="text-lg font-semibold text-green-300">Service Lifecycle Automation</h4>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4">
+                      Keep customers engaged with automated maintenance reminders and upsells.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="text-gray-400">→ Schedule maintenance reminders</li>
+                      <li className="text-gray-400">→ Seasonal service campaigns</li>
+                      <li className="text-gray-400">→ Warranty expiration notices</li>
+                      <li className="text-gray-400">→ Loyalty program automation</li>
                     </ul>
                   </div>
                 </div>
               </div>
+
+              {/* Integration Showcase */}
+              <div className="bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-purple-900/20 rounded-xl p-8 mb-8">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Seamless Integration With Your Tech Stack</h3>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  {[
+                    "ServiceTitan", "Jobber", "HouseCall Pro", "GoHighLevel",
+                    "QuickBooks", "Google Workspace", "Slack", "Microsoft Teams",
+                    "Twilio", "SendGrid", "Calendly", "Stripe",
+                    "Facebook Ads", "Google Ads", "LinkedIn", "Instagram"
+                  ].map((tool) => (
+                    <div key={tool} className="bg-white/5 rounded-lg p-3 text-center text-sm text-gray-300 border border-white/10">
+                      {tool}
+                    </div>
+                  ))}
+                </div>
+                
+                <p className="text-center text-blue-200">
+                  <strong>200+ integrations available.</strong> If you use it, we can automate it.
+                </p>
+              </div>
+              
+              {/* Automation Workflow Visualization */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="mt-16 md:mt-20 lg:mt-24 w-full overflow-hidden"
+              >
+                <div className="relative w-full max-w-6xl mx-auto p-4 md:p-6">
+                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 md:p-8 border-2 border-purple-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                      {/* Left side - Before */}
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-purple-800">Before AI Automation</h3>
+                        <div className="space-y-3">
+                          {[
+                            'Manual data entry and processing',
+                            'Time-consuming repetitive tasks',
+                            'Disconnected systems and tools',
+                            'Human error in data handling',
+                            'Delayed response times'
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start">
+                              <div className="flex-shrink-0 mt-1">
+                                <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                  </svg>
+                                </div>
+                              </div>
+                              <span className="ml-3 text-gray-700">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right side - After */}
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-green-700">With AI Automation</h3>
+                        <div className="space-y-3">
+                          {[
+                            'Automated data processing',
+                            'Efficient task automation',
+                            'Seamless system integration',
+                            'Reduced human error',
+                            'Instant responses and actions'
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start">
+                              <div className="flex-shrink-0 mt-1">
+                                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                                  <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                  </svg>
+                                </div>
+                              </div>
+                              <span className="ml-3 text-gray-700">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Connecting arrow */}
+                    <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-16 h-1 bg-gradient-to-r from-purple-200 to-blue-200"></div>
+                      <div className="absolute top-1/2 right-0 -mt-2 w-0 h-0 
+                        border-t-8 border-t-transparent
+                        border-b-8 border-b-transparent
+                        border-l-8 border-l-blue-300">
+                      </div>
+                    </div>
+                    
+                    <div className="mt-8 text-center">
+                      <p className="text-sm text-gray-500">
+                        Our AI automation streamlines your workflow, connecting all your tools and systems
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </section>
 
             {/* Analytics & Reporting Section */}
@@ -908,7 +1315,7 @@ const ServicesPage = () => {
               >
                 <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">Analytics & Reporting</h3>
                 <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
-                  Gain actionable insights into your business performance with custom dashboards and detailed reporting that track the metrics that matter most.
+                  Gain actionable insights into your business performance with custom dashboards and detailed reporting that track the metrics that matter most. Driven by our <Link href="/solutions/analyticscircuit" className="text-blue-300 hover:text-blue-200 underline">AnalyticsCircuit</Link> business intelligence platform.
                 </p>
               </motion.div>
 
@@ -965,6 +1372,162 @@ const ServicesPage = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* ROI Performance Visualization */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="mt-12"
+              >
+                <img 
+                  src="/static/images/roi-improvement-chart.svg" 
+                  alt="ROI Performance Metrics - 12-Month Business Transformation" 
+                  className="w-full max-w-6xl mx-auto rounded-xl shadow-2xl border border-green-500/20"
+                  style={{ backgroundColor: '#f8f9fa', minHeight: '500px', objectFit: 'contain' }}
+                />
+              </motion.div>
+            </section>
+
+            {/* AI Conversion Optimization Section */}
+            <section id="conversion" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI Conversion Optimization</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Maximize your website's conversion potential with AI-powered optimization that continuously tests and improves user experience to turn more visitors into customers.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white mr-4 shadow-lg shadow-green-500/20 group-hover:shadow-green-500/40 transition-all duration-300">
+                    <FaBullseye className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-green-300 transition-all duration-300">Intelligent Conversion Optimization</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-green-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">AI-powered A/B testing and optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Dynamic content personalization based on user behavior</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Smart form optimization and lead capture</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Predictive user journey mapping and optimization</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-green-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Significantly higher conversion rates and lead quality</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Personalized experiences that increase engagement</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Continuous optimization without manual intervention</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-green-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Data-driven insights into customer preferences</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* AI Chatbot Development Section */}
+            <section id="chatbots" className="mb-20">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+              >
+                <h3 className="gradient-text text-3xl md:text-4xl font-bold mb-6">AI Chatbot Development</h3>
+                <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-10">
+                  Deploy intelligent chatbots that provide instant customer support, qualify leads, and handle complex conversations with human-like accuracy 24/7. Built on our advanced <Link href="/solutions/chatcircuit" className="text-cyan-300 hover:text-cyan-200 underline">ChatCircuit</Link> conversational AI technology.
+                </p>
+              </motion.div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 group mb-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-white mr-4 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
+                    <FaBrain className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-cyan-300 transition-all duration-300">Intelligent Customer Support Automation</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-cyan-300">What We Offer:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Custom AI chatbots with natural language processing</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Multi-channel deployment (website, social media, SMS)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Automated lead qualification and appointment booking</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Seamless handoff to human agents when needed</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-cyan-300">Benefits:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">24/7 customer support without additional staff costs</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Instant response times improve customer satisfaction</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Capture and qualify leads outside business hours</span>
+                      </li>
+                      <li className="flex items-start">
+                        <FaCheckCircle className="text-cyan-400 mt-1 mr-2 flex-shrink-0" />
+                        <span className="text-blue-100">Reduce support workload while maintaining quality</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         </section>
@@ -991,19 +1554,19 @@ const ServicesPage = () => {
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Proven Success <span className="gradient-text">In Your Trade</span></h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-                We specialize in building custom automation and optimization systems for home service businesses, including:
+                We specialize in building custom automation and optimization systems for service businesses across multiple industries:
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
                 {[
-                  { icon: FaHome, name: "Roofing", href: "/industries#roofing" },
+                  { icon: FaHome, name: "Roofing", href: "/industries/roofing" },
                   { icon: FaCogs, name: "HVAC", href: "/industries/hvac" },
-                  { icon: FaStream, name: "Plumbing", href: "/industries#plumbing" },
-                  { icon: FaBullseye, name: "Electrical", href: "/industries#electrical" },
-                  { icon: FaUsers, name: "Pest Control", href: "/industries#pest-control" },
-                  { icon: FaIndustry, name: "Flooring", href: "/industries#flooring" },
-                  { icon: FaBrain, name: "Landscaping", href: "/industries#landscaping" },
-                  { icon: FaCheckCircle, name: "Pool Services", href: "/industries#pool-services" }
+                  { icon: FaStream, name: "Plumbing", href: "/industries/plumbing" },
+                  { icon: FaBullseye, name: "Electrical", href: "/industries/electrical" },
+                  { icon: FaIndustry, name: "Contracting", href: "/industries/contracting" },
+                  { icon: FaBrain, name: "Medical Spas", href: "/industries/medical-spas" },
+                  { icon: FaUsers, name: "Legal Services", href: "/industries/legal" },
+                  { icon: FaCheckCircle, name: "Recruiting", href: "/industries/recruiting" }
                 ].map((industry, index) => (
                   <motion.div
                     key={index}

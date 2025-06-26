@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" preserveAspectRatio="xMidYMid meet">
+  <!-- Dashboard background -->
+  <rect x="0" y="0" width="800" height="500" rx="10" fill="#1a1a1a" />
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="50" rx="10" fill="#2a2a2a" />
+  <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">Roofing Business Marketing Dashboard</text>
+  
+  <!-- Date selector -->
+  <rect x="650" y="15" width="130" height="25" rx="5" fill="#3a3a3a" />
+  <text x="660" y="32" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Last 30 days ▼</text>
+  
+  <!-- KPI Boxes -->
+  <rect x="20" y="70" width="180" height="100" rx="5" fill="#2a2a2a" />
+  <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#888888">Total Leads</text>
+  <text x="30" y="130" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#e74c3c">347</text>
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="14" fill="#4cd964">▲ 24%</text>
+  
+  <rect x="220" y="70" width="180" height="100" rx="5" fill="#2a2a2a" />
+  <text x="230" y="95" font-family="Arial, sans-serif" font-size="14" fill="#888888">Conversion Rate</text>
+  <text x="230" y="130" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff">6.8%</text>
+  <text x="290" y="130" font-family="Arial, sans-serif" font-size="14" fill="#4cd964">▲ 1.2%</text>
+  
+  <rect x="420" y="70" width="180" height="100" rx="5" fill="#2a2a2a" />
+  <text x="430" y="95" font-family="Arial, sans-serif" font-size="14" fill="#888888">Avg. Project Value</text>
+  <text x="430" y="130" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff">$8,750</text>
+  <text x="515" y="130" font-family="Arial, sans-serif" font-size="14" fill="#4cd964">▲ 5%</text>
+  
+  <rect x="620" y="70" width="160" height="100" rx="5" fill="#2a2a2a" />
+  <text x="630" y="95" font-family="Arial, sans-serif" font-size="14" fill="#888888">Marketing ROI</text>
+  <text x="630" y="130" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#e74c3c">580%</text>
+  <text x="700" y="130" font-family="Arial, sans-serif" font-size="14" fill="#4cd964">▲ 12%</text>
+  
+  <!-- Main Chart -->
+  <rect x="20" y="190" width="470" height="290" rx="5" fill="#2a2a2a" />
+  <text x="40" y="220" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Lead Sources (Last 30 Days)</text>
+  
+  <!-- Bar Chart -->
+  <rect x="50" y="410" width="60" height="50" fill="#e74c3c" />
+  <rect x="120" y="370" width="60" height="90" fill="#3498db" />
+  <rect x="190" y="320" width="60" height="140" fill="#2ecc71" />
+  <rect x="260" y="350" width="60" height="110" fill="#f1c40f" />
+  <rect x="330" y="290" width="60" height="170" fill="#9b59b6" />
+  
+  <!-- Chart Labels -->
+  <text x="50" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="start" transform="rotate(90 40,430)">Direct</text>
+  <text x="120" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="start" transform="rotate(90 110,430)">Google</text>
+  <text x="190" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="start" transform="rotate(90 180,430)">Local SEO</text>
+  <text x="260" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="start" transform="rotate(90 250,430)">Social</text>
+  <text x="330" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="start" transform="rotate(90 320,430)">Referrals</text>
+  
+  <!-- Pie Chart -->
+  <circle cx="650" cy="330" r="110" fill="#2a2a2a" />
+  <path d="M650,330 L650,220 A110,110 0 0,1 750,360 Z" fill="#e74c3c" />
+  <path d="M650,330 L750,360 A110,110 0 0,1 650,440 Z" fill="#3498db" />
+  <path d="M650,330 L650,440 A110,110 0 0,1 540,360 Z" fill="#2ecc71" />
+  <path d="M650,330 L540,360 A110,110 0 0,1 570,250 Z" fill="#f1c40f" />
+  <path d="M650,330 L570,250 A110,110 0 0,1 650,220 Z" fill="#9b59b6" />
+  
+  <text x="650" y="220" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Project Types</text>
+  
+  <!-- Legend -->
+  <rect x="540" y="380" width="10" height="10" fill="#e74c3c" />
+  <text x="555" y="390" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Roof Replacement (35%)</text>
+  
+  <rect x="540" y="400" width="10" height="10" fill="#3498db" />
+  <text x="555" y="410" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Repairs (25%)</text>
+  
+  <rect x="540" y="420" width="10" height="10" fill="#2ecc71" />
+  <text x="555" y="430" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">New Construction (20%)</text>
+  
+  <rect x="710" y="380" width="10" height="10" fill="#f1c40f" />
+  <text x="725" y="390" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Commercial (15%)</text>
+  
+  <rect x="710" y="400" width="10" height="10" fill="#9b59b6" />
+  <text x="725" y="410" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Inspections (5%)</text>
+</svg>

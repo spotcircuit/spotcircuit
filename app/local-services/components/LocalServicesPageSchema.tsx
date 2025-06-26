@@ -140,6 +140,54 @@ export default function LocalServicesPageSchema() {
     '.cta-section p'
   ];
 
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly will I see results from your local SEO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most clients see initial ranking improvements within 30-60 days. Local map pack results often appear faster than organic rankings. Our comprehensive strategy includes immediate optimizations to your Google Business Profile and citation cleanup, followed by ongoing content and link building for lasting results. We will provide weekly progress reports so you can track your improvement in real-time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your pricing structure for local service businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer flexible packages starting at $997/month for our essential local visibility services. For businesses looking for comprehensive marketing solutions, our premium packages range from $1,997-$3,997/month based on service area size and competition level. All packages include our AI-powered tools, dedicated account management, and detailed performance reporting. We also offer a 30-day satisfaction guarantee for new clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does your AI technology differ from traditional marketing agencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our proprietary AI technology analyzes thousands of successful local service businesses to identify what drives visibility and lead generation in your specific industry. Unlike traditional agencies that rely on manual processes and one-size-fits-all strategies, our AI constantly adapts to algorithm changes and customer behavior patterns. This allows us to implement more precise targeting, create more effective content, and optimize your marketing budget with significantly better ROI than conventional methods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign a long-term contract?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. While our most successful clients stay with us for years, we do not believe in locking you into long-term contracts. Our services are month-to-month after an initial 3-month commitment period that allows our strategies enough time to demonstrate meaningful results. We are confident in our ability to deliver value, which is why we let our results speak for themselves instead of relying on lengthy contract terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you measure success and track ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We track multiple key performance indicators including search rankings, website traffic, lead volume, conversion rates, cost per acquisition, and overall ROI. You will receive access to our client dashboard with real-time performance data and comprehensive monthly reports. We also integrate with your CRM or booking system to track leads all the way to booked jobs, giving you full visibility into how our marketing efforts directly impact your bottom line."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       {/* Breadcrumb Schema */}
@@ -164,6 +212,14 @@ export default function LocalServicesPageSchema() {
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
+      {/* FAQ Schema */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
       {/* Specific Service Schemas */}

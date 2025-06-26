@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
   { name: 'Services', href: '#', isScroll: false, hasDropdown: true },
+  { name: 'Industries', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Solutions', href: '#', isScroll: false, hasDropdown: true },
   { name: 'Resources', href: '#', isScroll: false, hasDropdown: true },
   { name: 'About', href: '#', isScroll: false, hasDropdown: true },
@@ -16,21 +17,36 @@ const navigation = [
 ]
 
 const servicesDropdown = [
-  { name: 'AI-First SEO', href: '/services', description: 'LLM optimization for modern search' },
-  { name: 'Local Business', href: '/local-services', description: 'Location-based visibility solutions' },
-  { name: 'AI Automation', href: '/services#automation', description: 'Custom AI automation solutions' },
-  { name: 'LLM Training', href: '/services#llm-training', description: 'Custom language model training' },
-  { name: 'Workflow with n8n', href: '/services#workflow', description: 'Automated business workflows' },
+  { name: 'AI-Powered SEO Services', href: '/services', description: 'LLM optimization for modern search' },
+  { name: 'Local Business Marketing', href: '/local-services', description: 'Location-based visibility solutions' },
+  { name: 'AI-Assisted Automation', href: '/services#automation', description: 'Smart workflows with n8n, Make, Clay & more' },
+  { name: 'Custom AI Training', href: '/services#llm-training', description: 'Tailored language model training' },
+  { name: 'Content Strategy & Creation', href: '/services#content', description: 'AI-enhanced content development' },
+  { name: 'AI Conversion Optimization', href: '/services#conversion', description: 'Maximize lead generation & sales' },
+  { name: 'Analytics & Reporting', href: '/services#analytics', description: 'Data-driven insights & metrics' },
+  { name: 'AI Chatbot Development', href: '/services#chatbots', description: 'Custom conversational interfaces' },
 ]
 
 const solutionsDropdown = [
   { name: 'AnswerCircuit', href: '/answercircuit', description: 'AI visibility optimization platform' },
-  { name: 'SEO 2.0', href: '/seo2', description: 'Next-gen AI-powered search strategies' },
-  { name: 'Process', href: '/process', description: 'Our unique optimization approach' },
+  { name: 'AI Search Visibility Platform', href: '/seo2', description: 'Next-gen AI-powered search strategies' },
+  { name: 'SpotCircuit Methodology', href: '/process', description: 'Our unique optimization approach' },
+  { name: 'ClientCircuit', href: '/solutions/clientcircuit', description: 'Advanced client management platform' },
+  { name: 'ContentCircuit', href: '/solutions/contentcircuit', description: 'AI-powered content generation' },
+  { name: 'AnalyticsCircuit', href: '/solutions/analyticscircuit', description: 'Comprehensive analytics dashboard' },
+  { name: 'ChatCircuit', href: '/solutions/chatcircuit', description: 'Enterprise chatbot solutions' },
+]
+
+const industriesDropdown = [
+  { name: 'Industries Overview', href: '/industries', description: 'All industries we serve' },
+  { name: 'Plumbing', href: '/industries/plumbing', description: 'AI marketing for plumbers' },
+  { name: 'Recruiting', href: '/industries/recruiting', description: 'AI marketing for recruiters' },
+  { name: 'Legal', href: '/industries/legal', description: 'AI marketing for lawyers' },
+  { name: 'Medical', href: '/industries/medical', description: 'AI marketing for healthcare' },
+  { name: 'Roofing', href: '/industries/roofing', description: 'AI marketing for roofers' },
 ]
 
 const aboutDropdown = [
-  { name: 'Industries We Serve', href: '/industries', description: 'Specialized industry expertise' },
   { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
   { name: 'Booking Calendar', href: '/booking', description: 'Schedule a consultation' },
 ]
@@ -46,6 +62,22 @@ const resourcesDropdown = [
   { name: 'AI Marketing Tools', href: '/resources/ai-marketing-tools', description: 'Curated AI tools directory' },
 ]
 
+// Announcement Banner Component
+function AnnouncementBanner() {
+  return (
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-2 px-4 text-sm font-medium">
+      <div className="relative inline-flex items-center">
+        <span className="animate-pulse absolute -left-3 h-2 w-2 rounded-full bg-yellow-400"></span>
+        <span className="ml-4">🚀 New: AI-Powered SEO Audits - </span>
+        <Link href="/booking" className="ml-1 font-semibold underline hover:text-yellow-200 transition-colors">
+          Book Your Free Strategy Session
+        </Link>
+        <span className="absolute -right-3 h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+      </div>
+    </div>
+  )
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -53,9 +85,23 @@ export default function Header() {
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [industriesOpen, setIndustriesOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
+  const [showBanner, setShowBanner] = useState(true)
   const pathname = usePathname()
   const isHomePage = pathname === '/'
+  
+  // Hide banner when scrolling down, show when scrolling up
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 20)
+      lastScrollY = currentScrollY
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,14 +129,20 @@ export default function Header() {
     setResourcesOpen(false)
     setSolutionsOpen(false)
     setServicesOpen(false)
+    setIndustriesOpen(false)
     setAboutOpen(false)
   }
 
   return (
-    <header className={`fixed w-full z-[100] transition-all duration-500 ${
-      scrolled ? 'bg-black/40 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)]' : 'bg-transparent'
-    }`}>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-filter backdrop-blur-sm z-[-1]"></div>
+    <>
+      {showBanner && <AnnouncementBanner />}
+      <header className={`fixed w-full z-[100] transition-all duration-500 ${
+        scrolled 
+          ? 'bg-black/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.3)] py-0' 
+          : 'bg-black/60 backdrop-blur-lg py-2'
+      }`}>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-purple-900/20 to-blue-900/30 backdrop-filter backdrop-blur-md z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-purple-500/5 z-0"></div>
       
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:p-6 lg:px-8" aria-label="Global">
         <motion.div 
@@ -99,21 +151,36 @@ export default function Header() {
           transition={{ duration: 0.5 }}
           className="flex lg:flex-1"
         >
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-x-3 group">
-            <span className="sr-only">SpotCircuit</span>
-            <div className="relative overflow-hidden rounded-full p-1 bg-gradient-to-r from-blue-500/80 to-purple-600/80 group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-300">
-              <div className="bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
-                <Image
-                  src="/static/images/sclogo.png"
-                  alt="SpotCircuit"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 transform transition-transform duration-500 group-hover:scale-110 brightness-200"
-                />
+          <div className="relative">
+            <Link 
+              href="/" 
+              className="flex items-center gap-x-3 py-2 px-2 -ml-2 rounded-lg hover:bg-white/5 transition-colors duration-200 relative z-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span className="sr-only">SpotCircuit</span>
+              <div className="relative overflow-hidden rounded-full p-1 bg-gradient-to-r from-blue-500/80 to-purple-600/80 hover:from-blue-500 hover:to-purple-600 transition-all duration-300">
+                <div className="bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
+                  <Image
+                    src="/static/images/sclogo.png"
+                    alt="SpotCircuit"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 transform transition-transform duration-500 hover:scale-110 brightness-200"
+                  />
+                </div>
               </div>
-            </div>
-            <span className="text-white font-bold text-xl tracking-tight group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300">SpotCircuit</span>
-          </Link>
+              <span className="text-white font-bold text-xl tracking-tight hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-500 transition-all duration-300">
+                SpotCircuit
+              </span>
+            </Link>
+            {/* Invisible clickable overlay */}
+            <a 
+              href="/" 
+              className="absolute inset-0 z-20 w-full h-full opacity-0"
+              aria-hidden="true"
+              onClick={(e) => e.preventDefault()}
+            />
+          </div>
         </motion.div>
         
         <div className="flex lg:hidden">
@@ -131,51 +198,70 @@ export default function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="hidden lg:flex lg:gap-x-6 xl:gap-x-8"
+          className="hidden lg:flex lg:gap-x-2 xl:gap-x-3"
         >
           {navigation.map((item, index) => (
             <motion.div 
               key={item.name}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="relative"
+              transition={{ 
+                duration: 0.3, 
+                delay: index * 0.1,
+                type: 'spring',
+                stiffness: 300,
+                damping: 20
+              }}
+              className="relative group"
             >
               {item.hasDropdown ? (
                 <button
-                  className={`text-sm font-medium leading-6 px-3 py-2 rounded-lg transition-all duration-300 relative group flex items-center ${
+                  className={`text-sm font-semibold leading-6 px-4 py-2.5 rounded-lg transition-all duration-300 relative flex items-center gap-1.5 group-hover:bg-white/5 group-hover:shadow-lg group-hover:shadow-blue-500/10 ${
                     pathname?.startsWith(item.href) 
-                      ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30' 
+                      ? 'text-white bg-gradient-to-r from-blue-500/30 to-purple-600/30 border border-blue-500/30 shadow-lg shadow-blue-500/10' 
                       : 'text-gray-200 hover:text-white hover:bg-white/5'
                   }`}
-                  onMouseEnter={() => setActiveItem(item.name)}
-                  onMouseLeave={() => setActiveItem('')}
+                  onMouseEnter={() => {
+                    setActiveItem(item.name)
+                    // Close other dropdowns when hovering over a new item
+                    setServicesOpen(item.name === 'Services')
+                    setIndustriesOpen(item.name === 'Industries')
+                    setSolutionsOpen(item.name === 'Solutions')
+                    setResourcesOpen(item.name === 'Resources')
+                    setAboutOpen(item.name === 'About')
+                  }}
                   onClick={() => {
-                    if (item.name === 'Services') {
-                      setServicesOpen(!servicesOpen)
-                    } else if (item.name === 'Solutions') {
-                      setSolutionsOpen(!solutionsOpen)
-                    } else if (item.name === 'Resources') {
-                      setResourcesOpen(!resourcesOpen)
-                    } else if (item.name === 'About') {
-                      setAboutOpen(!aboutOpen)
-                    }
+                    if (item.name === 'Services') setServicesOpen(!servicesOpen)
+                    else if (item.name === 'Industries') setIndustriesOpen(!industriesOpen)
+                    else if (item.name === 'Solutions') setSolutionsOpen(!solutionsOpen)
+                    else if (item.name === 'Resources') setResourcesOpen(!resourcesOpen)
+                    else if (item.name === 'About') setAboutOpen(!aboutOpen)
                   }}
                 >
-                  {item.name}
-                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-200 ${servicesOpen || solutionsOpen || resourcesOpen || aboutOpen ? 'rotate-180' : ''}`} />
-                  <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 ${
-                    activeItem === item.name || pathname?.startsWith(item.href) ? 'w-full' : 'w-0'
-                  }`} />
+                  <span className="relative z-10">{item.name}</span>
+                  <ChevronDownIcon 
+                    className={`ml-0.5 h-4 w-4 transition-transform duration-200 ${
+                      (item.name === 'Services' && servicesOpen) || 
+                      (item.name === 'Industries' && industriesOpen) || 
+                      (item.name === 'Solutions' && solutionsOpen) || 
+                      (item.name === 'Resources' && resourcesOpen) || 
+                      (item.name === 'About' && aboutOpen) 
+                        ? 'rotate-180' : ''
+                    }`} 
+                  />
+                  <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className={`absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 transform -translate-x-1/2 ${
+                    activeItem === item.name || pathname?.startsWith(item.href) ? 'w-4/5' : 'w-0'
+                  }`}></span>
                 </button>
               ) : (
                 <a
                   href={item.href}
                   onClick={(e) => handleNavigation(e, item.href, item.isScroll)}
-                  className={`text-sm font-medium leading-6 px-3 py-2 rounded-lg transition-all duration-300 relative group flex items-center ${
-                    pathname === item.href 
-                      ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30' 
-                      : 'text-gray-200 hover:text-white hover:bg-white/5'
+                  className={`relative group inline-flex items-center px-4 py-2.5 text-sm font-semibold leading-6 rounded-lg transition-all duration-300 ${
+                    pathname === item.href
+                      ? 'text-white bg-gradient-to-r from-blue-500/30 to-purple-600/30 border border-blue-500/30 shadow-lg shadow-blue-500/10'
+                      : 'text-gray-200 hover:text-white hover:bg-white/5 hover:shadow-lg hover:shadow-blue-500/10'
                   }`}
                   onMouseEnter={() => setActiveItem(item.name)}
                   onMouseLeave={() => setActiveItem('')}
@@ -207,6 +293,43 @@ export default function Header() {
                             <Link
                               href={item.href}
                               onClick={() => setServicesOpen(false)}
+                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
+                            >
+                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+              {item.name === 'Industries' && (
+                <AnimatePresence>
+                  {industriesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                    >
+                      <div className="space-y-1">
+                        {industriesDropdown.map((item, index) => (
+                          <motion.div
+                            key={item.name}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.02 }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setIndustriesOpen(false)}
                               className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
                             >
                               <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
@@ -345,7 +468,7 @@ export default function Header() {
           className="hidden lg:flex lg:flex-1 lg:justify-end"
         >
           <Link
-            href="/contact"
+            href="/booking"
             className="text-sm font-semibold leading-6 text-white px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-500/80 to-purple-600/80 hover:from-blue-500 hover:to-purple-600 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 border border-white/10"
           >
             Book Demo
@@ -372,6 +495,7 @@ export default function Header() {
                       <button
                         onClick={() => {
                           if (item.name === 'Services') setServicesOpen(!servicesOpen);
+                          else if (item.name === 'Industries') setIndustriesOpen(!industriesOpen);
                           else if (item.name === 'Solutions') setSolutionsOpen(!solutionsOpen);
                           else if (item.name === 'Resources') setResourcesOpen(!resourcesOpen);
                           else if (item.name === 'About') setAboutOpen(!aboutOpen);
@@ -382,6 +506,7 @@ export default function Header() {
                         <ChevronDownIcon
                           className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
                             (item.name === 'Services' && servicesOpen) ||
+                            (item.name === 'Industries' && industriesOpen) ||
                             (item.name === 'Solutions' && solutionsOpen) ||
                             (item.name === 'Resources' && resourcesOpen) ||
                             (item.name === 'About' && aboutOpen)
@@ -392,6 +517,7 @@ export default function Header() {
                       </button>
                       <AnimatePresence>
                         {((item.name === 'Services' && servicesOpen) ||
+                          (item.name === 'Industries' && industriesOpen) ||
                           (item.name === 'Solutions' && solutionsOpen) ||
                           (item.name === 'Resources' && resourcesOpen) ||
                           (item.name === 'About' && aboutOpen)) && (
@@ -403,6 +529,7 @@ export default function Header() {
                             className="mt-1 space-y-1 pl-4 border-l border-white/10"
                           >
                             {(item.name === 'Services' ? servicesDropdown : 
+                              item.name === 'Industries' ? industriesDropdown : 
                               item.name === 'Solutions' ? solutionsDropdown : 
                               item.name === 'About' ? aboutDropdown : 
                               resourcesDropdown).map(
@@ -443,8 +570,8 @@ export default function Header() {
               ))}
               <div className="pt-4">
                 <Link
-                  href="/contact"
-                  onClick={(e) => handleNavigation(e, "/contact", false)}
+                  href="/booking"
+                  onClick={(e) => handleNavigation(e, "/booking", false)}
                   className="flex items-center justify-center w-full rounded-xl px-4 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg shadow-blue-500/20"
                 >
                   Book Demo
@@ -467,6 +594,7 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+      </header>
+    </>
   )
 }

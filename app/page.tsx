@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FaCheckCircle } from 'react-icons/fa';
+import HomePageSchema from '@/components/schemas/HomePageSchema';
 import ServiceSchema from './components/ServiceSchema';
 import SpeakableSchema from './components/SpeakableSchema';
 import FaqSchema from './components/FaqSchema';
@@ -39,6 +40,7 @@ export default function HomePage() {
       <Header />
       
       {/* Schema Markup */}
+      <HomePageSchema />
       <ServiceSchema 
         name="AI-First SEO & LLM Optimization"
         description="SpotCircuit provides AI-First SEO and LLM optimization services to help businesses be found and cited by AI platforms like ChatGPT, Claude, and Google's AI Overview."
