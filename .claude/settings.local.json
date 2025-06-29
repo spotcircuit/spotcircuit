@@ -17,7 +17,9 @@
       "Bash(for file in financial-advisors consulting insurance marketing-agencies)",
       "Bash(do echo \"=== $file/page.tsx ===\")",
       "Bash(done)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": []
   }

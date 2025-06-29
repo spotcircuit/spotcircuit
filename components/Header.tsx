@@ -72,17 +72,26 @@ const resourcesDropdown = [
 ]
 
 // Announcement Banner Component
-function AnnouncementBanner() {
+function AnnouncementBanner({ onClose }: { onClose: () => void }) {
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-2 px-4 text-sm font-medium">
-      <div className="relative inline-flex items-center">
-        <span className="animate-pulse absolute -left-3 h-2 w-2 rounded-full bg-yellow-400"></span>
-        <span className="ml-4">🚀 New: AI-Powered SEO Audits - </span>
-        <Link href="/booking" className="ml-1 font-semibold underline hover:text-yellow-200 transition-colors">
-          Book Your Free Strategy Session
-        </Link>
-        <span className="absolute -right-3 h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 sm:py-3 px-4 sm:px-6 text-xs sm:text-sm font-medium relative">
+      <div className="max-w-7xl mx-auto pr-8 sm:pr-0">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-2">
+          <span className="hidden sm:inline-block animate-pulse h-2 w-2 rounded-full bg-yellow-400"></span>
+          <span className="block sm:inline">🚀 New: AI-Powered SEO Audits</span>
+          <Link href="/booking" className="font-semibold underline hover:text-yellow-200 transition-colors inline-block">
+            Book Free Strategy Session
+          </Link>
+          <span className="hidden sm:inline-block animate-pulse h-2 w-2 rounded-full bg-yellow-400"></span>
+        </div>
       </div>
+      <button
+        onClick={onClose}
+        className="absolute top-1/2 -translate-y-1/2 right-2 p-1 rounded-full hover:bg-white/20 transition-colors"
+        aria-label="Close announcement"
+      >
+        <XMarkIcon className="h-4 w-4" />
+      </button>
     </div>
   )
 }
@@ -144,16 +153,16 @@ export default function Header() {
 
   return (
     <>
-      {showBanner && <AnnouncementBanner />}
+      {showBanner && <AnnouncementBanner onClose={() => setShowBanner(false)} />}
       <header className={`fixed w-full z-[100] transition-all duration-500 ${
         scrolled 
-          ? 'bg-black/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.3)] py-0' 
-          : 'bg-black/60 backdrop-blur-lg py-2'
-      }`}>
+          ? 'bg-black/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.3)]' 
+          : 'bg-black/70 backdrop-blur-lg'
+      } ${showBanner ? 'top-0' : 'top-0'}`}>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-purple-900/20 to-blue-900/30 backdrop-filter backdrop-blur-md z-0"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-purple-500/5 z-0"></div>
       
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4" aria-label="Global">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -194,7 +203,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-2.5 text-white bg-gradient-to-r from-blue-500/10 to-purple-600/10 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center justify-center rounded-full p-3 text-white bg-gradient-to-r from-blue-500/10 to-purple-600/10 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300 touch-manipulation"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -565,7 +574,8 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="lg:hidden absolute top-16 inset-x-0 z-40 bg-black/80 backdrop-blur-lg shadow-xl mx-4 rounded-2xl border border-white/10"
+            className="lg:hidden fixed inset-x-0 z-50 bg-black/95 backdrop-blur-xl shadow-2xl border-t border-white/10"
+            style={{ top: showBanner ? '108px' : '72px' }}
           >
             <div className="px-5 pt-5 pb-6 space-y-3">
               {navigation.map((item, index) => (

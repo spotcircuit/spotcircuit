@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaCheckCircle } from 'react-icons/fa';
+import PageContent from '@/components/PageContent';
 import HomePageSchema from '@/components/schemas/HomePageSchema';
 import ServiceSchema from './components/ServiceSchema';
 import SpeakableSchema from './components/SpeakableSchema';
@@ -101,25 +102,26 @@ export default function HomePage() {
       />
       
       {/* Hero Section - Updated according to checklist */}
-      <section className="py-20 text-center relative overflow-hidden">
+      <PageContent noPadding className="text-center relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-20">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500 rounded-full filter blur-3xl animate-pulse"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
             AI-Powered SEO & Automation
-            <span className="block text-3xl md:text-5xl mt-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
               For Service Businesses
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
             Unlock smarter growth strategies with automation, analytics, and AI-tailored marketing.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4">
             <Link href="/booking" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
               Get a Free Growth Audit
             </Link>
@@ -129,11 +131,11 @@ export default function HomePage() {
           </div>
           
           {/* AI Workflow Visualization */}
-          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
+          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 mx-4 sm:mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="text-left mb-6 md:mb-0 md:mr-8">
-                <h3 className="text-xl font-bold mb-3">AI + Workflow Automation</h3>
-                <p className="text-gray-400 mb-4">
+              <div className="text-center md:text-left mb-6 md:mb-0 md:mr-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">AI + Workflow Automation</h3>
+                <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
                   Our AI analyzes, optimizes, and automates your marketing workflows for maximum efficiency and results.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -155,26 +157,27 @@ export default function HomePage() {
           </div>
           
           {/* Page Summary (Speakable) - Important for AI - Moved below for better flow */}
-          <div className="page-summary bg-gray-900 p-6 rounded-lg max-w-3xl mx-auto mt-12">
-            <h2 className="text-xl font-bold mb-2">TL;DR: What We Do</h2>
-            <p className="text-gray-300">
+          <div className="page-summary bg-gray-900 p-4 sm:p-6 rounded-lg max-w-3xl mx-auto mt-8 sm:mt-12 mx-4 sm:mx-auto">
+            <h2 className="text-lg sm:text-xl font-bold mb-2">TL;DR: What We Do</h2>
+            <p className="text-sm sm:text-base text-gray-300">
               SpotCircuit specializes in AI-powered marketing automation for service businesses and AI search optimization to ensure your business is found when prospects are searching for your services.
             </p>
           </div>
         </div>
       </section>
+      </PageContent>
 
       {/* Core Offerings Section */}
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 px-4">
             Explore Our Core Offerings
           </h2>
-          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
             Discover how our specialized services, industry-specific solutions, and powerful AI tools can be tailored to drive your business forward.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-4 sm:mb-6">
             <Link href="/services">
               <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
                 <div className="text-4xl mb-4">⚙️</div>
@@ -200,7 +203,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
             <Link href="/lead-generation">
               <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
                 <div className="text-3xl mb-4">🎯</div>
@@ -239,7 +242,7 @@ export default function HomePage() {
       {/* How It Works Section */}
       <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 px-4">
             How It Works
           </h2>
           
