@@ -61,7 +61,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
-  reactStrictMode: true,
   experimental: {
     externalDir: true,
     serverActions: {
@@ -85,18 +84,20 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
+      // Note: www to non-www and HTTP to HTTPS redirects are handled by Vercel automatically
+      // Removed the manual www redirect to prevent redirect loops
+      
+      // Local services redirect (was causing 404 loops)
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.spotcircuit.com',
-          },
-        ],
-        destination: 'https://spotcircuit.com/:path*',
+        source: '/local-services',
+        destination: '/local-marketing',
         permanent: true,
       },
-      
+      {
+        source: '/local-services/:path*',
+        destination: '/local-marketing/:path*',
+        permanent: true,
+      },
       // 404 Fixes - Redirect common 404 errors to their correct pages
       // Home page redirect
       {

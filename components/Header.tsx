@@ -21,7 +21,7 @@ const servicesDropdown = [
   { name: 'AI Search Visibility', href: '/ai-search-visibility', description: 'Optimize for ChatGPT & Google' },
   { name: 'Lead Generation', href: '/lead-generation', description: 'Advanced lead capture & conversion' },
   { name: 'AI Automation', href: '/ai-automation', description: 'n8n, Make, Zapier workflows' },
-  { name: 'Local Marketing', href: '/local-services', description: 'Location-based visibility & optimization' },
+  { name: 'Local Marketing', href: '/local-marketing', description: 'Location-based visibility & optimization' },
 ]
 
 const solutionsDropdown = [
