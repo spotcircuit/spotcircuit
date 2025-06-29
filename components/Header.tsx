@@ -190,13 +190,6 @@ export default function Header() {
                 SpotCircuit
               </span>
             </Link>
-            {/* Invisible clickable overlay */}
-            <a 
-              href="/" 
-              className="absolute inset-0 z-20 w-full h-full opacity-0"
-              aria-hidden="true"
-              onClick={(e) => e.preventDefault()}
-            />
           </div>
         </motion.div>
         
