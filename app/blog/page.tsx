@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { getAllPosts, getAllTags, getAllCategories } from './utils/blogLoader';
 import PostCard from './components/PostCard';
 import TagsList from './components/TagsList';
@@ -63,9 +61,7 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
   }));
 
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
-      
+    <div className="min-h-screen bg-black">      
       {/* Schema Markup */}
       <BlogPageSchema 
         blogPosts={blogPostSchemaItems}
@@ -307,8 +303,6 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 }

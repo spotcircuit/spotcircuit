@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
 import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
@@ -333,9 +331,7 @@ const AnalyticsConversionGuide: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen flex flex-col bg-black text-white">      
       {/* Structured data - Article Schema */}
       <script 
         type="application/ld+json"
@@ -1179,10 +1175,7 @@ document.getElementById('contact-form').addEventListener('submit', function() {
             </section>
           </article>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

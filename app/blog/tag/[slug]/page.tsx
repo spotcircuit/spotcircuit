@@ -63,7 +63,6 @@ export default async function TagPage({
 
   return (
     <>
-      <Header />
       <BlogLayout>
         {/* Tag Header */}
       <div className="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
@@ -88,7 +87,6 @@ export default async function TagPage({
         />
       </div>
       </BlogLayout>
-      <Footer />
     </>
   );
 }

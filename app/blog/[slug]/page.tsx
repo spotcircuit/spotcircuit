@@ -31,7 +31,6 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
     return (
         <div className="min-h-screen bg-black">
-            <Header />
             <main className="pt-24">
                 {/* Post Header */}
                 <div className="relative w-full h-[400px] overflow-hidden">
@@ -181,7 +180,6 @@ export default async function BlogPost({ params }: BlogPostParams) {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

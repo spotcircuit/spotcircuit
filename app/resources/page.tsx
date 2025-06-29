@@ -4,8 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { 
   FaBookOpen, 
   FaMapMarkerAlt, 
@@ -101,9 +99,7 @@ const ResourcesPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       {/* Schema markup for Resource page */}
       <script 
         type="application/ld+json"
@@ -343,10 +339,7 @@ const ResourcesPage: React.FC = () => {
             </div>
           </div>
         </section>
-      </main>
-      
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

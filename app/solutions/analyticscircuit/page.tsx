@@ -29,7 +29,6 @@ import AnalyticsCircuitPageSchema from './components/AnalyticsCircuitPageSchema'
 const AnalyticsCircuitPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <AnalyticsCircuitPageSchema />
@@ -397,8 +396,6 @@ const AnalyticsCircuitPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

@@ -188,7 +188,6 @@ const faqItems = [
 export default function AIAutomationPage() {
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Hero
           title="AI-Powered Workflow Automation"
@@ -465,7 +464,6 @@ export default function AIAutomationPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   )
 }

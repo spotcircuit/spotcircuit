@@ -161,7 +161,6 @@ const faqItems = [
 export default function AISearchVisibilityPage() {
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Hero
           title="AI Search Visibility"
@@ -422,7 +421,6 @@ export default function AISearchVisibilityPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   )
 }

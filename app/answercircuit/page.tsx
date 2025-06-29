@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ServiceSchema from '../components/ServiceSchema';
 import SpeakableSchema from '../components/SpeakableSchema';
 import BreadcrumbSchema from '../components/BreadcrumbSchema';
@@ -116,9 +114,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       {/* Schema Markup */}
       <ServiceSchema 
         name="AnswerCircuit - AI Visibility Platform for B2B SaaS"
@@ -911,10 +907,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
             </div>
           </div>
         </section>
-      </main>
-      
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

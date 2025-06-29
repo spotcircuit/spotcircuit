@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import RoofingPageSchema from './components/RoofingPageSchema';
 import RoofingDashboard from './components/RoofingDashboard';
 import { 
@@ -24,9 +22,7 @@ import {
 const RoofingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <RoofingPageSchema />
-      <Header />
-      
+      <RoofingPageSchema />      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-red-900/20"></div>
@@ -416,10 +412,7 @@ const RoofingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      <Footer />
-    </div>
+      </section>    </div>
   );
 };
 

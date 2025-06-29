@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { FaCheckCircle } from 'react-icons/fa';
 import HomePageSchema from '@/components/schemas/HomePageSchema';
 import ServiceSchema from './components/ServiceSchema';
@@ -36,9 +34,7 @@ export default function HomePage() {
   ];
   
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       {/* Schema Markup */}
       <HomePageSchema />
       <ServiceSchema 
@@ -737,9 +733,6 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </div>
+      </section>    </div>
   );
 }

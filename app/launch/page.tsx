@@ -19,8 +19,6 @@ import {
   CursorArrowRaysIcon,
   ChatBubbleBottomCenterTextIcon
 } from '@heroicons/react/24/outline';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export default function LaunchPage() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -172,9 +170,7 @@ export default function LaunchPage() {
   ];
 
   return (
-    <>
-      <Header />
-      
+    <>      
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
         <div className="relative">
@@ -543,9 +539,7 @@ export default function LaunchPage() {
           </div>
         </div>
         
-        {/* Footer */}
-        <Footer />
-      </div>
+        {/* Footer */}      </div>
     </>
   );
 }

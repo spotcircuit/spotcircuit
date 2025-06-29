@@ -2,25 +2,152 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-first responsive design */
+:root {
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --container-padding: 1rem; /* Default padding */
+  --section-padding: 2rem 0; /* Default section padding */
+}
+
+/* Base styles */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-end-rgb));
+  @apply bg-gray-900 text-gray-100 font-sans antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available; /* Fix for mobile viewport height */
 }
 
-/* Add Custom CSS Below */
-
-/* Base styles for dark mode */
-body {
-  background-color: #0a0a0a; /* Near-black */
-  color: #e0e0e0; /* Light gray text */
-  font-family: 'Inter', sans-serif; /* Or your preferred modern font */
+/* Ensure all interactive elements are tappable */
+a, button, [role="button"], input[type="submit"], input[type="button"], .btn {
+  @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  touch-action: manipulation; /* Improve touch response */
 }
+
+/* Improve form controls on mobile */
+input, select, textarea, button {
+  font-size: 16px; /* Prevent iOS zoom on focus */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Optimize images */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Touch feedback */
+button:active, a:active, [role="button"]:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+/* Prevent long words from breaking layout */
+h1, h2, h3, h4, h5, h6, p, a, span, div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Optimize typography for mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+  
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+}
+
+/* Responsive container */
+.container {
+  @apply w-full px-4 mx-auto;
+  max-width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Responsive typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 1rem;
+    --section-padding: 1.5rem 0;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Responsive images */
+img {
+  @apply max-w-full h-auto;
+  height: auto;
+}
+
+/* Touch targets */
+a, button, [role="button"], input, textarea, select, label[for] {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Focus styles */
+*:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-900;
+}
+
+/* Remove default button styles */
+button {
+  @apply bg-transparent border-0 p-0 cursor-pointer;
+}
+
+/* Utility classes */
+.section {
+  @apply py-8 md:py-16;
+}
+
+.container-narrow {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* Dark mode base styles remain */
 
 /* Glass Effect */
 .glass-effect {

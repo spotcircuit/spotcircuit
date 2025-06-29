@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
 import ResourceNavigation from '@/components/ResourceNavigation';
 import { 
@@ -348,9 +346,7 @@ const TechnicalSEOChecklist: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen flex flex-col bg-black text-white">      
       {/* Structured data - Article Schema */}
       <script 
         type="application/ld+json"
@@ -949,10 +945,7 @@ const TechnicalSEOChecklist: React.FC = () => {
             </section>
           </article>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

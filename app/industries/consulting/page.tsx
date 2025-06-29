@@ -24,7 +24,6 @@ import ConsultingPageSchema from './components/ConsultingPageSchema';
 const ConsultingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <ConsultingPageSchema />
@@ -376,8 +375,6 @@ const ConsultingPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

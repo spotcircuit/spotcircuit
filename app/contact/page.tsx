@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -87,10 +85,7 @@ const ContactPage = () => {
             description: "Schedule a free consultation with our team."
           }
         ]}
-      />
-      
-      <Header />
-      <main className="flex-grow">
+      />      <main className="flex-grow">
         {/* Header Image Section */}
         <img
           src="/static/images/contact.webp"
@@ -249,9 +244,7 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

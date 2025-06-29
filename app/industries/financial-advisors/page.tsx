@@ -24,7 +24,6 @@ import FinancialAdvisorsPageSchema from './components/FinancialAdvisorsPageSchem
 const FinancialAdvisorsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <FinancialAdvisorsPageSchema />
@@ -376,8 +375,6 @@ const FinancialAdvisorsPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

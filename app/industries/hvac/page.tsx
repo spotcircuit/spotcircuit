@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion, { FaqItem } from '@/components/FaqAccordion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -75,9 +73,7 @@ const HVACLandingPage = () => {
   ];
 
   return (
-    <>
-      <Header />
-      
+    <>      
       {/* Schema Markup */}
       <HvacPageSchema />
       
@@ -168,10 +164,7 @@ const HVACLandingPage = () => {
             </div>
           </div>
         </section>
-      </main>
-      
-      <Footer />
-    </>
+      </main>    </>
   );
 };
 

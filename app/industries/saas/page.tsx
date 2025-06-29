@@ -24,7 +24,6 @@ import SaasPageSchema from './components/SaasPageSchema';
 const SaasPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <SaasPageSchema />
@@ -376,8 +375,6 @@ const SaasPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

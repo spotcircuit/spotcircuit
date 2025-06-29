@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { 
   FaHammer, 
   FaCheckCircle, 
@@ -22,7 +20,6 @@ import {
 const ContractingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
@@ -396,7 +393,6 @@ const ContractingPage: React.FC = () => {
         </div>
       </section>
       
-      <Footer />
     </div>
   );
 };

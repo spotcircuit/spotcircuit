@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { getAllPosts, getAllTags, getAllCategories } from './utils/blogLoader';
 import PostCard from './components/PostCard';
 import TagsList from './components/TagsList';
@@ -44,9 +42,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const remainingPosts = filteredPosts.slice(1);
 
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
-      <main className="pt-24">
+    <div className="min-h-screen bg-black">      <main className="pt-24">
         {/* Featured Post Header */}
         {featuredPost ? (
           <PostCard post={featuredPost} featured={true} />
@@ -159,8 +155,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 }

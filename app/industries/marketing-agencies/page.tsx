@@ -24,7 +24,6 @@ import MarketingAgenciesPageSchema from './components/MarketingAgenciesPageSchem
 const MarketingAgenciesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <MarketingAgenciesPageSchema />
@@ -376,8 +375,6 @@ const MarketingAgenciesPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

@@ -7,8 +7,6 @@ import EntitySchema from '../components/EntitySchema';
 import DatasetSchema from '../components/DatasetSchema';
 import ClaimReviewSchema from '../components/ClaimReviewSchema';
 import ReviewSchema from '../components/ReviewSchema';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Schema Testing Page - SpotCircuit',
@@ -34,9 +32,7 @@ export default function SchemaTestPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      
+    <div className="min-h-screen flex flex-col">      
       <main className="flex-grow container mx-auto px-4 py-8 max-w-5xl">
         <h1 className="text-4xl font-bold mb-8 text-center">Schema Testing Page</h1>
         
@@ -88,10 +84,7 @@ export default function SchemaTestPage() {
             <li>Review Schema</li>
           </ul>
         </section>
-      </main>
-      
-      <Footer />
-      
+      </main>      
       {/* Schema Components */}
       <OrganizationSchema />
       <WebsiteSchema />

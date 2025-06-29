@@ -24,7 +24,6 @@ import LegalPageSchema from './components/LegalPageSchema';
 const LegalPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <LegalPageSchema />
@@ -376,8 +375,6 @@ const LegalPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

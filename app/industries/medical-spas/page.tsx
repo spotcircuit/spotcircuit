@@ -24,7 +24,6 @@ import MedicalSpasPageSchema from './components/MedicalSpasPageSchema';
 const MedicalSpasPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <MedicalSpasPageSchema />
@@ -376,8 +375,6 @@ const MedicalSpasPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

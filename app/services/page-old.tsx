@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
@@ -121,9 +119,7 @@ const ServicesPage = () => {
       {/* Client-side cleanup of any invalid schema markup */}
       <SchemaCleanup />
 
-      <div className="flex flex-col min-h-screen overflow-hidden">
-        <Header />
-        <main className="flex-grow">
+      <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
         {/* Header Image Section */}
         <img
           src="/static/images/services.webp"
@@ -1750,9 +1746,7 @@ const ServicesPage = () => {
           </div>
         </section>
 
-      </main>
-      <Footer />
-      </div>
+      </main>      </div>
     </>
   );
 };

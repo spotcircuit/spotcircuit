@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { 
   FaUsers, 
   FaCheckCircle, 
@@ -23,9 +21,7 @@ import RecruitingPageSchema from './components/RecruitingPageSchema';
 
 const RecruitingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       {/* Schema Markup */}
       <RecruitingPageSchema />
       
@@ -375,10 +371,7 @@ const RecruitingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      <Footer />
-    </div>
+      </section>    </div>
   );
 };
 

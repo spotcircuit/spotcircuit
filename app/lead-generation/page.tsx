@@ -133,7 +133,6 @@ const faqItems = [
 export default function LeadGenerationPage() {
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <Hero
           title="B2B AI Lead Generation for High-Growth Industries"
@@ -393,7 +392,6 @@ export default function LeadGenerationPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   )
 }

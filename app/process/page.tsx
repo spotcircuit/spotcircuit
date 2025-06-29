@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -128,10 +126,7 @@ const ProcessPage = () => {
             description: "Custom AI strategy development for service businesses."
           }
         ]}
-      />
-      
-      <Header />
-      <main className="flex-grow">
+      />      <main className="flex-grow">
         {/* Header Image Section */}
         <img
           src="/static/images/process.webp"
@@ -382,9 +377,7 @@ const ProcessPage = () => {
             </motion.div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

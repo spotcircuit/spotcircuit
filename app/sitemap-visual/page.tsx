@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { 
   FaHome, 
   FaSearch, 
@@ -218,7 +216,6 @@ const VisualSitemap: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header />
       
       {/* Structured data - WebPage Schema */}
       <script 
@@ -324,7 +321,6 @@ const VisualSitemap: React.FC = () => {
         </div>
       </main>
       
-      <Footer />
     </div>
   );
 };

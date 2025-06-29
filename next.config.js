@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable React Strict Mode
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -79,8 +81,7 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
   },
-  // TEMPORARILY DISABLED ALL REDIRECTS
-  /*
+  // Redirects configuration
   async redirects() {
     return [
       // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
@@ -231,11 +232,7 @@ const nextConfig = {
         permanent: true,
       },
     ];
-  },
-  */
-  async redirects() {
-    return [];
-  },
+  }
 };
 
 module.exports = nextConfig;

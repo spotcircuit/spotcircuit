@@ -142,7 +142,6 @@ const faqItems = [
 export default function AnalyticsPage() {
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="pt-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -395,7 +394,6 @@ export default function AnalyticsPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   )
 }

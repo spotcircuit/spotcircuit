@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { 
   FaWrench, 
   FaCheckCircle, 
@@ -22,9 +20,7 @@ import PlumbingPageSchema from '@/app/industries/plumbing/components/PlumbingPag
 
 const PlumbingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       {/* Schema Markup */}
       <PlumbingPageSchema />
       
@@ -308,10 +304,7 @@ const PlumbingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      <Footer />
-    </div>
+      </section>    </div>
   );
 };
 

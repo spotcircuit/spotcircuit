@@ -72,9 +72,7 @@ const faqItems = [
 
 export default function ServicesPage() {
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-black text-white">
+    <>      <div className="min-h-screen bg-black text-white">
         {/* New Hero Section */}
         <section className="relative bg-gray-900 overflow-hidden mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -428,8 +426,6 @@ export default function ServicesPage() {
             </div>
         </div>
 
-      </div>
-      <Footer />
-    </>
+      </div>    </>
   )
 }

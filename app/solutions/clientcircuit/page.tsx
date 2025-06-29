@@ -29,7 +29,6 @@ import ClientCircuitPageSchema from './components/ClientCircuitPageSchema';
 const ClientCircuitPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <ClientCircuitPageSchema />
@@ -393,8 +392,6 @@ const ClientCircuitPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

@@ -2,8 +2,6 @@
 
 import React from 'react';
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCookieBite } from 'react-icons/fa';
@@ -32,9 +30,7 @@ const CookiesPage = () => {
         dateModified="2023-12-31"
         url={pageUrl}
       />
-      <div className="flex flex-col min-h-screen overflow-hidden">
-        <Header />
-        <main className="flex-grow">
+      <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
           {/* Header Image Section */}
           <img
             src="/static/images/hero.svg"
@@ -148,9 +144,7 @@ const CookiesPage = () => {
               </motion.div>
             </div>
           </section>
-        </main>
-        <Footer />
-      </div>
+        </main>      </div>
     </>
   );
 };

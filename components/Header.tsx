@@ -164,7 +164,6 @@ export default function Header() {
             <Link 
               href="/" 
               className="flex items-center gap-x-3 py-2 px-2 -ml-2 rounded-lg hover:bg-white/5 transition-colors duration-200 relative z-10"
-              onClick={(e) => e.stopPropagation()}
             >
               <span className="sr-only">SpotCircuit</span>
               <div className="relative overflow-hidden rounded-full p-1 bg-gradient-to-r from-blue-500/80 to-purple-600/80 hover:from-blue-500 hover:to-purple-600 transition-all duration-300">

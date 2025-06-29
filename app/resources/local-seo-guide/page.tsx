@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
 import RelatedResources, { ResourceItem } from '@/components/RelatedResources';
 import ResourceNavigation from '@/components/ResourceNavigation';
@@ -330,9 +328,7 @@ const LocalSEOGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      
+    <div className="min-h-screen bg-black text-white">      
       <main className="pt-20 pb-20">
         {/* Hero section */}
         <section className="relative overflow-hidden bg-gradient-to-b from-blue-900 to-black py-20">
@@ -1269,9 +1265,7 @@ const LocalSEOGuide = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

@@ -16,7 +16,8 @@
       "Bash(pnpm install:*)",
       "Bash(for file in financial-advisors consulting insurance marketing-agencies)",
       "Bash(do echo \"=== $file/page.tsx ===\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 // Import schema components
 import LocalMarketingPageSchema from './components/LocalMarketingPageSchema';
 import PackageSchema from './components/PackageSchema';
@@ -44,6 +42,29 @@ import RelatedServices from '@/components/RelatedServices';
 const LocalMarketingPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('plumbing');
   const [isSticky, setIsSticky] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  
+  // Handle touch events for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe left to close menu
+      setIsMenuOpen(false);
+    }
+    if (touchStart - touchEnd < -50) {
+      // Swipe right to open menu
+      setIsMenuOpen(true);
+    }
+  };
   
   // Handle sticky CTA bar
   React.useEffect(() => {
@@ -71,8 +92,50 @@ const LocalMarketingPage: React.FC = () => {
     }
   };
 
+  // Add viewport meta tag for mobile responsiveness
+  React.useEffect(() => {
+    // This ensures proper viewport scaling on mobile devices
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    if (viewportMeta) {
+      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <div 
+      className="min-h-screen bg-black text-white relative overflow-x-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Add padding top to main content to account for fixed header */}
+      <style jsx global>{`
+        body {
+          padding-top: 64px; /* Height of the fixed header */
+        }
+        @media (min-width: 1024px) {
+          body {
+            padding-top: 0;
+          }
+        }
+      `}</style>
+      {/* Add structured data for better SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Local Service Marketing Solutions',
+            description: 'AI-powered marketing automation for home service businesses. Dominate local search, automate lead generation, and fill your schedule with quality jobs.',
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com'}/local-marketing`,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com'}/local-marketing`,
+            },
+          }),
+        }}
+      />
       {/* Animated Background Elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-900/20 rounded-full filter blur-3xl animate-pulse"></div>
@@ -80,14 +143,58 @@ const LocalMarketingPage: React.FC = () => {
         <div className="absolute top-2/3 right-1/4 w-64 h-64 bg-purple-900/20 rounded-full filter blur-3xl animate-pulse"></div>
       </div>
 
-      {/* Sticky CTA Bar */}
+      {/* Mobile Navigation Overlay */}
+      <motion.div
+        initial={{ opacity: 0, x: '-100%' }}
+        animate={isMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: '-100%' }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        className="fixed inset-0 bg-black/95 z-50 p-6 overflow-y-auto"
+      >
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold text-white">Menu</h2>
+          <button 
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white p-2"
+            aria-label="Close menu"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav className="flex flex-col space-y-4">
+          <a href="#features" className="text-xl text-white hover:text-green-500 transition-colors py-3" onClick={() => setIsMenuOpen(false)}>Features</a>
+          <a href="#pricing" className="text-xl text-white hover:text-green-500 transition-colors py-3" onClick={() => setIsMenuOpen(false)}>Pricing</a>
+          <a href="#testimonials" className="text-xl text-white hover:text-green-500 transition-colors py-3" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
+          <a href="#contact" className="text-xl text-white hover:text-green-500 transition-colors py-3" onClick={() => setIsMenuOpen(false)}>Contact</a>
+        </nav>
+      </motion.div>
+
+      {/* Mobile Header */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-40 border-b border-gray-800">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="/" className="text-xl font-bold text-white">SpotCircuit</a>
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white p-2"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Sticky CTA Bar - Enhanced for mobile */}
       <motion.div 
         initial={{ y: 100, opacity: 0 }}
         animate={isSticky ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-sm border-t border-gray-800 py-3 z-50 shadow-2xl"
+        className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-sm border-t border-gray-800 py-2 sm:py-3 z-50 shadow-2xl"
       >
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="container mx-auto px-3 sm:px-4 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3">
           <motion.div 
             className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
@@ -130,9 +237,7 @@ const LocalMarketingPage: React.FC = () => {
             </Link>
           </motion.div>
         </div>
-      </motion.div>
-      <Header />
-      
+      </motion.div>      
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Animated background elements */}
@@ -1716,10 +1821,7 @@ const LocalMarketingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      <Footer />
-    </div>
+      </section>    </div>
   );
 };
 

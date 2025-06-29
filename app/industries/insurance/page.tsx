@@ -24,7 +24,6 @@ import InsurancePageSchema from './components/InsurancePageSchema';
 const InsurancePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <InsurancePageSchema />
@@ -376,8 +375,6 @@ const InsurancePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

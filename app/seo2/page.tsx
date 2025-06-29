@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FaqAccordion from '@/components/FaqAccordion';
 import { 
   FaRocket, 
@@ -244,9 +242,7 @@ const SEO2Page: React.FC = () => {
   };
   
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <Header />
-      
+    <div className="flex flex-col min-h-screen overflow-hidden">      
       {/* Schema Markup */}
       <Script id="seo2-schema" type="application/ld+json">
         {JSON.stringify(seo2Schema)}
@@ -726,9 +722,7 @@ const SEO2Page: React.FC = () => {
         </div>
       </section>
 
-      </main>
-      <Footer />
-    </div>
+      </main>    </div>
   );
 };
 

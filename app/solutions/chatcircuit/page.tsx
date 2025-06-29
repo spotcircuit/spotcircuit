@@ -29,7 +29,6 @@ import ChatCircuitPageSchema from './components/ChatCircuitPageSchema';
 const ChatCircuitPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
       
       {/* Schema Markup */}
       <ChatCircuitPageSchema />
@@ -397,8 +396,6 @@ const ChatCircuitPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };
