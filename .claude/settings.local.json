@@ -19,7 +19,11 @@
       "Bash(done)",
       "Bash(node:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
