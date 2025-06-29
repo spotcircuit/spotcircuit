@@ -4,9 +4,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function Hero() {
+interface CTAButton {
+  text: string;
+  href: string;
+}
+
+interface HeroProps {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  primaryCTA?: CTAButton;
+  secondaryCTA?: CTAButton;
+  backgroundImage?: string;
+  className?: string;
+}
+
+export function Hero({ 
+  title, 
+  subtitle, 
+  description, 
+  primaryCTA = { text: 'Get Started', href: '/booking' },
+  secondaryCTA,
+  backgroundImage,
+  className = ''
+}: HeroProps) {
   return (
-    <div className="relative isolate overflow-hidden bg-black">
+    <div className={`relative isolate overflow-hidden bg-black ${className}`}>
       {/* Background gradient */}
       <div className="absolute inset-x-0 top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
         <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-green-500 to-green-900 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
@@ -52,16 +75,28 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl"
           >
-            AI-Powered SEO Automation for Shopify
+            {title}
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 text-lg leading-8 text-gray-300"
-          >
-            Transform your Shopify store with our advanced AI technology. Automate your SEO strategy, boost organic traffic, and increase conversions with SpotCircuit's intelligent optimization.
-          </motion.p>
+          {subtitle && (
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-4 text-2xl font-semibold text-gray-200"
+            >
+              {subtitle}
+            </motion.h2>
+          )}
+          {description && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-6 text-lg leading-8 text-gray-300"
+            >
+              {description}
+            </motion.p>
+          )}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,14 +104,16 @@ export default function Hero() {
             className="mt-10 flex items-center justify-center gap-x-6"
           >
             <Link
-              href="#book-demo"
-              className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400"
+              href={primaryCTA.href}
+              className="rounded-md bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             >
-              Get Started
+              {primaryCTA.text}
             </Link>
-            <Link href="#how-it-works" className="text-sm font-semibold leading-6 text-white">
-              Learn more <span aria-hidden="true">→</span>
-            </Link>
+            {secondaryCTA && (
+              <Link href={secondaryCTA.href} className="text-sm font-semibold leading-6 text-white hover:text-blue-400 transition-colors">
+                {secondaryCTA.text} <span aria-hidden="true">→</span>
+              </Link>
+            )}
           </motion.div>
         </div>
 
@@ -90,17 +127,19 @@ export default function Hero() {
           >
             <div className="relative w-full h-[20rem] sm:h-[25rem] lg:w-[40rem] lg:h-[35rem]">
               {/* Main Hero Image */}
-              <Image
-                src="/static/images/hero.svg"
-                alt="AI SEO Dashboard"
-                fill
-                className="relative rounded-xl bg-transparent shadow-xl ring-1 ring-white/10 object-contain"
-                style={{ 
-                  mixBlendMode: 'screen',
-                  filter: 'brightness(1.2) contrast(1.1)'
-                }}
-                priority
-              />
+              {backgroundImage && (
+                <Image
+                  src={backgroundImage}
+                  alt={title}
+                  fill
+                  className="relative rounded-xl bg-transparent shadow-xl ring-1 ring-white/10 object-contain"
+                  style={{ 
+                    mixBlendMode: 'screen',
+                    filter: 'brightness(1.2) contrast(1.1)'
+                  }}
+                  priority
+                />
+              )}
             </div>
           </motion.div>
         </div>
@@ -108,3 +147,6 @@ export default function Hero() {
     </div>
   );
 }
+
+// Default export for backward compatibility
+export default Hero;

@@ -62,8 +62,10 @@ export default async function TagPage({
   }
 
   return (
-    <BlogLayout>
-      {/* Tag Header */}
+    <>
+      <Header />
+      <BlogLayout>
+        {/* Tag Header */}
       <div className="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center justify-center mb-4">
@@ -85,6 +87,8 @@ export default async function TagPage({
           emptyMessage="No articles found with this tag. Check back soon for new content."
         />
       </div>
-    </BlogLayout>
+      </BlogLayout>
+      <Footer />
+    </>
   );
 }

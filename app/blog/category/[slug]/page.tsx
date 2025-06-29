@@ -59,8 +59,10 @@ export default async function CategoryPage({
   );
 
   return (
-    <BlogLayout>
-      {/* Category Header */}
+    <>
+      <Header />
+      <BlogLayout>
+        {/* Category Header */}
       <div className="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -81,6 +83,8 @@ export default async function CategoryPage({
           emptyMessage="No articles found in this category. Check back soon for new content."
         />
       </div>
-    </BlogLayout>
+      </BlogLayout>
+      <Footer />
+    </>
   );
 }

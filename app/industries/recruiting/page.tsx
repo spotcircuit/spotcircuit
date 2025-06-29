@@ -30,7 +30,7 @@ const RecruitingPage: React.FC = () => {
       <RecruitingPageSchema />
       
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-blue-900/20"></div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-500/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">

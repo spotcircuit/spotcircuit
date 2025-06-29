@@ -1,22 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { TrophyIcon } from '@heroicons/react/24/outline';
 
-interface ProblemItem {
-  title: string;
-  description: string;
+interface Result {
+  metric: string;
+  label: string;
+  description?: string;
   icon?: React.ReactNode;
 }
 
-interface ProblemProps {
+interface ResultsProps {
   title: string;
   subtitle?: string;
-  problems: ProblemItem[];
+  results: Result[];
+  columns?: 3 | 4;
   className?: string;
 }
 
-export function Problem({ title, subtitle, problems, className = '' }: ProblemProps) {
+export function Results({ 
+  title, 
+  subtitle, 
+  results, 
+  columns = 4,
+  className = '' 
+}: ResultsProps) {
+  const gridCols = columns === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4';
+
   return (
     <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 ${className}`}>
       <div className="max-w-7xl mx-auto">
@@ -44,8 +54,8 @@ export function Problem({ title, subtitle, problems, className = '' }: ProblemPr
           )}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {problems.map((problem, index) => (
+        <div className={`grid ${gridCols} gap-8`}>
+          {results.map((result, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -54,17 +64,25 @@ export function Problem({ title, subtitle, problems, className = '' }: ProblemPr
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/10 mb-4">
-                {problem.icon || <ExclamationTriangleIcon className="w-8 h-8 text-red-500" />}
+              {result.icon && (
+                <div className="mb-4 flex justify-center">
+                  {result.icon}
+                </div>
+              )}
+              
+              <div className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
+                {result.metric}
               </div>
               
               <h3 className="text-lg font-semibold text-white mb-2">
-                {problem.title}
+                {result.label}
               </h3>
               
-              <p className="text-gray-400">
-                {problem.description}
-              </p>
+              {result.description && (
+                <p className="text-gray-400 text-sm">
+                  {result.description}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
@@ -73,5 +91,5 @@ export function Problem({ title, subtitle, problems, className = '' }: ProblemPr
   );
 }
 
-// Default export for backward compatibility
-export default Problem;
+// Also export as Results for compatibility
+export { Results as default };

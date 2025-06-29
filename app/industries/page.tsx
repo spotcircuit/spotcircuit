@@ -20,53 +20,120 @@ import {
   FaArrowRight, 
   FaCheckCircle, 
   FaEnvelope,
-  FaUsers 
+  FaUsers,
+  FaHeart,
+  FaGavel,
+  FaChartLine
 } from 'react-icons/fa';
 import { HiOutlineClock, HiOutlineChartBar, HiOutlineTrendingUp } from 'react-icons/hi';
 import { HiOutlineMapPin, HiOutlineWrenchScrewdriver } from 'react-icons/hi2';
 
 const IndustriesPage = () => {
-  // Define the home service industries
-  const homeServiceIndustries = [
+  // Define B2B Service Industries
+  const b2bIndustries = [
     {
-      title: "Plumbing",
-      icon: <FaFaucet className="text-3xl text-blue-400" />,
-      description: "Transform your plumbing business with AI-driven scheduling, customer management, and targeted local marketing that brings in emergency and maintenance jobs.",
+      title: "Recruiting & Staffing",
+      icon: <FaUsers className="text-3xl text-amber-400" />,
+      description: "Scale your recruiting business with AI-powered candidate sourcing, automated screening, and placement tracking systems that fill positions faster.",
       benefits: [
-        "Automated dispatch for emergency calls",
-        "Predictive maintenance scheduling",
-        "Local SEO domination for 'emergency plumber' searches",
-        "Customer history tracking for faster diagnostics"
+        "AI-powered candidate matching",
+        "Automated screening workflows",
+        "Client relationship management",
+        "Performance tracking and analytics"
       ],
-      link: "/industries/plumbing"
+      link: "/industries/recruiting"
     },
     {
-      title: "HVAC",
-      icon: <FaSnowflake className="text-3xl text-blue-400" />,
-      description: "Optimize your HVAC business for seasonal demand, improve technician routing, and capture high-value installation and service contracts.",
+      title: "SaaS & Software",
+      icon: <FaBrain className="text-3xl text-purple-400" />,
+      description: "Accelerate growth with AI-driven user acquisition, churn prediction, and revenue optimization strategies designed for software companies.",
       benefits: [
-        "Seasonal marketing automation",
-        "Technician route optimization",
-        "Equipment upgrade opportunity detection",
-        "Maintenance contract conversion systems"
+        "Product-led growth optimization",
+        "Developer marketing strategies",
+        "Account-based marketing campaigns",
+        "Churn prediction and prevention"
       ],
-      link: "/industries/hvac"
+      link: "/industries/saas"
     },
     {
-      title: "Electrical",
-      icon: <FaBolt className="text-3xl text-blue-400" />,
-      description: "Streamline your electrical contracting business with intelligent job quoting, inventory management, and targeted marketing for residential and commercial projects.",
+      title: "Insurance Brokerages",
+      icon: <FaTools className="text-3xl text-cyan-400" />,
+      description: "Transform your insurance agency with AI-powered lead qualification, automated quoting, and personalized policy recommendations.",
       benefits: [
-        "Automated quote generation",
-        "Inventory and parts management",
-        "Code compliance tracking",
-        "Targeted marketing for high-value projects"
+        "Instant quote generation",
+        "Risk assessment automation",
+        "Cross-selling opportunity detection",
+        "Client retention strategies"
       ],
-      link: "/industries/electrical"
+      link: "/industries/insurance"
+    },
+    {
+      title: "Consulting Firms",
+      icon: <FaBrain className="text-3xl text-indigo-400" />,
+      description: "Enhance your consulting practice with AI-powered research, automated reporting, and intelligent project management systems.",
+      benefits: [
+        "AI research assistance",
+        "Automated report generation",
+        "Knowledge management systems",
+        "Client insight analytics"
+      ],
+      link: "/industries/consulting"
+    },
+    {
+      title: "Marketing Agencies",
+      icon: <FaChartLine className="text-3xl text-pink-400" />,
+      description: "Supercharge your agency with AI-powered campaign creation, performance optimization, and scalable client management.",
+      benefits: [
+        "AI campaign generation",
+        "Multi-client dashboard",
+        "Performance prediction models",
+        "Automated reporting systems"
+      ],
+      link: "/industries/marketing-agencies"
+    },
+    {
+      title: "Financial Advisors",
+      icon: <FaChartLine className="text-3xl text-emerald-400" />,
+      description: "Grow your practice with AI-driven client acquisition, portfolio optimization, and automated financial planning tools.",
+      benefits: [
+        "Lead qualification automation",
+        "Portfolio optimization AI",
+        "Compliance automation",
+        "Client communication tracking"
+      ],
+      link: "/industries/financial-advisors"
+    }
+  ];
+
+  // Define Local Service Industries
+  const localServiceIndustries = [
+    {
+      title: "Healthcare & Medical",
+      icon: <FaHeart className="text-3xl text-red-400" />,
+      description: "Transform your medical practice, dental office, or medical spa with AI-powered patient acquisition, appointment optimization, and targeted healthcare marketing.",
+      benefits: [
+        "Patient acquisition campaigns",
+        "Appointment scheduling optimization",
+        "Treatment-specific marketing",
+        "Patient retention programs"
+      ],
+      link: "/industries/medical"
+    },
+    {
+      title: "Legal Services",
+      icon: <FaGavel className="text-3xl text-blue-400" />,
+      description: "Transform your law practice with AI-powered client intake, document management, and marketing systems that attract qualified leads.",
+      benefits: [
+        "Automated client intake workflows",
+        "Practice area-specific marketing",
+        "Document automation and management",
+        "Client communication tracking"
+      ],
+      link: "/industries/legal"
     },
     {
       title: "Roofing",
-      icon: <FaHome className="text-3xl text-blue-400" />,
+      icon: <FaHome className="text-3xl text-orange-400" />,
       description: "Scale your roofing company with storm-response automation, lead qualification, and marketing systems that generate qualified inspection requests.",
       benefits: [
         "Weather event triggered marketing",
@@ -78,8 +145,8 @@ const IndustriesPage = () => {
     },
     {
       title: "General Contracting",
-      icon: <FaHardHat className="text-3xl text-blue-400" />,
-      description: "Streamline your contracting business with project management automation, subcontractor coordination, and marketing that showcases your quality work.",
+      icon: <FaHardHat className="text-3xl text-yellow-400" />,
+      description: "Streamline your contracting business with project management automation, subcontractor coordination, and portfolio marketing.",
       benefits: [
         "Project timeline optimization",
         "Subcontractor management",
@@ -89,40 +156,40 @@ const IndustriesPage = () => {
       link: "/industries/contracting"
     },
     {
-      title: "Medical Spas",
-      icon: <FaLeaf className="text-3xl text-blue-400" />,
-      description: "Grow your medical spa with automated appointment scheduling, patient management, and targeted marketing for aesthetic treatments and wellness services.",
+      title: "HVAC",
+      icon: <FaSnowflake className="text-3xl text-blue-400" />,
+      description: "Optimize your HVAC business for seasonal demand, improve technician routing, and capture high-value installation contracts.",
       benefits: [
-        "Automated appointment reminders",
-        "Treatment package management",
-        "Before/after photo management",
-        "Targeted social media campaigns"
+        "Seasonal marketing automation",
+        "Technician route optimization",
+        "Equipment upgrade opportunity detection",
+        "Maintenance contract conversion systems"
       ],
-      link: "/industries/medical-spas"
+      link: "/industries/hvac"
     },
     {
-      title: "Legal Services",
-      icon: <FaTools className="text-3xl text-blue-400" />,
-      description: "Transform your law practice with AI-powered client intake, document management, and marketing systems that attract qualified leads for your practice areas.",
+      title: "Plumbing",
+      icon: <FaFaucet className="text-3xl text-blue-400" />,
+      description: "Transform your plumbing business with AI-driven scheduling, customer management, and targeted local marketing.",
       benefits: [
-        "Automated client intake workflows",
-        "Practice area-specific marketing",
-        "Document automation and management",
-        "Client communication tracking"
+        "Automated dispatch for emergency calls",
+        "Predictive maintenance scheduling",
+        "Local SEO domination",
+        "Customer history tracking"
       ],
-      link: "/industries/legal"
+      link: "/industries/plumbing"
     },
     {
-      title: "Recruiting & Staffing",
-      icon: <FaUsers className="text-3xl text-blue-400" />,
-      description: "Scale your recruiting business with AI-powered candidate sourcing, automated screening, and placement tracking systems that fill positions faster.",
+      title: "Electrical",
+      icon: <FaBolt className="text-3xl text-yellow-400" />,
+      description: "Streamline your electrical contracting business with intelligent job quoting, inventory management, and targeted marketing.",
       benefits: [
-        "AI-powered candidate matching",
-        "Automated screening workflows",
-        "Client relationship management",
-        "Performance tracking and analytics"
+        "Automated quote generation",
+        "Inventory and parts management",
+        "Code compliance tracking",
+        "Targeted marketing for high-value projects"
       ],
-      link: "/industries/recruiting"
+      link: "/industries/electrical"
     }
   ];
 
@@ -291,16 +358,38 @@ const IndustriesPage = () => {
         {/* Industries Navigation Menu */}
         <section id="industries-nav" className="py-8 bg-gray-900 border-b border-gray-800 sticky top-20 z-30">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-4">
-              {homeServiceIndustries.map((industry) => (
-                <Link 
-                  key={industry.title} 
-                  href={industry.link}
-                  className="px-4 py-2 rounded-full bg-blue-900/30 hover:bg-blue-700/50 text-blue-300 hover:text-white transition-all duration-300 text-sm md:text-base"
-                >
-                  {industry.title}
-                </Link>
-              ))}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* B2B Services */}
+              <div>
+                <h3 className="text-amber-400 font-semibold mb-3 text-center">B2B Services</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {b2bIndustries.map((industry) => (
+                    <Link 
+                      key={industry.title} 
+                      href={industry.link}
+                      className="px-3 py-1.5 rounded-full bg-amber-900/30 hover:bg-amber-700/50 text-amber-300 hover:text-white transition-all duration-300 text-sm"
+                    >
+                      {industry.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Local Services */}
+              <div>
+                <h3 className="text-blue-400 font-semibold mb-3 text-center">Local Services</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {localServiceIndustries.map((industry) => (
+                    <Link 
+                      key={industry.title} 
+                      href={industry.link}
+                      className="px-3 py-1.5 rounded-full bg-blue-900/30 hover:bg-blue-700/50 text-blue-300 hover:text-white transition-all duration-300 text-sm"
+                    >
+                      {industry.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -325,40 +414,84 @@ const IndustriesPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {homeServiceIndustries.map((industry, index) => (
-                <Link href={industry.link} key={industry.title} className="block">
-                  <motion.div
-                    id={industry.title.toLowerCase().replace(/\s+/g, '-')}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index, duration: 0.5 }}
-                    className="industry-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 shadow-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 scroll-mt-32 cursor-pointer"
-                  >
-                    <div className="flex items-center mb-6">
-                      <div className="mr-4 p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
-                        {industry.icon}
+            {/* B2B Services Section */}
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-amber-400 text-center mb-8">B2B Services</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {b2bIndustries.map((industry, index) => (
+                  <Link href={industry.link} key={industry.title} className="block">
+                    <motion.div
+                      id={industry.title.toLowerCase().replace(/\s+/g, '-')}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * index, duration: 0.5 }}
+                      className="industry-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 shadow-xl border border-gray-700 hover:border-amber-500 transition-all duration-300 scroll-mt-32 cursor-pointer h-full"
+                    >
+                      <div className="flex items-center mb-6">
+                        <div className="mr-4 p-3 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20">
+                          {industry.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">{industry.title}</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">{industry.title}</h3>
-                    </div>
-                    <p className="text-gray-300 mb-6">{industry.description}</p>
-                    <ul className="space-y-3 mb-6">
-                      {industry.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start">
-                          <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-gray-300">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
-                        View {industry.title} solution <FaArrowRight className="ml-2" />
-                      </span>
-                    </div>
-                  </motion.div>
-                </Link>
-              ))}
+                      <p className="text-gray-300 mb-6">{industry.description}</p>
+                      <ul className="space-y-3 mb-6">
+                        {industry.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-start">
+                            <FaCheckCircle className="text-amber-400 mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-gray-300">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="inline-flex items-center text-amber-400 hover:text-amber-300 font-semibold transition-colors duration-200">
+                          View {industry.title} solution <FaArrowRight className="ml-2" />
+                        </span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Local Services Section */}
+            <div>
+              <h3 className="text-3xl font-bold text-blue-400 text-center mb-8">Local Services</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {localServiceIndustries.map((industry, index) => (
+                  <Link href={industry.link} key={industry.title} className="block">
+                    <motion.div
+                      id={industry.title.toLowerCase().replace(/\s+/g, '-')}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * index, duration: 0.5 }}
+                      className="industry-card bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 shadow-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 scroll-mt-32 cursor-pointer h-full"
+                    >
+                      <div className="flex items-center mb-6">
+                        <div className="mr-4 p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
+                          {industry.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">{industry.title}</h3>
+                      </div>
+                      <p className="text-gray-300 mb-6">{industry.description}</p>
+                      <ul className="space-y-3 mb-6">
+                        {industry.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-start">
+                            <FaCheckCircle className="text-blue-400 mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-gray-300">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200">
+                          View {industry.title} solution <FaArrowRight className="ml-2" />
+                        </span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>

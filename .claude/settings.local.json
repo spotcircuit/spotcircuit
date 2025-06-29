@@ -4,7 +4,19 @@
       "Bash(mkdir:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(test:*)",
+      "Bash(npm install)",
+      "Bash(npx next dev:*)",
+      "Bash(git checkout:*)",
+      "Bash(pnpm install:*)",
+      "Bash(for file in financial-advisors consulting insurance marketing-agencies)",
+      "Bash(do echo \"=== $file/page.tsx ===\")",
+      "Bash(done)"
     ],
     "deny": []
   }

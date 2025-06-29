@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaVideo, FaPhoneAlt } from 'react-icons/fa';
 import Script from 'next/script';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import BreadcrumbSchema from '@/app/components/BreadcrumbSchema';
 import SpeakableSchema from '@/app/components/SpeakableSchema';
 import FaqSchema from '@/app/components/FaqSchema';
@@ -67,6 +69,7 @@ export default function BookingPage() {
 
   return (
     <>
+      <Header />
       {/* Schema Markup */}
       <Script id="event-schema" type="application/ld+json">
         {JSON.stringify(eventSchema)}
@@ -260,6 +263,7 @@ export default function BookingPage() {
         </div>
       </div>
     </main>
+      <Footer />
     </>
   );
 }

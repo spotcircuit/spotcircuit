@@ -17,14 +17,11 @@ const navigation = [
 ]
 
 const servicesDropdown = [
-  { name: 'AI-Powered SEO Services', href: '/services', description: 'LLM optimization for modern search' },
-  { name: 'Local Business Marketing', href: '/local-services', description: 'Location-based visibility solutions' },
-  { name: 'AI-Assisted Automation', href: '/services#automation', description: 'Smart workflows with n8n, Make, Clay & more' },
-  { name: 'Custom AI Training', href: '/services#llm-training', description: 'Tailored language model training' },
-  { name: 'Content Strategy & Creation', href: '/services#content', description: 'AI-enhanced content development' },
-  { name: 'AI Conversion Optimization', href: '/services#conversion', description: 'Maximize lead generation & sales' },
-  { name: 'Analytics & Reporting', href: '/services#analytics', description: 'Data-driven insights & metrics' },
-  { name: 'AI Chatbot Development', href: '/services#chatbots', description: 'Custom conversational interfaces' },
+  { name: 'Services Overview', href: '/services', description: 'All our AI-powered services' },
+  { name: 'AI Search Visibility', href: '/ai-search-visibility', description: 'Optimize for ChatGPT & Google' },
+  { name: 'Lead Generation', href: '/lead-generation', description: 'Advanced lead capture & conversion' },
+  { name: 'AI Automation', href: '/ai-automation', description: 'n8n, Make, Zapier workflows' },
+  { name: 'Local Marketing', href: '/local-services', description: 'Location-based visibility & optimization' },
 ]
 
 const solutionsDropdown = [
@@ -37,14 +34,26 @@ const solutionsDropdown = [
   { name: 'ChatCircuit', href: '/solutions/chatcircuit', description: 'Enterprise chatbot solutions' },
 ]
 
-const industriesDropdown = [
-  { name: 'Industries Overview', href: '/industries', description: 'All industries we serve' },
-  { name: 'Plumbing', href: '/industries/plumbing', description: 'AI marketing for plumbers' },
-  { name: 'Recruiting', href: '/industries/recruiting', description: 'AI marketing for recruiters' },
-  { name: 'Legal', href: '/industries/legal', description: 'AI marketing for lawyers' },
-  { name: 'Medical', href: '/industries/medical', description: 'AI marketing for healthcare' },
-  { name: 'Roofing', href: '/industries/roofing', description: 'AI marketing for roofers' },
-]
+const industriesDropdown = {
+  overview: { name: 'Industries Overview', href: '/industries', description: 'All industries we serve' },
+  b2b: [
+    { name: 'Recruiting & Staffing', href: '/industries/recruiting', description: 'AI for talent acquisition' },
+    { name: 'SaaS & Software', href: '/industries/saas', description: 'Growth for software companies' },
+    { name: 'Insurance Brokerages', href: '/industries/insurance', description: 'Automated quoting & sales' },
+    { name: 'Consulting Firms', href: '/industries/consulting', description: 'AI-powered research & insights' },
+    { name: 'Marketing Agencies', href: '/industries/marketing-agencies', description: 'Scale agency operations' },
+    { name: 'Financial Advisors', href: '/industries/financial-advisors', description: 'Client acquisition & portfolio AI' },
+  ],
+  local: [
+    { name: 'Healthcare & Medical', href: '/industries/medical', description: 'Medical, dental & spa marketing' },
+    { name: 'Legal Services', href: '/industries/legal', description: 'AI for law firms' },
+    { name: 'Roofing', href: '/industries/roofing', description: 'Storm response & lead gen' },
+    { name: 'General Contracting', href: '/industries/contracting', description: 'Project & portfolio marketing' },
+    { name: 'HVAC', href: '/industries/hvac', description: 'Seasonal demand optimization' },
+    { name: 'Plumbing', href: '/industries/plumbing', description: 'Emergency response marketing' },
+    { name: 'Electrical', href: '/industries/electrical', description: 'Commercial & residential leads' },
+  ]
+}
 
 const aboutDropdown = [
   { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
@@ -213,6 +222,13 @@ export default function Header() {
                 damping: 20
               }}
               className="relative group"
+              onMouseLeave={() => {
+                if (item.name === 'Services') setServicesOpen(false)
+                else if (item.name === 'Industries') setIndustriesOpen(false)
+                else if (item.name === 'Solutions') setSolutionsOpen(false)
+                else if (item.name === 'Resources') setResourcesOpen(false)
+                else if (item.name === 'About') setAboutOpen(false)
+              }}
             >
               {item.hasDropdown ? (
                 <button
@@ -281,6 +297,8 @@ export default function Header() {
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                      onMouseEnter={() => setServicesOpen(true)}
+                      onMouseLeave={() => setServicesOpen(false)}
                     >
                       <div className="space-y-1">
                         {servicesDropdown.map((item, index) => (
@@ -317,30 +335,89 @@ export default function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                      className="absolute top-full -left-40 mt-2 w-[640px] max-w-[90vw] bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-6 z-50"
+                      onMouseEnter={() => setIndustriesOpen(true)}
+                      onMouseLeave={() => setIndustriesOpen(false)}
                     >
-                      <div className="space-y-1">
-                        {industriesDropdown.map((item, index) => (
-                          <motion.div
-                            key={item.name}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.2, delay: index * 0.02 }}
-                          >
-                            <Link
-                              href={item.href}
-                              onClick={() => setIndustriesOpen(false)}
-                              className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group"
-                            >
-                              <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
-                                {item.name}
-                              </div>
-                              <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
-                                {item.description}
-                              </div>
-                            </Link>
-                          </motion.div>
-                        ))}
+                      {/* Overview Link - Centered */}
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="mb-4 text-center"
+                      >
+                        <Link
+                          href={industriesDropdown.overview.href}
+                          onClick={() => setIndustriesOpen(false)}
+                          className="inline-block px-6 py-3 rounded-lg text-sm hover:bg-white/10 transition-all duration-200 group"
+                        >
+                          <div className="font-semibold text-white group-hover:text-blue-400 transition-colors text-base">
+                            {industriesDropdown.overview.name}
+                          </div>
+                          <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors mt-1">
+                            {industriesDropdown.overview.description}
+                          </div>
+                        </Link>
+                      </motion.div>
+                      
+                      <div className="border-t border-white/10 my-4"></div>
+                      
+                      <div className="grid grid-cols-2 gap-6">
+                        {/* B2B Services Column */}
+                        <div>
+                          <h3 className="text-amber-400 font-semibold text-xs uppercase tracking-wider mb-3 px-3">B2B Services</h3>
+                          <div className="space-y-1">
+                            {industriesDropdown.b2b.map((item, index) => (
+                              <motion.div
+                                key={item.name}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.2, delay: index * 0.02 }}
+                              >
+                                <Link
+                                  href={item.href}
+                                  onClick={() => setIndustriesOpen(false)}
+                                  className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-amber-500/10 transition-all duration-200 group"
+                                >
+                                  <div className="font-medium text-white group-hover:text-amber-400 transition-colors">
+                                    {item.name}
+                                  </div>
+                                  <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    {item.description}
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Local Services Column */}
+                        <div>
+                          <h3 className="text-blue-400 font-semibold text-xs uppercase tracking-wider mb-3 px-3">Local Services</h3>
+                          <div className="space-y-1">
+                            {industriesDropdown.local.map((item, index) => (
+                              <motion.div
+                                key={item.name}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.2, delay: index * 0.02 }}
+                              >
+                                <Link
+                                  href={item.href}
+                                  onClick={() => setIndustriesOpen(false)}
+                                  className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-blue-500/10 transition-all duration-200 group"
+                                >
+                                  <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                                    {item.name}
+                                  </div>
+                                  <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    {item.description}
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   )}
@@ -355,6 +432,8 @@ export default function Header() {
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                      onMouseEnter={() => setSolutionsOpen(true)}
+                      onMouseLeave={() => setSolutionsOpen(false)}
                     >
                       <div className="space-y-1">
                         {solutionsDropdown.map((item, index) => (
@@ -392,6 +471,8 @@ export default function Header() {
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 p-4 z-50"
+                      onMouseEnter={() => setAboutOpen(true)}
+                      onMouseLeave={() => setAboutOpen(false)}
                     >
                       <div className="space-y-1">
                         {aboutDropdown.map((item, index) => (
@@ -528,20 +609,62 @@ export default function Header() {
                             transition={{ duration: 0.2, ease: 'easeInOut' }}
                             className="mt-1 space-y-1 pl-4 border-l border-white/10"
                           >
-                            {(item.name === 'Services' ? servicesDropdown : 
-                              item.name === 'Industries' ? industriesDropdown : 
-                              item.name === 'Solutions' ? solutionsDropdown : 
-                              item.name === 'About' ? aboutDropdown : 
-                              resourcesDropdown).map(
-                              (subItem) => (
+                            {item.name === 'Industries' ? (
+                              <>
+                                {/* Overview Link */}
                                 <Link
-                                  key={subItem.name}
-                                  href={subItem.href}
-                                  onClick={(e) => handleNavigation(e, subItem.href, false)}
+                                  href={industriesDropdown.overview.href}
+                                  onClick={(e) => handleNavigation(e, industriesDropdown.overview.href, false)}
                                   className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
                                 >
-                                  {subItem.name}
+                                  {industriesDropdown.overview.name}
                                 </Link>
+                                
+                                {/* B2B Services */}
+                                <div className="mt-3 mb-2">
+                                  <p className="px-3 text-xs font-semibold text-amber-400 uppercase tracking-wider">B2B Services</p>
+                                </div>
+                                {industriesDropdown.b2b.map((subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    onClick={(e) => handleNavigation(e, subItem.href, false)}
+                                    className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-amber-500/10 transition-colors duration-200"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                                
+                                {/* Local Services */}
+                                <div className="mt-3 mb-2">
+                                  <p className="px-3 text-xs font-semibold text-blue-400 uppercase tracking-wider">Local Services</p>
+                                </div>
+                                {industriesDropdown.local.map((subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    onClick={(e) => handleNavigation(e, subItem.href, false)}
+                                    className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-blue-500/10 transition-colors duration-200"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </>
+                            ) : (
+                              (item.name === 'Services' ? servicesDropdown : 
+                                item.name === 'Solutions' ? solutionsDropdown : 
+                                item.name === 'About' ? aboutDropdown : 
+                                resourcesDropdown).map(
+                                (subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    onClick={(e) => handleNavigation(e, subItem.href, false)}
+                                    className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                )
                               )
                             )}
                             {item.name === 'Resources' && (

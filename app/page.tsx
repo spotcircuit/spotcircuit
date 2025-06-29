@@ -168,62 +168,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Core Services Section - Clickable Cards */}
+      {/* Core Offerings Section */}
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Core Services
+            Explore Our Core Offerings
           </h2>
-          <p className="text-xl text-gray-300 text-center mb-12">
-            Comprehensive solutions for your business growth
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Discover how our specialized services, industry-specific solutions, and powerful AI tools can be tailored to drive your business forward.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <Link href="/services#ai-search">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-6">
+            <Link href="/services">
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
+                <div className="text-4xl mb-4">⚙️</div>
+                <h3 className="text-2xl font-bold mb-3">Services</h3>
+                <p className="text-gray-400 text-sm">Explore our comprehensive suite of marketing and automation services.</p>
+              </div>
+            </Link>
+            
+            <Link href="/industries">
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
+                <div className="text-4xl mb-4">🏢</div>
+                <h3 className="text-2xl font-bold mb-3">Industries</h3>
+                <p className="text-gray-400 text-sm">Discover tailored strategies for your specific industry needs.</p>
+              </div>
+            </Link>
+            
+            <Link href="/solutions">
+              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="text-2xl font-bold mb-3">Solutions</h3>
+                <p className="text-gray-400 text-sm">Find the perfect solution to solve your business challenges.</p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Link href="/lead-generation">
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
+                <div className="text-3xl mb-4">🎯</div>
+                <h3 className="text-xl font-bold mb-3">Lead Generation</h3>
+                <p className="text-gray-400 text-sm">Attract and convert high-quality leads.</p>
+              </div>
+            </Link>
+            
+            <Link href="/ai-search-visibility">
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
                 <div className="text-3xl mb-4">🔍</div>
-                <h3 className="text-xl font-bold mb-3">AI Search Optimization</h3>
-                <p className="text-gray-400 text-sm">Get found and cited by AI platforms like ChatGPT and Google AI Overview.</p>
+                <h3 className="text-xl font-bold mb-3">AI Search Visibility</h3>
+                <p className="text-gray-400 text-sm">Dominate search results and be seen by your target audience.</p>
               </div>
             </Link>
             
-            <Link href="/services#workflow">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
-                <div className="text-3xl mb-4">⚙️</div>
-                <h3 className="text-xl font-bold mb-3">AI Workflow Automation</h3>
-                <p className="text-gray-400 text-sm">Automate repetitive tasks and streamline your marketing and sales processes.</p>
+            <Link href="/local-marketing">
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
+                <div className="text-3xl mb-4">📍</div>
+                <h3 className="text-xl font-bold mb-3">Local Marketing</h3>
+                <p className="text-gray-400 text-sm">Connect with customers in your local area.</p>
               </div>
             </Link>
             
-            <Link href="/services#crm">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
-                <div className="text-3xl mb-4">👥</div>
-                <h3 className="text-xl font-bold mb-3">CRM + Lead Management</h3>
-                <p className="text-gray-400 text-sm">Nurture leads with automated follow-ups and personalized messaging.</p>
-              </div>
-            </Link>
-            
-            <Link href="/services#analytics">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
-                <div className="text-3xl mb-4">📊</div>
-                <h3 className="text-xl font-bold mb-3">Reporting & Analytics</h3>
-                <p className="text-gray-400 text-sm">Custom dashboards to track performance and make data-driven decisions.</p>
-              </div>
-            </Link>
-            
-            <Link href="/services#websites">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
-                <div className="text-3xl mb-4">🖥️</div>
-                <h3 className="text-xl font-bold mb-3">Website Rebuilds & CRO</h3>
-                <p className="text-gray-400 text-sm">High-converting websites optimized for both users and search engines.</p>
-              </div>
-            </Link>
-            
-            <Link href="/services#reputation">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full">
-                <div className="text-3xl mb-4">⭐</div>
-                <h3 className="text-xl font-bold mb-3">Directory & Reputation</h3>
-                <p className="text-gray-400 text-sm">Manage your online reputation and listings across all major platforms.</p>
+            <Link href="/ai-automation">
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
+                <div className="text-3xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold mb-3">AI Automation</h3>
+                <p className="text-gray-400 text-sm">Streamline your workflows and boost efficiency.</p>
               </div>
             </Link>
           </div>

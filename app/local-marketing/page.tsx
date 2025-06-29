@@ -7,20 +7,9 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-// Lazy load the PackageSchema component with proper client-side handling
-// Using a more explicit path to resolve TypeScript module resolution issues
-const PackageSchema = dynamic(
-  () => import(/* webpackChunkName: "package-schema" */ '../local-services/components/PackageSchema').catch(() => {
-    console.warn('Failed to load PackageSchema component');
-    return () => null;
-  }), {
-    ssr: false,
-    loading: () => <div className="hidden">Loading schema...</div>
-  }
-);
-
-// Import LocalServicesPageSchema
-import LocalServicesPageSchema from './components/LocalServicesPageSchema';
+// Import schema components
+import LocalMarketingPageSchema from './components/LocalMarketingPageSchema';
+import PackageSchema from './components/PackageSchema';
 import { 
   FaTools, 
   FaCheckCircle, 
@@ -52,7 +41,7 @@ import RelatedServices from '@/components/RelatedServices';
 
 // Metadata moved to metadata.ts file
 
-const LocalServicesPage: React.FC = () => {
+const LocalMarketingPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('plumbing');
   const [isSticky, setIsSticky] = useState(false);
   
@@ -181,7 +170,7 @@ const LocalServicesPage: React.FC = () => {
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Specialized for <Link href="/local-services#plumbing" className="text-green-400 hover:text-green-300 font-medium transition-colors">plumbers</Link>, <Link href="/local-services#hvac" className="text-green-400 hover:text-green-300 font-medium transition-colors">HVAC pros</Link>, <Link href="/local-services#electrical" className="text-green-400 hover:text-green-300 font-medium transition-colors">electricians</Link>, and <Link href="/local-services#contractors" className="text-green-400 hover:text-green-300 font-medium transition-colors">contractors</Link>. 
+                Specialized for <Link href="/local-marketing#plumbing" className="text-green-400 hover:text-green-300 font-medium transition-colors">plumbers</Link>, <Link href="/local-marketing#hvac" className="text-green-400 hover:text-green-300 font-medium transition-colors">HVAC pros</Link>, <Link href="/local-marketing#electrical" className="text-green-400 hover:text-green-300 font-medium transition-colors">electricians</Link>, and <Link href="/local-marketing#contractors" className="text-green-400 hover:text-green-300 font-medium transition-colors">contractors</Link>. 
                 Fill your schedule with high-quality jobs while you focus on what you do best.
               </p>
               
@@ -1424,7 +1413,7 @@ const LocalServicesPage: React.FC = () => {
           <PackageSchema />
           
           {/* Main page schema markup */}
-          <LocalServicesPageSchema />
+          <LocalMarketingPageSchema />
         </div>
       </section>
       
@@ -1685,116 +1674,48 @@ const LocalServicesPage: React.FC = () => {
       </section>
       
       {/* Final CTA Section */}
-      <section id="get-started" className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-700/20 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-700/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-radial from-blue-500/10 to-transparent rounded-full"></div>
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0 bg-grid-pattern"></div>
-          </div>
+      <section id="get-started" className="py-20 bg-gradient-to-r from-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern-overlay"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="inline-block px-6 py-2 mb-6 rounded-full bg-blue-900/50 border border-blue-700/50 backdrop-blur-sm"
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-300 font-medium">
-                Transform Your Local Business Today
-              </span>
-            </motion.div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              Ready to Dominate Your Local Market?<br />
+              <span className="text-gradient bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">Get Started Today</span>
+            </h2>
             
-            <motion.h2 
-              className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Ready to <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500">Dominate</span> Your Local Market?
-            </motion.h2>
-            
-            <motion.p 
-              className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
               Join hundreds of successful local service businesses using SpotCircuit's AI-powered marketing solutions to grow their customer base and revenue.
-            </motion.p>
+            </p>
             
-            <motion.div 
-              className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <Link href="/contact" className="group w-full sm:w-auto">
-                <div className="relative overflow-hidden rounded-xl p-0.5 bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 group-hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
-                  <div className="absolute inset-0.5 bg-gradient-to-r from-green-600 to-blue-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 group-hover:bg-transparent">
-                    Schedule a Free Strategy Session
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </div>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+              <Link href="/contact">
+                <span className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block w-full sm:w-auto">
+                  Schedule a Free Strategy Session
+                </span>
               </Link>
               
-              <Link href="/audit" className="group w-full sm:w-auto">
-                <div className="relative overflow-hidden rounded-xl p-0.5 bg-gradient-to-r from-gray-700 to-gray-800 group-hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-gray-800/30">
-                  <div className="absolute inset-0.5 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative flex items-center justify-center gap-2 bg-gray-900/80 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 group-hover:bg-transparent border border-gray-700 group-hover:border-gray-600">
-                    Get a Free Local SEO Audit
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.17.708l1.05-.15a1 1 0 011.2.983V7h1a1 1 0 010 2H8v1a1 1 0 01-1 1H6a1 1 0 110-2h1V9a1 1 0 01-1-1V5.5a1 1 0 01.672-.943l.966-.322a1 1 0 10-.59-1.914l-.966.323zM12 18a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </div>
+              <Link href="/audit">
+                <span className="bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 rounded-xl transition duration-300 border border-white/30 hover:border-white inline-block w-full sm:w-auto">
+                  Get a Free Local SEO Audit
+                </span>
               </Link>
-            </motion.div>
+            </div>
             
-            <motion.div 
-              className="flex flex-col items-center space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center -space-x-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar key={star} className="w-6 h-6 text-yellow-400" />
-                ))}
+            <div className="flex items-center justify-center space-x-6">
+              <div className="flex">
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
               </div>
-              <p className="text-gray-300">Rated 4.9/5 from <span className="font-semibold text-white">200+</span> local service businesses</p>
-              
-              <div className="flex items-center space-x-4 pt-4 border-t border-gray-800/50 w-full max-w-xs justify-center">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((img) => (
-                    <div key={img} className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden">
-                      <div className={`w-full h-full ${['bg-blue-400', 'bg-green-400', 'bg-purple-400'][img-1]}`}></div>
-                    </div>
-                  ))}
-                </div>
-                <div className="text-left">
-                  <p className="text-sm text-gray-300">Trusted by <span className="font-semibold text-white">500+</span> businesses</p>
-                  <p className="text-xs text-gray-400">across 25+ service industries</p>
-                </div>
-              </div>
-            </motion.div>
+              <p className="text-gray-300">Rated 4.9/5 from 200+ local service businesses</p>
+            </div>
           </div>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-0"></div>
       </section>
       
       <Footer />
@@ -1802,4 +1723,4 @@ const LocalServicesPage: React.FC = () => {
   );
 };
 
-export default LocalServicesPage;
+export default LocalMarketingPage;

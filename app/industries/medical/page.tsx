@@ -17,7 +17,9 @@ import {
   FaShieldAlt,
   FaHeartbeat,
   FaCalendarCheck,
-  FaHospital
+  FaHospital,
+  FaTooth,
+  FaSpa
 } from 'react-icons/fa';
 import MedicalPageSchema from './components/MedicalPageSchema';
 
@@ -30,17 +32,17 @@ const MedicalPage: React.FC = () => {
       <MedicalPageSchema />
       
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-teal-900/20"></div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-teal-500/10 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 lg:pr-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                AI-Powered Marketing for <span className="text-teal-500">Medical Professionals</span>
+                AI-Powered Marketing for <span className="text-teal-500">Healthcare Providers</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 hero-description">
-                Grow your medical practice with HIPAA-compliant digital marketing strategies that attract new patients while maintaining the highest standards of privacy and professionalism.
+                Grow your medical practice, dental office, or medical spa with HIPAA-compliant digital marketing strategies that attract new patients while maintaining the highest standards of privacy and professionalism.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -88,7 +90,7 @@ const MedicalPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
                   <span className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">
-                    Get Your Free Medical Practice Marketing Audit
+                    Get Your Free Healthcare Marketing Audit
                   </span>
                 </Link>
                 <Link href="/services">
@@ -140,10 +142,10 @@ const MedicalPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Specialized Marketing for <span className="text-teal-500">Healthcare Excellence</span>
+              Specialized Marketing for <span className="text-teal-500">All Healthcare Providers</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto feature-benefit-section">
-              Our AI-powered marketing solutions address the unique challenges of medical practices with HIPAA-compliant strategies that build trust and attract quality patients.
+              Our AI-powered marketing solutions address the unique challenges of medical practices, dental offices, and medical spas with HIPAA-compliant strategies that build trust and attract quality patients.
             </p>
           </div>
           
@@ -220,6 +222,81 @@ const MedicalPage: React.FC = () => {
               </ul>
             </div>
           </div>
+          
+          {/* Additional features for dental and medical spa */}
+          <div className="grid md:grid-cols-3 gap-8 mt-8">
+            <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/50 hover:border-teal-700/50 transition-all">
+              <div className="bg-gradient-to-br from-teal-500/20 to-teal-700/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <FaTooth className="text-teal-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Dental Practice Marketing</h3>
+              <p className="text-gray-300 mb-4">
+                Specialized strategies for general dentistry, orthodontics, and cosmetic dental practices.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Smile makeover campaigns</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Insurance verification tools</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Emergency dental SEO</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/50 hover:border-teal-700/50 transition-all">
+              <div className="bg-gradient-to-br from-teal-500/20 to-teal-700/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <FaSpa className="text-teal-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Medical Spa Marketing</h3>
+              <p className="text-gray-300 mb-4">
+                Targeted marketing for aesthetic treatments, wellness services, and beauty enhancement procedures.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Before/after galleries</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Treatment package promotions</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">VIP membership programs</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/50 hover:border-teal-700/50 transition-all">
+              <div className="bg-gradient-to-br from-teal-500/20 to-teal-700/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <FaUserMd className="text-teal-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Multi-Specialty Integration</h3>
+              <p className="text-gray-300 mb-4">
+                Unified marketing for practices offering medical, dental, and aesthetic services.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Cross-service promotions</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Integrated patient journeys</span>
+                </li>
+                <li className="flex items-start">
+                  <FaCheckCircle className="text-teal-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm">Comprehensive wellness marketing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
       
@@ -229,7 +306,7 @@ const MedicalPage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Proven <span className="text-teal-500">Results</span> for Medical Practices
+              Proven <span className="text-teal-500">Results</span> for Healthcare Providers
             </h2>
           </div>
           
@@ -285,12 +362,12 @@ const MedicalPage: React.FC = () => {
               </div>
               
               <blockquote className="text-xl italic text-gray-300 mb-6">
-                "SpotCircuit's HIPAA-compliant marketing has transformed our practice. We've grown from 20 to 75 new patients per month while maintaining complete privacy compliance. The ROI has been exceptional."
+                "SpotCircuit's HIPAA-compliant marketing has transformed our multi-specialty practice. We've grown from 20 to 75 new patients per month across our medical, dental, and aesthetic services while maintaining complete privacy compliance. The ROI has been exceptional."
               </blockquote>
               
               <div>
                 <p className="font-bold">Dr. Robert Martinez</p>
-                <p className="text-teal-400 text-sm">Family Medicine Practice Owner</p>
+                <p className="text-teal-400 text-sm">Multi-Specialty Healthcare Center Owner</p>
               </div>
               
               <div className="mt-4 grid grid-cols-3 gap-4 text-center">
@@ -322,23 +399,30 @@ const MedicalPage: React.FC = () => {
             
             <div className="space-y-6">
               <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/30">
-                <h3 className="text-xl font-bold mb-3">How can digital marketing help my medical practice while maintaining HIPAA compliance?</h3>
+                <h3 className="text-xl font-bold mb-3">How can digital marketing help my healthcare practice while maintaining HIPAA compliance?</h3>
                 <p className="text-gray-300">
-                  Digital marketing helps medical practices attract new patients through HIPAA-compliant strategies including secure patient communications, privacy-protected testimonials, educational content marketing, and targeted advertising that respects patient privacy while effectively growing your practice.
+                  Digital marketing helps medical practices, dental offices, and medical spas attract new patients through HIPAA-compliant strategies including secure patient communications, privacy-protected testimonials, educational content marketing, and targeted advertising that respects patient privacy while effectively growing your practice.
                 </p>
               </div>
               
               <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/30">
-                <h3 className="text-xl font-bold mb-3">What makes SpotCircuit different for medical practice marketing?</h3>
+                <h3 className="text-xl font-bold mb-3">What makes SpotCircuit different for healthcare marketing?</h3>
                 <p className="text-gray-300">
-                  SpotCircuit specializes in healthcare marketing with deep understanding of HIPAA requirements, medical ethics compliance, patient privacy protection, and proven strategies specifically designed for medical practices. Our team ensures all marketing efforts maintain the highest standards of patient confidentiality.
+                  SpotCircuit specializes in healthcare marketing with deep understanding of HIPAA requirements, medical ethics compliance, patient privacy protection, and proven strategies specifically designed for medical practices, dental offices, and medical spas. Our team ensures all marketing efforts maintain the highest standards of patient confidentiality.
                 </p>
               </div>
               
               <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/30">
-                <h3 className="text-xl font-bold mb-3">How long does it take to see results from medical practice marketing?</h3>
+                <h3 className="text-xl font-bold mb-3">Do you work with dental practices and medical spas?</h3>
                 <p className="text-gray-300">
-                  Most medical practices see initial increases in patient inquiries within 30-45 days. Significant growth in new patient appointments typically occurs within 60-90 days. Our strategies focus on both immediate patient acquisition and long-term practice growth through reputation building and referral networks.
+                  Yes! We specialize in marketing for all healthcare providers including medical practices, dental offices, and medical spas. Each sector has unique needs - from cosmetic dentistry promotion to aesthetic treatment marketing - and we tailor our strategies accordingly while maintaining full HIPAA compliance.
+                </p>
+              </div>
+              
+              <div className="bg-teal-900/20 rounded-xl p-6 border border-teal-800/30">
+                <h3 className="text-xl font-bold mb-3">How long does it take to see results from healthcare marketing?</h3>
+                <p className="text-gray-300">
+                  Most healthcare providers see initial increases in patient inquiries within 30-45 days. Significant growth in new patient appointments typically occurs within 60-90 days. Our strategies focus on both immediate patient acquisition and long-term practice growth through reputation building and referral networks.
                 </p>
               </div>
             </div>
@@ -353,7 +437,7 @@ const MedicalPage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Grow Your Medical Practice?
+              Ready to Grow Your Healthcare Practice?
             </h2>
             
             <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">

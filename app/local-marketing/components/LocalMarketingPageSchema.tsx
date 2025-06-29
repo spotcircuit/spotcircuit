@@ -8,11 +8,11 @@ import PlumbingServiceSchema from './PlumbingServiceSchema';
 import HVACServiceSchema from './HVACServiceSchema';
 import ElectricalServiceSchema from './ElectricalServiceSchema';
 
-export default function LocalServicesPageSchema() {
+export default function LocalMarketingPageSchema() {
   // Define breadcrumb items
   const breadcrumbItems = [
     { name: 'Home', url: 'https://spotcircuit.com/', position: 1 },
-    { name: 'Local Services', url: 'https://spotcircuit.com/local-services/', position: 2 }
+    { name: 'Local Marketing', url: 'https://spotcircuit.com/local-marketing/', position: 2 }
   ];
 
   // Define service areas
@@ -24,29 +24,29 @@ export default function LocalServicesPageSchema() {
   // Define local service types
   const serviceTypes = [
     {
-      name: 'Plumbing Services',
-      description: 'Professional plumbing services for residential and commercial properties',
-      url: 'https://spotcircuit.com/local-services/#plumbing'
+      'name': 'Plumbing Services',
+      'description': 'Professional plumbing services for residential and commercial properties',
+      'url': 'https://spotcircuit.com/local-marketing/#plumbing'
     },
     {
-      name: 'HVAC Services',
-      description: 'Heating, ventilation, and air conditioning installation and repair',
-      url: 'https://spotcircuit.com/local-services/#hvac'
+      'name': 'HVAC Services',
+      'description': 'Heating, ventilation, and air conditioning installation and repair',
+      'url': 'https://spotcircuit.com/local-marketing/#hvac'
     },
     {
-      name: 'Electrical Services',
-      description: 'Residential and commercial electrical services and repairs',
-      url: 'https://spotcircuit.com/local-services/#electrical'
+      'name': 'Electrical Services',
+      'description': 'Residential and commercial electrical services and repairs',
+      'url': 'https://spotcircuit.com/local-marketing/#electrical'
     },
     {
-      name: 'Contracting Services',
-      description: 'General contracting and home improvement services',
-      url: 'https://spotcircuit.com/local-services/#contracting'
+      'name': 'Contracting Services',
+      'description': 'General contracting and home improvement services',
+      'url': 'https://spotcircuit.com/local-marketing/#contracting'
     },
     {
-      name: 'Roofing Services',
-      description: 'Roof installation, repair, and maintenance services',
-      url: 'https://spotcircuit.com/local-services/#roofing'
+      'name': 'Roofing Services',
+      'description': 'Roof installation, repair, and maintenance services',
+      'url': 'https://spotcircuit.com/local-marketing/#roofing'
     }
   ];
 
@@ -54,10 +54,10 @@ export default function LocalServicesPageSchema() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://spotcircuit.com/local-services/#organization',
-    'name': 'SpotCircuit Local Services',
-    'description': 'AI-powered marketing solutions for local service businesses including plumbers, HVAC professionals, electricians, and contractors.',
-    'url': 'https://spotcircuit.com/local-services/',
+    '@id': 'https://spotcircuit.com/local-marketing/#organization',
+    'name': 'SpotCircuit Local Marketing',
+      'description': 'AI-powered marketing solutions for local service businesses including plumbers, HVAC professionals, electricians, and contractors.',
+      'url': 'https://spotcircuit.com/local-marketing/',
     'logo': 'https://spotcircuit.com/images/logo.png',
     'image': 'https://spotcircuit.com/images/local-services-hero.jpg',
     'telephone': '+1-800-123-4567',
@@ -99,8 +99,8 @@ export default function LocalServicesPageSchema() {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://spotcircuit.com/local-services/#service',
-    'name': 'Local Service Marketing',
+    '@id': 'https://spotcircuit.com/local-marketing/#service',
+    'name': 'Local Marketing',
     'description': 'AI-powered marketing solutions designed specifically for local service businesses to increase leads, improve online reputation, and maximize ROI.',
     'provider': {
       '@type': 'Organization',
