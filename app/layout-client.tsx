@@ -100,10 +100,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         </svg>
       </button>
       
-      {/* Chatbot Widget - only render on client side */}
-      {typeof window !== 'undefined' && (
-        <ChatbotWidget />
-      )}
+      {/* Chatbot Widget - already client-side only via dynamic import */}
+      <ChatbotWidget />
       
       {/* Google Analytics */}
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (

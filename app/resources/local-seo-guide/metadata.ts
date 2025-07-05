@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'The Ultimate Local SEO Guide for Service Businesses | SpotCircuit',
   description: 'Master local search optimization with our comprehensive Local SEO guide for service businesses. Learn proven strategies to boost local visibility, optimize Google Business Profile, and dominate map searches.',
   keywords: 'local SEO guide, local search optimization, Google Business Profile optimization, local service business SEO, local map pack, local SEO strategies, local citations, local backlinks, local rankings',
+  alternates: {
+    canonical: '/resources/local-seo-guide',
+  },
   openGraph: {
     title: 'The Ultimate Local SEO Guide for Service Businesses | SpotCircuit',
     description: 'Master local search optimization with our comprehensive Local SEO guide for service businesses. Learn proven strategies to boost local visibility, optimize Google Business Profile, and dominate map searches.',

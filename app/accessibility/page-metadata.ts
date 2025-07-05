@@ -4,6 +4,9 @@ export const accessibilityMetadata: Metadata = {
   title: 'Accessibility Statement | SpotCircuit',
   description: 'Learn about SpotCircuit\'s commitment to digital accessibility and our efforts to ensure our website is accessible to all users, including those with disabilities.',
   keywords: 'accessibility, web accessibility, WCAG, ADA compliance, accessible website, disability access, SpotCircuit accessibility',
+  alternates: {
+    canonical: '/accessibility',
+  },
   openGraph: {
     title: 'Accessibility Statement | SpotCircuit',
     description: 'Learn about SpotCircuit\'s commitment to digital accessibility and our efforts to ensure our website is accessible to all users, including those with disabilities.',

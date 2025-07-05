@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3006  -turbopack",
+    "dev": "next dev -p 3006",
     "build": "next build",
     "build:check": "tsc --noEmit && next build",
     "start": "next start",
@@ -31,6 +31,7 @@
     "framer-motion": "^12.15.0",
     "googleapis": "^148.0.0",
     "gray-matter": "^4.0.3",
+    "lucide-react": "^0.525.0",
     "marked": "^15.0.6",
     "next": "^15.3.3",
     "node-fetch": "^2.7.0",

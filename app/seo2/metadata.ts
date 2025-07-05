@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'SEO 2.0: The AI-First Revolution | SpotCircuit',
   description: 'Dominate the new era of search with AI-First SEO strategies engineered for AI comprehension, visibility, and citation in platforms like ChatGPT, Claude, and Google AI.',
   keywords: 'SEO 2.0, AI-First SEO, AI search optimization, LLM optimization, AI citation, ChatGPT optimization, structured data for AI',
+  alternates: {
+    canonical: '/seo2',
+  },
   openGraph: {
     title: 'SEO 2.0: The AI-First Revolution | SpotCircuit',
     description: 'Dominate the new era of search with AI-First SEO strategies engineered for AI comprehension, visibility, and citation in platforms like ChatGPT, Claude, and Google AI.',

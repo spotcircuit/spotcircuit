@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   applicationName: 'SpotCircuit',
   alternates: {
-    canonical: '/',
     languages: {
       'en-US': '/en-US',
     },
@@ -87,7 +86,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="canonical" href={baseUrl} />
         <script src="https://plugin.nytsys.com/api/site/0fb07629-302a-4e33-ba82-04eccb80b732/nytsys.min.js"></script>
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col`}>

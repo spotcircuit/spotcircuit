@@ -14,6 +14,9 @@ import {
 export const metadata: Metadata = {
   title: 'AI-Powered Digital Marketing Services | SpotCircuit',
   description: 'Transform your business with our comprehensive suite of AI-powered services. From SEO to automation, lead generation to local marketing, we have the solutions you need.',
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'AI-Powered Digital Marketing Services | SpotCircuit',
     description: 'Comprehensive AI marketing services to transform your business.',

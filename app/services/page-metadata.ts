@@ -4,6 +4,9 @@ export const servicesMetadata: Metadata = {
   title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
   description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',
   keywords: 'home service business automation, AI for contractors, HVAC marketing, plumber SEO, roofing leads, local service automation, field service optimization',
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
     description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',

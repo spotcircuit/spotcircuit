@@ -4,6 +4,9 @@ export const cookiesMetadata: Metadata = {
   title: 'Cookie Policy | SpotCircuit',
   description: 'Learn about how SpotCircuit uses cookies and similar technologies on our website. Understand what cookies are, how we use them, and how you can manage them.',
   keywords: 'cookie policy, cookies, website cookies, tracking technologies, cookie management, SpotCircuit cookies',
+  alternates: {
+    canonical: '/cookies',
+  },
   openGraph: {
     title: 'Cookie Policy | SpotCircuit',
     description: 'Learn about how SpotCircuit uses cookies and similar technologies on our website. Understand what cookies are, how we use them, and how you can manage them.',

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
   alternates: {
-    canonical: 'https://spotcircuit.com/resources/ai-search-optimization',
+    canonical: '/resources/ai-search-optimization',
   },
   robots: {
     index: true,

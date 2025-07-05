@@ -27,7 +27,12 @@
       "Bash(chmod:*)",
       "Bash(./fix-redirects.sh)",
       "Bash(gh pr create:*)",
-      "Bash(gh pr merge:*)"
+      "Bash(gh pr merge:*)",
+      "WebFetch(domain:foreverbooked.com)",
+      "Bash(cd:*)",
+      "Bash(tsx:*)",
+      "Bash(npx tsx:*)",
+      "Bash(ssh:*)"
     ],
     "deny": []
   }

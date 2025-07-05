@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description,
   keywords,
   alternates: {
-    canonical: `${baseUrl}/local-marketing`,
+    canonical: '/local-marketing',
   },
   openGraph: {
     title,

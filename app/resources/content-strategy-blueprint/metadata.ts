@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
   alternates: {
-    canonical: 'https://spotcircuit.com/resources/content-strategy-blueprint',
+    canonical: '/resources/content-strategy-blueprint',
   },
   robots: {
     index: true,

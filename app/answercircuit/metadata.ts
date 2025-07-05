@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     images: ['/static/images/ai-visibility-audit-og.png'],
   },
   alternates: {
-    canonical: 'https://spotcircuit.com/answercircuit',
+    canonical: '/answercircuit',
   },
   robots: {
     index: true,

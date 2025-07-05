@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Blog | SpotCircuit - AI-First SEO & LLM Optimization',
   description: 'Discover insights on AI-First SEO, LLM optimization, business automation, and service optimization from SpotCircuit experts.',
   keywords: 'AI-First SEO, LLM optimization, AI search, chatbot citation, home service automation, business growth',
+  alternates: {
+    canonical: '/blog',
+  },
   openGraph: {
     title: 'Blog | SpotCircuit - AI-First SEO & LLM Optimization',
     description: 'Discover insights on AI-First SEO, LLM optimization, business automation, and service optimization from SpotCircuit experts.',
