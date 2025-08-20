@@ -22,8 +22,8 @@ export default function CanonicalUrl({ path }: CanonicalUrlProps) {
   
   // For homepage, use root domain without trailing slash
   const canonicalUrl = formattedPath === '/' 
-    ? 'https://spotcircuit.com' 
-    : `https://spotcircuit.com${formattedPath}`;
+    ? 'https://www.spotcircuit.com' 
+    : `https://www.spotcircuit.com${formattedPath}`;
 
   return (
     <Head>

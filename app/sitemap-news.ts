@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPosts } from '@/lib/ghost';
 
 export default async function newsSitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://spotcircuit.com';
+  const baseUrl = 'https://www.spotcircuit.com';
   
   try {
     // Fetch blog posts from Ghost CMS

@@ -27,7 +27,7 @@ export default function ServiceSchema({
     description,
     provider: {
       '@type': 'Organization',
-      '@id': 'https://spotcircuit.com/#organization',
+      '@id': 'https://www.spotcircuit.com/#organization',
       name: provider
     },
     url,

@@ -22,7 +22,7 @@ const RecruitingPageSchema: React.FC = () => {
             "provider": {
               "@type": "Organization",
               "name": "SpotCircuit",
-              "url": "https://spotcircuit.com"
+              "url": "https://www.spotcircuit.com"
             },
             "areaServed": {
               "@type": "Country",
@@ -111,19 +111,19 @@ const RecruitingPageSchema: React.FC = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://spotcircuit.com"
+                "item": "https://www.spotcircuit.com"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Industries",
-                "item": "https://spotcircuit.com/industries"
+                "item": "https://www.spotcircuit.com/industries"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Recruiting Marketing",
-                "item": "https://spotcircuit.com/industries/recruiting"
+                "item": "https://www.spotcircuit.com/industries/recruiting"
               }
             ]
           })
@@ -141,7 +141,7 @@ const RecruitingPageSchema: React.FC = () => {
               "@type": "SpeakableSpecification",
               "cssSelector": [".hero-description", ".feature-benefit-section"]
             },
-            "url": "https://spotcircuit.com/industries/recruiting"
+            "url": "https://www.spotcircuit.com/industries/recruiting"
           })
         }}
       />

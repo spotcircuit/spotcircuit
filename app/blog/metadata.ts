@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     title: 'Blog | SpotCircuit - AI-First SEO & LLM Optimization',
     description: 'Discover insights on AI-First SEO, LLM optimization, business automation, and service optimization from SpotCircuit experts.',
     type: 'website',
-    url: 'https://spotcircuit.com/blog',
+    url: 'https://www.spotcircuit.com/blog',
     siteName: 'SpotCircuit',
     images: [
       {
-        url: 'https://spotcircuit.com/static/images/blog.webp',
+        url: 'https://www.spotcircuit.com/static/images/blog.webp',
         width: 1200,
         height: 630,
         alt: 'SpotCircuit Blog - AI-First SEO & Business Automation Insights'
@@ -26,6 +26,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog | SpotCircuit - AI-First SEO & LLM Optimization',
     description: 'Discover insights on AI-First SEO, LLM optimization, business automation, and service optimization from SpotCircuit experts.',
-    images: ['https://spotcircuit.com/static/images/blog.webp']
+    images: ['https://www.spotcircuit.com/static/images/blog.webp']
   }
 };

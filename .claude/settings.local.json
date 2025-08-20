@@ -32,7 +32,8 @@
       "Bash(cd:*)",
       "Bash(tsx:*)",
       "Bash(npx tsx:*)",
-      "Bash(ssh:*)"
+      "Bash(ssh:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }

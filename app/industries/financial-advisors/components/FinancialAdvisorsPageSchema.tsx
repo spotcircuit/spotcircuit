@@ -6,8 +6,8 @@ const FinancialAdvisorsPageSchema: React.FC = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://spotcircuit.com/industries/financial-advisors",
-        "url": "https://spotcircuit.com/industries/financial-advisors",
+        "@id": "https://www.spotcircuit.com/industries/financial-advisors",
+        "url": "https://www.spotcircuit.com/industries/financial-advisors",
         "name": "AI Solutions for Financial Advisors | SpotCircuit",
         "description": "Grow your practice with AI-powered client acquisition, automated portfolio management, and intelligent financial planning. Manage 3x more assets with SpotCircuit.",
         "breadcrumb": {
@@ -17,7 +17,7 @@ const FinancialAdvisorsPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 1,
               "item": {
-                "@id": "https://spotcircuit.com",
+                "@id": "https://www.spotcircuit.com",
                 "name": "Home"
               }
             },
@@ -25,7 +25,7 @@ const FinancialAdvisorsPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 2,
               "item": {
-                "@id": "https://spotcircuit.com/industries",
+                "@id": "https://www.spotcircuit.com/industries",
                 "name": "Industries"
               }
             },
@@ -33,7 +33,7 @@ const FinancialAdvisorsPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 3,
               "item": {
-                "@id": "https://spotcircuit.com/industries/financial-advisors",
+                "@id": "https://www.spotcircuit.com/industries/financial-advisors",
                 "name": "Financial Advisors"
               }
             }
@@ -42,12 +42,12 @@ const FinancialAdvisorsPageSchema: React.FC = () => {
       },
       {
         "@type": "FinancialService",
-        "@id": "https://spotcircuit.com/#financial-advisor-ai-service",
+        "@id": "https://www.spotcircuit.com/#financial-advisor-ai-service",
         "name": "SpotCircuit AI for Financial Advisors",
         "description": "AI-powered solutions for financial advisors including client acquisition, portfolio management, and financial planning automation",
         "provider": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization"
+          "@id": "https://www.spotcircuit.com/#organization"
         },
         "serviceType": "Financial Technology Solutions",
         "areaServed": {

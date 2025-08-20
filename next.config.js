@@ -83,6 +83,17 @@ const nextConfig = {
   // Redirects configuration
   async redirects() {
     return [
+      // New hub redirects
+      {
+        source: '/api',
+        destination: '/api-docs',
+        permanent: true,
+      },
+      {
+        source: '/downloads',
+        destination: '/resources/downloads',
+        permanent: true,
+      },
       // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
       // Note: www to non-www and HTTP to HTTPS redirects are handled by Vercel automatically
       // Removed the manual www redirect to prevent redirect loops

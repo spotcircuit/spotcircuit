@@ -118,16 +118,16 @@ const CaseStudiesPage = () => {
         "name": study.title,
         "headline": `${study.title} - ${study.subtitle}`,
         "description": study.description,
-        "url": `https://spotcircuit.com/case-studies#${study.title.toLowerCase().replace(/\s+/g, '-')}`,
-        "mainEntityOfPage": "https://spotcircuit.com/case-studies",
+        "url": `https://www.spotcircuit.com/case-studies#${study.title.toLowerCase().replace(/\s+/g, '-')}`,
+        "mainEntityOfPage": "https://www.spotcircuit.com/case-studies",
         "author": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization",
+          "@id": "https://www.spotcircuit.com/#organization",
           "name": "SpotCircuit"
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization",
+          "@id": "https://www.spotcircuit.com/#organization",
           "name": "SpotCircuit"
         }
       }
@@ -162,8 +162,8 @@ const CaseStudiesPage = () => {
       </Script>
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Case Studies", url: "https://spotcircuit.com/case-studies", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Case Studies", url: "https://www.spotcircuit.com/case-studies", position: 2 }
         ]} 
       />
       <SpeakableSchema cssSelectors={["p.text-xl.md\\:text-2xl.text-blue-100"]} />
@@ -175,7 +175,7 @@ const CaseStudiesPage = () => {
       <EntitySchema 
         name="SpotCircuit Case Studies"
         description="Explore how we've helped businesses achieve significant growth through AI-powered automation and intelligent SEO strategies."
-        url="https://spotcircuit.com/case-studies"
+        url="https://www.spotcircuit.com/case-studies"
         entityType="CollectionPage"
         relatedEntities={caseStudies.map(study => ({
           name: study.title,

@@ -26,10 +26,10 @@ export const LegalPageSchema = ({
     publisher: {
       '@type': 'Organization',
       name: 'SpotCircuit',
-      url: 'https://spotcircuit.com',
+      url: 'https://www.spotcircuit.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://spotcircuit.com/static/images/logo.png',
+        url: 'https://www.spotcircuit.com/static/images/logo.png',
         width: '600',
         height: '60',
       },

@@ -285,7 +285,7 @@ const AISearchOptimizationGuide: React.FC = () => {
               "name": "SpotCircuit",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://spotcircuit.com/static/images/logo.png",
+                "url": "https://www.spotcircuit.com/static/images/logo.png",
                 "width": 600,
                 "height": 60
               }
@@ -1294,7 +1294,7 @@ const AISearchOptimizationGuide: React.FC = () => {
       "author": {
         "@type": "Organization",
         "name": "SpotCircuit",
-        "url": "https://spotcircuit.com"
+        "url": "https://www.spotcircuit.com"
       },
       "datePublished": "2024-03-15"
     }
@@ -1322,7 +1322,7 @@ const AISearchOptimizationGuide: React.FC = () => {
       "author": {
         "@type": "Organization",
         "name": "SpotCircuit",
-        "url": "https://spotcircuit.com"
+        "url": "https://www.spotcircuit.com"
       },
       "datePublished": "2024-03-15"
     }
@@ -1364,8 +1364,8 @@ const AISearchOptimizationGuide: React.FC = () => {
       "@type": "HowToStep", 
       "name": "Audit Current Content",
       "text": "Review existing content structure and identify optimization opportunities.",
-      "image": "https://spotcircuit.com/images/content-audit.jpg",
-      "url": "https://spotcircuit.com/resources/content-audit-guide"
+      "image": "https://www.spotcircuit.com/images/content-audit.jpg",
+      "url": "https://www.spotcircuit.com/resources/content-audit-guide"
     },
     {
       "@type": "HowToStep", 
@@ -1408,8 +1408,8 @@ const AISearchOptimizationGuide: React.FC = () => {
       "@type": "HowToStep", 
       "name": "Audit Current Content",
       "text": "Review existing content structure and identify optimization opportunities.",
-      "image": "https://spotcircuit.com/images/content-audit.jpg",
-      "url": "https://spotcircuit.com/resources/content-audit-guide"
+      "image": "https://www.spotcircuit.com/images/content-audit.jpg",
+      "url": "https://www.spotcircuit.com/resources/content-audit-guide"
     },
     {
       "@type": "HowToStep", 

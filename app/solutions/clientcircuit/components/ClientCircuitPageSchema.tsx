@@ -10,8 +10,8 @@ const ClientCircuitPageSchema: React.FC = () => {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "AI-powered client relationship management platform that automates lead nurturing, manages communications, and drives conversion through intelligent insights.",
-    "url": "https://spotcircuit.com/solutions/clientcircuit",
-    "screenshot": "https://spotcircuit.com/images/clientcircuit-dashboard.png",
+    "url": "https://www.spotcircuit.com/solutions/clientcircuit",
+    "screenshot": "https://www.spotcircuit.com/images/clientcircuit-dashboard.png",
     "offers": {
       "@type": "Offer",
       "price": "997",
@@ -33,7 +33,7 @@ const ClientCircuitPageSchema: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "featureList": [
       "Intelligent Lead Scoring",
@@ -85,19 +85,19 @@ const ClientCircuitPageSchema: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://spotcircuit.com"
+        "item": "https://www.spotcircuit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Solutions",
-        "item": "https://spotcircuit.com/solutions"
+        "item": "https://www.spotcircuit.com/solutions"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "ClientCircuit",
-        "item": "https://spotcircuit.com/solutions/clientcircuit"
+        "item": "https://www.spotcircuit.com/solutions/clientcircuit"
       }
     ]
   };

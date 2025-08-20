@@ -119,20 +119,20 @@ const AnswerCircuitSalesPage: React.FC = () => {
       <ServiceSchema 
         name="AnswerCircuit - AI Visibility Platform for B2B SaaS"
         description="AnswerCircuit is an AI visibility platform that ensures your B2B SaaS product is cited and recommended by AI platforms like ChatGPT, Claude, and Perplexity when prospects research your category."
-        url="https://spotcircuit.com/answercircuit"
+        url="https://www.spotcircuit.com/answercircuit"
         serviceType="AIService"
       />
       <SpeakableSchema cssSelectors={[".circuit-summary", ".problem-description", ".ai-visibility-explanation"]} />
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "AnswerCircuit", url: "https://spotcircuit.com/answercircuit", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "AnswerCircuit", url: "https://www.spotcircuit.com/answercircuit", position: 2 }
         ]} 
       />
       <EntitySchema 
         name="AI Visibility Platform"
         description="A service that ensures B2B SaaS products are cited and recommended by AI platforms like ChatGPT, Claude, and Perplexity when prospects research product categories."
-        url="https://spotcircuit.com/answercircuit"
+        url="https://www.spotcircuit.com/answercircuit"
         entityType="Service"
         sameAs={[
           "https://schema.org/Service"
@@ -140,12 +140,12 @@ const AnswerCircuitSalesPage: React.FC = () => {
         relatedEntities={[
           {
             name: "AI Search Optimization",
-            url: "https://spotcircuit.com/resources/ai-search-optimization",
+            url: "https://www.spotcircuit.com/resources/ai-search-optimization",
             description: "Strategies for optimizing content to be discovered and cited by AI platforms."
           },
           {
             name: "SaaS Marketing",
-            url: "https://spotcircuit.com/services",
+            url: "https://www.spotcircuit.com/services",
             description: "Marketing services specifically designed for SaaS companies."
           }
         ]}
@@ -154,7 +154,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
         itemReviewed={{
           name: "AnswerCircuit AI Visibility Platform",
           description: "An AI visibility platform that ensures B2B SaaS products are cited by AI platforms",
-          url: "https://spotcircuit.com/answercircuit"
+          url: "https://www.spotcircuit.com/answercircuit"
         }}
         reviewRating={{
           ratingValue: "5",

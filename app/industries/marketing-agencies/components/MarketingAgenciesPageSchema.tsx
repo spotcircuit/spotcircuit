@@ -6,8 +6,8 @@ const MarketingAgenciesPageSchema: React.FC = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://spotcircuit.com/industries/marketing-agencies",
-        "url": "https://spotcircuit.com/industries/marketing-agencies",
+        "@id": "https://www.spotcircuit.com/industries/marketing-agencies",
+        "url": "https://www.spotcircuit.com/industries/marketing-agencies",
         "name": "AI Solutions for Marketing Agencies | SpotCircuit",
         "description": "Scale your agency with AI-powered campaign creation, automated content generation, and intelligent performance optimization. Deliver 10x results with SpotCircuit.",
         "breadcrumb": {
@@ -17,7 +17,7 @@ const MarketingAgenciesPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 1,
               "item": {
-                "@id": "https://spotcircuit.com",
+                "@id": "https://www.spotcircuit.com",
                 "name": "Home"
               }
             },
@@ -25,7 +25,7 @@ const MarketingAgenciesPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 2,
               "item": {
-                "@id": "https://spotcircuit.com/industries",
+                "@id": "https://www.spotcircuit.com/industries",
                 "name": "Industries"
               }
             },
@@ -33,7 +33,7 @@ const MarketingAgenciesPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 3,
               "item": {
-                "@id": "https://spotcircuit.com/industries/marketing-agencies",
+                "@id": "https://www.spotcircuit.com/industries/marketing-agencies",
                 "name": "Marketing Agencies"
               }
             }
@@ -42,12 +42,12 @@ const MarketingAgenciesPageSchema: React.FC = () => {
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://spotcircuit.com/#marketing-agency-ai-service",
+        "@id": "https://www.spotcircuit.com/#marketing-agency-ai-service",
         "name": "SpotCircuit AI for Marketing Agencies",
         "description": "AI-powered solutions for marketing agencies including campaign automation, content generation, and performance optimization",
         "provider": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization"
+          "@id": "https://www.spotcircuit.com/#organization"
         },
         "serviceType": "Marketing Technology Solutions",
         "areaServed": {

@@ -68,7 +68,7 @@ const ServicesPage = () => {
       <ServiceSchema 
         name="Home Service Business Automation & Optimization"
         description="Custom AI-powered automation and SEO solutions specifically designed for home service businesses like HVAC, plumbing, roofing, electrical, and more."
-        url="https://spotcircuit.com/services"
+        url="https://www.spotcircuit.com/services"
         serviceType="AI Business Automation"
       />
       <FaqSchema faqs={faqItems} />
@@ -79,15 +79,15 @@ const ServicesPage = () => {
       />
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Services", url: "https://spotcircuit.com/services", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Services", url: "https://www.spotcircuit.com/services", position: 2 }
         ]} 
       />
       <SpeakableSchema cssSelectors={[".page-summary"]} />
       <EntitySchema 
         name="Home Service Business Automation"
         description="AI-powered automation and optimization solutions for home service businesses to streamline operations, increase leads, and improve customer retention."
-        url="https://spotcircuit.com/services"
+        url="https://www.spotcircuit.com/services"
         entityType="Service"
         sameAs={[
           "https://schema.org/Service"
@@ -95,12 +95,12 @@ const ServicesPage = () => {
         relatedEntities={[
           {
             name: "HVAC Business Solutions",
-            url: "https://spotcircuit.com/industries/hvac",
+            url: "https://www.spotcircuit.com/industries/hvac",
             description: "Specialized solutions for HVAC contractors."
           },
           {
             name: "Plumbing Business Solutions",
-            url: "https://spotcircuit.com/industries/plumbing",
+            url: "https://www.spotcircuit.com/industries/plumbing",
             description: "Specialized solutions for plumbing companies."
           }
         ]}
@@ -114,7 +114,7 @@ const ServicesPage = () => {
         bestRating={5}
         worstRating={1}
         description="Professional SEO services focused on optimizing for AI platforms and large language models"
-        url="https://spotcircuit.com/services"
+        url="https://www.spotcircuit.com/services"
       />
       {/* Client-side cleanup of any invalid schema markup */}
       <SchemaCleanup />

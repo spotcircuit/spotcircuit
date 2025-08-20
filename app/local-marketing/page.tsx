@@ -128,10 +128,10 @@ const LocalMarketingPage: React.FC = () => {
             '@type': 'WebPage',
             name: 'Local Service Marketing Solutions',
             description: 'AI-powered marketing automation for home service businesses. Dominate local search, automate lead generation, and fill your schedule with quality jobs.',
-            url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com'}/local-marketing`,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com'}/local-marketing`,
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com'}/local-marketing`,
+              '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com'}/local-marketing`,
             },
           }),
         }}

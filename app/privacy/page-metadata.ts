@@ -10,7 +10,7 @@ export const privacyMetadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | SpotCircuit',
     description: 'Learn how SpotCircuit collects, uses, and protects your personal data. Our privacy policy outlines our commitment to safeguarding your information.',
-    url: 'https://spotcircuit.com/privacy',
+    url: 'https://www.spotcircuit.com/privacy',
     images: [
       {
         url: '/static/images/services.webp',

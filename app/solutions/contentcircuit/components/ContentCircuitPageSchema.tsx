@@ -10,8 +10,8 @@ const ContentCircuitPageSchema: React.FC = () => {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "AI-powered content creation engine that generates high-converting content at scale with brand voice alignment, SEO optimization, and strategic content planning.",
-    "url": "https://spotcircuit.com/solutions/contentcircuit",
-    "screenshot": "https://spotcircuit.com/images/contentcircuit-dashboard.png",
+    "url": "https://www.spotcircuit.com/solutions/contentcircuit",
+    "screenshot": "https://www.spotcircuit.com/images/contentcircuit-dashboard.png",
     "offers": {
       "@type": "Offer",
       "price": "697",
@@ -33,7 +33,7 @@ const ContentCircuitPageSchema: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "featureList": [
       "AI Content Generation",
@@ -85,19 +85,19 @@ const ContentCircuitPageSchema: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://spotcircuit.com"
+        "item": "https://www.spotcircuit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Solutions",
-        "item": "https://spotcircuit.com/solutions"
+        "item": "https://www.spotcircuit.com/solutions"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "ContentCircuit",
-        "item": "https://spotcircuit.com/solutions/contentcircuit"
+        "item": "https://www.spotcircuit.com/solutions/contentcircuit"
       }
     ]
   };

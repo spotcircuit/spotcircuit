@@ -10,7 +10,7 @@ export const accessibilityMetadata: Metadata = {
   openGraph: {
     title: 'Accessibility Statement | SpotCircuit',
     description: 'Learn about SpotCircuit\'s commitment to digital accessibility and our efforts to ensure our website is accessible to all users, including those with disabilities.',
-    url: 'https://spotcircuit.com/accessibility',
+    url: 'https://www.spotcircuit.com/accessibility',
     images: [
       {
         url: '/static/images/services.webp',

@@ -3,12 +3,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaLock } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 const PrivacyPage = () => {
-  const pageUrl = 'https://spotcircuit.com/privacy';
+  const pageUrl = 'https://www.spotcircuit.com/privacy';
   const pageTitle = 'Privacy Policy | SpotCircuit';
   const pageDescription = 'Learn how SpotCircuit collects, uses, and protects your personal information in compliance with privacy regulations.';
 
@@ -32,11 +33,15 @@ const PrivacyPage = () => {
       />
       <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
           {/* Header Image Section */}
-          <img
-            src="/static/images/hero.svg"
-            alt="SpotCircuit privacy image"
-            className="h-[75px] w-full object-cover overflow-hidden"
-          />
+          <div className="relative h-[75px] w-full overflow-hidden">
+            <Image
+              src="/static/images/hero.svg"
+              alt="SpotCircuit privacy image"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Hero Section */}
           <section className="gradient-bg-dark py-16 md:py-24 text-center relative overflow-hidden">

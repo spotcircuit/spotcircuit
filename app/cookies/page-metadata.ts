@@ -10,7 +10,7 @@ export const cookiesMetadata: Metadata = {
   openGraph: {
     title: 'Cookie Policy | SpotCircuit',
     description: 'Learn about how SpotCircuit uses cookies and similar technologies on our website. Understand what cookies are, how we use them, and how you can manage them.',
-    url: 'https://spotcircuit.com/cookies',
+    url: 'https://www.spotcircuit.com/cookies',
     images: [
       {
         url: '/static/images/services.webp',

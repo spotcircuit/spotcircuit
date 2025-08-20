@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'Technical SEO Audit Checklist: The Complete Guide',
     description: "A comprehensive checklist to identify and fix technical SEO issues affecting your website's search performance.",
-    url: 'https://spotcircuit.com/resources/technical-seo-checklist',
+    url: 'https://www.spotcircuit.com/resources/technical-seo-checklist',
     images: [{
       url: '/static/images/tech-seo-checklist-og.png',
       width: 1200,

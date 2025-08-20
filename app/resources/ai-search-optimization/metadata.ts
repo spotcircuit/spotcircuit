@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'The Complete Guide to AI Search Optimization for SaaS',
     description: 'Everything you need to know about getting cited by AI search engines. Free templates and implementation guide.',
-    url: 'https://spotcircuit.com/resources/ai-search-optimization',
+    url: 'https://www.spotcircuit.com/resources/ai-search-optimization',
     images: [{
       url: '/static/images/ai-seo-guide-og.png',
       width: 1200,

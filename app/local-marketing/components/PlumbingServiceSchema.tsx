@@ -8,13 +8,13 @@ export default function PlumbingServiceSchema() {
   const plumbingServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://spotcircuit.com/local-services/#plumbing-service',
+    '@id': 'https://www.spotcircuit.com/local-services/#plumbing-service',
     'name': 'Plumbing Marketing Services',
     'description': 'AI-powered marketing solutions designed specifically for plumbing businesses to increase leads, improve online reputation, and maximize ROI.',
     'provider': {
       '@type': 'Organization',
       'name': 'SpotCircuit',
-      'url': 'https://spotcircuit.com'
+      'url': 'https://www.spotcircuit.com'
     },
     'serviceType': 'Digital Marketing for Plumbers',
     'areaServed': [

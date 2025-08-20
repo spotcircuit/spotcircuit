@@ -64,7 +64,7 @@ const PackageSchema: React.FC = () => {
               "description": pkg.description,
               "offers": {
                 "@type": "Offer",
-                "url": `https://spotcircuit.com/local-services#packages`,
+                "url": `https://www.spotcircuit.com/local-services#packages`,
                 "priceCurrency": pkg.priceCurrency,
                 "price": pkg.price,
                 "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],

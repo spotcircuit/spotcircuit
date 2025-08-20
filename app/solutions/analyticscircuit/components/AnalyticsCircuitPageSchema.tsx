@@ -10,8 +10,8 @@ const AnalyticsCircuitPageSchema: React.FC = () => {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "AI-powered business intelligence platform that transforms raw data into actionable insights with predictive analytics, real-time dashboards, and multi-touch attribution.",
-    "url": "https://spotcircuit.com/solutions/analyticscircuit",
-    "screenshot": "https://spotcircuit.com/images/analyticscircuit-dashboard.png",
+    "url": "https://www.spotcircuit.com/solutions/analyticscircuit",
+    "screenshot": "https://www.spotcircuit.com/images/analyticscircuit-dashboard.png",
     "offers": {
       "@type": "Offer",
       "price": "1297",
@@ -33,7 +33,7 @@ const AnalyticsCircuitPageSchema: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "featureList": [
       "Real-time Dashboards",
@@ -85,19 +85,19 @@ const AnalyticsCircuitPageSchema: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://spotcircuit.com"
+        "item": "https://www.spotcircuit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Solutions",
-        "item": "https://spotcircuit.com/solutions"
+        "item": "https://www.spotcircuit.com/solutions"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "AnalyticsCircuit",
-        "item": "https://spotcircuit.com/solutions/analyticscircuit"
+        "item": "https://www.spotcircuit.com/solutions/analyticscircuit"
       }
     ]
   };

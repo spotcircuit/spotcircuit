@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'Content Strategy Blueprint: Create Content That Ranks & Converts',
     description: 'Comprehensive guide to developing a content strategy that ranks in search engines, gets cited by AI platforms, and converts visitors into customers.',
-    url: 'https://spotcircuit.com/resources/content-strategy-blueprint',
+    url: 'https://www.spotcircuit.com/resources/content-strategy-blueprint',
     images: [{
       url: '/static/images/content-strategy-card.jpg',
       width: 1200,

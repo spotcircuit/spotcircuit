@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Free Marketing Resources & Guides | SpotCircuit',
     description: 'Access our library of free marketing resources, guides, templates, and tools to improve your digital marketing results.',
-    url: 'https://spotcircuit.com/resources',
+    url: 'https://www.spotcircuit.com/resources',
     images: [{
       url: '/static/images/resources-og.png',
       width: 1200,

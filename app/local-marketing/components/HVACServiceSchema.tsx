@@ -8,13 +8,13 @@ export default function HVACServiceSchema() {
   const hvacServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://spotcircuit.com/local-services/#hvac-service',
+    '@id': 'https://www.spotcircuit.com/local-services/#hvac-service',
     'name': 'HVAC Marketing Services',
     'description': 'AI-powered marketing solutions designed specifically for HVAC businesses to increase leads, improve online reputation, and maximize ROI.',
     'provider': {
       '@type': 'Organization',
       'name': 'SpotCircuit',
-      'url': 'https://spotcircuit.com'
+      'url': 'https://www.spotcircuit.com'
     },
     'serviceType': 'Digital Marketing for HVAC Companies',
     'areaServed': [

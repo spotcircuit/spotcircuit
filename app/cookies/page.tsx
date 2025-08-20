@@ -3,12 +3,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaCookieBite } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 const CookiesPage = () => {
-  const pageUrl = 'https://spotcircuit.com/cookies';
+  const pageUrl = 'https://www.spotcircuit.com/cookies';
   const pageTitle = 'Cookie Policy | SpotCircuit';
   const pageDescription = 'Learn how SpotCircuit uses cookies and similar technologies to enhance your browsing experience and analyze website traffic.';
 
@@ -32,11 +33,15 @@ const CookiesPage = () => {
       />
       <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
           {/* Header Image Section */}
-          <img
-            src="/static/images/hero.svg"
-            alt="SpotCircuit cookies image"
-            className="h-[75px] w-full object-cover overflow-hidden"
-          />
+          <div className="relative h-[75px] w-full overflow-hidden">
+            <Image
+              src="/static/images/hero.svg"
+              alt="SpotCircuit cookies image"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Hero Section */}
           <section className="gradient-bg-dark py-16 md:py-24 text-center relative overflow-hidden">

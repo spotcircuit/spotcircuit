@@ -9,28 +9,28 @@ import SpeakableSchema from '@/app/components/SpeakableSchema';
 export default function ElectricalPageSchema() {
   // Define breadcrumb items
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://spotcircuit.com/' },
-    { name: 'Industries', url: 'https://spotcircuit.com/industries/' },
-    { name: 'Electrical', url: 'https://spotcircuit.com/industries/electrical/' }
+    { name: 'Home', url: 'https://www.spotcircuit.com/' },
+    { name: 'Industries', url: 'https://www.spotcircuit.com/industries/' },
+    { name: 'Electrical', url: 'https://www.spotcircuit.com/industries/electrical/' }
   ];
 
   // Define related services
   const relatedEntities = [
     {
       name: 'Local SEO for Electricians',
-      url: 'https://spotcircuit.com/services/local-seo/',
+      url: 'https://www.spotcircuit.com/services/local-seo/',
       description: 'Rank higher in local search results for electrical services',
       type: 'Service'
     },
     {
       name: 'Electrician PPC Advertising',
-      url: 'https://spotcircuit.com/services/ppc/',
+      url: 'https://www.spotcircuit.com/services/ppc/',
       description: 'Targeted pay-per-click campaigns for electrical contractors',
       type: 'Service'
     },
     {
       name: 'Electrician Reputation Management',
-      url: 'https://spotcircuit.com/services/reputation/',
+      url: 'https://www.spotcircuit.com/services/reputation/',
       description: 'Build and manage online reviews for your electrical business',
       type: 'Service'
     }
@@ -42,8 +42,8 @@ export default function ElectricalPageSchema() {
       <ServiceSchema
         name="AI-Powered Marketing for Electrical Contractors"
         description="Grow your electrical business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI."
-        url="https://spotcircuit.com/industries/electrical/"
-        image="https://spotcircuit.com/images/electrical-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/electrical/"
+        image="https://www.spotcircuit.com/images/electrical-marketing.jpg"
         provider="SpotCircuit"
         areaServed={['United States']}
         serviceType="Electrical Marketing Services"
@@ -57,8 +57,8 @@ export default function ElectricalPageSchema() {
         type="Service"
         name="Electrical Marketing Services"
         description="AI-powered marketing solutions designed specifically for electrical contractors to increase leads, improve online reputation, and maximize ROI."
-        url="https://spotcircuit.com/industries/electrical/"
-        image="https://spotcircuit.com/images/electrical-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/electrical/"
+        image="https://www.spotcircuit.com/images/electrical-marketing.jpg"
         sameAs={[
           { url: 'https://www.linkedin.com/company/spotcircuit' },
           { url: 'https://twitter.com/spotcircuit' }
@@ -72,7 +72,7 @@ export default function ElectricalPageSchema() {
           provider: {
             '@type': 'Organization',
             name: 'SpotCircuit',
-            url: 'https://spotcircuit.com'
+            url: 'https://www.spotcircuit.com'
           },
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
@@ -112,7 +112,7 @@ export default function ElectricalPageSchema() {
           '.services-overview h2',
           '.testimonial blockquote'
         ]}
-        url="https://spotcircuit.com/industries/electrical/"
+        url="https://www.spotcircuit.com/industries/electrical/"
       />
     </>
   );

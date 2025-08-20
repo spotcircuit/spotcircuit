@@ -5,10 +5,10 @@ export function WebsiteSchema() {
     "@context": "https://schema.org/",
     "@type": "WebSite",
     "name": "SpotCircuit",
-    "url": "https://spotcircuit.com",
+    "url": "https://www.spotcircuit.com",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://spotcircuit.com/search?q={search_term_string}",
+      "target": "https://www.spotcircuit.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };

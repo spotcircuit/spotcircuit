@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
 // Helper function to get staggered dates for more natural lastModified values
 function getStaggeredDate(daysAgo: number): Date {
@@ -7,8 +7,8 @@ function getStaggeredDate(daysAgo: number): Date {
   return date;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.spotcircuit.com';
+export default function sitemap() {
+  const baseUrl = 'https://spotcircuit.com';
   
   // Define your main routes with priority and update frequency
   const routes = [
@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/solutions/contentcircuit', priority: 0.8, changeFreq: 'weekly', lastMod: getStaggeredDate(16) },
     { path: '/solutions/analyticscircuit', priority: 0.8, changeFreq: 'weekly', lastMod: getStaggeredDate(17) },
     { path: '/solutions/chatcircuit', priority: 0.8, changeFreq: 'weekly', lastMod: getStaggeredDate(18) },
+    { path: '/solutions', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },
     
     // Resources
     { path: '/resources', priority: 0.9, changeFreq: 'weekly', lastMod: getStaggeredDate(0) },  // Resources hub page
@@ -49,11 +50,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/resources/content-strategy-blueprint', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },  // New resource
     { path: '/resources/analytics-conversion-guide', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(1) },  // New resource
     { path: '/resources/ai-marketing-tools', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(1) },  // New resource
+    { path: '/resources/downloads/local-seo-checklist', priority: 0.6, changeFreq: 'yearly', lastMod: getStaggeredDate(0) },
     
     // Other important pages
     { path: '/case-studies', priority: 0.8, changeFreq: 'monthly', lastMod: getStaggeredDate(12) },
     { path: '/booking', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(25) },
     { path: '/contact', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(30) },
+    { path: '/webinars', priority: 0.7, changeFreq: 'weekly', lastMod: getStaggeredDate(0) },
+    { path: '/tools', priority: 0.7, changeFreq: 'weekly', lastMod: getStaggeredDate(0) },
+    { path: '/roi-calculator', priority: 0.7, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },
+    { path: '/api-docs', priority: 0.6, changeFreq: 'monthly', lastMod: getStaggeredDate(0) },
     
     // Less important pages
     { path: '/launch', priority: 0.6, changeFreq: 'monthly', lastMod: getStaggeredDate(10) },

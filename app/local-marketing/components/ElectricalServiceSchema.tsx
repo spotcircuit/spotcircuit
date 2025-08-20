@@ -8,13 +8,13 @@ export default function ElectricalServiceSchema() {
   const electricalServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://spotcircuit.com/local-services/#electrical-service',
+    '@id': 'https://www.spotcircuit.com/local-services/#electrical-service',
     'name': 'Electrical Contractor Marketing Services',
     'description': 'AI-powered marketing solutions designed specifically for electrical contractors to increase leads, improve online reputation, and maximize ROI.',
     'provider': {
       '@type': 'Organization',
       'name': 'SpotCircuit',
-      'url': 'https://spotcircuit.com'
+      'url': 'https://www.spotcircuit.com'
     },
     'serviceType': 'Digital Marketing for Electricians',
     'areaServed': [

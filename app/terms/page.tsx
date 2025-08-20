@@ -3,12 +3,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaShieldAlt } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 const TermsPage = () => {
-  const pageUrl = 'https://spotcircuit.com/terms';
+  const pageUrl = 'https://www.spotcircuit.com/terms';
   const pageTitle = 'Terms of Service | SpotCircuit';
   const pageDescription = 'Read our Terms of Service to understand the rules and guidelines for using SpotCircuit\'s services and website.';
 
@@ -32,11 +33,15 @@ const TermsPage = () => {
       />
       <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
           {/* Header Image Section */}
-          <img
-            src="/static/images/hero.svg"
-            alt="SpotCircuit terms image"
-            className="h-[75px] w-full object-cover overflow-hidden"
-          />
+          <div className="relative h-[75px] w-full overflow-hidden">
+            <Image
+              src="/static/images/hero.svg"
+              alt="SpotCircuit terms image"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Hero Section */}
           <section className="gradient-bg-dark py-16 md:py-24 text-center relative overflow-hidden">

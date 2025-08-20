@@ -6,8 +6,8 @@ const InsurancePageSchema: React.FC = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://spotcircuit.com/industries/insurance",
-        "url": "https://spotcircuit.com/industries/insurance",
+        "@id": "https://www.spotcircuit.com/industries/insurance",
+        "url": "https://www.spotcircuit.com/industries/insurance",
         "name": "AI Solutions for Insurance Brokerages | SpotCircuit",
         "description": "Transform your insurance brokerage with AI-powered lead generation, automated quoting, and intelligent client management. Increase policy sales by 45% with SpotCircuit.",
         "breadcrumb": {
@@ -17,7 +17,7 @@ const InsurancePageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 1,
               "item": {
-                "@id": "https://spotcircuit.com",
+                "@id": "https://www.spotcircuit.com",
                 "name": "Home"
               }
             },
@@ -25,7 +25,7 @@ const InsurancePageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 2,
               "item": {
-                "@id": "https://spotcircuit.com/industries",
+                "@id": "https://www.spotcircuit.com/industries",
                 "name": "Industries"
               }
             },
@@ -33,7 +33,7 @@ const InsurancePageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 3,
               "item": {
-                "@id": "https://spotcircuit.com/industries/insurance",
+                "@id": "https://www.spotcircuit.com/industries/insurance",
                 "name": "Insurance"
               }
             }
@@ -42,12 +42,12 @@ const InsurancePageSchema: React.FC = () => {
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://spotcircuit.com/#insurance-ai-service",
+        "@id": "https://www.spotcircuit.com/#insurance-ai-service",
         "name": "SpotCircuit AI for Insurance",
         "description": "AI-powered solutions for insurance brokerages including lead generation, automated quoting, and client management",
         "provider": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization"
+          "@id": "https://www.spotcircuit.com/#organization"
         },
         "serviceType": "Insurance Technology Solutions",
         "areaServed": {

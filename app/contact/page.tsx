@@ -3,6 +3,7 @@
 import React from 'react';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaEnvelope, FaArrowRight } from 'react-icons/fa';
 import Script from 'next/script';
@@ -40,10 +41,10 @@ const ContactPage = () => {
   const organizationContactSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://spotcircuit.com/#organization",
+    "@id": "https://www.spotcircuit.com/#organization",
     "name": "SpotCircuit",
-    "url": "https://spotcircuit.com",
-    "logo": "https://spotcircuit.com/spotcircuit-logo.png",
+    "url": "https://www.spotcircuit.com",
+    "logo": "https://www.spotcircuit.com/spotcircuit-logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-800-123-4567",
@@ -62,8 +63,8 @@ const ContactPage = () => {
       </Script>
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Contact", url: "https://spotcircuit.com/contact", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Contact", url: "https://www.spotcircuit.com/contact", position: 2 }
         ]} 
       />
       <SpeakableSchema cssSelectors={["p.text-xl.text-gray-300"]} />
@@ -71,12 +72,12 @@ const ContactPage = () => {
       <EntitySchema 
         name="SpotCircuit Contact Information"
         description="Get in touch with SpotCircuit for AI-powered automation and SEO solutions for your home service business."
-        url="https://spotcircuit.com/contact"
+        url="https://www.spotcircuit.com/contact"
         entityType="ContactPage"
         relatedEntities={[
           {
             name: "Home Service Business Automation",
-            url: "https://spotcircuit.com/services",
+            url: "https://www.spotcircuit.com/services",
             description: "AI-powered automation solutions for home service businesses."
           },
           {
@@ -155,14 +156,14 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="flex-grow flex flex-col justify-center items-center">
-                  <img 
-                    src="/static/images/calendar-illustration.svg" 
-                    alt="Schedule a call" 
-                    className="w-48 h-48 mb-8 opacity-80"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://via.placeholder.com/200?text=Calendar";
-                    }}
-                  />
+                  <div className="relative w-48 h-48 mb-8 opacity-80">
+                    <Image
+                      src="/static/images/calendar-illustration.svg"
+                      alt="Schedule a call"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   
                   <motion.div
                     whileHover={{ scale: 1.05 }}

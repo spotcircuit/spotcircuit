@@ -6,8 +6,8 @@ const ConsultingPageSchema: React.FC = () => {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://spotcircuit.com/industries/consulting",
-        "url": "https://spotcircuit.com/industries/consulting",
+        "@id": "https://www.spotcircuit.com/industries/consulting",
+        "url": "https://www.spotcircuit.com/industries/consulting",
         "name": "AI Solutions for Consulting Firms | SpotCircuit",
         "description": "Scale your consulting practice with AI-powered research, automated insights generation, and intelligent project management. Deliver 3x more value with SpotCircuit.",
         "breadcrumb": {
@@ -17,7 +17,7 @@ const ConsultingPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 1,
               "item": {
-                "@id": "https://spotcircuit.com",
+                "@id": "https://www.spotcircuit.com",
                 "name": "Home"
               }
             },
@@ -25,7 +25,7 @@ const ConsultingPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 2,
               "item": {
-                "@id": "https://spotcircuit.com/industries",
+                "@id": "https://www.spotcircuit.com/industries",
                 "name": "Industries"
               }
             },
@@ -33,7 +33,7 @@ const ConsultingPageSchema: React.FC = () => {
               "@type": "ListItem",
               "position": 3,
               "item": {
-                "@id": "https://spotcircuit.com/industries/consulting",
+                "@id": "https://www.spotcircuit.com/industries/consulting",
                 "name": "Consulting"
               }
             }
@@ -42,12 +42,12 @@ const ConsultingPageSchema: React.FC = () => {
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://spotcircuit.com/#consulting-ai-service",
+        "@id": "https://www.spotcircuit.com/#consulting-ai-service",
         "name": "SpotCircuit AI for Consulting",
         "description": "AI-powered solutions for consulting firms including research automation, insights generation, and project management",
         "provider": {
           "@type": "Organization",
-          "@id": "https://spotcircuit.com/#organization"
+          "@id": "https://www.spotcircuit.com/#organization"
         },
         "serviceType": "Consulting Technology Solutions",
         "areaServed": {

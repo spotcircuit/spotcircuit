@@ -6,8 +6,8 @@ const OrganizationSchema: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SpotCircuit',
-    url: 'https://spotcircuit.com',
-    logo: 'https://spotcircuit.com/logo.png',
+    url: 'https://www.spotcircuit.com',
+    logo: 'https://www.spotcircuit.com/logo.png',
     sameAs: [
       'https://twitter.com/spotcircuit',
       'https://www.linkedin.com/company/spotcircuit',

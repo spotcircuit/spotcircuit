@@ -32,6 +32,11 @@ const Header = dynamic(
   { ssr: false }
 );
 
+const Footer = dynamic(
+  () => import('@/components/Footer'),
+  { ssr: false }
+);
+
 // Client component wrapper for client-side functionality
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -49,45 +54,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         {children}
       </main>
       
-      <footer className="bg-gray-800 py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-gray-400">&copy; {new Date().getFullYear()} SpotCircuit. All rights reserved.</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</a>
-            </div>
-          </div>
-          
-          {/* Mobile app badges */}
-          <div className="md:hidden mt-8 pt-6 border-t border-gray-700">
-            <p className="text-center text-gray-400 mb-4">Download our app</p>
-            <div className="flex justify-center space-x-4">
-              <a href="#" className="block" aria-label="Download on the App Store">
-                <img 
-                  src="/app-store-badge.svg" 
-                  alt="Download on the App Store" 
-                  className="h-10 w-auto"
-                  width={135}
-                  height={40}
-                />
-              </a>
-              <a href="#" className="block" aria-label="Get it on Google Play">
-                <img 
-                  src="/google-play-badge.png" 
-                  alt="Get it on Google Play" 
-                  className="h-10 w-auto"
-                  width={135}
-                  height={40}
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       
       {/* Back to top button for mobile */}
       <button 

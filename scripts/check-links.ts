@@ -4,7 +4,7 @@ import { glob } from 'glob';
 import { JSDOM } from 'jsdom';
 
 // Configuration
-const BASE_URL = 'https://spotcircuit.com';
+const BASE_URL = 'https://www.spotcircuit.com';
 const SITE_ROOT = path.join(process.cwd(), 'app');
 const IGNORE_PATHS = ['/api', '/_next', '/_vercel', '/.next'];
 const IGNORE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico', '.css', '.js'];

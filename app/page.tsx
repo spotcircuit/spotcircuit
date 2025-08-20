@@ -44,13 +44,13 @@ export default function HomePage() {
       <ServiceSchema 
         name="AI-First SEO & LLM Optimization"
         description="SpotCircuit provides AI-First SEO and LLM optimization services to help businesses be found and cited by AI platforms like ChatGPT, Claude, and Google's AI Overview."
-        url="https://spotcircuit.com"
+        url="https://www.spotcircuit.com"
         serviceType="SEOService"
       />
       <SpeakableSchema cssSelectors={[".page-summary", "#faq"]} />
       <FaqSchema faqs={faqItems} />
       <ImageObjectSchema 
-        url="https://spotcircuit.com/static/images/seo20.webp"
+        url="https://www.spotcircuit.com/static/images/seo20.webp"
         name="SEO 2.0: The AI-First Revolution"
         description="A visual representation of how AI is transforming search and content discovery, showing the evolution from traditional SEO to AI-First optimization."
         width={400}
@@ -58,14 +58,14 @@ export default function HomePage() {
       />
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 }
         ]} 
       />
       <EntitySchema 
         type="Thing"
         name="AI-First SEO"
         description="A modern approach to search engine optimization focused on making content discoverable and citable by AI platforms like ChatGPT, Claude, and Google's AI Overview."
-        url="https://spotcircuit.com"
+        url="https://www.spotcircuit.com"
         sameAs={[
           { url: "https://en.wikipedia.org/wiki/Search_engine_optimization" },
           { url: "https://schema.org/Thing" }
@@ -73,13 +73,13 @@ export default function HomePage() {
         relatedEntities={[
           {
             name: "Local Service Marketing",
-            url: "https://spotcircuit.com/local-services",
+            url: "https://www.spotcircuit.com/local-services",
             description: "AI-powered marketing solutions for local service businesses like HVAC, plumbing, and electrical contractors.",
             type: "Service"
           },
           {
             name: "AnswerCircuit",
-            url: "https://spotcircuit.com/answercircuit",
+            url: "https://www.spotcircuit.com/answercircuit",
             description: "A proprietary AI optimization system for SaaS companies to ensure visibility when potential customers research solutions.",
             type: "SoftwareApplication"
           }
@@ -90,7 +90,7 @@ export default function HomePage() {
           type: "Service",
           name: "SpotCircuit AI-First SEO Services",
           description: "Professional SEO services focused on optimizing for AI platforms and large language models",
-          url: "https://spotcircuit.com/services"
+          url: "https://www.spotcircuit.com/services"
         }}
         reviewRating={{
           ratingValue: 4.9,

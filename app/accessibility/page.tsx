@@ -3,12 +3,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaUniversalAccess } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 const AccessibilityPage = () => {
-  const pageUrl = 'https://spotcircuit.com/accessibility';
+  const pageUrl = 'https://www.spotcircuit.com/accessibility';
   const pageTitle = 'Accessibility Statement | SpotCircuit';
   const pageDescription = 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts and how to contact us with accessibility concerns.';
 
@@ -32,11 +33,15 @@ const AccessibilityPage = () => {
       />
       <div className="flex flex-col min-h-screen overflow-hidden">        <main className="flex-grow">
           {/* Header Image Section */}
-          <img
-            src="/static/images/hero.svg"
-            alt="SpotCircuit accessibility image"
-            className="h-[75px] w-full object-cover overflow-hidden"
-          />
+          <div className="relative h-[75px] w-full overflow-hidden">
+            <Image
+              src="/static/images/hero.svg"
+              alt="SpotCircuit accessibility image"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           
           {/* Hero Section */}
           <section className="gradient-bg-dark py-16 md:py-24 text-center relative overflow-hidden">

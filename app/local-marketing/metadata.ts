@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 const title = 'Local Service Marketing Solutions | SpotCircuit';
 const description = 'AI-powered marketing automation for home service businesses. Dominate local search, automate lead generation, and fill your schedule with quality jobs.';
 const keywords = 'local service marketing, contractor marketing, plumber marketing, HVAC marketing, electrician marketing, local SEO, home service marketing, local business marketing';
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com';
 
 export const metadata: Metadata = {
   title,

@@ -21,7 +21,7 @@ export default function SpeakableSchema({ cssSelectors, xpath }: SpeakableSchema
       ...(cssSelectors && cssSelectors.length > 0 && { cssSelector: cssSelectors }),
       ...(xpath && xpath.length > 0 && { xpath: xpath })
     },
-    url: 'https://spotcircuit.com'
+    url: 'https://www.spotcircuit.com'
   };
 
   return (

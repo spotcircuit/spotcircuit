@@ -10,7 +10,7 @@ const MedicalSpasPageSchema: React.FC = () => {
     "provider": {
       "@type": "Organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "areaServed": {
       "@type": "Country",
@@ -87,19 +87,19 @@ const MedicalSpasPageSchema: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://spotcircuit.com"
+        "item": "https://www.spotcircuit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Industries",
-        "item": "https://spotcircuit.com/industries"
+        "item": "https://www.spotcircuit.com/industries"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Medical Spas",
-        "item": "https://spotcircuit.com/industries/medical-spas"
+        "item": "https://www.spotcircuit.com/industries/medical-spas"
       }
     ]
   };

@@ -5,8 +5,8 @@ export const HomePageSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SpotCircuit',
-    url: 'https://spotcircuit.com',
-    logo: 'https://spotcircuit.com/spotcircuit-logo.png',
+    url: 'https://www.spotcircuit.com',
+    logo: 'https://www.spotcircuit.com/spotcircuit-logo.png',
     description: 'AI-Powered Growth Solutions for Local Services & B2B SaaS',
     sameAs: [
       'https://twitter.com/spotcircuit',
@@ -27,10 +27,10 @@ export const HomePageSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'SpotCircuit',
-    url: 'https://spotcircuit.com',
+    url: 'https://www.spotcircuit.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://spotcircuit.com/search?q={search_term_string}',
+      target: 'https://www.spotcircuit.com/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };

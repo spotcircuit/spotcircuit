@@ -1,6 +1,7 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaVideo, FaPhoneAlt } from 'react-icons/fa';
 import Script from 'next/script';
@@ -51,9 +52,9 @@ export default function BookingPage() {
     },
     "organizer": {
       "@type": "Organization",
-      "@id": "https://spotcircuit.com/#organization",
+      "@id": "https://www.spotcircuit.com/#organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "offers": {
       "@type": "Offer",
@@ -72,8 +73,8 @@ export default function BookingPage() {
       </Script>
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Booking", url: "https://spotcircuit.com/booking", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Booking", url: "https://www.spotcircuit.com/booking", position: 2 }
         ]} 
       />
       <SpeakableSchema cssSelectors={["p.text-xl.text-blue-200"]} />
@@ -82,17 +83,17 @@ export default function BookingPage() {
         type="Service"
         name="Free Consultation Booking"
         description="Book a 30-minute consultation with SpotCircuit to discuss your specific needs and how we can help with AI-powered automation and SEO solutions."
-        url="https://spotcircuit.com/booking"
+        url="https://www.spotcircuit.com/booking"
         relatedEntities={[
           {
             name: "AI Implementation Process",
-            url: "https://spotcircuit.com/process",
+            url: "https://www.spotcircuit.com/process",
             description: "Learn about our implementation process.",
             type: "WebPage"
           },
           {
             name: "Home Service Business Automation",
-            url: "https://spotcircuit.com/services",
+            url: "https://www.spotcircuit.com/services",
             description: "AI-powered automation solutions for home service businesses.",
             type: "Service"
           }
@@ -177,14 +178,14 @@ export default function BookingPage() {
             </div>
             
             <div className="bg-gray-900/70 p-8 md:p-12 flex flex-col justify-center items-center">
-              <img 
-                src="/static/images/calendar-illustration.svg" 
-                alt="Schedule a call" 
-                className="w-48 h-48 mb-8 opacity-80"
-                onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/200?text=Calendar";
-                }}
-              />
+              <div className="relative w-48 h-48 mb-8 opacity-80">
+                <Image
+                  src="/static/images/calendar-illustration.svg"
+                  alt="Schedule a call"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}

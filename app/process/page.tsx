@@ -103,8 +103,8 @@ const ProcessPage = () => {
       />
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Process", url: "https://spotcircuit.com/process", position: 2 }
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Process", url: "https://www.spotcircuit.com/process", position: 2 }
         ]} 
       />
       <SpeakableSchema cssSelectors={["p.text-xl.md\\:text-2xl.text-blue-100", ".text-lg.text-blue-200"]} />
@@ -112,17 +112,17 @@ const ProcessPage = () => {
       <EntitySchema 
         name="AI Implementation Process"
         description="A systematic approach to implementing AI automation solutions for home service businesses including discovery, strategy development, implementation, and optimization."
-        url="https://spotcircuit.com/process"
+        url="https://www.spotcircuit.com/process"
         entityType="Thing"
         relatedEntities={[
           {
             name: "Home Service Business Automation",
-            url: "https://spotcircuit.com/services",
+            url: "https://www.spotcircuit.com/services",
             description: "AI-powered automation solutions for home service businesses."
           },
           {
             name: "AI Strategy Development",
-            url: "https://spotcircuit.com/process#strategy",
+            url: "https://www.spotcircuit.com/process#strategy",
             description: "Custom AI strategy development for service businesses."
           }
         ]}

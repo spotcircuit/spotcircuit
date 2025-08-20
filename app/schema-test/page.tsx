@@ -20,8 +20,8 @@ export const metadata = {
 export default function SchemaTestPage() {
   // Define breadcrumb items
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://spotcircuit.com', position: 1 },
-    { name: 'Schema Test', url: 'https://spotcircuit.com/schema-test', position: 2 },
+    { name: 'Home', url: 'https://www.spotcircuit.com', position: 1 },
+    { name: 'Schema Test', url: 'https://www.spotcircuit.com/schema-test', position: 2 },
   ];
 
   // Speakable CSS selectors
@@ -94,7 +94,7 @@ export default function SchemaTestPage() {
       <EntitySchema 
         name="AI-First SEO"
         description="An innovative approach to search engine optimization that prioritizes AI platforms and large language models."
-        url="https://spotcircuit.com/schema-test"
+        url="https://www.spotcircuit.com/schema-test"
         entityType="Thing"
         sameAs={[
           "https://en.wikipedia.org/wiki/Search_engine_optimization",
@@ -103,12 +103,12 @@ export default function SchemaTestPage() {
         relatedEntities={[
           {
             name: "Large Language Models",
-            url: "https://spotcircuit.com/resources/llm-optimization",
+            url: "https://www.spotcircuit.com/resources/llm-optimization",
             description: "AI models trained on vast text datasets that can understand and generate human-like text."
           },
           {
             name: "Structured Data",
-            url: "https://spotcircuit.com/resources/schema-markup",
+            url: "https://www.spotcircuit.com/resources/schema-markup",
             description: "Standardized format for providing information about a page and classifying its content."
           }
         ]}
@@ -117,14 +117,14 @@ export default function SchemaTestPage() {
       <DatasetSchema 
         name="SEO Performance Dataset"
         description="A collection of SEO performance metrics and case studies demonstrating the effectiveness of AI-First SEO strategies."
-        url="https://spotcircuit.com/schema-test"
+        url="https://www.spotcircuit.com/schema-test"
         keywords={["SEO", "AI-First SEO", "Performance Metrics", "Case Studies"]}
         creator={{
           name: "SpotCircuit",
-          url: "https://spotcircuit.com"
+          url: "https://www.spotcircuit.com"
         }}
         distribution={{
-          contentUrl: "https://spotcircuit.com/data/seo-performance.json",
+          contentUrl: "https://www.spotcircuit.com/data/seo-performance.json",
           encodingFormat: "application/json"
         }}
       />
@@ -133,14 +133,14 @@ export default function SchemaTestPage() {
         claimReviewed="AI-First SEO produces better results than traditional SEO for modern search engines"
         author={{
           name: "SpotCircuit Research Team",
-          url: "https://spotcircuit.com/about"
+          url: "https://www.spotcircuit.com/about"
         }}
         reviewRating={{
           ratingValue: "5",
           bestRating: "5",
           worstRating: "1"
         }}
-        url="https://spotcircuit.com/schema-test"
+        url="https://www.spotcircuit.com/schema-test"
         itemReviewed={{
           name: "AI-First SEO Methodology",
           description: "Modern approach to SEO focusing on AI and LLM optimization"
@@ -151,7 +151,7 @@ export default function SchemaTestPage() {
         itemReviewed={{
           name: "SpotCircuit AI-First SEO Services",
           description: "Professional SEO services focused on optimizing for AI platforms and large language models",
-          url: "https://spotcircuit.com/services"
+          url: "https://www.spotcircuit.com/services"
         }}
         reviewRating={{
           ratingValue: "4.9",

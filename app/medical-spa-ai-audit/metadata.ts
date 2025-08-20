@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com';
 
 export const metadata: Metadata = {
   title: 'Free AI Visibility Audit for Medical Spas | SpotCircuit',

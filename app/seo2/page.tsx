@@ -187,7 +187,7 @@ const SEO2Page: React.FC = () => {
     "description": "AI-First search optimization services for businesses looking to dominate the new era of search with content strategies engineered for AI comprehension and visibility.",
     "provider": {
       "@type": "Organization",
-      "@id": "https://spotcircuit.com/#organization",
+      "@id": "https://www.spotcircuit.com/#organization",
       "name": "SpotCircuit"
     },
     "serviceType": "AI SEO Service",
@@ -210,7 +210,7 @@ const SEO2Page: React.FC = () => {
       "@type": "SpeakableSpecification",
       "cssSelector": [".seo2-summary", ".pain-points", ".faq-section"]
     },
-    "url": "https://spotcircuit.com/seo2"
+    "url": "https://www.spotcircuit.com/seo2"
   };
   
   // FAQ Schema

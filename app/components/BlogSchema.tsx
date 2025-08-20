@@ -29,7 +29,7 @@ export default function BlogPageSchema({ blogPosts, blogUrl }: BlogPageSchemaPro
     url: blogUrl,
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://spotcircuit.com/#organization',
+      '@id': 'https://www.spotcircuit.com/#organization',
       name: 'SpotCircuit'
     },
     // Include BlogPosting entries for each blog post
@@ -49,7 +49,7 @@ export default function BlogPageSchema({ blogPosts, blogUrl }: BlogPageSchemaPro
       ...(post.image && { image: post.image }),
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://spotcircuit.com/#organization',
+        '@id': 'https://www.spotcircuit.com/#organization',
         name: 'SpotCircuit'
       }
     }))

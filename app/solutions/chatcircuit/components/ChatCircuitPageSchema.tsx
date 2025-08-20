@@ -10,8 +10,8 @@ const ChatCircuitPageSchema: React.FC = () => {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "AI-powered customer support platform that deploys intelligent chatbots for instant customer service, lead qualification, and automated support across all channels.",
-    "url": "https://spotcircuit.com/solutions/chatcircuit",
-    "screenshot": "https://spotcircuit.com/images/chatcircuit-interface.png",
+    "url": "https://www.spotcircuit.com/solutions/chatcircuit",
+    "screenshot": "https://www.spotcircuit.com/images/chatcircuit-interface.png",
     "offers": {
       "@type": "Offer",
       "price": "497",
@@ -33,7 +33,7 @@ const ChatCircuitPageSchema: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "SpotCircuit",
-      "url": "https://spotcircuit.com"
+      "url": "https://www.spotcircuit.com"
     },
     "featureList": [
       "AI Conversations",
@@ -85,19 +85,19 @@ const ChatCircuitPageSchema: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://spotcircuit.com"
+        "item": "https://www.spotcircuit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Solutions",
-        "item": "https://spotcircuit.com/solutions"
+        "item": "https://www.spotcircuit.com/solutions"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "ChatCircuit",
-        "item": "https://spotcircuit.com/solutions/chatcircuit"
+        "item": "https://www.spotcircuit.com/solutions/chatcircuit"
       }
     ]
   };

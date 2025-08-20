@@ -9,6 +9,7 @@ import {
   ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import FaqSchema from '@/app/components/FaqSchema';
 
 const faqSections = [
   {
@@ -90,10 +91,15 @@ function classNames(...classes: string[]) {
 }
 
 export default function FAQ() {
+  const faqs = faqSections.flatMap((section) =>
+    section.questions.map((q) => ({ question: q.question, answer: q.answer }))
+  );
   return (
     <div className="bg-gradient-to-r from-green-600 to-green-500">
       <div id="faq-section" className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl">
+          {/* JSON-LD schema for FAQPage */}
+          <FaqSchema faqs={faqs} schemaType="FAQPage" id="faqpage-schema" />
           <div className="flex items-center justify-center gap-x-3 mb-16 text-center">
             <QuestionMarkCircleIcon className="h-10 w-10 text-green-200" />
             <h2 className="text-3xl font-bold leading-10 tracking-tight text-white">

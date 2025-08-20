@@ -51,7 +51,7 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
   // Prepare data for schema
   const blogPostSchemaItems = filteredPosts.map(post => ({
     title: post.title,
-    url: `https://spotcircuit.com/blog/${post.slug}`,
+    url: `https://www.spotcircuit.com/blog/${post.slug}`,
     datePublished: new Date(post.date).toISOString(),
     description: post.excerpt,
     author: {
@@ -65,16 +65,16 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
       {/* Schema Markup */}
       <BlogPageSchema 
         blogPosts={blogPostSchemaItems}
-        blogUrl="https://spotcircuit.com/blog"
+        blogUrl="https://www.spotcircuit.com/blog"
       />
       <SpeakableSchema cssSelectors={[".blog-summary"]} />
       <BreadcrumbSchema 
         items={[
-          { name: "Home", url: "https://spotcircuit.com", position: 1 },
-          { name: "Blog", url: "https://spotcircuit.com/blog", position: 2 },
+          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
+          { name: "Blog", url: "https://www.spotcircuit.com/blog", position: 2 },
           ...(currentFilter ? [{ 
             name: currentFilter.value, 
-            url: `https://spotcircuit.com/blog?${currentFilter.type}=${encodeURIComponent(currentFilter.value)}`, 
+            url: `https://www.spotcircuit.com/blog?${currentFilter.type}=${encodeURIComponent(currentFilter.value)}`, 
             position: 3 
           }] : [])
         ]} 
@@ -82,17 +82,17 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
       <EntitySchema 
         name="SpotCircuit Blog"
         description="Insights on AI-First SEO, LLM optimization, home service business automation, and growth strategies for ambitious businesses."
-        url="https://spotcircuit.com/blog"
+        url="https://www.spotcircuit.com/blog"
         entityType="Blog"
         relatedEntities={[
           {
             name: "AI-First SEO",
-            url: "https://spotcircuit.com/seo2",
+            url: "https://www.spotcircuit.com/seo2",
             description: "Modern approach to SEO focused on AI platform optimization."
           },
           {
             name: "Home Service Business Automation",
-            url: "https://spotcircuit.com/services",
+            url: "https://www.spotcircuit.com/services",
             description: "AI automation solutions for home service businesses."
           }
         ]}
@@ -101,14 +101,14 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
         claimReviewed="AI-First SEO produces better results than traditional SEO in the age of AI search assistants"
         author={{
           name: "SpotCircuit Research Team",
-          url: "https://spotcircuit.com/about"
+          url: "https://www.spotcircuit.com/about"
         }}
         reviewRating={{
           ratingValue: "5",
           bestRating: "5",
           worstRating: "1"
         }}
-        url="https://spotcircuit.com/blog"
+        url="https://www.spotcircuit.com/blog"
         itemReviewed={{
           name: "AI-First SEO Methodology",
           description: "Modern approach to SEO focusing on AI and LLM optimization"

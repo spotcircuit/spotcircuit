@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Your Competitors Are Getting All The AI Mentions - AnswerCircuit',
     description: 'While you rank #1 on Google, ChatGPT recommends them. Stop losing 10-15 qualified demos every month.',
     type: 'website',
-    url: 'https://spotcircuit.com/answercircuit',
+    url: 'https://www.spotcircuit.com/answercircuit',
     images: [{
       url: '/static/images/ai-visibility-audit-og.png',
       width: 1200,

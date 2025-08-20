@@ -9,28 +9,28 @@ import SpeakableSchema from '@/app/components/SpeakableSchema';
 export default function ContractingPageSchema() {
   // Define breadcrumb items
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://spotcircuit.com/' },
-    { name: 'Industries', url: 'https://spotcircuit.com/industries/' },
-    { name: 'Contracting', url: 'https://spotcircuit.com/industries/contracting/' }
+    { name: 'Home', url: 'https://www.spotcircuit.com/' },
+    { name: 'Industries', url: 'https://www.spotcircuit.com/industries/' },
+    { name: 'Contracting', url: 'https://www.spotcircuit.com/industries/contracting/' }
   ];
 
   // Define related services
   const relatedEntities = [
     {
       name: 'Local SEO for Contractors',
-      url: 'https://spotcircuit.com/services/local-seo/',
+      url: 'https://www.spotcircuit.com/services/local-seo/',
       description: 'Rank higher in local search results for contracting services',
       type: 'Service'
     },
     {
       name: 'Contractor PPC Advertising',
-      url: 'https://spotcircuit.com/services/ppc/',
+      url: 'https://www.spotcircuit.com/services/ppc/',
       description: 'Targeted pay-per-click campaigns for general contractors',
       type: 'Service'
     },
     {
       name: 'Contractor Reputation Management',
-      url: 'https://spotcircuit.com/services/reputation/',
+      url: 'https://www.spotcircuit.com/services/reputation/',
       description: 'Build and manage online reviews for your contracting business',
       type: 'Service'
     }
@@ -42,8 +42,8 @@ export default function ContractingPageSchema() {
       <ServiceSchema
         name="AI-Powered Marketing for General Contractors"
         description="Grow your contracting business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI."
-        url="https://spotcircuit.com/industries/contracting/"
-        image="https://spotcircuit.com/images/contracting-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/contracting/"
+        image="https://www.spotcircuit.com/images/contracting-marketing.jpg"
         provider="SpotCircuit"
         areaServed={['United States']}
         serviceType="Contractor Marketing Services"
@@ -57,8 +57,8 @@ export default function ContractingPageSchema() {
         type="Service"
         name="Contractor Marketing Services"
         description="AI-powered marketing solutions designed specifically for general contractors to increase leads, improve online reputation, and maximize ROI."
-        url="https://spotcircuit.com/industries/contracting/"
-        image="https://spotcircuit.com/images/contracting-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/contracting/"
+        image="https://www.spotcircuit.com/images/contracting-marketing.jpg"
         sameAs={[
           { url: 'https://www.linkedin.com/company/spotcircuit' },
           { url: 'https://twitter.com/spotcircuit' }
@@ -72,7 +72,7 @@ export default function ContractingPageSchema() {
           provider: {
             '@type': 'Organization',
             name: 'SpotCircuit',
-            url: 'https://spotcircuit.com'
+            url: 'https://www.spotcircuit.com'
           },
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
@@ -112,7 +112,7 @@ export default function ContractingPageSchema() {
           '.services-overview h2',
           '.testimonial blockquote'
         ]}
-        url="https://spotcircuit.com/industries/contracting/"
+        url="https://www.spotcircuit.com/industries/contracting/"
       />
     </>
   );

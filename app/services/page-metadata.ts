@@ -10,7 +10,7 @@ export const servicesMetadata: Metadata = {
   openGraph: {
     title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
     description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',
-    url: 'https://spotcircuit.com/services',
+    url: 'https://www.spotcircuit.com/services',
     images: [
       {
         url: '/static/images/services.webp',

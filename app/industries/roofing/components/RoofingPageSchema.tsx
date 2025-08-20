@@ -9,28 +9,28 @@ import SpeakableSchema from '@/app/components/SpeakableSchema';
 export default function RoofingPageSchema() {
   // Define breadcrumb items
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://spotcircuit.com/' },
-    { name: 'Industries', url: 'https://spotcircuit.com/industries/' },
-    { name: 'Roofing', url: 'https://spotcircuit.com/industries/roofing/' }
+    { name: 'Home', url: 'https://www.spotcircuit.com/' },
+    { name: 'Industries', url: 'https://www.spotcircuit.com/industries/' },
+    { name: 'Roofing', url: 'https://www.spotcircuit.com/industries/roofing/' }
   ];
 
   // Define related services
   const relatedEntities = [
     {
       name: 'Local SEO for Roofers',
-      url: 'https://spotcircuit.com/services/local-seo/',
+      url: 'https://www.spotcircuit.com/services/local-seo/',
       description: 'Rank higher in local search results for roofing services',
       type: 'Service'
     },
     {
       name: 'Roofer PPC Advertising',
-      url: 'https://spotcircuit.com/services/ppc/',
+      url: 'https://www.spotcircuit.com/services/ppc/',
       description: 'Targeted pay-per-click campaigns for roofing companies',
       type: 'Service'
     },
     {
       name: 'Roofer Reputation Management',
-      url: 'https://spotcircuit.com/services/reputation/',
+      url: 'https://www.spotcircuit.com/services/reputation/',
       description: 'Build and manage online reviews for your roofing business',
       type: 'Service'
     }
@@ -42,8 +42,8 @@ export default function RoofingPageSchema() {
       <ServiceSchema
         name="AI-Powered Marketing for Roofing Companies"
         description="Grow your roofing business with targeted digital marketing that generates qualified leads, builds your online reputation, and maximizes your ROI."
-        url="https://spotcircuit.com/industries/roofing/"
-        image="https://spotcircuit.com/images/roofing-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/roofing/"
+        image="https://www.spotcircuit.com/images/roofing-marketing.jpg"
         provider="SpotCircuit"
         areaServed={['United States']}
         serviceType="Roofing Marketing Services"
@@ -57,8 +57,8 @@ export default function RoofingPageSchema() {
         type="Service"
         name="Roofing Marketing Services"
         description="AI-powered marketing solutions designed specifically for roofing contractors to increase leads, improve online reputation, and maximize ROI."
-        url="https://spotcircuit.com/industries/roofing/"
-        image="https://spotcircuit.com/images/roofing-marketing.jpg"
+        url="https://www.spotcircuit.com/industries/roofing/"
+        image="https://www.spotcircuit.com/images/roofing-marketing.jpg"
         sameAs={[
           { url: 'https://www.linkedin.com/company/spotcircuit' },
           { url: 'https://twitter.com/spotcircuit' }
@@ -72,7 +72,7 @@ export default function RoofingPageSchema() {
           provider: {
             '@type': 'Organization',
             name: 'SpotCircuit',
-            url: 'https://spotcircuit.com'
+            url: 'https://www.spotcircuit.com'
           },
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
@@ -112,7 +112,7 @@ export default function RoofingPageSchema() {
           '.services-overview h2',
           '.testimonial blockquote'
         ]}
-        url="https://spotcircuit.com/industries/roofing/"
+        url="https://www.spotcircuit.com/industries/roofing/"
       />
     </>
   );

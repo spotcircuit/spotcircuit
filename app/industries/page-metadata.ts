@@ -10,7 +10,7 @@ export const industriesMetadata: Metadata = {
   openGraph: {
     title: 'Home Service Industries | SpotCircuit - AI-Powered Growth Solutions',
     description: 'AI-powered growth solutions for plumbing, HVAC, electrical, landscaping, roofing, and other home service businesses. Generate qualified leads and optimize operations.',
-    url: 'https://spotcircuit.com/industries',
+    url: 'https://www.spotcircuit.com/industries',
     images: [
       {
         url: '/static/images/industries.webp',

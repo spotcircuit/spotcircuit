@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://spotcircuit.com';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com';
 
 export const metadata: Metadata = {
   title: 'SpotCircuit - AI-Powered Local SEO & Marketing',

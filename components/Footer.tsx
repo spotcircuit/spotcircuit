@@ -51,6 +51,11 @@ const navigation = {
   resources: [
     { name: 'Blog', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Tools', href: '/tools' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'API Docs', href: '/api-docs' },
+    { name: 'Local SEO Checklist', href: '/resources/downloads/local-seo-checklist' },
     { name: 'AI Marketing Tools', href: '/resources/ai-marketing-tools' },
     { name: 'Local SEO Guide', href: '/resources/local-seo-guide' },
     { name: 'AI Search Optimization', href: '/resources/ai-search-optimization' },
