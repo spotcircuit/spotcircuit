@@ -15,7 +15,10 @@
     "publish": "ts-node scripts/post-to-ghost.ts",
     "generate-and-publish": "ts-node scripts/generate-and-publish.ts",
     "process-tags": "ts-node scripts/process-content.ts",
-    "smart-link": "ts-node scripts/smart-linker.ts"
+    "smart-link": "ts-node scripts/smart-linker.ts",
+    "assets:generate": "ts-node scripts/generate-assets.ts"
+    ,
+    "images:generate": "ts-node scripts/generate-images.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
@@ -30,11 +33,13 @@
     "dotenv": "^16.4.7",
     "framer-motion": "^12.15.0",
     "googleapis": "^148.0.0",
+    "exceljs": "^4.4.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.525.0",
     "marked": "^15.0.6",
     "next": "^15.3.3",
     "node-fetch": "^2.7.0",
+    "pdfkit": "^0.15.0",
     "nodemailer": "^6.10.1",
     "nodemailer-smtp-transport": "^2.7.4",
     "openai": "^4.80.1",

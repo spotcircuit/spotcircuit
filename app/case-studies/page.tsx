@@ -176,7 +176,7 @@ const CaseStudiesPage = () => {
         name="SpotCircuit Case Studies"
         description="Explore how we've helped businesses achieve significant growth through AI-powered automation and intelligent SEO strategies."
         url="https://www.spotcircuit.com/case-studies"
-        entityType="CollectionPage"
+        type="CollectionPage"
         relatedEntities={caseStudies.map(study => ({
           name: study.title,
           url: study.url,

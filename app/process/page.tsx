@@ -113,7 +113,7 @@ const ProcessPage = () => {
         name="AI Implementation Process"
         description="A systematic approach to implementing AI automation solutions for home service businesses including discovery, strategy development, implementation, and optimization."
         url="https://www.spotcircuit.com/process"
-        entityType="Thing"
+        type="HowTo"
         relatedEntities={[
           {
             name: "Home Service Business Automation",

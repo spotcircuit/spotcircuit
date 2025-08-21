@@ -73,7 +73,7 @@ const ContactPage = () => {
         name="SpotCircuit Contact Information"
         description="Get in touch with SpotCircuit for AI-powered automation and SEO solutions for your home service business."
         url="https://www.spotcircuit.com/contact"
-        entityType="ContactPage"
+        type="ContactPage"
         relatedEntities={[
           {
             name: "Home Service Business Automation",

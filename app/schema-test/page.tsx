@@ -95,7 +95,7 @@ export default function SchemaTestPage() {
         name="AI-First SEO"
         description="An innovative approach to search engine optimization that prioritizes AI platforms and large language models."
         url="https://www.spotcircuit.com/schema-test"
-        entityType="Thing"
+        type="Thing"
         sameAs={[
           "https://en.wikipedia.org/wiki/Search_engine_optimization",
           "https://schema.org/Thing"

@@ -83,7 +83,7 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
         name="SpotCircuit Blog"
         description="Insights on AI-First SEO, LLM optimization, home service business automation, and growth strategies for ambitious businesses."
         url="https://www.spotcircuit.com/blog"
-        entityType="Blog"
+        type="Blog"
         relatedEntities={[
           {
             name: "AI-First SEO",
@@ -101,18 +101,20 @@ export default async function BlogPage({ searchParams }: BlogPageParams) {
         claimReviewed="AI-First SEO produces better results than traditional SEO in the age of AI search assistants"
         author={{
           name: "SpotCircuit Research Team",
+          type: "Organization",
           url: "https://www.spotcircuit.com/about"
         }}
         reviewRating={{
-          ratingValue: "5",
-          bestRating: "5",
-          worstRating: "1"
+          ratingValue: 5,
+          bestRating: 5,
+          worstRating: 1
         }}
         url="https://www.spotcircuit.com/blog"
         itemReviewed={{
           name: "AI-First SEO Methodology",
           description: "Modern approach to SEO focusing on AI and LLM optimization"
         }}
+        datePublished={new Date().toISOString()}
       />
       
       <main className="pt-24">

@@ -17,13 +17,8 @@ const ChatbotWidget = dynamic(
   { ssr: false }
 );
 
-const OrganizationSchema = dynamic(
-  () => import('@/components/schemas/OrganizationSchema').then(mod => mod.default),
-  { ssr: false }
-);
-
-const WebsiteSchema = dynamic(
-  () => import('@/components/schemas/WebsiteSchema').then(mod => mod.default),
+const GlobalSchemaManager = dynamic(
+  () => import('@/components/GlobalSchemaManager').then(mod => mod.default),
   { ssr: false }
 );
 
@@ -43,9 +38,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   
   return (
     <>
-      {/* Schema.org markup for SEO */}
-      <OrganizationSchema />
-      <WebsiteSchema />
+      {/* Global Schema.org markup for SEO */}
+      <GlobalSchemaManager />
       
       {/* Header with built-in mobile navigation */}
       <Header />

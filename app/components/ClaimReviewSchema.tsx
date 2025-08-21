@@ -1,15 +1,17 @@
 import Script from 'next/script';
+import { sanitizeSchema, validateNumericValue, validateUrl, validateISODate } from '@/lib/schema-validation';
 
 interface ClaimReviewSchemaProps {
   claimReviewed: string;
   reviewRating: {
-    ratingValue: number;
-    bestRating: number;
-    worstRating: number;
+    ratingValue: number | string;
+    bestRating: number | string;
+    worstRating: number | string;
     alternateName?: string; // e.g., "True", "Mostly False", etc.
   };
   itemReviewed: {
     name?: string;
+    description?: string;
     author?: {
       name: string;
       type?: string; // 'Person' or 'Organization'
@@ -26,8 +28,8 @@ interface ClaimReviewSchemaProps {
     type?: string; // 'Person' or 'Organization'
     url?: string;
   };
-  reviewUrl: string;
-  datePublished: string; // ISO 8601 format
+  url: string; // Changed from reviewUrl for consistency
+  datePublished?: string; // ISO 8601 format - made optional
 }
 
 export default function ClaimReviewSchema(props: ClaimReviewSchemaProps) {
@@ -36,24 +38,38 @@ export default function ClaimReviewSchema(props: ClaimReviewSchemaProps) {
     reviewRating,
     itemReviewed,
     author,
-    reviewUrl,
+    url,
     datePublished
   } = props;
 
-  const claimReviewSchema = {
+  // Convert rating values to numbers if they're strings
+  const ratingValue = typeof reviewRating.ratingValue === 'string' 
+    ? parseFloat(reviewRating.ratingValue) 
+    : reviewRating.ratingValue;
+  
+  const bestRating = typeof reviewRating.bestRating === 'string'
+    ? parseFloat(reviewRating.bestRating)
+    : reviewRating.bestRating;
+    
+  const worstRating = typeof reviewRating.worstRating === 'string'
+    ? parseFloat(reviewRating.worstRating)
+    : reviewRating.worstRating;
+
+  const claimReviewSchema = sanitizeSchema({
     '@context': 'https://schema.org',
     '@type': 'ClaimReview',
     claimReviewed,
     reviewRating: {
       '@type': 'Rating',
-      ratingValue: reviewRating.ratingValue,
-      bestRating: reviewRating.bestRating,
-      worstRating: reviewRating.worstRating,
+      ratingValue,
+      bestRating,
+      worstRating,
       ...(reviewRating.alternateName && { alternateName: reviewRating.alternateName })
     },
     itemReviewed: {
       '@type': 'Claim',
       ...(itemReviewed.name && { name: itemReviewed.name }),
+      ...(itemReviewed.description && { description: itemReviewed.description }),
       ...(itemReviewed.datePublished && { datePublished: itemReviewed.datePublished }),
       ...(itemReviewed.author && {
         author: {
@@ -74,9 +90,9 @@ export default function ClaimReviewSchema(props: ClaimReviewSchemaProps) {
       name: author.name,
       ...(author.url && { url: author.url })
     },
-    url: reviewUrl,
-    datePublished
-  };
+    url,
+    ...(datePublished && { datePublished })
+  });
 
   return (
     <Script id="claim-review-schema" type="application/ld+json" strategy="afterInteractive">

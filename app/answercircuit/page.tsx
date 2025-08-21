@@ -133,7 +133,7 @@ const AnswerCircuitSalesPage: React.FC = () => {
         name="AI Visibility Platform"
         description="A service that ensures B2B SaaS products are cited and recommended by AI platforms like ChatGPT, Claude, and Perplexity when prospects research product categories."
         url="https://www.spotcircuit.com/answercircuit"
-        entityType="Service"
+        type="Service"
         sameAs={[
           "https://schema.org/Service"
         ]}
