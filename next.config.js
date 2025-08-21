@@ -83,166 +83,40 @@ const nextConfig = {
   // Redirects configuration
   async redirects() {
     return [
-      // New hub redirects
-      {
-        source: '/api',
-        destination: '/api-docs',
-        permanent: true,
-      },
-      {
-        source: '/downloads',
-        destination: '/resources/downloads',
-        permanent: true,
-      },
-      // Redirect from www to non-www (Note: HTTP to HTTPS is handled by Vercel automatically)
-      // Note: www to non-www and HTTP to HTTPS redirects are handled by Vercel automatically
-      // Removed the manual www redirect to prevent redirect loops
-      
-      // Local services redirect (was causing 404 loops)
-      {
-        source: '/local-services',
-        destination: '/local-marketing',
-        permanent: true,
-      },
-      {
-        source: '/local-services/:path*',
-        destination: '/local-marketing/:path*',
-        permanent: true,
-      },
-      // 404 Fixes - Redirect common 404 errors to their correct pages
-      // Home page redirect
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      // Privacy policy redirect
-      {
-        source: '/privacy-policy',
-        destination: '/privacy',
-        permanent: true,
-      },
-      {
-        source: '/privacy-policy/',
-        destination: '/privacy',
-        permanent: true,
-      },
-      // Pricing page redirect
-      {
-        source: '/pricing',
-        destination: '/services',
-        permanent: true,
-      },
-      // Local SEO redirect
-      {
-        source: '/local-seo',
-        destination: '/resources/local-seo-guide',
-        permanent: true,
-      },
-      // Email subdomain redirect - Note: subdomain redirects need to be handled in Vercel dashboard
-      // Testimonials redirect
-      {
-        source: '/testimonials',
-        destination: '/case-studies',
-        permanent: true,
-      },
-      // Integrations redirect
-      {
-        source: '/integrations',
-        destination: '/services',
-        permanent: true,
-      },
-      // Industry pages redirects
-      {
-        source: '/automotive',
-        destination: '/industries',
-        permanent: true,
-      },
-      {
-        source: '/hvac',
-        destination: '/industries/hvac',
-        permanent: true,
-      },
-      {
-        source: '/contractors',
-        destination: '/industries/contracting',
-        permanent: true,
-      },
-      // Careers redirect
-      {
-        source: '/careers',
-        destination: '/contact',
-        permanent: true,
-      },
-      // Results redirect
-      {
-        source: '/results',
-        destination: '/case-studies',
-        permanent: true,
-      },
-      // Case study specific redirect
-      {
-        source: '/case-studies/hvac-success',
-        destination: '/case-studies',
-        permanent: true,
-      },
-      // Thank you page redirect
-      {
-        source: '/thank-you',
-        destination: '/',
-        permanent: true,
-      },
-      // About page redirect
-      {
-        source: '/about',
-        destination: '/',
-        permanent: true,
-      },
-      // Plan pages redirects
-      {
-        source: '/professional-plan',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/standard-plan',
-        destination: '/services',
-        permanent: true,
-      },
-      // Old home page redirect
-      {
-        source: '/home-page261030',
-        destination: '/',
-        permanent: true,
-      },
-      // Terms redirect
-      {
-        source: '/terms-conditions',
-        destination: '/terms',
-        permanent: true,
-      },
-      {
-        source: '/terms-conditions/',
-        destination: '/terms',
-        permanent: true,
-      },
-      // RSS feed redirect
-      {
-        source: '/feed',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/feed/',
-        destination: '/blog',
-        permanent: true,
-      },
-      // Old blog post redirect
-      {
-        source: '/effective-strategies-for-local-advertising',
-        destination: '/blog',
-        permanent: true,
-      },
+      { source: '/api', destination: '/api-docs', permanent: true },
+      { source: '/downloads', destination: '/resources/downloads', permanent: true },
+      { source: '/local-services', destination: '/local-marketing', permanent: true },
+      { source: '/local-services/:path*', destination: '/local-marketing/:path*', permanent: true },
+      { source: '/home', destination: '/', permanent: true },
+      { source: '/privacy-policy', destination: '/privacy', permanent: true },
+      { source: '/privacy-policy/', destination: '/privacy', permanent: true },
+      { source: '/pricing', destination: '/services', permanent: true },
+      { source: '/local-seo', destination: '/resources/local-seo-guide', permanent: true },
+      { source: '/testimonials', destination: '/case-studies', permanent: true },
+      { source: '/integrations', destination: '/services', permanent: true },
+      { source: '/automotive', destination: '/industries', permanent: true },
+      { source: '/hvac', destination: '/industries/hvac', permanent: true },
+      { source: '/contractors', destination: '/industries/contracting', permanent: true },
+      { source: '/careers', destination: '/contact', permanent: true },
+      { source: '/results', destination: '/case-studies', permanent: true },
+      { source: '/case-studies/hvac-success', destination: '/case-studies', permanent: true },
+      { source: '/thank-you', destination: '/', permanent: true },
+      { source: '/about', destination: '/', permanent: true },
+      { source: '/professional-plan', destination: '/services', permanent: true },
+      { source: '/standard-plan', destination: '/services', permanent: true },
+      { source: '/home-page261030', destination: '/', permanent: true },
+      { source: '/terms-conditions', destination: '/terms', permanent: true },
+      { source: '/terms-conditions/', destination: '/terms', permanent: true },
+      { source: '/feed', destination: '/blog', permanent: true },
+      { source: '/feed/', destination: '/blog', permanent: true },
+      { source: '/effective-strategies-for-local-advertising', destination: '/blog', permanent: true },
+      // Collapse locale-prefixed URLs that 404
+      { source: '/en-US', destination: '/', permanent: true },
+      { source: '/en-us', destination: '/', permanent: true },
+      // New fixes for broken links
+      { source: '/faq', destination: '/local-marketing', permanent: true },
+      { source: '/audit', destination: '/contact', permanent: true },
+      { source: '/case-studies/:slug*', destination: '/case-studies', permanent: true },
     ];
   }
 };

@@ -1574,7 +1574,7 @@ const LocalMarketingPage: React.FC = () => {
               </div>
               
               <div className="px-8 pb-8">
-                <Link href="/case-studies/apex-plumbing">
+                <Link href="/case-studies">
                   <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
                     Read full case study
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -1626,7 +1626,7 @@ const LocalMarketingPage: React.FC = () => {
               </div>
               
               <div className="px-8 pb-8">
-                <Link href="/case-studies/coolair-hvac">
+                <Link href="/case-studies">
                   <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
                     Read full case study
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -1678,7 +1678,7 @@ const LocalMarketingPage: React.FC = () => {
               </div>
               
               <div className="px-8 pb-8">
-                <Link href="/case-studies/volt-electric">
+                <Link href="/case-studies">
                   <span className="text-blue-400 hover:text-blue-300 text-sm font-medium inline-flex items-center">
                     Read full case study
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -1766,7 +1766,7 @@ const LocalMarketingPage: React.FC = () => {
           </div>
           
           <div className="mt-10 text-center">
-            <Link href="/faq">
+            <Link href="#faq">
               <span className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center">
                 View more frequently asked questions
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
@@ -1802,7 +1802,7 @@ const LocalMarketingPage: React.FC = () => {
                 </span>
               </Link>
               
-              <Link href="/audit">
+              <Link href="/contact">
                 <span className="bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 rounded-xl transition duration-300 border border-white/30 hover:border-white inline-block w-full sm:w-auto">
                   Get a Free Local SEO Audit
                 </span>
