@@ -169,3 +169,5 @@ dist
 
 # scripts directory
 /scripts/
+
+spotcircuit_*_hreflang-to-redirect_*.csv
