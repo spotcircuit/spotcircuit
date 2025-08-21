@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'consulting firm marketing, business consultant marketing, management consulting SEO, consulting leads, B2B consulting marketing',
   alternates: {
     canonical: '/industries/consulting',
+    languages: {
+      'x-default': '/industries/consulting',
+      'en': '/industries/consulting',
+    },
   },
 };

@@ -68,7 +68,8 @@ const navigation = {
     { name: 'Contact Us', href: '/contact' },
     { name: 'Book a Call', href: '/booking' },
     { name: 'Answer Circuit', href: '/answercircuit' },
-    { name: 'Launch Services', href: '/launch' }
+    { name: 'Launch Services', href: '/launch' },
+    { name: 'Developer Portfolio', href: 'https://portfolio.spotcircuit.com', external: true }
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -437,13 +438,25 @@ export default function Footer() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.3 + (index * 0.05) }}
                     >
-                      <Link 
-                        href={item.href} 
-                        className="text-sm leading-6 text-blue-100 hover:text-white transition-colors duration-200 flex items-center group"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                        {item.name}
-                      </Link>
+                      {(item as any).external ? (
+                        <a 
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm leading-6 text-blue-100 hover:text-white transition-colors duration-200 flex items-center group"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          href={item.href} 
+                          className="text-sm leading-6 text-blue-100 hover:text-white transition-colors duration-200 flex items-center group"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                          {item.name}
+                        </Link>
+                      )}
                     </motion.li>
                   ))}
                 </ul>

@@ -2323,7 +2323,7 @@ function() {
                           <h4 className="font-semibold text-white">Done-for-You Implementation</h4>
                           <p className="text-sm text-gray-400">Professional optimization service</p>
                         </div>
-                        <Link href="/services/ai-seo-implementation" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm transition-colors">
+                        <Link href="/contact" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm transition-colors">
                           Learn More
                         </Link>
                       </div>

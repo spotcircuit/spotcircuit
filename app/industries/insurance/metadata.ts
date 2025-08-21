@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'insurance agency marketing, insurance lead generation, insurance agent SEO, life insurance marketing, auto insurance leads',
   alternates: {
     canonical: '/industries/insurance',
+    languages: {
+      'x-default': '/industries/insurance',
+      'en': '/industries/insurance',
+    },
   },
 };

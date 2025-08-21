@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'our process, how it works, implementation process, marketing strategy, AI implementation, business growth process',
   alternates: {
     canonical: '/process',
+    languages: {
+      'x-default': '/process',
+      'en': '/process',
+    },
   },
 };

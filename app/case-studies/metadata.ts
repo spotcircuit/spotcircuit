@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'case studies, success stories, client results, marketing results, business transformation, ROI examples',
   alternates: {
     canonical: '/case-studies',
+    languages: {
+      'x-default': '/case-studies',
+      'en': '/case-studies',
+    },
   },
 };

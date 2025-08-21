@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'roofing marketing, roofing leads, roof replacement leads, storm damage marketing, roofing SEO, roofing company marketing',
   alternates: {
     canonical: '/industries/roofing',
+    languages: {
+      'x-default': '/industries/roofing',
+      'en': '/industries/roofing',
+    },
   },
 };

@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'marketing agency tools, white label marketing, agency automation, digital agency SEO, marketing agency growth',
   alternates: {
     canonical: '/industries/marketing-agencies',
+    languages: {
+      'x-default': '/industries/marketing-agencies',
+      'en': '/industries/marketing-agencies',
+    },
   },
 };

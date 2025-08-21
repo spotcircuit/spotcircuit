@@ -438,6 +438,101 @@ const CaseStudiesPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Additional Case Studies Section */}
+        <section className="py-16 md:py-24 gradient-bg-dark">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">More Success Stories</h2>
+              <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+                Explore additional case studies showcasing our expertise across different industries
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* CoolAir HVAC */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link href="/case-studies/coolair-hvac">
+                  <div className="modern-card h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+                    <div className="p-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                        <FaTools className="text-white text-xl" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-white">CoolAir HVAC</h3>
+                      <p className="text-blue-100 mb-4">
+                        HVAC service provider achieving 3x growth through local SEO optimization and automated lead management.
+                      </p>
+                      <span className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                        Read Case Study <FaExternalLinkAlt className="ml-2 text-sm" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Apex Plumbing */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Link href="/case-studies/apex-plumbing">
+                  <div className="modern-card h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+                    <div className="p-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                        <FaTools className="text-white text-xl" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-white">Apex Plumbing</h3>
+                      <p className="text-blue-100 mb-4">
+                        Regional plumbing contractor scaling operations with AI-powered customer service and predictive maintenance scheduling.
+                      </p>
+                      <span className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                        Read Case Study <FaExternalLinkAlt className="ml-2 text-sm" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Volt Electric */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Link href="/case-studies/volt-electric">
+                  <div className="modern-card h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+                    <div className="p-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                        <FaLightbulb className="text-white text-xl" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-white">Volt Electric</h3>
+                      <p className="text-blue-100 mb-4">
+                        Commercial electrical contractor winning enterprise contracts through strategic AI visibility and authority building.
+                      </p>
+                      <span className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center">
+                        Read Case Study <FaExternalLinkAlt className="ml-2 text-sm" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
         
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-purple-700 text-white text-center relative overflow-hidden">

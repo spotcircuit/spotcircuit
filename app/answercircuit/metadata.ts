@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/answercircuit',
+    languages: {
+      'x-default': '/answercircuit',
+      'en': '/answercircuit',
+    },
   },
   robots: {
     index: true,

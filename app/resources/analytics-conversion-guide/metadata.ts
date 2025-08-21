@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'analytics guide, conversion optimization, marketing analytics, conversion tracking, ROI measurement, A/B testing guide',
   alternates: {
     canonical: '/resources/analytics-conversion-guide',
+    languages: {
+      'x-default': '/resources/analytics-conversion-guide',
+      'en': '/resources/analytics-conversion-guide',
+    },
   },
 };

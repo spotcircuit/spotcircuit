@@ -442,7 +442,7 @@ const aiTools = [
     name: "HubSpot Content Assistant",
     description: "AI content creation tool integrated with HubSpot's marketing platform.",
     categories: ['content', 'automation'],
-    url: "https://www.hubspot.com/products/marketing/artificial-intelligence-tools",
+    url: "https://www.hubspot.com/ai",
     image: "https://dummyimage.com/400x400/ff7a59/ffffff&text=HubSpot",
     pricing: {
       hasFree: true,

@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'electrical contractor marketing, electrician leads, electrical service marketing, commercial electrical marketing, residential electrician SEO',
   alternates: {
     canonical: '/industries/electrical',
+    languages: {
+      'x-default': '/industries/electrical',
+      'en': '/industries/electrical',
+    },
   },
 };

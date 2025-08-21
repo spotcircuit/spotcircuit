@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/resources/content-strategy-blueprint',
+    languages: {
+      'x-default': '/resources/content-strategy-blueprint',
+      'en': '/resources/content-strategy-blueprint',
+    },
   },
   robots: {
     index: true,

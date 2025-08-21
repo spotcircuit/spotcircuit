@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/resources/ai-search-optimization',
+    languages: {
+      'x-default': '/resources/ai-search-optimization',
+      'en': '/resources/ai-search-optimization',
+    },
   },
   robots: {
     index: true,

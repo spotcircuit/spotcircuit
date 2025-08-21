@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'financial advisor marketing, wealth management marketing, investment advisor SEO, financial planning leads, RIA marketing',
   alternates: {
     canonical: '/industries/financial-advisors',
+    languages: {
+      'x-default': '/industries/financial-advisors',
+      'en': '/industries/financial-advisors',
+    },
   },
 };

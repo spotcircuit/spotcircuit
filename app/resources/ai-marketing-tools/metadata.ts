@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'AI marketing tools, marketing automation, AI content creation, AI lead generation, marketing AI platforms, AI analytics tools',
   alternates: {
     canonical: '/resources/ai-marketing-tools',
+    languages: {
+      'x-default': '/resources/ai-marketing-tools',
+      'en': '/resources/ai-marketing-tools',
+    },
   },
 };

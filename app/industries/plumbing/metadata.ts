@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'plumbing marketing, plumber leads, emergency plumbing marketing, drain cleaning leads, plumbing SEO, plumbing company marketing',
   alternates: {
     canonical: '/industries/plumbing',
+    languages: {
+      'x-default': '/industries/plumbing',
+      'en': '/industries/plumbing',
+    },
   },
 };

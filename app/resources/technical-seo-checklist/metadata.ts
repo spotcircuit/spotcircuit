@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/resources/technical-seo-checklist',
+    languages: {
+      'x-default': '/resources/technical-seo-checklist',
+      'en': '/resources/technical-seo-checklist',
+    },
   },
   robots: {
     index: true,

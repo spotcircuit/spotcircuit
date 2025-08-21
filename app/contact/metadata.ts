@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'contact SpotCircuit, schedule consultation, marketing consultation, AI marketing help, business growth consultation',
   alternates: {
     canonical: '/contact',
+    languages: {
+      'x-default': '/contact',
+      'en': '/contact',
+    },
   },
 };

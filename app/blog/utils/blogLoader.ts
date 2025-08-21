@@ -2,6 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { blogPosts as staticBlogPosts } from '../lib/blog-data';
+import { getBlogPostContent } from '../lib/content-loader';
 
 export type BlogPost = {
   slug: string;
@@ -35,10 +37,28 @@ function calculateReadTime(content: string): number {
 // Get all blog posts
 export async function getAllPosts(): Promise<BlogPost[]> {
   try {
-    // Create blog posts directory if it doesn't exist
+    // First, convert static blog posts from blog-data.tsx
+    const staticPosts: BlogPost[] = staticBlogPosts.map(post => {
+      const content = getBlogPostContent(post.slug);
+      const readTime = calculateReadTime(content);
+      
+      return {
+        slug: post.slug,
+        title: post.title,
+        excerpt: post.excerpt,
+        date: new Date(post.date).toISOString(),
+        content: content,
+        tags: post.tags,
+        category: post.categories[0] || 'Uncategorized', // Use first category
+        readTime: readTime,
+        coverImage: post.coverImage
+      };
+    });
+
+    // Then check for markdown posts in the filesystem
     const postsDirectory = path.join(process.cwd(), 'app/blog/posts');
     if (!fs.existsSync(postsDirectory)) {
-      // If no posts directory exists, create it and add a sample post
+      // If no posts directory exists, create it
       fs.mkdirSync(postsDirectory, { recursive: true });
       
       // Create a sample post if there are no posts

@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords,
   alternates: {
     canonical: '/local-marketing',
+    languages: {
+      'x-default': '/local-marketing',
+      'en': '/local-marketing',
+    },
   },
   openGraph: {
     title,

@@ -6,5 +6,9 @@ export const metadata: Metadata = {
   keywords: 'book consultation, schedule meeting, free consultation, marketing consultation, AI strategy session',
   alternates: {
     canonical: '/booking',
+    languages: {
+      'x-default': '/booking',
+      'en': '/booking',
+    },
   },
 };
