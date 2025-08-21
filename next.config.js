@@ -85,6 +85,7 @@ const nextConfig = {
     return [
       { source: '/api', destination: '/api-docs', permanent: true },
       { source: '/downloads', destination: '/resources/downloads', permanent: true },
+      { source: '/downloads/:path*', destination: '/resources/downloads/:path*', permanent: true },
       { source: '/local-services', destination: '/local-marketing', permanent: true },
       { source: '/local-services/:path*', destination: '/local-marketing/:path*', permanent: true },
       { source: '/home', destination: '/', permanent: true },
@@ -110,13 +111,14 @@ const nextConfig = {
       { source: '/feed', destination: '/blog', permanent: true },
       { source: '/feed/', destination: '/blog', permanent: true },
       { source: '/effective-strategies-for-local-advertising', destination: '/blog', permanent: true },
+      { source: '/insurance-roi-calculator', destination: '/roi-calculator', permanent: true },
+      { source: '/saas-roi-calculator', destination: '/roi-calculator', permanent: true },
       // Collapse locale-prefixed URLs that 404
       { source: '/en-US', destination: '/', permanent: true },
       { source: '/en-us', destination: '/', permanent: true },
       // New fixes for broken links
       { source: '/faq', destination: '/local-marketing', permanent: true },
       { source: '/audit', destination: '/contact', permanent: true },
-      { source: '/case-studies/:slug+', destination: '/case-studies', permanent: true },
     ];
   }
 };
