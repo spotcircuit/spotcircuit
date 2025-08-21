@@ -116,7 +116,7 @@ const nextConfig = {
       // New fixes for broken links
       { source: '/faq', destination: '/local-marketing', permanent: true },
       { source: '/audit', destination: '/contact', permanent: true },
-      { source: '/case-studies/:slug*', destination: '/case-studies', permanent: true },
+      { source: '/case-studies/:slug+', destination: '/case-studies', permanent: true },
     ];
   }
 };
