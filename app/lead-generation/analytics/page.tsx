@@ -12,9 +12,28 @@ import { CheckCircleIcon, ArrowLeftIcon, ChartBarIcon, ChartPieIcon } from '@her
 export const metadata: Metadata = {
   title: 'B2B Lead Generation Analytics - Industry-Specific KPIs | SpotCircuit',
   description: 'Track the metrics that matter for your industry. Real-time dashboards and reporting for recruiting agencies, B2B SaaS companies, and insurance brokerages.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/lead-generation/analytics',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/lead-generation/analytics',
+      'en': 'https://www.spotcircuit.com/lead-generation/analytics',
+    },
+  },
   openGraph: {
-    title: 'B2B Lead Generation Analytics | SpotCircuit',
-    description: 'Industry-specific analytics and KPIs for B2B lead generation.',
+    title: 'B2B Lead Generation Analytics - Industry-Specific KPIs | SpotCircuit',
+    description: 'Track the metrics that matter for your industry. Real-time dashboards and reporting for recruiting agencies, B2B SaaS companies, and insurance brokerages.',
+    url: 'https://www.spotcircuit.com/lead-generation/analytics',
+    images: ['/static/images/lead-generation-analytics-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'B2B Lead Generation Analytics - Industry-Specific KPIs | SpotCircuit',
+    description: 'Track the metrics that matter for your industry. Real-time dashboards and reporting for recruiting agencies, B2B SaaS companies, and insurance brokerages.',
+    images: ['/static/images/lead-generation-analytics-og.webp'],
+    creator: '@spotcircuit',
   },
 }
 
@@ -385,7 +404,7 @@ export default function AnalyticsPage() {
               <div>
                 <h4 className="text-white font-bold mb-3">Get Started</h4>
                 <div className="space-y-2">
-                  <Link href="/pricing" className="block text-gray-400 hover:text-green-400 text-sm">Pricing</Link>
+                  <Link href="/services" className="block text-gray-400 hover:text-green-400 text-sm">Pricing</Link>
                   <Link href="/demo" className="block text-gray-400 hover:text-green-400 text-sm">Request Demo</Link>
                   <Link href="/contact" className="block text-gray-400 hover:text-green-400 text-sm">Contact Us</Link>
                 </div>

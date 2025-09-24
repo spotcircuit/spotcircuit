@@ -383,7 +383,7 @@ const ContractingPage: React.FC = () => {
                 </span>
               </Link>
               
-              <Link href="/local-services">
+              <Link href="/local-marketing">
                 <span className="bg-transparent hover:bg-orange-800/50 text-white font-bold py-4 px-8 rounded-lg border border-white transition duration-300 inline-block">
                   Explore All Local Services
                 </span>

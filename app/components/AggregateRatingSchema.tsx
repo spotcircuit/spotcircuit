@@ -77,26 +77,41 @@ export default function AggregateRatingSchema({
   const schema = {
     '@context': 'https://schema.org',
     '@type': itemType,
+    '@id': url ? `${url}#${itemType.toLowerCase()}` : `#${itemType.toLowerCase()}-${itemName.replace(/\s+/g, '-').toLowerCase()}`,
     name: itemName,
     aggregateRating: {
       '@type': 'AggregateRating',
+      '@id': `#rating-${itemName.replace(/\s+/g, '-').toLowerCase()}`,
       ratingValue: formattedRatingValue,
       reviewCount: reviewCount,
       ...(ratingCount && { ratingCount }),
       bestRating: bestRating,
-      worstRating: worstRating
+      worstRating: worstRating,
+      ratingExplanation: `Average rating of ${formattedRatingValue} out of ${bestRating} based on ${reviewCount} reviews`
     },
     ...(description && { description }),
     ...(url && { url }),
-    ...(image && { image }),
-    ...(address && { 
+    ...(image && {
+      image: {
+        '@type': 'ImageObject',
+        url: image
+      }
+    }),
+    ...(address && {
       address: {
         '@type': 'PostalAddress',
+        '@id': `#address-${itemName.replace(/\s+/g, '-').toLowerCase()}`,
         ...address
       }
     }),
     ...(telephone && { telephone }),
-    ...(priceRange && { priceRange })
+    ...(priceRange && { priceRange }),
+    // Add author for review aggregation context
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.spotcircuit.com/#organization',
+      name: 'SpotCircuit'
+    }
   };
 
   return (

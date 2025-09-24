@@ -173,7 +173,7 @@ const LocalMarketingPage: React.FC = () => {
       {/* Mobile Header */}
       <header className="lg:hidden fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-40 border-b border-gray-800">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold text-white">SpotCircuit</a>
+          <Link href="/" className="text-xl font-bold text-white">SpotCircuit</Link>
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-white p-2"

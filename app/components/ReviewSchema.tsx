@@ -63,18 +63,28 @@ export default function ReviewSchema(props: ReviewSchemaProps) {
   const reviewSchema = {
     '@context': 'https://schema.org',
     '@type': 'Review',
+    '@id': `#review-${itemReviewed.name.replace(/\s+/g, '-').toLowerCase()}`,
+    inLanguage: 'en-US',
     itemReviewed: {
       '@type': itemReviewed.type,
+      '@id': itemReviewed.url ? `${itemReviewed.url}#${itemReviewed.type.toLowerCase()}` : undefined,
       name: itemReviewed.name,
       ...(itemReviewed.url && { url: itemReviewed.url }),
-      ...(itemReviewed.image && { image: itemReviewed.image }),
+      ...(itemReviewed.image && {
+        image: {
+          '@type': 'ImageObject',
+          url: itemReviewed.image
+        }
+      }),
       ...(itemReviewed.description && { description: itemReviewed.description })
     },
     reviewRating: {
       '@type': 'Rating',
+      '@id': `#rating-${itemReviewed.name.replace(/\s+/g, '-').toLowerCase()}`,
       ratingValue: reviewRating.ratingValue,
       bestRating: reviewRating.bestRating || 5,
-      worstRating: reviewRating.worstRating || 1
+      worstRating: reviewRating.worstRating || 1,
+      ratingExplanation: `Rating of ${reviewRating.ratingValue} out of ${reviewRating.bestRating || 5}`
     },
     author: {
       '@type': author.type || 'Person',
@@ -82,14 +92,18 @@ export default function ReviewSchema(props: ReviewSchemaProps) {
       ...(author.url && { url: author.url })
     },
     reviewBody,
-    ...(datePublished && { datePublished }),
+    ...(datePublished && {
+      datePublished,
+      dateCreated: datePublished
+    }),
     ...(publisher && {
       publisher: {
         '@type': publisher.type || 'Organization',
         name: publisher.name,
         ...(publisher.url && { url: publisher.url })
       }
-    })
+    }),
+    headline: `Review of ${itemReviewed.name}`
   };
 
   // Add positive and negative notes if provided

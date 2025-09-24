@@ -5,7 +5,7 @@ export const termsMetadata: Metadata = {
   description: 'Read the terms and conditions for using SpotCircuit\'s AI-powered automation and SEO services. Learn about user rights, responsibilities, and our service policies.',
   keywords: 'terms of service, legal terms, SpotCircuit terms, service agreement, user agreement, legal',
   alternates: {
-    canonical: '/terms',
+    canonical: 'https://www.spotcircuit.com/terms',
   },
   openGraph: {
     title: 'Terms of Service | SpotCircuit',

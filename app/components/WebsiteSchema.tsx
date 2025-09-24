@@ -7,11 +7,31 @@ export default function WebsiteSchema() {
     '@type': 'WebSite',
     '@id': 'https://www.spotcircuit.com/#website',
     name: 'SpotCircuit',
+    alternateName: 'SpotCircuit AI Platform',
     url: 'https://www.spotcircuit.com',
     description: 'AI-First SEO & LLM Optimization Platform',
+    inLanguage: 'en-US',
+    copyrightYear: new Date().getFullYear(),
+    copyrightHolder: {
+      '@id': 'https://www.spotcircuit.com/#organization'
+    },
     publisher: {
       '@id': 'https://www.spotcircuit.com/#organization'
     },
+    about: [
+      {
+        '@type': 'Thing',
+        name: 'AI Search Optimization'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Large Language Models'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Structured Data'
+      }
+    ],
     potentialAction: [
       {
         '@type': 'SearchAction',
@@ -20,8 +40,18 @@ export default function WebsiteSchema() {
           urlTemplate: 'https://www.spotcircuit.com/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
+      },
+      {
+        '@type': 'ReadAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://www.spotcircuit.com/blog/{article_slug}'
+        }
       }
-    ]
+    ],
+    mainEntity: {
+      '@id': 'https://www.spotcircuit.com/#organization'
+    }
   };
 
   return (

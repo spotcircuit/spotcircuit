@@ -13,10 +13,10 @@ import { Process } from '@/components/Process'
 import { CheckCircleIcon, ArrowRightIcon, CodeBracketIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
-  title: 'AI Automation Services - n8n, Make, Zapier Workflows | SpotCircuit',
+  title: 'AI Automation Services - n8n, Make, Zapier | SpotCircuit',
   description: 'Transform your business with AI-powered automation workflows using n8n, Make, and Zapier. From lead generation to recruiting, we build custom automations that scale.',
   alternates: {
-    canonical: '/ai-automation',
+    canonical: 'https://www.spotcircuit.com/ai-automation',
   },
   openGraph: {
     title: 'AI Automation Services - n8n, Make, Zapier | SpotCircuit',
@@ -451,7 +451,7 @@ export default function AIAutomationPage() {
                   <Link href="/industries/medical" className="block text-gray-400 hover:text-purple-400">Healthcare & Medical</Link>
                   <Link href="/industries/legal" className="block text-gray-400 hover:text-purple-400">Legal Services</Link>
                   <Link href="/industries/roofing" className="block text-gray-400 hover:text-purple-400">Roofing & Construction</Link>
-                  <Link href="/local-services" className="block text-gray-400 hover:text-purple-400">Local Services</Link>
+                  <Link href="/local-marketing" className="block text-gray-400 hover:text-purple-400">Local Services</Link>
                 </div>
               </div>
               <div>

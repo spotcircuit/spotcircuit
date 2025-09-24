@@ -5,7 +5,7 @@ export const privacyMetadata: Metadata = {
   description: 'Learn how SpotCircuit collects, uses, and protects your personal data. Our privacy policy outlines our commitment to safeguarding your information.',
   keywords: 'privacy policy, data protection, personal information, GDPR, data security, SpotCircuit privacy',
   alternates: {
-    canonical: '/privacy',
+    canonical: 'https://www.spotcircuit.com/privacy',
   },
   openGraph: {
     title: 'Privacy Policy | SpotCircuit',

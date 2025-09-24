@@ -6,6 +6,29 @@ import FaqSchema from '@/app/components/FaqSchema';
 export const metadata = {
   title: 'API Docs | SpotCircuit',
   description: 'Overview of SpotCircuit API documentation: authentication, endpoints, rate limits, and changelog stub.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/api-docs',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/api-docs',
+      'en': 'https://www.spotcircuit.com/api-docs',
+    },
+  },
+  openGraph: {
+    title: 'API Docs | SpotCircuit',
+    description: 'Overview of SpotCircuit API documentation: authentication, endpoints, rate limits, and changelog stub.',
+    url: 'https://www.spotcircuit.com/api-docs',
+    images: ['/static/images/api-docs-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Docs | SpotCircuit',
+    description: 'Overview of SpotCircuit API documentation: authentication, endpoints, rate limits, and changelog stub.',
+    images: ['/static/images/api-docs-og.webp'],
+    creator: '@spotcircuit',
+  },
 };
 
 const faqs = [

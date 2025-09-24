@@ -29,7 +29,11 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
   alternates: {
-    canonical: '/resources',
+    canonical: 'https://www.spotcircuit.com/resources',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/resources',
+      'en': 'https://www.spotcircuit.com/resources',
+    },
   },
   robots: {
     index: true,

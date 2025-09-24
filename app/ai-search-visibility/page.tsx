@@ -13,7 +13,7 @@ import { CheckCircleIcon, ArrowRightIcon, MagnifyingGlassIcon, ChartBarIcon } fr
 import { SparklesIcon, GlobeAltIcon, CpuChipIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'AI Search Visibility Services - Optimize for ChatGPT, Google & More | SpotCircuit',
+  title: 'AI Search Visibility - ChatGPT, Google & More | SpotCircuit',
   description: 'Dominate search results across AI platforms and traditional search engines. Expert optimization for ChatGPT, Perplexity, Claude, and Google.',
   openGraph: {
     title: 'AI Search Visibility Services | SpotCircuit',
@@ -183,7 +183,7 @@ export default function AISearchVisibilityPage() {
                 <Link href="/solutions/contentcircuit" className="text-center px-4 py-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-all group">
                   <span className="text-white group-hover:text-blue-400">✍️ Content Creation</span>
                 </Link>
-                <Link href="/local-services" className="text-center px-4 py-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-all group">
+                <Link href="/local-marketing" className="text-center px-4 py-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-all group">
                   <span className="text-white group-hover:text-blue-400">📍 Local SEO</span>
                 </Link>
                 <Link href="/ai-automation" className="text-center px-4 py-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-all group">
@@ -325,7 +325,7 @@ export default function AISearchVisibilityPage() {
                   <p className="text-cyan-400 text-sm font-semibold">Optimize for legal →</p>
                 </div>
               </Link>
-              <Link href="/local-services" className="group">
+              <Link href="/local-marketing" className="group">
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all">
                   <div className="text-3xl mb-3">📍</div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400">Local Services</h3>
@@ -412,7 +412,7 @@ export default function AISearchVisibilityPage() {
               <div>
                 <h3 className="text-lg font-bold text-white mb-4">Get Started</h3>
                 <div className="space-y-2">
-                  <Link href="/pricing" className="block text-gray-400 hover:text-cyan-400 text-sm">View Pricing</Link>
+                  <Link href="/services" className="block text-gray-400 hover:text-cyan-400 text-sm">View Pricing</Link>
                   <Link href="/case-studies" className="block text-gray-400 hover:text-cyan-400 text-sm">Success Stories</Link>
                   <Link href="/contact" className="block text-gray-400 hover:text-cyan-400 text-sm">Contact Us</Link>
                 </div>

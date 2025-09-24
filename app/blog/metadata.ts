@@ -5,10 +5,10 @@ export const metadata: Metadata = {
   description: 'Discover insights on AI-First SEO, LLM optimization, business automation, and service optimization from SpotCircuit experts.',
   keywords: 'AI-First SEO, LLM optimization, AI search, chatbot citation, home service automation, business growth',
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://www.spotcircuit.com/blog',
     languages: {
-      'x-default': '/blog',
-      'en': '/blog',
+      'x-default': 'https://www.spotcircuit.com/blog',
+      'en': 'https://www.spotcircuit.com/blog',
     },
   },
   openGraph: {

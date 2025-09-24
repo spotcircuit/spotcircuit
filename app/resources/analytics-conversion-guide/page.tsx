@@ -414,7 +414,7 @@ const AnalyticsConversionGuide: React.FC = () => {
                   View Complete Guide
                 </span>
               </Link>
-              <a href="/downloads/analytics-setup-template.pdf" className="border-2 border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+              <a href="/resources/downloads/analytics-setup-template.pdf" className="border-2 border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
                 <FaDownload className="mr-2" />
                 Download Analytics Checklist
               </a>
@@ -563,7 +563,7 @@ const AnalyticsConversionGuide: React.FC = () => {
                 <h3 className="text-lg font-bold mb-3 text-white">Download Checklist</h3>
                 <p className="text-sm text-gray-300 mb-4">Get our analytics implementation checklist to ensure proper setup.</p>
                 <a 
-                  href="/downloads/analytics-setup-template.pdf"
+                  href="/resources/downloads/analytics-setup-template.pdf"
                   className="flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                 >
                   <FaDownload className="mr-2" />

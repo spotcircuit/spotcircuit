@@ -407,7 +407,7 @@ const ContentStrategyBlueprint: React.FC = () => {
                   View Complete Blueprint
                 </span>
               </Link>
-              <a href="/downloads/content-strategy-template.pdf" className="border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+              <a href="/resources/downloads/content-strategy-template.pdf" className="border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
                 <FaDownload className="mr-2" />
                 Download Strategy Template
               </a>
@@ -559,7 +559,7 @@ const ContentStrategyBlueprint: React.FC = () => {
                 <h3 className="text-lg font-bold mb-3 text-white">Download Template</h3>
                 <p className="text-sm text-gray-300 mb-4">Get our content strategy template to create your own plan.</p>
                 <a 
-                  href="/downloads/content-strategy-template.pdf"
+                  href="/resources/downloads/content-strategy-template.pdf"
                   className="flex items-center justify-center bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                 >
                   <FaDownload className="mr-2" />

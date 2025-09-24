@@ -427,7 +427,7 @@ const TechnicalSEOChecklist: React.FC = () => {
                   View Complete Checklist
                 </span>
               </Link>
-              <a href="/downloads/technical-seo-checklist.pdf" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+              <a href="/resources/downloads/technical-seo-checklist.pdf" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
                 <FaDownload className="mr-2" />
                 Download PDF Checklist
               </a>
@@ -579,7 +579,7 @@ const TechnicalSEOChecklist: React.FC = () => {
                 <h3 className="text-lg font-bold mb-3 text-white">Download Checklist</h3>
                 <p className="text-sm text-gray-300 mb-4">Get the complete checklist as a PDF to use for your site audits.</p>
                 <a 
-                  href="/downloads/technical-seo-checklist.pdf"
+                  href="/resources/downloads/technical-seo-checklist.pdf"
                   className="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                 >
                   <FaDownload className="mr-2" />

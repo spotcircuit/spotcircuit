@@ -5,7 +5,7 @@ export const industriesMetadata: Metadata = {
   description: 'AI-powered growth solutions for plumbing, HVAC, electrical, landscaping, roofing, and other home service businesses. Generate qualified leads and optimize operations.',
   keywords: 'home service industries, plumbing SEO, HVAC marketing, electrical contractor automation, landscaping business growth, roofing leads, AI for home services',
   alternates: {
-    canonical: '/industries',
+    canonical: 'https://www.spotcircuit.com/industries',
   },
   openGraph: {
     title: 'Home Service Industries | SpotCircuit - AI-Powered Growth Solutions',

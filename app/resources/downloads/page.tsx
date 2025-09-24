@@ -5,6 +5,29 @@ import RelatedContent from '@/components/RelatedContent';
 export const metadata = {
   title: 'Downloads | SpotCircuit',
   description: 'Free marketing resources and checklists to help you grow. Download PDFs and spreadsheets.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/resources/downloads',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/resources/downloads',
+      'en': 'https://www.spotcircuit.com/resources/downloads',
+    },
+  },
+  openGraph: {
+    title: 'Downloads | SpotCircuit',
+    description: 'Free marketing resources and checklists to help you grow. Download PDFs and spreadsheets.',
+    url: 'https://www.spotcircuit.com/resources/downloads',
+    images: ['/static/images/downloads-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Downloads | SpotCircuit',
+    description: 'Free marketing resources and checklists to help you grow. Download PDFs and spreadsheets.',
+    images: ['/static/images/downloads-og.webp'],
+    creator: '@spotcircuit',
+  },
 };
 
 const items = [

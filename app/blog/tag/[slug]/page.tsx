@@ -37,6 +37,27 @@ export async function generateMetadata({
   return {
     title: `${tagName} Articles - SpotCircuit Blog`,
     description: `Articles related to ${tagName}`,
+    alternates: {
+      canonical: `https://www.spotcircuit.com/blog/tag/${slug}`,
+      languages: {
+        'x-default': `https://www.spotcircuit.com/blog/tag/${slug}`,
+        'en': `https://www.spotcircuit.com/blog/tag/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${tagName} Articles - SpotCircuit Blog`,
+      description: `Articles related to ${tagName}`,
+      url: `https://www.spotcircuit.com/blog/tag/${slug}`,
+      type: 'website',
+      siteName: 'SpotCircuit',
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${tagName} Articles - SpotCircuit Blog`,
+      description: `Articles related to ${tagName}`,
+      creator: '@spotcircuit',
+    },
   };
 }
 

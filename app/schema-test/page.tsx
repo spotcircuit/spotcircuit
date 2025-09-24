@@ -11,6 +11,29 @@ import ReviewSchema from '../components/ReviewSchema';
 export const metadata = {
   title: 'Schema Testing Page - SpotCircuit',
   description: 'A comprehensive schema testing page for search engines and AI crawlers to discover all structured data on SpotCircuit.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/schema-test',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/schema-test',
+      'en': 'https://www.spotcircuit.com/schema-test',
+    },
+  },
+  openGraph: {
+    title: 'Schema Testing Page - SpotCircuit',
+    description: 'A comprehensive schema testing page for search engines and AI crawlers to discover all structured data on SpotCircuit.',
+    url: 'https://www.spotcircuit.com/schema-test',
+    images: ['/static/images/schema-test-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Schema Testing Page - SpotCircuit',
+    description: 'A comprehensive schema testing page for search engines and AI crawlers to discover all structured data on SpotCircuit.',
+    images: ['/static/images/schema-test-og.webp'],
+    creator: '@spotcircuit',
+  },
   robots: {
     index: true,
     follow: true,
@@ -97,8 +120,8 @@ export default function SchemaTestPage() {
         url="https://www.spotcircuit.com/schema-test"
         type="Thing"
         sameAs={[
-          "https://en.wikipedia.org/wiki/Search_engine_optimization",
-          "https://schema.org/Thing"
+          { url: "https://en.wikipedia.org/wiki/Search_engine_optimization", name: "Search Engine Optimization - Wikipedia" },
+          { url: "https://schema.org/Thing", name: "Thing - Schema.org" }
         ]}
         relatedEntities={[
           {

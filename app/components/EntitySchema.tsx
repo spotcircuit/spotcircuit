@@ -43,15 +43,23 @@ export default function EntitySchema(props: EntitySchemaProps) {
     name,
     description,
     url,
+    identifier: `${url}#entity`,
     ...(image && {
       image: {
         '@type': 'ImageObject',
+        '@id': `${url}#image`,
         url: image
       }
     }),
     ...(sameAs && sameAs.length > 0 && {
       sameAs: sameAs.map(link => link.url)
     }),
+    // Add author/publisher context for entities
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.spotcircuit.com/#organization',
+      name: 'SpotCircuit'
+    },
     ...(additionalProperties || {})
   };
 

@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 
 export const servicesMetadata: Metadata = {
   title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
-  description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',
+  description: 'AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim time.',
   keywords: 'home service business automation, AI for contractors, HVAC marketing, plumber SEO, roofing leads, local service automation, field service optimization',
   alternates: {
-    canonical: '/services',
+    canonical: 'https://www.spotcircuit.com/services',
   },
   openGraph: {
     title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
-    description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',
+    description: 'AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim time.',
     url: 'https://www.spotcircuit.com/services',
     images: [
       {
@@ -22,7 +22,7 @@ export const servicesMetadata: Metadata = {
   },
   twitter: {
     title: 'AI-Powered Home Service Business Solutions | SpotCircuit',
-    description: 'Custom AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim your time.',
+    description: 'AI automation and SEO solutions for home service businesses. Optimize scheduling, generate leads, build teams faster, and reclaim time.',
     images: ['/static/images/services.webp'],
   },
 };

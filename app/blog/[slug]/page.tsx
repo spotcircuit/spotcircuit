@@ -5,8 +5,63 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MarkdownContent from '../components/MarkdownContent';
 import { getPostBySlug, getAllPosts } from '../utils/blogLoader';
+import { Metadata } from 'next';
 
 export const revalidate = 60;
+
+// Generate metadata including canonical URL
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found | SpotCircuit Blog',
+      description: 'The requested blog post could not be found.',
+    };
+  }
+
+  return {
+    title: post.title + ' | SpotCircuit Blog',
+    description: post.excerpt,
+    keywords: post.tags.join(', '),
+    alternates: {
+      canonical: `https://www.spotcircuit.com/blog/${params.slug}`,
+      languages: {
+        'x-default': `https://www.spotcircuit.com/blog/${params.slug}`,
+        'en': `https://www.spotcircuit.com/blog/${params.slug}`,
+      },
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.spotcircuit.com/blog/${params.slug}`,
+      type: 'article',
+      images: post.coverImage ? [{
+        url: post.coverImage,
+        width: 1200,
+        height: 630,
+        alt: post.title,
+      }] : [],
+      siteName: 'SpotCircuit',
+      locale: 'en_US',
+      publishedTime: post.date,
+      authors: ['SpotCircuit Team'],
+      section: 'Blog',
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: post.coverImage ? [post.coverImage] : [],
+      creator: '@spotcircuit',
+    },
+  };
+}
 
 interface BlogPostParams {
     params: {

@@ -33,6 +33,27 @@ export async function generateMetadata({
     description:
       category?.description ??
       `Articles in ${(prettyName)}. New posts are added regularly.`,
+    alternates: {
+      canonical: `https://www.spotcircuit.com/blog/category/${slug}`,
+      languages: {
+        'x-default': `https://www.spotcircuit.com/blog/category/${slug}`,
+        'en': `https://www.spotcircuit.com/blog/category/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${(category?.name ?? prettyName)} Articles - SpotCircuit Blog`,
+      description: category?.description ?? `Articles in ${(prettyName)}. New posts are added regularly.`,
+      url: `https://www.spotcircuit.com/blog/category/${slug}`,
+      type: 'website',
+      siteName: 'SpotCircuit',
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${(category?.name ?? prettyName)} Articles - SpotCircuit Blog`,
+      description: category?.description ?? `Articles in ${(prettyName)}. New posts are added regularly.`,
+      creator: '@spotcircuit',
+    },
   };
 }
 

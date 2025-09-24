@@ -15,11 +15,19 @@ export default function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': items.map(item => ({
+    '@id': '#breadcrumb-list',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
-      'position': item.position,
-      'name': item.name,
-      'item': item.url
+      '@id': `#breadcrumb-item-${index + 1}`,
+      position: item.position,
+      name: item.name,
+      item: {
+        '@type': 'WebPage',
+        '@id': `${item.url}#webpage`,
+        name: item.name,
+        url: item.url
+      }
     }))
   };
 

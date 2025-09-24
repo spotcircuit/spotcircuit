@@ -6,6 +6,29 @@ import FaqSchema from '@/app/components/FaqSchema';
 export const metadata = {
   title: 'Webinars | SpotCircuit',
   description: 'Explore SpotCircuit webinars: AI search visibility, lead generation analytics, and automation. Watch recordings and see upcoming sessions.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/webinars',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/webinars',
+      'en': 'https://www.spotcircuit.com/webinars',
+    },
+  },
+  openGraph: {
+    title: 'Webinars | SpotCircuit',
+    description: 'Explore SpotCircuit webinars: AI search visibility, lead generation analytics, and automation. Watch recordings and see upcoming sessions.',
+    url: 'https://www.spotcircuit.com/webinars',
+    images: ['/static/images/webinars-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Webinars | SpotCircuit',
+    description: 'Explore SpotCircuit webinars: AI search visibility, lead generation analytics, and automation. Watch recordings and see upcoming sessions.',
+    images: ['/static/images/webinars-og.webp'],
+    creator: '@spotcircuit',
+  },
 };
 
 const faqs = [

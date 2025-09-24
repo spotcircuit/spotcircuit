@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Master analytics and conversion optimization with our comprehensive guide. Learn to track, analyze, and improve your marketing performance for better ROI.',
   keywords: 'analytics guide, conversion optimization, marketing analytics, conversion tracking, ROI measurement, A/B testing guide',
   alternates: {
-    canonical: '/resources/analytics-conversion-guide',
+    canonical: 'https://www.spotcircuit.com/resources/analytics-conversion-guide',
     languages: {
       'x-default': '/resources/analytics-conversion-guide',
       'en': '/resources/analytics-conversion-guide',

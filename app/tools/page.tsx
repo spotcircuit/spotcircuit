@@ -7,7 +7,27 @@ export const metadata = {
   title: 'Marketing Tools | SpotCircuit',
   description: 'Free tools for AI search visibility, analytics, and automation. Explore calculators, generators, and checkers to grow pipeline.',
   alternates: {
-    canonical: '/tools',
+    canonical: 'https://www.spotcircuit.com/tools',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/tools',
+      'en': 'https://www.spotcircuit.com/tools',
+    },
+  },
+  openGraph: {
+    title: 'Marketing Tools | SpotCircuit',
+    description: 'Free tools for AI search visibility, analytics, and automation. Explore calculators, generators, and checkers to grow pipeline.',
+    url: 'https://www.spotcircuit.com/tools',
+    images: ['/static/images/tools-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing Tools | SpotCircuit',
+    description: 'Free tools for AI search visibility, analytics, and automation. Explore calculators, generators, and checkers to grow pipeline.',
+    images: ['/static/images/tools-og.webp'],
+    creator: '@spotcircuit',
   },
 };
 

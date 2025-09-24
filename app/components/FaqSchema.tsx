@@ -12,18 +12,35 @@ interface FaqSchemaProps {
   id?: string;
 }
 
-export default function FaqSchema({ faqs, schemaType = 'QAContent', id = 'faq-schema' }: FaqSchemaProps) {
-  // Using a different schema type than FAQPage to avoid duplication
+export default function FaqSchema({ faqs, schemaType = 'FAQPage', id = 'faq-schema' }: FaqSchemaProps) {
+  // Using FAQPage as the default schema type for better Google Rich Results support
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': schemaType,
-    'name': 'Frequently Asked Questions',
-    'mainEntity': faqs.map(faq => ({
+    '@id': `#${id}`,
+    name: 'Frequently Asked Questions',
+    inLanguage: 'en-US',
+    mainEntity: faqs.map((faq, index) => ({
       '@type': 'Question',
-      'name': faq.question,
-      'acceptedAnswer': {
+      '@id': `#question-${index + 1}`,
+      name: faq.question,
+      text: faq.question,
+      answerCount: 1,
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': faq.answer
+        '@id': `#answer-${index + 1}`,
+        text: faq.answer,
+        inLanguage: 'en-US',
+        author: {
+          '@type': 'Organization',
+          '@id': 'https://www.spotcircuit.com/#organization',
+          name: 'SpotCircuit'
+        }
+      },
+      author: {
+        '@type': 'Organization',
+        '@id': 'https://www.spotcircuit.com/#organization',
+        name: 'SpotCircuit'
       }
     }))
   };

@@ -15,11 +15,27 @@ export const metadata: Metadata = {
   title: 'AI-Powered Digital Marketing Services | SpotCircuit',
   description: 'Transform your business with our comprehensive suite of AI-powered services. From SEO to automation, lead generation to local marketing, we have the solutions you need.',
   alternates: {
-    canonical: '/services',
+    canonical: 'https://www.spotcircuit.com/services',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/services',
+      'en': 'https://www.spotcircuit.com/services',
+    },
   },
   openGraph: {
     title: 'AI-Powered Digital Marketing Services | SpotCircuit',
-    description: 'Comprehensive AI marketing services to transform your business.',
+    description: 'Transform your business with our comprehensive suite of AI-powered services. From SEO to automation, lead generation to local marketing, we have the solutions you need.',
+    url: 'https://www.spotcircuit.com/services',
+    images: ['/static/images/services-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI-Powered Digital Marketing Services | SpotCircuit',
+    description: 'Transform your business with our comprehensive suite of AI-powered services. From SEO to automation, lead generation to local marketing, we have the solutions you need.',
+    images: ['/static/images/services-og.webp'],
+    creator: '@spotcircuit',
   },
 }
 
@@ -420,7 +436,7 @@ export default function ServicesPage() {
                     >
                         Schedule Consultation
                     </Link>
-                    <Link href="/pricing" className="text-sm font-semibold leading-6 text-white">
+                    <Link href="/services" className="text-sm font-semibold leading-6 text-white">
                         View Pricing <span aria-hidden="true">→</span>
                     </Link>
                     </div>

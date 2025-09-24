@@ -16,7 +16,27 @@ export const metadata: Metadata = {
   title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
   description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.spotcircuit.com/',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/',
+      'en': 'https://www.spotcircuit.com/',
+    },
+  },
+  openGraph: {
+    title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
+    description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
+    url: 'https://www.spotcircuit.com/',
+    images: ['/static/images/home-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
+    description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
+    images: ['/static/images/home-og.webp'],
+    creator: '@spotcircuit',
   },
 };
 

@@ -47,30 +47,32 @@ export function useViewportHeight() {
 }
 
 export function lockBodyScroll(lock: boolean) {
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      if (lock) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.touchAction = 'none';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.touchAction = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-      }
+  // This function should be called from within a component
+  if (typeof document !== 'undefined') {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     }
-    
-    return () => {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = '';
-        document.body.style.touchAction = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-      }
-    };
-  }, [lock]);
+  }
+}
+
+export function createBodyScrollLockCleanup() {
+  // This is the cleanup function that can be returned from useEffect
+  return () => {
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+  };
 }
 
 export function useTouchDevice() {

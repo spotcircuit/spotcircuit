@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
   alternates: {
-    canonical: '/resources/technical-seo-checklist',
+    canonical: 'https://www.spotcircuit.com/resources/technical-seo-checklist',
     languages: {
       'x-default': '/resources/technical-seo-checklist',
       'en': '/resources/technical-seo-checklist',

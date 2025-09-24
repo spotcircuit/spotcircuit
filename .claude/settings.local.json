@@ -33,7 +33,15 @@
       "Bash(tsx:*)",
       "Bash(npx tsx:*)",
       "Bash(ssh:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(./fix_redirects.sh)",
+      "Bash(./fix_downloads.sh)",
+      "Read(//mnt/c/Users/**)",
+      "Bash(for:*)",
+      "Bash(do echo \"Checking $img:\")",
+      "Bash(xargs ls:*)",
+      "Bash(awk:*)",
+      "Bash(sort:*)"
     ],
     "deny": []
   }

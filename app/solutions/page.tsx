@@ -6,7 +6,27 @@ export const metadata = {
   title: 'Solutions | SpotCircuit',
   description: 'Explore SpotCircuit solutions: ClientCircuit, ContentCircuit, AnalyticsCircuit, and ChatCircuit.',
   alternates: {
-    canonical: '/solutions',
+    canonical: 'https://www.spotcircuit.com/solutions',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/solutions',
+      'en': 'https://www.spotcircuit.com/solutions',
+    },
+  },
+  openGraph: {
+    title: 'Solutions | SpotCircuit',
+    description: 'Explore SpotCircuit solutions: ClientCircuit, ContentCircuit, AnalyticsCircuit, and ChatCircuit.',
+    url: 'https://www.spotcircuit.com/solutions',
+    images: ['/static/images/solutions-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solutions | SpotCircuit',
+    description: 'Explore SpotCircuit solutions: ClientCircuit, ContentCircuit, AnalyticsCircuit, and ChatCircuit.',
+    images: ['/static/images/solutions-og.webp'],
+    creator: '@spotcircuit',
   },
 };
 

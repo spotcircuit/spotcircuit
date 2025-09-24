@@ -12,9 +12,28 @@ import { CheckCircleIcon, ArrowLeftIcon, ChartBarIcon } from '@heroicons/react/2
 export const metadata: Metadata = {
   title: 'B2B SaaS Conversion Optimization | SpotCircuit',
   description: 'Convert more free trials to paid customers with AI-driven optimization. Reduce churn, increase MRR, and maximize customer lifetime value for your SaaS business.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/lead-generation/conversion-optimization',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/lead-generation/conversion-optimization',
+      'en': 'https://www.spotcircuit.com/lead-generation/conversion-optimization',
+    },
+  },
   openGraph: {
     title: 'B2B SaaS Conversion Optimization | SpotCircuit',
-    description: 'AI-powered conversion optimization specifically for B2B SaaS companies.',
+    description: 'Convert more free trials to paid customers with AI-driven optimization. Reduce churn, increase MRR, and maximize customer lifetime value for your SaaS business.',
+    url: 'https://www.spotcircuit.com/lead-generation/conversion-optimization',
+    images: ['/static/images/conversion-optimization-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'B2B SaaS Conversion Optimization | SpotCircuit',
+    description: 'Convert more free trials to paid customers with AI-driven optimization. Reduce churn, increase MRR, and maximize customer lifetime value for your SaaS business.',
+    images: ['/static/images/conversion-optimization-og.webp'],
+    creator: '@spotcircuit',
   },
 }
 
@@ -332,7 +351,7 @@ export default function ConversionOptimizationPage() {
               <div>
                 <h4 className="text-white font-bold mb-3">Get Started</h4>
                 <div className="space-y-2">
-                  <Link href="/pricing" className="block text-gray-400 hover:text-purple-400">View Pricing</Link>
+                  <Link href="/services" className="block text-gray-400 hover:text-purple-400">View Pricing</Link>
                   <Link href="/contact" className="block text-gray-400 hover:text-purple-400">Contact Sales</Link>
                 </div>
               </div>

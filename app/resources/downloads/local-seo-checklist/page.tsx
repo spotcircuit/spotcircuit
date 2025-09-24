@@ -7,6 +7,29 @@ import OptimizedImage from '@/app/components/OptimizedImage';
 export const metadata = {
   title: 'Local SEO Checklist (Download) | SpotCircuit',
   description: 'Free local SEO checklist to improve visibility in maps and AI results. Download PDF/XLSX and follow step-by-step best practices.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/resources/downloads/local-seo-checklist',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/resources/downloads/local-seo-checklist',
+      'en': 'https://www.spotcircuit.com/resources/downloads/local-seo-checklist',
+    },
+  },
+  openGraph: {
+    title: 'Local SEO Checklist (Download) | SpotCircuit',
+    description: 'Free local SEO checklist to improve visibility in maps and AI results. Download PDF/XLSX and follow step-by-step best practices.',
+    url: 'https://www.spotcircuit.com/resources/downloads/local-seo-checklist',
+    images: ['/static/images/local-seo-checklist-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Local SEO Checklist (Download) | SpotCircuit',
+    description: 'Free local SEO checklist to improve visibility in maps and AI results. Download PDF/XLSX and follow step-by-step best practices.',
+    images: ['/static/images/local-seo-checklist-og.webp'],
+    creator: '@spotcircuit',
+  },
 };
 
 const faqs = [
@@ -37,7 +60,7 @@ export default function LocalSEOChecklistDownloadPage() {
       <section className="mt-6 grid gap-4 sm:grid-cols-2">
         <a
           className="rounded-lg border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition"
-          href="/downloads/local-seo-checklist.pdf"
+          href="/resources/downloads/local-seo-checklist.pdf"
         >
           <h2 className="text-lg font-semibold text-white">Download PDF</h2>
           <p className="text-sm text-white/80 mt-1">Printable version with sections and guidance.</p>

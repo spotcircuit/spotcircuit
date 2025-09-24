@@ -12,9 +12,28 @@ import { CheckCircleIcon, ArrowLeftIcon, EnvelopeIcon } from '@heroicons/react/2
 export const metadata: Metadata = {
   title: 'Insurance Lead Nurturing & Automation | SpotCircuit',
   description: 'Convert insurance leads with AI-powered nurturing. Automate quote follow-ups, policy renewals, and cross-sell opportunities for commercial and personal lines.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/lead-generation/lead-nurturing',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/lead-generation/lead-nurturing',
+      'en': 'https://www.spotcircuit.com/lead-generation/lead-nurturing',
+    },
+  },
   openGraph: {
     title: 'Insurance Lead Nurturing & Automation | SpotCircuit',
-    description: 'AI-powered lead nurturing specifically for insurance brokerages.',
+    description: 'Convert insurance leads with AI-powered nurturing. Automate quote follow-ups, policy renewals, and cross-sell opportunities for commercial and personal lines.',
+    url: 'https://www.spotcircuit.com/lead-generation/lead-nurturing',
+    images: ['/static/images/lead-nurturing-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insurance Lead Nurturing & Automation | SpotCircuit',
+    description: 'Convert insurance leads with AI-powered nurturing. Automate quote follow-ups, policy renewals, and cross-sell opportunities for commercial and personal lines.',
+    images: ['/static/images/lead-nurturing-og.webp'],
+    creator: '@spotcircuit',
   },
 }
 
@@ -283,7 +302,7 @@ export default function LeadNurturingPage() {
                 <div className="space-y-2">
                   <Link href="/solutions/contentcircuit" className="block text-gray-400 hover:text-blue-400">Insurance Content Marketing</Link>
                   <Link href="/ai-search-visibility" className="block text-gray-400 hover:text-blue-400">Local Insurance SEO</Link>
-                  <Link href="/local-services" className="block text-gray-400 hover:text-blue-400">Google My Business Optimization</Link>
+                  <Link href="/local-marketing" className="block text-gray-400 hover:text-blue-400">Google My Business Optimization</Link>
                 </div>
               </div>
             </div>

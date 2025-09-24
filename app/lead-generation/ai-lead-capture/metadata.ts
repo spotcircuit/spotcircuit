@@ -5,6 +5,6 @@ export const metadata: Metadata = {
   description: 'Capture more leads with intelligent AI-powered forms and chatbots that engage visitors and qualify prospects automatically.',
   keywords: 'AI lead capture, intelligent forms, AI chatbots, lead qualification, automated lead capture, conversion optimization',
   alternates: {
-    canonical: '/lead-generation/ai-lead-capture',
+    canonical: 'https://www.spotcircuit.com/lead-generation/ai-lead-capture',
   },
 };

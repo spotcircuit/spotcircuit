@@ -2285,7 +2285,7 @@ function() {
                           <h4 className="font-semibold text-white">Content Optimization Worksheet</h4>
                           <p className="text-sm text-gray-400">Step-by-step optimization guide</p>
                         </div>
-                        <a href="/downloads/content-optimization-worksheet.pdf" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm transition-colors flex items-center">
+                        <a href="/resources/downloads/content-optimization-worksheet.pdf" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm transition-colors flex items-center">
                           <FaDownload className="mr-2" />
                           Download
                         </a>
@@ -2342,7 +2342,7 @@ function() {
                       <FaFileAlt className="text-4xl text-blue-400 mx-auto mb-4" />
                       <h4 className="font-semibold text-white mb-2">Complete PDF Guide</h4>
                       <p className="text-sm text-gray-400 mb-4">Everything in this guide as downloadable PDF</p>
-                      <a href="/downloads/ai-search-optimization-guide.pdf" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm transition-colors inline-block">
+                      <a href="/resources/downloads/ai-search-optimization-guide.pdf" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm transition-colors inline-block">
                         Download PDF
                       </a>
                     </div>
@@ -2350,7 +2350,7 @@ function() {
                       <FaCheckCircle className="text-4xl text-green-400 mx-auto mb-4" />
                       <h4 className="font-semibold text-white mb-2">Implementation Checklist</h4>
                       <p className="text-sm text-gray-400 mb-4">Step-by-step checklist for optimization</p>
-                      <a href="/downloads/ai-seo-checklist.pdf" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm transition-colors inline-block">
+                      <a href="/resources/downloads/ai-seo-checklist.pdf" className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm transition-colors inline-block">
                         Download
                       </a>
                     </div>
@@ -2358,7 +2358,7 @@ function() {
                       <FaChartBar className="text-4xl text-purple-400 mx-auto mb-4" />
                       <h4 className="font-semibold text-white mb-2">Tracking Template</h4>
                       <p className="text-sm text-gray-400 mb-4">Monthly reporting template</p>
-                      <a href="/downloads/ai-seo-tracking-template.xlsx" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm transition-colors inline-block">
+                      <a href="/resources/downloads/ai-seo-tracking-template.xlsx" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm transition-colors inline-block">
                         Download
                       </a>
                     </div>

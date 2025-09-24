@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     description: 'While you rank #1 on Google, ChatGPT recommends them. Stop losing 10-15 qualified demos every month.',
     type: 'website',
     url: 'https://www.spotcircuit.com/answercircuit',
+    siteName: 'SpotCircuit',
+    locale: 'en_US',
     images: [{
       url: '/static/images/ai-visibility-audit-og.png',
       width: 1200,
@@ -21,9 +23,10 @@ export const metadata: Metadata = {
     title: 'Stop Losing Deals to AI Invisibility',
     description: 'Get cited by ChatGPT, Claude & Perplexity in 90 days or we work free.',
     images: ['/static/images/ai-visibility-audit-og.png'],
+    creator: '@spotcircuit',
   },
   alternates: {
-    canonical: '/answercircuit',
+    canonical: 'https://www.spotcircuit.com/answercircuit',
     languages: {
       'x-default': '/answercircuit',
       'en': '/answercircuit',

@@ -14,8 +14,8 @@ import { Benefits } from '@/components/Benefits'
 import { CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
-  title: 'B2B AI Lead Generation Services - Recruiting, SaaS, Insurance | SpotCircuit',
-  description: 'Specialized AI-powered lead generation for B2B companies. Transform your recruiting agency, SaaS company, or insurance brokerage with intelligent lead capture and nurturing.',
+  title: 'B2B AI Lead Generation - Recruiting, SaaS | SpotCircuit',
+  description: 'AI-powered lead generation for B2B companies. Transform your recruiting agency, SaaS, or insurance brokerage with intelligent capture.',
   openGraph: {
     title: 'B2B AI Lead Generation Services | SpotCircuit',
     description: 'Specialized AI lead generation for recruiting agencies, B2B SaaS companies, and insurance brokerages.',
@@ -159,7 +159,7 @@ export default function LeadGenerationPage() {
                 <p className="text-sm text-gray-400 group-hover:text-gray-300">Get found on</p>
                 <p className="text-white font-semibold group-hover:text-blue-400">ChatGPT & Google →</p>
               </Link>
-              <Link href="/local-services" className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 hover:bg-gray-800/70 transition-all group">
+              <Link href="/local-marketing" className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 hover:bg-gray-800/70 transition-all group">
                 <p className="text-sm text-gray-400 group-hover:text-gray-300">Local businesses</p>
                 <p className="text-white font-semibold group-hover:text-blue-400">Location Marketing →</p>
               </Link>
@@ -384,7 +384,7 @@ export default function LeadGenerationPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <Link href="/blog" className="text-gray-400 hover:text-blue-400">AI Marketing Blog</Link>
                   <Link href="/case-studies" className="text-gray-400 hover:text-blue-400">Success Stories</Link>
-                  <Link href="/pricing" className="text-gray-400 hover:text-blue-400">Pricing & Plans</Link>
+                  <Link href="/services" className="text-gray-400 hover:text-blue-400">Pricing & Plans</Link>
                   <Link href="/about" className="text-gray-400 hover:text-blue-400">About SpotCircuit</Link>
                 </div>
               </div>

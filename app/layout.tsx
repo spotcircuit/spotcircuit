@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import ClientLayout from './layout-client';
 
@@ -101,8 +102,8 @@ export default function RootLayout({
           }}
         />
         
-        <script src="https://plugin.nytsys.com/api/site/0fb07629-302a-4e33-ba82-04eccb80b732/nytsys.min.js"></script>
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="a18DINjK2SMdjS3jMyt+Mg" async></script>
+        <Script src="https://plugin.nytsys.com/api/site/0fb07629-302a-4e33-ba82-04eccb80b732/nytsys.min.js" strategy="afterInteractive" />
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="a18DINjK2SMdjS3jMyt+Mg" strategy="afterInteractive" />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col`}>
         <ClientLayout>

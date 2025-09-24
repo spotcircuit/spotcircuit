@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Complete Guide to AI Search Optimization (ASO) for SaaS | SpotCircuit',
-  description: 'Learn how to optimize your SaaS content for AI search engines like ChatGPT, Claude, and Perplexity. Free templates, examples, and implementation guide included.',
+  title: 'AI Search Optimization Guide for SaaS | SpotCircuit',
+  description: 'Optimize your SaaS content for ChatGPT, Claude & Perplexity. Free templates, examples & implementation guide included.',
   keywords: 'AI SEO guide, AI search optimization tutorial, ASO guide, AEO guide, LLMO guide, GEO guide, ChatGPT SEO, Claude SEO, how to optimize for AI, SaaS AI visibility, schema markup guide, semantic SEO tutorial',
   authors: [{ name: 'SpotCircuit Team' }],
   creator: 'SpotCircuit',
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
   alternates: {
-    canonical: '/resources/ai-search-optimization',
+    canonical: 'https://www.spotcircuit.com/resources/ai-search-optimization',
     languages: {
-      'x-default': '/resources/ai-search-optimization',
-      'en': '/resources/ai-search-optimization',
+      'x-default': 'https://www.spotcircuit.com/resources/ai-search-optimization',
+      'en': 'https://www.spotcircuit.com/resources/ai-search-optimization',
     },
   },
   robots: {

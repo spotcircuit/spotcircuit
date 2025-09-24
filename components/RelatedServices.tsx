@@ -90,7 +90,7 @@ const RelatedServices: React.FC<RelatedServicesProps> = ({ currentService }) => 
               key={service.id}
               title={service.title}
               description={service.description}
-              href={`/local-services#${service.id}`}
+              href={`/local-marketing#${service.id}`}
               icon={service.icon}
             />
           ))}
@@ -98,7 +98,7 @@ const RelatedServices: React.FC<RelatedServicesProps> = ({ currentService }) => 
         
         <div className="text-center mt-12">
           <Link 
-            href="/local-services" 
+            href="/local-marketing" 
             className="inline-flex items-center text-green-400 hover:text-green-300 font-medium group"
           >
             View All Services

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Master local search optimization with our comprehensive Local SEO guide for service businesses. Learn proven strategies to boost local visibility, optimize Google Business Profile, and dominate map searches.',
   keywords: 'local SEO guide, local search optimization, Google Business Profile optimization, local service business SEO, local map pack, local SEO strategies, local citations, local backlinks, local rankings',
   alternates: {
-    canonical: '/resources/local-seo-guide',
+    canonical: 'https://www.spotcircuit.com/resources/local-seo-guide',
     languages: {
       'x-default': '/resources/local-seo-guide',
       'en': '/resources/local-seo-guide',

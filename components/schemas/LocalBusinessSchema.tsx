@@ -67,7 +67,7 @@ export default function LocalBusinessSchema(props: LocalBusinessSchemaProps) {
     }),
     ...(areaServed && areaServed.length > 0 && {
       areaServed: areaServed.map(area => ({
-        '@type': 'State',
+        '@type': area === 'United States' ? 'Country' : 'State',
         name: area
       }))
     }),

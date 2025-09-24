@@ -23,23 +23,45 @@ export default function ServiceSchema({
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${url}#service`,
     name,
     description,
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.spotcircuit.com/#organization',
-      name: provider
+      name: provider,
+      url: 'https://www.spotcircuit.com'
     },
     url,
-    ...(image && { image }),
-    ...(serviceType && { serviceType }),
-    areaServed: areaServed.map(area => ({
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        name: area
+    ...(image && {
+      image: {
+        '@type': 'ImageObject',
+        url: image
       }
-    }))
+    }),
+    ...(serviceType && {
+      category: serviceType,
+      additionalType: `https://schema.org/${serviceType.replace(/\s+/g, '')}`
+    }),
+    areaServed: areaServed.map(area => ({
+      '@type': area === 'United States' ? 'Country' : 'State',
+      name: area
+    })),
+    serviceOutput: 'Business Growth and Optimization',
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Business'
+    },
+    brand: {
+      '@type': 'Brand',
+      name: 'SpotCircuit'
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      availableLanguage: ['English'],
+      serviceUrl: url,
+      processingTime: 'P1D'
+    }
   };
 
   return (

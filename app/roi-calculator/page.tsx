@@ -6,6 +6,29 @@ import SoftwareApplicationSchema from '@/app/components/SoftwareApplicationSchem
 export const metadata = {
   title: 'ROI Calculator | SpotCircuit',
   description: 'Estimate ROI from improvements in traffic, conversion rate, and deal size. Plan growth scenarios with SpotCircuit.',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/roi-calculator',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/roi-calculator',
+      'en': 'https://www.spotcircuit.com/roi-calculator',
+    },
+  },
+  openGraph: {
+    title: 'ROI Calculator | SpotCircuit',
+    description: 'Estimate ROI from improvements in traffic, conversion rate, and deal size. Plan growth scenarios with SpotCircuit.',
+    url: 'https://www.spotcircuit.com/roi-calculator',
+    images: ['/static/images/roi-calculator-og.webp'],
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ROI Calculator | SpotCircuit',
+    description: 'Estimate ROI from improvements in traffic, conversion rate, and deal size. Plan growth scenarios with SpotCircuit.',
+    images: ['/static/images/roi-calculator-og.webp'],
+    creator: '@spotcircuit',
+  },
 };
 
 export default function ROICalculatorPage() {

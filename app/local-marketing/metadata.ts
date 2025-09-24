@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   description,
   keywords,
   alternates: {
-    canonical: '/local-marketing',
+    canonical: 'https://www.spotcircuit.com/local-marketing',
     languages: {
-      'x-default': '/local-marketing',
-      'en': '/local-marketing',
+      'x-default': 'https://www.spotcircuit.com/local-marketing',
+      'en': 'https://www.spotcircuit.com/local-marketing',
     },
   },
   openGraph: {
