@@ -6,6 +6,9 @@ import SoftwareApplicationSchema from '@/app/components/SoftwareApplicationSchem
 export const metadata = {
   title: 'Marketing Tools | SpotCircuit',
   description: 'Free tools for AI search visibility, analytics, and automation. Explore calculators, generators, and checkers to grow pipeline.',
+  alternates: {
+    canonical: '/tools',
+  },
 };
 
 const tools = [

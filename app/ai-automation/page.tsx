@@ -15,6 +15,9 @@ import { CheckCircleIcon, ArrowRightIcon, CodeBracketIcon } from '@heroicons/rea
 export const metadata: Metadata = {
   title: 'AI Automation Services - n8n, Make, Zapier Workflows | SpotCircuit',
   description: 'Transform your business with AI-powered automation workflows using n8n, Make, and Zapier. From lead generation to recruiting, we build custom automations that scale.',
+  alternates: {
+    canonical: '/ai-automation',
+  },
   openGraph: {
     title: 'AI Automation Services - n8n, Make, Zapier | SpotCircuit',
     description: 'Transform your business with AI-powered automation workflows. Custom solutions for every industry.',

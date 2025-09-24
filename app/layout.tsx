@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   applicationName: 'SpotCircuit',
   alternates: {
-    canonical: '/',
     languages: {
       'x-default': '/',
       'en': '/',

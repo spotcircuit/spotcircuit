@@ -5,6 +5,9 @@ import RelatedContent from '@/components/RelatedContent';
 export const metadata = {
   title: 'Solutions | SpotCircuit',
   description: 'Explore SpotCircuit solutions: ClientCircuit, ContentCircuit, AnalyticsCircuit, and ChatCircuit.',
+  alternates: {
+    canonical: '/solutions',
+  },
 };
 
 const solutions = [
