@@ -196,7 +196,7 @@ export function generateDynamicDescription(context: PageContext): string {
 
   // Blog categories
   if (pageType === 'blog-category' && category) {
-    const template = BLOG_CATEGORY_TEMPLATES[category.toLowerCase()];
+    const template = BLOG_CATEGORY_TEMPLATES[category?.toLowerCase() || ''];
     if (template) {
       return template.description;
     }
@@ -256,8 +256,8 @@ export function generatePageMetadata(context: PageContext): Metadata {
     title = INDUSTRY_TEMPLATES[industry].title;
   } else if (pageType === 'service' && service && SERVICE_TEMPLATES[service]) {
     title = SERVICE_TEMPLATES[service].title;
-  } else if (pageType === 'blog-category' && category && BLOG_CATEGORY_TEMPLATES[category.toLowerCase()]) {
-    title = BLOG_CATEGORY_TEMPLATES[category.toLowerCase()].title;
+  } else if (pageType === 'blog-category' && category && BLOG_CATEGORY_TEMPLATES[category?.toLowerCase() || '']) {
+    title = BLOG_CATEGORY_TEMPLATES[category?.toLowerCase() || ''].title;
   } else if (pageType === 'blog-tag' && tag) {
     title = `${tag} Content & Resources | SpotCircuit Blog`;
   } else if (pageType === 'resource' && service && RESOURCE_TEMPLATES[service]) {
@@ -275,8 +275,8 @@ export function generatePageMetadata(context: PageContext): Metadata {
     keywords = INDUSTRY_TEMPLATES[industry].keywords || [];
   } else if (pageType === 'service' && service && SERVICE_TEMPLATES[service]) {
     keywords = SERVICE_TEMPLATES[service].keywords || [];
-  } else if (pageType === 'blog-category' && category && BLOG_CATEGORY_TEMPLATES[category.toLowerCase()]) {
-    keywords = BLOG_CATEGORY_TEMPLATES[category.toLowerCase()].keywords || [];
+  } else if (pageType === 'blog-category' && category && BLOG_CATEGORY_TEMPLATES[category?.toLowerCase() || '']) {
+    keywords = BLOG_CATEGORY_TEMPLATES[category?.toLowerCase() || ''].keywords || [];
   }
 
   // Construct URL path
