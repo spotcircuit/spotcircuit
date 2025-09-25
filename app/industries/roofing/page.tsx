@@ -8,7 +8,7 @@ export const metadata: Metadata = generatePageMetadata({
   industry: 'roofing'
 });
 
-'use client';
+
 import Image from 'next/image';
 import RoofingPageSchema from './components/RoofingPageSchema';
 import RoofingDashboard from './components/RoofingDashboard';

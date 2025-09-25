@@ -3,7 +3,6 @@ import React from 'react';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaEnvelope, FaArrowRight } from 'react-icons/fa';
 import Script from 'next/script';
 import BreadcrumbSchema from '../components/BreadcrumbSchema';
@@ -44,8 +43,6 @@ export const metadata: Metadata = {
     creator: '@spotcircuit',
   },
 };
-
-"use client";
 
 const ContactPage = () => {
   // Define FAQ items for schema markup
@@ -137,7 +134,7 @@ const ContactPage = () => {
           </div>
           
           <div className="container mx-auto text-center relative z-10">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -146,7 +143,7 @@ const ContactPage = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
                 Ready to transform your home service business with AI-powered automation? We're here to help you get started.
               </p>
-            </motion.div>
+            </div>
           </div>
         </section>
         
@@ -155,7 +152,7 @@ const ContactPage = () => {
           <div className="container mx-auto relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {/* Contact Form */}
-              <motion.div
+              <div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
@@ -171,10 +168,10 @@ const ContactPage = () => {
                   </p>
                 </div>
                 <ContactForm />
-              </motion.div>
+              </div>
               
               {/* Schedule a Call */}
-              <motion.div
+              <div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
@@ -200,7 +197,7 @@ const ContactPage = () => {
                     />
                   </div>
                   
-                  <motion.div
+                  <div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-full"
@@ -214,9 +211,9 @@ const ContactPage = () => {
                       Book a Free Consultation
                       <FaArrowRight className="ml-2" />
                     </a>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -229,7 +226,7 @@ const ContactPage = () => {
           </div>
           
           <div className="container mx-auto relative z-10">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -240,7 +237,7 @@ const ContactPage = () => {
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 Get answers to common questions about working with SpotCircuit.
               </p>
-            </motion.div>
+            </div>
             
             <div className="max-w-3xl mx-auto">
               {[
@@ -265,7 +262,7 @@ const ContactPage = () => {
                   answer: "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
                 }
               ].map((faq, index) => (
-                <motion.div
+                <div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -275,7 +272,7 @@ const ContactPage = () => {
                 >
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{faq.question}</h3>
                   <p className="text-gray-700">{faq.answer}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

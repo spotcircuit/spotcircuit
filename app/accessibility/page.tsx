@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { FaUniversalAccess } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
@@ -40,8 +39,6 @@ export const metadata: Metadata = {
   },
 };
 
-"use client";
-
 const AccessibilityPage = () => {
   const pageUrl = 'https://www.spotcircuit.com/accessibility';
   const pageTitle = 'Accessibility Statement | SpotCircuit';
@@ -77,7 +74,7 @@ const AccessibilityPage = () => {
             </div>
             
             <div className="container mx-auto px-4 relative z-10">
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -92,7 +89,7 @@ const AccessibilityPage = () => {
                 <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
                   Our commitment to making our website accessible to all users.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </section>
 
@@ -100,7 +97,7 @@ const AccessibilityPage = () => {
           <section className="py-16 md:py-24 bg-black relative">
             <div className="section-divider absolute top-0 left-0 right-0"></div>
             <div className="container mx-auto px-4">
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -196,7 +193,7 @@ const AccessibilityPage = () => {
                 <div className="mt-12 text-center">
                   <p className="text-gray-400">Last updated: April 16, 2025</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </section>
         </main>      </div>

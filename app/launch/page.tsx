@@ -1,42 +1,7 @@
-import type { Metadata } from 'next';
+"use client";
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from 'framer-motion';
-
-export const metadata: Metadata = {
-  title: 'Launch Your AI-First SEO Campaign | SpotCircuit',
-  description: 'Ready to transform your business with AI-powered SEO and marketing? Launch your campaign with SpotCircuit\'s proven strategies that drive real results and sustainable growth.',
-  keywords: 'launch SEO campaign, start AI marketing, SEO setup, digital marketing launch, business growth automation',
-  alternates: {
-    canonical: 'https://www.spotcircuit.com/launch',
-    languages: {
-      'x-default': 'https://www.spotcircuit.com/launch',
-      'en': 'https://www.spotcircuit.com/launch',
-    },
-  },
-  openGraph: {
-    title: 'Launch Your AI-First SEO Campaign | SpotCircuit',
-    description: 'Ready to transform your business with AI-powered SEO and marketing? Launch your campaign with SpotCircuit\'s proven strategies that drive real results.',
-    url: 'https://www.spotcircuit.com/launch',
-    siteName: 'SpotCircuit',
-    type: 'website',
-    locale: 'en_US',
-    images: [{
-      url: '/static/images/launch-og.webp',
-      width: 1200,
-      height: 630,
-      alt: 'Launch Your AI-First SEO Campaign',
-    }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Launch Your AI-First SEO Campaign | SpotCircuit',
-    description: 'Ready to transform your business with AI-powered SEO and marketing? Launch your campaign with SpotCircuit\'s proven strategies that drive real results.',
-    images: ['/static/images/launch-og.webp'],
-    creator: '@spotcircuit',
-  },
-};
-
-"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { 

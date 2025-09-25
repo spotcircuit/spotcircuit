@@ -7,8 +7,6 @@ export const metadata: Metadata = generatePageMetadata({
   pageType: 'industry',
   industry: 'electrical'
 });
-
-'use client';
 import Image from 'next/image';
 import { 
   FaBolt, 

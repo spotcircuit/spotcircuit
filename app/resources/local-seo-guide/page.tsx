@@ -1,14 +1,6 @@
-import type { Metadata } from 'next';
+"use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { generatePageMetadata } from '@/utils/metadata-generator';
-
-export const metadata: Metadata = generatePageMetadata({
-  pageType: 'resource',
-  service: 'local-seo-guide'
-});
-
-"use client";
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import FaqAccordion from '@/components/FaqAccordion';

@@ -7,7 +7,7 @@ export const metadata: Metadata = generatePageMetadata({
   industry: 'recruiting'
 });
 
-'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { 

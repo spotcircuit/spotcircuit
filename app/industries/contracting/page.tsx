@@ -6,8 +6,6 @@ export const metadata: Metadata = generatePageMetadata({
   pageType: 'industry',
   industry: 'contracting'
 });
-
-'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 

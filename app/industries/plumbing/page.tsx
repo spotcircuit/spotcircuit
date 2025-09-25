@@ -8,7 +8,7 @@ export const metadata: Metadata = generatePageMetadata({
   industry: 'plumbing'
 });
 
-'use client';
+
 import Image from 'next/image';
 import { 
   FaWrench, 
