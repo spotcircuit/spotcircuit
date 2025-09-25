@@ -63,11 +63,12 @@ export default function ReviewSchema(props: ReviewSchemaProps) {
   const reviewSchema = {
     '@context': 'https://schema.org',
     '@type': 'Review',
-    '@id': `#review-${itemReviewed.name.replace(/\s+/g, '-').toLowerCase()}`,
+    '@id': `#review-${(itemReviewed?.name || 'unknown').replace(/\s+/g, '-').toLowerCase()}`,
+
     inLanguage: 'en-US',
     itemReviewed: {
       '@type': itemReviewed.type,
-      '@id': itemReviewed.url ? `${itemReviewed.url}#${itemReviewed.type.toLowerCase()}` : undefined,
+      '@id': itemReviewed.url ? `${itemReviewed.url}#${(itemReviewed?.type || 'unknown').toLowerCase()}` : undefined,
       name: itemReviewed.name,
       ...(itemReviewed.url && { url: itemReviewed.url }),
       ...(itemReviewed.image && {
@@ -80,7 +81,8 @@ export default function ReviewSchema(props: ReviewSchemaProps) {
     },
     reviewRating: {
       '@type': 'Rating',
-      '@id': `#rating-${itemReviewed.name.replace(/\s+/g, '-').toLowerCase()}`,
+      '@id': `#rating-${(itemReviewed?.name || 'unknown').replace(/\s+/g, '-').toLowerCase()}`,
+
       ratingValue: reviewRating.ratingValue,
       bestRating: reviewRating.bestRating || 5,
       worstRating: reviewRating.worstRating || 1,

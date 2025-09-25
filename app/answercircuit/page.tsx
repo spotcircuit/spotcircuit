@@ -54,32 +54,6 @@ const AnswerCircuitSalesPage: React.FC = () => {
     }
   ];
 
-  // Urgency timer - set to end 7 days from now for scarcity
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date();
-      // Set end date to 7 days from current date instead of end of month
-      const endDate = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000));
-      const difference = endDate.getTime() - now.getTime();
-      
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      
-      setTimeLeft({ days, hours, minutes });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  // Testimonial rotation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   const testimonials = [
     {
       quote: "We went from zero AI visibility to being the #1 cited source for 'project management software' in ChatGPT. Our demo requests increased 47% in 90 days.",
@@ -112,6 +86,34 @@ const AnswerCircuitSalesPage: React.FC = () => {
       metric: "+68% leads"
     }
   ];
+
+  // Urgency timer - set to end 7 days from now for scarcity
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date();
+      // Set end date to 7 days from current date instead of end of month
+      const endDate = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000));
+      const difference = endDate.getTime() - now.getTime();
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+      setTimeLeft({ days, hours, minutes });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Testimonial rotation
+  useEffect(() => {
+    if (testimonials && testimonials.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [testimonials.length]);
 
   return (
     <div className="min-h-screen bg-black text-white">      
