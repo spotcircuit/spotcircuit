@@ -1,8 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/utils/metadata-generator';
 
-export default function ResourcePage({ params }: { params: { slug: string } }) {
-  const title = params.slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  // Use our dynamic metadata generator for resource pages
+  return generatePageMetadata({
+    pageType: 'resource',
+    service: slug,
+    customContext: {
+      resourceSlug: slug
+    }
+  });
+}
+
+export default async function ResourcePage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params;
+  const title = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="py-16 md:py-24 container mx-auto px-4">

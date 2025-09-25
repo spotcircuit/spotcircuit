@@ -1,7 +1,14 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/utils/metadata-generator';
+
+export const metadata: Metadata = generatePageMetadata({
+  pageType: 'industry',
+  industry: 'plumbing'
+});
+
+'use client';
 import Image from 'next/image';
 import { 
   FaWrench, 

@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { categories, blogPosts } from "../../lib/blog-data";
 import { BlogLayout, BlogList } from "../../components";
+import { generatePageMetadata } from "@/utils/metadata-generator";
 
 export const revalidate = 60;
 
@@ -34,31 +35,20 @@ export async function generateMetadata({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  return {
+  // Use our dynamic metadata generator for enhanced SEO
+  return generatePageMetadata({
+    pageType: 'blog-tag',
+    tag: slug,
     title: `${tagName} Articles - SpotCircuit Blog`,
-    description: `Articles related to ${tagName}`,
-    alternates: {
-      canonical: `https://www.spotcircuit.com/blog/tag/${slug}`,
-      languages: {
-        'x-default': `https://www.spotcircuit.com/blog/tag/${slug}`,
-        'en': `https://www.spotcircuit.com/blog/tag/${slug}`,
-      },
-    },
-    openGraph: {
-      title: `${tagName} Articles - SpotCircuit Blog`,
-      description: `Articles related to ${tagName}`,
-      url: `https://www.spotcircuit.com/blog/tag/${slug}`,
-      type: 'website',
-      siteName: 'SpotCircuit',
-      locale: 'en_US',
-    },
-    twitter: {
-      card: 'summary',
-      title: `${tagName} Articles - SpotCircuit Blog`,
-      description: `Articles related to ${tagName}`,
-      creator: '@spotcircuit',
-    },
-  };
+    customContext: {
+      tagName,
+      postCount: blogPosts.filter(post =>
+        post.tags.some(tag =>
+          tag.toLowerCase().replace(/\s+/g, "-") === slug
+        )
+      ).length
+    }
+  });
 }
 
 export default async function TagPage({

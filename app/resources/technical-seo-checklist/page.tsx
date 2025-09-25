@@ -1,7 +1,14 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/utils/metadata-generator';
+
+export const metadata: Metadata = generatePageMetadata({
+  pageType: 'resource',
+  service: 'technical-seo-checklist'
+});
+
+"use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import FaqAccordion from '@/components/FaqAccordion';
 import ResourceNavigation from '@/components/ResourceNavigation';

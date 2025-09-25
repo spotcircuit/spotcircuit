@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,8 +6,8 @@ import NextImage from 'next/legacy/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import FaqAccordion from '@/components/FaqAccordion';
 import ResourceNavigation from '@/components/ResourceNavigation';
-import { 
-  FaTools, 
+import {
+  FaTools,
   FaRobot,
   FaPencilAlt,
   FaSearch,
@@ -43,11 +42,47 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 
-import { 
+import {
   HiOutlineMenu,
   HiOutlineX,
   HiOutlineSparkles
 } from 'react-icons/hi';
+
+export const metadata: Metadata = {
+  title: 'Complete AI Marketing Tools Directory 2024 | SpotCircuit',
+  description: 'Discover the best AI marketing tools for content creation, SEO, social media, video production, and automation. Comprehensive directory with 15+ reviewed tools, pricing, features, and use cases.',
+  keywords: 'AI marketing tools, content creation AI, SEO tools, social media automation, video AI, marketing automation, ChatGPT marketing, AI copywriting',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/resources/ai-marketing-tools',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/resources/ai-marketing-tools',
+      'en': 'https://www.spotcircuit.com/resources/ai-marketing-tools',
+    },
+  },
+  openGraph: {
+    title: 'Complete AI Marketing Tools Directory 2024 | SpotCircuit',
+    description: 'Discover the best AI marketing tools for content creation, SEO, social media, and automation. Comprehensive reviews, pricing, and use cases.',
+    url: 'https://www.spotcircuit.com/resources/ai-marketing-tools',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/ai-marketing-tools-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'AI Marketing Tools Directory',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Complete AI Marketing Tools Directory 2024 | SpotCircuit',
+    description: 'Discover the best AI marketing tools for content creation, SEO, social media, and automation. Comprehensive reviews, pricing, and use cases.',
+    images: ['/static/images/ai-marketing-tools-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
 
 // Define tool categories and their icons
 const toolCategories = [

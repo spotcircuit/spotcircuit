@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/utils/metadata-generator';
+
+export const metadata: Metadata = generatePageMetadata({
+  pageType: 'industry',
+  industry: 'landscaping'
+});
 
 export default function LandscapingIndustryPage() {
   return (

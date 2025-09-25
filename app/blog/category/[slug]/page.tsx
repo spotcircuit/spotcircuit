@@ -13,6 +13,7 @@ import {
 import { Metadata } from "next";
 import { categories, blogPosts } from "../../lib/blog-data";
 import { BlogLayout, BlogList } from "../../components";
+import { generatePageMetadata } from "@/utils/metadata-generator";
 
 export const revalidate = 60;
 
@@ -28,33 +29,21 @@ export async function generateMetadata({
     .replace(/-/g, " ")
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-  return {
-    title: `${(category?.name ?? prettyName)} Articles - SpotCircuit Blog`,
-    description:
-      category?.description ??
-      `Articles in ${(prettyName)}. New posts are added regularly.`,
-    alternates: {
-      canonical: `https://www.spotcircuit.com/blog/category/${slug}`,
-      languages: {
-        'x-default': `https://www.spotcircuit.com/blog/category/${slug}`,
-        'en': `https://www.spotcircuit.com/blog/category/${slug}`,
-      },
-    },
-    openGraph: {
-      title: `${(category?.name ?? prettyName)} Articles - SpotCircuit Blog`,
-      description: category?.description ?? `Articles in ${(prettyName)}. New posts are added regularly.`,
-      url: `https://www.spotcircuit.com/blog/category/${slug}`,
-      type: 'website',
-      siteName: 'SpotCircuit',
-      locale: 'en_US',
-    },
-    twitter: {
-      card: 'summary',
-      title: `${(category?.name ?? prettyName)} Articles - SpotCircuit Blog`,
-      description: category?.description ?? `Articles in ${(prettyName)}. New posts are added regularly.`,
-      creator: '@spotcircuit',
-    },
-  };
+  // Use our dynamic metadata generator for enhanced SEO
+  return generatePageMetadata({
+    pageType: 'blog-category',
+    category: slug,
+    title: `${category?.name ?? prettyName} Articles - SpotCircuit Blog`,
+    customContext: {
+      categoryData: category,
+      prettyName,
+      postCount: blogPosts.filter(post =>
+        post.categories.some(cat =>
+          cat.toLowerCase().replace(/\s+/g, "-") === slug
+        )
+      ).length
+    }
+  });
 }
 
 export default async function CategoryPage({

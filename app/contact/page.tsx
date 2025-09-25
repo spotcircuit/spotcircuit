@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React from 'react';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
@@ -11,6 +10,42 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema';
 import SpeakableSchema from '../components/SpeakableSchema';
 import FaqSchema from '../components/FaqSchema';
 import EntitySchema from '../components/EntitySchema';
+
+export const metadata: Metadata = {
+  title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
+  description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation or send us a message to transform your business with our proven SEO and marketing strategies.',
+  keywords: 'contact SpotCircuit, free consultation, AI marketing contact, business automation contact, SEO consultation',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/contact',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/contact',
+      'en': 'https://www.spotcircuit.com/contact',
+    },
+  },
+  openGraph: {
+    title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
+    description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business.',
+    url: 'https://www.spotcircuit.com/contact',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/contact-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'Contact SpotCircuit',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
+    description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business.',
+    images: ['/static/images/contact-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
 
 const ContactPage = () => {
   // Define FAQ items for schema markup

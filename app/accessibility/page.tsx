@@ -1,30 +1,55 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaUniversalAccess } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
+export const metadata: Metadata = {
+  title: 'Accessibility Statement | SpotCircuit',
+  description: 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts to meet WCAG 2.1 Level AA standards and how to contact us with accessibility concerns.',
+  keywords: 'accessibility statement, WCAG compliance, digital accessibility, web accessibility, assistive technologies',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/accessibility',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/accessibility',
+      'en': 'https://www.spotcircuit.com/accessibility',
+    },
+  },
+  openGraph: {
+    title: 'Accessibility Statement | SpotCircuit',
+    description: 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts to meet WCAG 2.1 Level AA standards.',
+    url: 'https://www.spotcircuit.com/accessibility',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/accessibility-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'SpotCircuit Accessibility Statement',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Statement | SpotCircuit',
+    description: 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts to meet WCAG 2.1 Level AA standards.',
+    images: ['/static/images/accessibility-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
+
 const AccessibilityPage = () => {
   const pageUrl = 'https://www.spotcircuit.com/accessibility';
   const pageTitle = 'Accessibility Statement | SpotCircuit';
-  const pageDescription = 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts and how to contact us with accessibility concerns.';
+  const pageDescription = 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts to meet WCAG 2.1 Level AA standards and how to contact us with accessibility concerns.';
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={pageUrl} />
-      </Head>
-      <LegalPageSchema 
+      <LegalPageSchema
         title={pageTitle}
         description={pageDescription}
         datePublished="2023-01-01"

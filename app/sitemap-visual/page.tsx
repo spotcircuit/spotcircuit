@@ -1,3 +1,39 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Visual Sitemap | SpotCircuit',
+  description: 'Explore SpotCircuit\'s complete site structure with our interactive visual sitemap showcasing services, industries, and resources.',
+  keywords: 'sitemap, site navigation, website structure, SpotCircuit pages, site map',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/sitemap-visual',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/sitemap-visual',
+      'en': 'https://www.spotcircuit.com/sitemap-visual',
+    },
+  },
+  openGraph: {
+    title: 'Visual Sitemap | SpotCircuit',
+    description: 'Explore SpotCircuit\'s complete site structure with our interactive visual sitemap.',
+    url: 'https://www.spotcircuit.com/sitemap-visual',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/sitemap-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'SpotCircuit Visual Sitemap',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Visual Sitemap | SpotCircuit',
+    description: 'Explore SpotCircuit\'s complete site structure with our interactive visual sitemap.',
+    images: ['/static/images/sitemap-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
 "use client";
 
 import React from 'react';

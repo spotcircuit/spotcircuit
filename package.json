@@ -16,9 +16,9 @@
     "generate-and-publish": "ts-node scripts/generate-and-publish.ts",
     "process-tags": "ts-node scripts/process-content.ts",
     "smart-link": "ts-node scripts/smart-linker.ts",
-    "assets:generate": "ts-node scripts/generate-assets.ts"
-    ,
-    "images:generate": "ts-node scripts/generate-images.ts"
+    "assets:generate": "ts-node scripts/generate-assets.ts",
+    "images:generate": "ts-node scripts/generate-images.ts",
+    "validate:metadata": "node scripts/validate-metadata.js"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

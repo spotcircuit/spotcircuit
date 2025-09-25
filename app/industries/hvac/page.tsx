@@ -1,8 +1,15 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import FaqAccordion, { FaqItem } from '@/components/FaqAccordion';
+import { generatePageMetadata } from '@/utils/metadata-generator';
+
+export const metadata: Metadata = generatePageMetadata({
+  pageType: 'industry',
+  industry: 'hvac'
+});
+
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 import { 

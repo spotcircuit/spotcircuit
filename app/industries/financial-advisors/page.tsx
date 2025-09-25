@@ -1,6 +1,13 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
+import { generatePageMetadata } from '@/utils/metadata-generator';
+
+export const metadata: Metadata = generatePageMetadata({
+  pageType: 'industry',
+  industry: 'financial-advisors'
+});
+
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';

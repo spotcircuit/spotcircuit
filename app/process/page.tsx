@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React from 'react';
 import FaqAccordion from '@/components/FaqAccordion';
 import Link from 'next/link';
@@ -10,6 +9,42 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema';
 import SpeakableSchema from '../components/SpeakableSchema';
 import FaqSchema from '../components/FaqSchema';
 import EntitySchema from '../components/EntitySchema';
+
+export const metadata: Metadata = {
+  title: 'Our Proven AI Implementation Process | SpotCircuit',
+  description: 'Discover how SpotCircuit implements AI solutions for home service businesses through our systematic 4-step process: Discovery, Strategy Development, Implementation, and Optimization. Get measurable results in 8-12 weeks.',
+  keywords: 'AI implementation process, home service automation, business process optimization, AI integration, digital transformation',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/process',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/process',
+      'en': 'https://www.spotcircuit.com/process',
+    },
+  },
+  openGraph: {
+    title: 'Our Proven AI Implementation Process | SpotCircuit',
+    description: 'Discover how SpotCircuit implements AI solutions for home service businesses through our systematic 4-step process. Get measurable results in 8-12 weeks.',
+    url: 'https://www.spotcircuit.com/process',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/process-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'SpotCircuit AI Implementation Process',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Proven AI Implementation Process | SpotCircuit',
+    description: 'Discover how SpotCircuit implements AI solutions for home service businesses through our systematic 4-step process. Get measurable results in 8-12 weeks.',
+    images: ['/static/images/process-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
 
 const ProcessPage = () => {
   const processSteps = [

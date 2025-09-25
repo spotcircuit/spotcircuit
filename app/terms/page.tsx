@@ -1,12 +1,46 @@
-"use client";
-
+import type { Metadata } from 'next';
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaShieldAlt } from 'react-icons/fa';
 import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | SpotCircuit',
+  description: 'Read our comprehensive Terms of Service to understand the rules, guidelines, and legal agreements for using SpotCircuit\'s AI-powered marketing services and website platform.',
+  keywords: 'terms of service, legal agreement, user agreement, SpotCircuit terms, service conditions',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/terms',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/terms',
+      'en': 'https://www.spotcircuit.com/terms',
+    },
+  },
+  openGraph: {
+    title: 'Terms of Service | SpotCircuit',
+    description: 'Read our comprehensive Terms of Service to understand the rules, guidelines, and legal agreements for using SpotCircuit\'s AI-powered marketing services.',
+    url: 'https://www.spotcircuit.com/terms',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/terms-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'SpotCircuit Terms of Service',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | SpotCircuit',
+    description: 'Read our comprehensive Terms of Service to understand the rules, guidelines, and legal agreements for using SpotCircuit\'s AI-powered marketing services.',
+    images: ['/static/images/terms-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
 
 const TermsPage = () => {
   const pageUrl = 'https://www.spotcircuit.com/terms';
@@ -15,15 +49,6 @@ const TermsPage = () => {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={pageUrl} />
-      </Head>
       <LegalPageSchema 
         title={pageTitle}
         description={pageDescription}

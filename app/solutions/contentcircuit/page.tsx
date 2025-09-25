@@ -1,17 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { 
-  FaFileAlt, 
-  FaCheckCircle, 
-  FaMapMarkerAlt, 
-  FaStar, 
+import {
+  FaFileAlt,
+  FaCheckCircle,
+  FaMapMarkerAlt,
+  FaStar,
   FaPhoneAlt,
-  FaChartLine, 
+  FaChartLine,
   FaAngleRight,
   FaPencilAlt,
   FaRobot,
@@ -25,6 +24,42 @@ import {
   FaBlog
 } from 'react-icons/fa';
 import ContentCircuitPageSchema from './components/ContentCircuitPageSchema';
+
+export const metadata: Metadata = {
+  title: 'ContentCircuit - AI Content Creation Engine | SpotCircuit',
+  description: 'Transform your content strategy with ContentCircuit, an AI-powered content creation engine that generates high-converting blog posts, social media content, and marketing materials at scale while maintaining your brand voice.',
+  keywords: 'AI content creation, content marketing automation, blog post generator, social media content, brand voice AI, SEO content',
+  alternates: {
+    canonical: 'https://www.spotcircuit.com/solutions/contentcircuit',
+    languages: {
+      'x-default': 'https://www.spotcircuit.com/solutions/contentcircuit',
+      'en': 'https://www.spotcircuit.com/solutions/contentcircuit',
+    },
+  },
+  openGraph: {
+    title: 'ContentCircuit - AI Content Creation Engine | SpotCircuit',
+    description: 'Transform your content strategy with ContentCircuit, an AI-powered content creation engine that generates high-converting content at scale while maintaining your brand voice.',
+    url: 'https://www.spotcircuit.com/solutions/contentcircuit',
+    siteName: 'SpotCircuit',
+    type: 'website',
+    locale: 'en_US',
+    images: [{
+      url: '/static/images/contentcircuit-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'ContentCircuit AI Content Creation Platform',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ContentCircuit - AI Content Creation Engine | SpotCircuit',
+    description: 'Transform your content strategy with ContentCircuit, an AI-powered content creation engine that generates high-converting content at scale while maintaining your brand voice.',
+    images: ['/static/images/contentcircuit-og.webp'],
+    creator: '@spotcircuit',
+  },
+};
+
+"use client";
 
 const ContentCircuitPage: React.FC = () => {
   return (
