@@ -10,7 +10,7 @@ import ReviewSchema from '../components/ReviewSchema';
 
 export const metadata = {
   title: 'Schema Testing Page - SpotCircuit',
-  description: 'A comprehensive schema testing page for search engines and AI crawlers to discover all structured data on SpotCircuit.',
+  description: 'Comprehensive schema markup testing page designed for search engines and AI crawlers. Discover all structured data implementations used across SpotCircuit\'s platform for enhanced SEO.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/schema-test',
     languages: {

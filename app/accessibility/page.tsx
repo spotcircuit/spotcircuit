@@ -7,7 +7,7 @@ import { LegalPageSchema } from '@/components/schemas/LegalPageSchema';
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement | SpotCircuit',
-  description: 'SpotCircuit is committed to ensuring digital accessibility for people with disabilities. Learn about our ongoing efforts to meet WCAG 2.1 Level AA standards and how to contact us with accessibility concerns.',
+  description: 'SpotCircuit ensures digital accessibility for all users. Learn about our WCAG 2.1 Level AA compliance efforts and how to report accessibility concerns.',
   keywords: 'accessibility statement, WCAG compliance, digital accessibility, web accessibility, assistive technologies',
   alternates: {
     canonical: 'https://www.spotcircuit.com/accessibility',

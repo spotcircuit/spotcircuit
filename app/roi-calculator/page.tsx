@@ -5,7 +5,7 @@ import SoftwareApplicationSchema from '@/app/components/SoftwareApplicationSchem
 
 export const metadata = {
   title: 'ROI Calculator | SpotCircuit',
-  description: 'Estimate ROI from improvements in traffic, conversion rate, and deal size. Plan growth scenarios with SpotCircuit.',
+  description: 'Calculate your potential ROI from AI-powered marketing improvements. Estimate growth from increased traffic, conversion rates, and deal sizes.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/roi-calculator',
     languages: {

@@ -4,7 +4,7 @@ import RelatedContent from '@/components/RelatedContent';
 
 export const metadata = {
   title: 'Solutions | SpotCircuit',
-  description: 'Explore SpotCircuit solutions: ClientCircuit, ContentCircuit, AnalyticsCircuit, and ChatCircuit.',
+  description: 'Discover SpotCircuit\'s comprehensive AI solutions: ClientCircuit for pipeline growth, ContentCircuit for content operations, AnalyticsCircuit for insights, and ChatCircuit for conversational experiences.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/solutions',
     languages: {

@@ -12,7 +12,7 @@ import EntitySchema from '../components/EntitySchema';
 
 export const metadata: Metadata = {
   title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
-  description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation or send us a message to transform your business with our proven SEO and marketing strategies.',
+  description: 'Contact SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business growth.',
   keywords: 'contact SpotCircuit, free consultation, AI marketing contact, business automation contact, SEO consultation',
   alternates: {
     canonical: 'https://www.spotcircuit.com/contact',

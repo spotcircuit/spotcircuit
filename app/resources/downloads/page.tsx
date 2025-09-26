@@ -4,7 +4,7 @@ import RelatedContent from '@/components/RelatedContent';
 
 export const metadata = {
   title: 'Downloads | SpotCircuit',
-  description: 'Free marketing resources and checklists to help you grow. Download PDFs and spreadsheets.',
+  description: 'Download free marketing resources, SEO checklists, and growth templates. Access comprehensive PDFs and spreadsheets to accelerate your business growth.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/resources/downloads',
     languages: {

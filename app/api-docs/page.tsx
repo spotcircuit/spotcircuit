@@ -5,7 +5,7 @@ import FaqSchema from '@/app/components/FaqSchema';
 
 export const metadata = {
   title: 'API Docs | SpotCircuit',
-  description: 'Overview of SpotCircuit API documentation: authentication, endpoints, rate limits, and changelog stub.',
+  description: 'Complete SpotCircuit API documentation covering authentication, endpoints, rate limits, and changelog. Integrate our AI-powered marketing solutions easily.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/api-docs',
     languages: {

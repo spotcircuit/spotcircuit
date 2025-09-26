@@ -14,7 +14,7 @@ import ReviewSchema from './components/ReviewSchema';
 
 export const metadata: Metadata = {
   title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
-  description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
+  description: 'Transform your business with SpotCircuit\'s AI-powered solutions. Automate local services for contractors, optimize search for SaaS companies, and accelerate growth with proven marketing strategies.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/',
     languages: {
