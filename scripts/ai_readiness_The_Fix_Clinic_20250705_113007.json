@@ -1,0 +1,65 @@
+{
+  "analysis_date": "2025-07-05T11:30:07.147636",
+  "business": "The Fix Clinic",
+  "location": "Ashburn, VA",
+  "maps_data": {
+    "search_query": "medical spa Ashburn, VA",
+    "target_found": false,
+    "target_position": null,
+    "top_3_analysis": [],
+    "ai_visibility_signals": []
+  },
+  "ai_readiness_factors": {
+    "top_3_common_traits": [],
+    "top_3_advantages": [],
+    "target_gaps": [],
+    "critical_missing": []
+  },
+  "optimization_roadmap": {
+    "immediate_actions": [],
+    "week_1_tasks": [
+      {
+        "task": "Create Google Posts schedule (2x/week)",
+        "topics": [
+          "New treatments",
+          "Special offers",
+          "Educational content",
+          "Team highlights"
+        ]
+      },
+      {
+        "task": "Optimize business description",
+        "focus": [
+          "Include all services",
+          "Add location keywords",
+          "Mention specialties"
+        ]
+      },
+      {
+        "task": "Upload 20+ high-quality photos",
+        "types": [
+          "Interior",
+          "Exterior",
+          "Team",
+          "Equipment",
+          "Results"
+        ]
+      }
+    ],
+    "month_1_goals": [
+      "Achieve 50+ reviews with 4.5+ rating",
+      "Complete all GBP fields and attributes",
+      "Establish Q&A presence with 20+ questions",
+      "Regular Google Posts (8+ per month)",
+      "Respond to 100% of reviews"
+    ],
+    "ongoing_strategy": [
+      "Weekly Google Posts with treatment education",
+      "Monthly Q&A additions based on real customer questions",
+      "Consistent review response within 24 hours",
+      "Quarterly photo updates",
+      "Service page optimization for voice search"
+    ],
+    "expected_impact": {}
+  }
+}

@@ -1,0 +1,220 @@
+[
+  {
+    "team": {
+      "allMembers": [
+        {
+          "name": "Whitney Filley",
+          "role": "Nurse",
+          "credentials": "Nurse"
+        },
+        {
+          "name": "Kim",
+          "role": "Cool Sculpting Tech",
+          "credentials": "Tech"
+        },
+        {
+          "name": "Jamie",
+          "role": "Staff",
+          "credentials": ""
+        },
+        {
+          "name": "Briana",
+          "role": "Staff",
+          "credentials": ""
+        },
+        {
+          "name": "Lauren",
+          "role": "Technician",
+          "credentials": ""
+        },
+        {
+          "name": "Bre",
+          "role": "Technician",
+          "credentials": ""
+        },
+        {
+          "name": "Dr. Tara Margarella",
+          "role": "Chief Medical Officer",
+          "credentials": "DO, BS in Biomedical Engineering"
+        },
+        {
+          "name": "Dr. Garrett Gause",
+          "role": "Medical Director",
+          "credentials": "MD, Board Certified in Family Medicine"
+        },
+        {
+          "name": "Dr. Bill Lieber",
+          "role": "Medical Director",
+          "credentials": "MD, Board-certified in Emergency Medicine"
+        },
+        {
+          "name": "Dr. Garrett Gause",
+          "role": "Medical Director",
+          "credentials": "Board Certified in Family Medicine"
+        },
+        {
+          "name": "Kesh",
+          "role": "Staff",
+          "credentials": ""
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Tight Tulip Treatment Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Tight Tulip Treatment Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Dr. Robert Greiner",
+          "role": "Provider",
+          "credentials": ""
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "BOTOX® Injection Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "RMA",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "RN, BSN",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Dr. Robert Greiner",
+          "role": "Doctor",
+          "credentials": ""
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Co-Owner, Certified Tech/Medical Assistant",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Co-Owner, Nurse Injector",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Dermal Filler Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Dr. Robert Greiner",
+          "role": "Provider",
+          "credentials": "Dr."
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "InMode Lumecca IPL Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "InMode Lumecca IPL Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Reverso™ Eye Treatment Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Reverso™ Eye Treatment Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "InMode Tone™ Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "InMode Tone™ Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Celluma® Light Therapy Body Contouring Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Celluma® Light Therapy Body Contouring Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Dermaplane Facial Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Dermaplane Facial Provider",
+          "credentials": "RN, BSN"
+        },
+        {
+          "name": "Kesh Hecker",
+          "role": "Specialty Facial Provider",
+          "credentials": "RMA"
+        },
+        {
+          "name": "Natalie Glasgow",
+          "role": "Specialty Facial Provider",
+          "credentials": "RN, BSN"
+        }
+      ],
+      "keyContact": {
+        "name": "",
+        "role": "",
+        "isOwner": false
+      }
+    },
+    "seoProfile": {},
+    "contactInfo": {
+      "email": "info@phoenixmedspa.net",
+      "hours": "Mon: 9:30 AM – 4:00 PM, Tue: 9:30 AM – 4:00 PM, Wed: 9:30 AM – 6:00 PM, Thu: 9:30 AM – 6:00 PM, Fri: 9:30 AM – 12:00 PM, Sat: By Appointment, Sun: Closed",
+      "phone": "(816) 852-3994",
+      "address": "19201 East Valley View Parkway, Independence, Missouri 64055, United States",
+      "emergencyAvailable": false
+    },
+    "websiteQuality": {
+      "hasBlog": false,
+      "hasPricingInfo": true,
+      "mobileResponsive": true,
+      "professionalDesign": true,
+      "contentCompleteness": "High",
+      "lastUpdatedIndicator": "2025-06-17T06:11:39+00:00",
+      "hasPlaceholderContent": true
+    },
+    "digitalFeatures": {
+      "hasLiveChat": false,
+      "hasMobileApp": false,
+      "hasTelehealth": false,
+      "hasOnlineBooking": true,
+      "hasPatientPortal": true,
+      "acceptsOnlinePayments": true
+    },
+    "trustIndicators": {},
+    "businessOfferings": {}
+  }
+]

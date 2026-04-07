@@ -1,0 +1,61 @@
+{
+  "folders": [
+    { "path": "." }
+  ],
+  "settings": {
+    // — Enable Copilot Chat (agent) on load
+    "github.copilot.chat.enable": true,
+    "github.copilot.chat.openPanelOnStart": true,
+    "github.copilot.enable": { "enabled": true },
+
+    // — Editor readability
+    "editor.semanticHighlighting.enabled": true,
+    "editor.inlayHints.enabled": "on",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "breadcrumbs.enabled": true,
+    "editor.minimap.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 100,
+    "editor.wrappingIndent": "same",
+
+    // — CodeLens & GitLens overlays
+    "editor.codeLens": true,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.hovers.currentLine.over": "line",
+
+    // — Auto-save when focus changes (prevents lost edits)
+    "files.autoSave": "onFocusChange",
+
+    // — Disable telemetry if you prefer
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false
+  },
+  "extensions": {
+    "recommendations": [
+      // Your existing list…
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next",
+      "dsznajder.es7-react-js-snippets",
+      "github.copilot",
+      "github.copilot-chat",
+      "ms-azuretools.vscode-docker",
+      "pflannery.vscode-versionlens",
+      "GitHub.vscode-github-actions",
+      "christian-kohler.npm-intellisense",
+      "DavidAnson.vscode-markdownlint",
+
+      // — Add for easier code reading/navigation:
+      "eamodio.gitlens",                       // Git blame + history in-editor
+      "usernamehw.errorlens",                  // Highlights errors/warnings inline
+      "christian-kohler.path-intellisense",    // Autocomplete import paths
+      "wayou.vscode-todo-highlight",           // Highlights TODOs/BUGs in code
+      "coenraads.bracket-pair-colorizer-2",    // Alternate bracket colorizer
+      "shd101wyy.markdown-preview-enhanced",   // Live markdown preview
+      "humao.rest-client"                      // Test APIs quickly from VS Code
+    ]
+  }
+}

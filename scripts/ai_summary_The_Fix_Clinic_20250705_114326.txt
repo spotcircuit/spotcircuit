@@ -1,0 +1,12 @@
+
+AI READINESS SUMMARY REPORT
+Generated: 2025-07-05 11:43
+Business: The Fix Clinic
+Location: Medical Spas in ashburn, va
+Position: #12
+AI Score: 40/100
+
+CRITICAL GAPS:
+- No Q&A section (costs 20 points)
+- No Google Posts (costs 15 points)
+- Not responding to reviews (costs 15 points)

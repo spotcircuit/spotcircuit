@@ -1,0 +1,105 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "competitor_name": {
+        "type": "string",
+        "description": "Name of the competitor business"
+      },
+      "competitor_address": {
+        "type": "string",
+        "description": "Full street address of the competitor"
+      },
+      "competitor_city": {
+        "type": "string",
+        "description": "City extracted from the address"
+      },
+      "competitor_state": {
+        "type": "string",
+        "description": "State abbreviation extracted from the address"
+      },
+      "competitor_category": {
+        "type": "string",
+        "description": "Business category/type as shown on Google Maps"
+      },
+      "competitor_rank": {
+        "type": "integer",
+        "description": "Ranking position in Google Maps search results",
+        "minimum": 1
+      },
+      "competitor_rating": {
+        "type": ["number", "null"],
+        "description": "Average star rating (1.0 to 5.0)",
+        "minimum": 1.0,
+        "maximum": 5.0,
+        "nullable": true
+      },
+      "competitor_reviews": {
+        "type": ["integer", "null"],
+        "description": "Total number of Google reviews",
+        "minimum": 0,
+        "nullable": true
+      },
+      "competitor_place_id": {
+        "type": "string",
+        "description": "Google Maps Place ID"
+      },
+      "competitor_website": {
+        "type": "string",
+        "description": "Business website URL if available"
+      },
+      "competitor_phone": {
+        "type": "string",
+        "description": "Business phone number if available"
+      },
+      "latitude": {
+        "type": ["number", "null"],
+        "description": "Latitude coordinate of the search location",
+        "minimum": -90,
+        "maximum": 90,
+        "nullable": true
+      },
+      "longitude": {
+        "type": ["number", "null"],
+        "description": "Longitude coordinate of the search location",
+        "minimum": -180,
+        "maximum": 180,
+        "nullable": true
+      },
+      "search_query": {
+        "type": "string",
+        "description": "The search term used to find competitors"
+      },
+      "is_source_business": {
+        "type": "boolean",
+        "description": "True if this result matches the input business name"
+      },
+      "input_location": {
+        "type": "string",
+        "description": "The original location input"
+      },
+      "input_business_name": {
+        "type": "string",
+        "description": "The business name provided with the location"
+      }
+    },
+    "required": [
+      "competitor_name",
+      "competitor_address",
+      "competitor_city", 
+      "competitor_state",
+      "competitor_category",
+      "competitor_rank",
+      "latitude",
+      "longitude",
+      "search_query",
+      "is_source_business",
+      "input_location",
+      "input_business_name"
+    ],
+    "additionalProperties": false
+  },
+  "views": {}
+}

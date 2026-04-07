@@ -1,0 +1,246 @@
+{/* Main content */}
+<article className="flex-1 max-w-4xl">
+  {/* Introduction */}
+  <section id="introduction" className="mb-16">
+    <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400">
+      Introduction: Why Local SEO Matters for Service Businesses
+    </h2>
+    
+    <div className="prose prose-lg prose-invert max-w-none">
+      <p>
+        For local service businesses like plumbers, HVAC technicians, electricians, and roofers, showing up when nearby customers search is no longer optional—it's essential for survival and growth. 
+        <strong>97% of consumers</strong> search online for local services, and <strong>78% of local mobile searches</strong> result in an offline purchase within 24 hours.
+      </p>
+      
+      <p>
+        Yet many service businesses struggle to appear in the coveted "Local Pack" and map listings, missing out on high-intent customers actively searching for solutions in their area. The reality is harsh but clear: 
+        <strong>If your business isn't visible when local customers search, you simply don't exist to them.</strong>
+      </p>
+    </div>
+    
+    <div className="mt-8 mb-8 bg-gray-900 rounded-xl p-6">
+      <h3 className="text-xl font-bold mb-4 text-blue-400">Common Local SEO Challenges for Service Businesses</h3>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {painPoints.map((point, index) => (
+          <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+            <div className="bg-blue-900 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+              {point.icon}
+            </div>
+            <h4 className="font-bold mb-2">{point.title}</h4>
+            <p className="text-sm text-gray-300">{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <div className="bg-gradient-to-r from-blue-900/30 to-green-900/30 rounded-xl p-6 border border-blue-900">
+      <div className="flex items-start gap-4">
+        <div className="text-5xl text-blue-400">
+          <FaQuoteLeft />
+        </div>
+        <div>
+          <p className="text-lg italic mb-4">
+            "When we focused on optimizing our Google Business Profile and building local citations, our calls from Google Maps increased by 137% in just three months. For service businesses, local SEO delivers better ROI than any other marketing channel we've tried."
+          </p>
+          <div className="flex items-center">
+            <div className="w-12 h-12 rounded-full bg-blue-800 flex items-center justify-center text-xl font-bold mr-3">
+              JP
+            </div>
+            <div>
+              <p className="font-bold">James Peterson</p>
+              <p className="text-sm text-gray-400">Owner, Peterson Plumbing Solutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {/* Local SEO Fundamentals */}
+  <section id="local-seo-fundamentals" className="mb-16">
+    <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400">
+      Local SEO Fundamentals for Service Businesses
+    </h2>
+    
+    <div className="prose prose-lg prose-invert max-w-none mb-8">
+      <p>
+        Local SEO differs from traditional SEO in several key ways. While regular SEO focuses on ranking websites organically in search results nationwide or globally, local SEO specifically targets searches with local intent—usually from people looking for services in their immediate vicinity.
+      </p>
+      
+      <h3>The Three Pillars of Local Search Success</h3>
+      
+      <p>
+        Google evaluates local businesses on three primary factors, often referred to as the "local search triad":
+      </p>
+    </div>
+    
+    <div className="grid md:grid-cols-3 gap-6 mb-10">
+      <div className="bg-gradient-to-b from-blue-900/50 to-blue-900/20 rounded-xl p-6 border border-blue-800">
+        <div className="bg-blue-900 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+          <FaMapMarkerAlt className="text-2xl text-white" />
+        </div>
+        <h3 className="text-xl font-bold text-center mb-3 text-blue-400">Proximity</h3>
+        <p className="text-gray-300">
+          How close your business is to the searcher. For service businesses without storefronts, this means properly defining your service area and creating content relevant to the specific locations you serve.
+        </p>
+      </div>
+      
+      <div className="bg-gradient-to-b from-green-900/50 to-green-900/20 rounded-xl p-6 border border-green-800">
+        <div className="bg-green-900 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+          <FaStore className="text-2xl text-white" />
+        </div>
+        <h3 className="text-xl font-bold text-center mb-3 text-green-400">Relevance</h3>
+        <p className="text-gray-300">
+          How well your business matches what the searcher is looking for. This involves proper category selection, service descriptions, keyword optimization, and content that clearly describes your offerings.
+        </p>
+      </div>
+      
+      <div className="bg-gradient-to-b from-purple-900/50 to-purple-900/20 rounded-xl p-6 border border-purple-800">
+        <div className="bg-purple-900 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+          <FaChartBar className="text-2xl text-white" />
+        </div>
+        <h3 className="text-xl font-bold text-center mb-3 text-purple-400">Prominence</h3>
+        <p className="text-gray-300">
+          How well-known and reputable your business is. This includes review quantity and quality, citation consistency across the web, backlinks from local sources, and overall online visibility.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  {/* Google Business Profile section */}
+  <section id="google-business-profile" className="mb-16">
+    <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400">
+      Google Business Profile: Your Most Powerful Local SEO Tool
+    </h2>
+    
+    <div className="prose prose-lg prose-invert max-w-none mb-8">
+      <p>
+        For service businesses, your Google Business Profile (GBP) is the foundation of your local SEO strategy. It's often the first thing potential customers see when searching for your services, and it dramatically impacts your visibility in the Local Pack and Google Maps.
+      </p>
+    </div>
+    
+    <div className="bg-gray-900 rounded-xl p-6 mb-8">
+      <h3 className="text-xl font-bold mb-6 text-blue-400">Google Business Profile Optimization Checklist</h3>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <h4 className="font-bold text-green-400 mb-3 flex items-center">
+            <FaCheckCircle className="mr-2" />
+            Essential Optimizations
+          </h4>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <span className="bg-blue-900 text-blue-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">1</span>
+              <span>
+                <strong className="block text-white">Verify your business</strong>
+                <span className="text-sm text-gray-400">Complete the verification process to unlock all GBP features</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-900 text-blue-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">2</span>
+              <span>
+                <strong className="block text-white">Choose precise categories</strong>
+                <span className="text-sm text-gray-400">Select one primary and 2-5 secondary categories that match your services</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-900 text-blue-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">3</span>
+              <span>
+                <strong className="block text-white">Define service areas</strong>
+                <span className="text-sm text-gray-400">Add the specific cities, neighborhoods, or ZIP codes you serve</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-900 text-blue-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">4</span>
+              <span>
+                <strong className="block text-white">Add all services with descriptions</strong>
+                <span className="text-sm text-gray-400">List every service you offer with keyword-rich descriptions</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-900 text-blue-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">5</span>
+              <span>
+                <strong className="block text-white">Upload high-quality photos</strong>
+                <span className="text-sm text-gray-400">Include photos of your team, vehicles, completed projects, and equipment</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 className="font-bold text-purple-400 mb-3 flex items-center">
+            <FaLightbulb className="mr-2" />
+            Advanced Strategies
+          </h4>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <span className="bg-purple-900 text-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">1</span>
+              <span>
+                <strong className="block text-white">Post weekly updates</strong>
+                <span className="text-sm text-gray-400">Share before/after photos, special offers, and service highlights</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-purple-900 text-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">2</span>
+              <span>
+                <strong className="block text-white">Add Q&A content</strong>
+                <span className="text-sm text-gray-400">Pre-emptively add common questions and detailed answers</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-purple-900 text-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">3</span>
+              <span>
+                <strong className="block text-white">Set up messaging</strong>
+                <span className="text-sm text-gray-400">Enable and actively respond to customer messages through GBP</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-purple-900 text-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">4</span>
+              <span>
+                <strong className="block text-white">Create service-specific offers</strong>
+                <span className="text-sm text-gray-400">Add seasonal promotions and service package deals</span>
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-purple-900 text-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2 mt-0.5">5</span>
+              <span>
+                <strong className="block text-white">Track with UTM parameters</strong>
+                <span className="text-sm text-gray-400">Add UTM tracking to your website link to measure GBP traffic</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {/* FAQ Section */}
+  <section id="faqs" className="mb-16">
+    <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400">
+      Frequently Asked Questions
+    </h2>
+    
+    <div className="mt-6">
+      <FaqAccordion items={faqItems} />
+    </div>
+  </section>
+  
+  {/* CTA Section */}
+  <section className="mb-16">
+    <div className="bg-gradient-to-r from-blue-900 to-green-900 rounded-xl p-8 text-center">
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Dominate Local Search?</h2>
+      <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        SpotCircuit's specialized local SEO services can help your service business appear at the top of local search results, attract more nearby customers, and outrank your competition.
+      </p>
+      <div className="flex flex-wrap justify-center gap-4">
+        <Link href="/contact" className="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors">
+          Get a Free Consultation
+        </Link>
+        <Link href="/local-services" className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition-colors">
+          Explore Local Services
+        </Link>
+      </div>
+    </div>
+  </section>
+</article>

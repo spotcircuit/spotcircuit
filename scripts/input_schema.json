@@ -1,0 +1,95 @@
+{
+	"title": "🗺️ Google Maps Competitor Analyzer",
+	"description": "🔍 Discover competitors near any business location using Google Maps! Perfect for market research, site selection, and competitive analysis. Get detailed insights including ratings, reviews, rankings, and contact info for businesses in your target market. 🎯",
+	"type": "object",
+	"schemaVersion": 1,
+	"properties": {
+	  "inputMethod": {
+		"title": "📝 Input Method",
+		"type": "string",
+		"description": "Choose how you want to enter your locations",
+		"default": "structured",
+		"enum": ["structured", "bulk"],
+		"enumTitles": ["🏗️ Structured Input (City/State/Zip)", "📋 Bulk Paste"],
+		"editor": "select"
+	  },
+	  "searchQuery": {
+		"title": "🔎 Search Category",
+		"type": "string",
+		"description": "🏪 What type of businesses are you looking for? Be specific for best results! Examples: \"restaurant\", \"coffee shop\", \"dentist\", \"gym\", \"hair salon\", \"auto repair\", \"pharmacy\", \"hotel\"",
+		"editor": "textfield"
+	  },
+	  "city": {
+		"title": "🏙️ City",
+		"type": "string",
+		"description": "Enter the city name (e.g., Seattle, Los Angeles, New York)",
+		"editor": "textfield"
+	  },
+	  "state": {
+		"title": "📍 State",
+		"type": "string",
+		"description": "Enter the 2-letter state code (e.g., WA, CA, NY)",
+		"editor": "textfield",
+		"pattern": "^[A-Z]{2}$",
+		"maxLength": 2
+	  },
+	  "zipCode": {
+		"title": "📮 ZIP Code",
+		"type": "string",
+		"description": "Enter the 5-digit ZIP code (optional)",
+		"editor": "textfield",
+		"pattern": "^\\d{5}$",
+		"maxLength": 5
+	  },
+	  "businessName": {
+		"title": "🏢 Your Business Name",
+		"type": "string",
+		"description": "Optional: Enter your business name to identify it in the results",
+		"editor": "textfield"
+	  },
+	  "bulkLocations": {
+		"title": "📋 Bulk Location Input",
+		"type": "string",
+		"description": "Paste multiple locations, one per line. Supported formats:\n\n✅ **Full addresses**: 123 Main St, Seattle, WA 98101\n✅ **City, State**: Seattle, WA\n✅ **ZIP codes**: 98101\n✅ **Place IDs**: ChIJ2eUgeAK6j4ARbn5u_wAGqWA\n✅ **Coordinates**: 47.6062,-122.3321\n✅ **With business names**: 123 Main St, Seattle, WA | My Business\n\n💡 Tip: Use pipe (|) to separate address from business name",
+		"editor": "textarea"
+	  },
+	  "locations": {
+		"title": "📍 Advanced Location Input",
+		"type": "array",
+		"description": "For power users: Enter locations with full control over format",
+		"editor": "keyValue",
+		"prefill": [
+		  {
+			"key": "123 Main St, Beverly Hills, CA 90210",
+			"value": "My Business"
+		  }
+		]
+	  },
+	  "maxCompetitors": {
+		"title": "📊 Maximum Competitors per Location",
+		"type": "integer",
+		"description": "🎯 How many nearby competitors do you want to analyze? Google Maps typically shows 20-30 businesses in a search area. More competitors = more comprehensive analysis!",
+		"default": 30,
+		"minimum": 1,
+		"maximum": 30,
+		"editor": "number"
+	  },
+	  "verbose": {
+		"title": "🔧 Debug Mode",
+		"type": "boolean",
+		"description": "🐛 Enable detailed logging to troubleshoot issues. This shows exactly how the scraper parses each business listing - useful if you're getting unexpected results!",
+		"default": false,
+		"editor": "checkbox"
+	  },
+	  "proxyConfiguration": {
+		"title": "🌐 Proxy Settings",
+		"type": "object",
+		"description": "🛡️ Use residential proxies to avoid rate limits and blocks. Highly recommended when analyzing multiple locations or running frequently!",
+		"editor": "proxy",
+		"prefill": {
+		  "useApifyProxy": true
+		}
+	  }
+	},
+	"required": ["searchQuery"]
+}

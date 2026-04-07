@@ -1,0 +1,136 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b2bBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.6" />
+    </linearGradient>
+    <linearGradient id="b2bPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#6D28D9;stop-opacity:0.4" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#050505"/>
+  
+  <!-- Network grid -->
+  <g opacity="0.1">
+    <defs>
+      <pattern id="hexGrid" width="60" height="52" patternUnits="userSpaceOnUse">
+        <polygon points="30,0 45,15 45,37 30,52 15,37 15,15" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="800" height="600" fill="url(#hexGrid)"/>
+  </g>
+  
+  <!-- Central business hub -->
+  <g transform="translate(400, 300)">
+    <circle cx="0" cy="0" r="80" fill="url(#b2bBlue)" opacity="0.2"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="url(#b2bBlue)" stroke-width="3" filter="url(#shadow)"/>
+    <circle cx="0" cy="0" r="40" fill="#0a0a0a" stroke="#2563EB" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold">B2B</text>
+  </g>
+  
+  <!-- Industry nodes -->
+  <!-- Recruiting (Top) -->
+  <g transform="translate(400, 120)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#10B981" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#10B981" font-family="Arial" font-size="24">👥</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">Recruiting</text>
+  </g>
+  
+  <!-- SaaS (Top Right) -->
+  <g transform="translate(580, 210)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#8B5CF6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#8B5CF6" font-family="Arial" font-size="24">🚀</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">SaaS</text>
+  </g>
+  
+  <!-- Insurance (Bottom Right) -->
+  <g transform="translate(580, 390)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#F59E0B" font-family="Arial" font-size="24">🛡️</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">Insurance</text>
+  </g>
+  
+  <!-- Finance (Bottom) -->
+  <g transform="translate(400, 480)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#06B6D4" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#06B6D4" font-family="Arial" font-size="24">💰</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">Finance</text>
+  </g>
+  
+  <!-- Consulting (Bottom Left) -->
+  <g transform="translate(220, 390)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#EC4899" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#EC4899" font-family="Arial" font-size="24">📊</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">Consulting</text>
+  </g>
+  
+  <!-- Manufacturing (Top Left) -->
+  <g transform="translate(220, 210)">
+    <circle cx="0" cy="0" r="50" fill="#0a0a0a" stroke="#EF4444" stroke-width="2" filter="url(#shadow)"/>
+    <text x="0" y="-5" text-anchor="middle" fill="#EF4444" font-family="Arial" font-size="24">🏭</text>
+    <text x="0" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12">Manufacturing</text>
+  </g>
+  
+  <!-- Connection lines -->
+  <g opacity="0.5">
+    <line x1="400" y1="300" x2="400" y2="170" stroke="#10B981" stroke-width="2"/>
+    <line x1="400" y1="300" x2="540" y2="235" stroke="#8B5CF6" stroke-width="2"/>
+    <line x1="400" y1="300" x2="540" y2="365" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="400" y1="300" x2="400" y2="430" stroke="#06B6D4" stroke-width="2"/>
+    <line x1="400" y1="300" x2="260" y2="365" stroke="#EC4899" stroke-width="2"/>
+    <line x1="400" y1="300" x2="260" y2="235" stroke="#EF4444" stroke-width="2"/>
+  </g>
+  
+  <!-- Data flow particles -->
+  <g>
+    <!-- Recruiting to Center -->
+    <circle cx="400" cy="170" r="3" fill="#10B981">
+      <animate attributeName="cy" values="170;300" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- SaaS to Center -->
+    <circle cx="540" cy="235" r="3" fill="#8B5CF6">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; -140,65; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Insurance to Center -->
+    <circle cx="540" cy="365" r="3" fill="#F59E0B">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; -140,-65; 0,0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Metrics dashboard -->
+  <g transform="translate(50, 50)" opacity="0.9">
+    <rect x="0" y="0" width="180" height="100" rx="10" fill="#0a0a0a" stroke="#2563EB" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">Lead Pipeline</text>
+    <rect x="20" y="40" width="140" height="8" rx="4" fill="#1a1a1a"/>
+    <rect x="20" y="40" width="98" height="8" rx="4" fill="#10B981"/>
+    <text x="90" y="70" text-anchor="middle" fill="#10B981" font-family="Arial" font-size="18" font-weight="bold">70%</text>
+  </g>
+  
+  <!-- KPI indicators -->
+  <g transform="translate(570, 50)" opacity="0.9">
+    <rect x="0" y="0" width="180" height="100" rx="10" fill="#0a0a0a" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">Conversion Rate</text>
+    <text x="90" y="60" text-anchor="middle" fill="#8B5CF6" font-family="Arial" font-size="28" font-weight="bold">4.7%</text>
+    <text x="90" y="85" text-anchor="middle" fill="#10B981" font-family="Arial" font-size="12">↑ 23% MoM</text>
+  </g>
+  
+  <!-- Connection strength indicators -->
+  <g opacity="0.3">
+    <circle cx="400" cy="300" r="120" fill="none" stroke="#2563EB" stroke-width="1" stroke-dasharray="5,5">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="180" fill="none" stroke="#7C3AED" stroke-width="1" stroke-dasharray="3,7">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="-360 400 300" dur="30s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
