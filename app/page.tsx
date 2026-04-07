@@ -1,764 +1,210 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { FaCheckCircle } from 'react-icons/fa';
-import PageContent from '@/components/PageContent';
-import HomePageSchema from '@/components/schemas/HomePageSchema';
-import ServiceSchema from './components/ServiceSchema';
-import SpeakableSchema from './components/SpeakableSchema';
-import FaqSchema from './components/FaqSchema';
-import ImageObjectSchema from './components/ImageObjectSchema';
-import BreadcrumbSchema from './components/BreadcrumbSchema';
-import EntitySchema from './components/EntitySchema';
-import ReviewSchema from './components/ReviewSchema';
 
 export const metadata: Metadata = {
-  title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
-  description: 'Transform your business with SpotCircuit\'s AI-powered solutions. Automate local services for contractors, optimize search for SaaS companies, and accelerate growth with proven marketing strategies.',
+  title: 'SpotCircuit - Agentic AI Engineering',
+  description: 'Agentic AI engineering for teams that ship. Framework licensing, Claude Code implementation, knowledge bases, and data pipelines.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/',
-    languages: {
-      'x-default': 'https://www.spotcircuit.com/',
-      'en': 'https://www.spotcircuit.com/',
-    },
   },
   openGraph: {
-    title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
-    description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship. Framework licensing, Claude Code implementation, knowledge bases, and data pipelines.',
     url: 'https://www.spotcircuit.com/',
-    images: ['/static/images/home-og.webp'],
     siteName: 'SpotCircuit',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpotCircuit - AI-Powered Growth Solutions | Local Services & B2B SaaS',
-    description: 'Transform your business with AI. Local service automation for contractors. AI search optimization for SaaS companies.',
-    images: ['/static/images/home-og.webp'],
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship.',
     creator: '@spotcircuit',
   },
 };
 
+const services = [
+  {
+    title: 'Clarity Framework',
+    description: 'Open-source agentic intelligence framework. Gives any engineer full project context on day one. Built on Karpathy\'s LLM Wiki pattern.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    href: '/clarity',
+    tag: 'Open Source',
+  },
+  {
+    title: 'AI Integration Consulting',
+    description: 'Config-driven pipelines, API connectors, and workflow automation. We wire AI into your existing stack.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+    ),
+    href: '/services#integration',
+    tag: '$150-250/hr',
+  },
+  {
+    title: 'Claude Code Implementation',
+    description: 'Custom skills, slash commands, memory systems, and MCP servers for your engineering team.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    href: '/services#claude-code',
+    tag: 'Teams',
+  },
+  {
+    title: 'Knowledge Base Builder',
+    description: 'The Karpathy wiki pattern as a service. Structured knowledge that compounds over time and makes your team smarter.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    href: '/services#knowledge-base',
+    tag: 'Service',
+  },
+  {
+    title: 'Document Processing Pipelines',
+    description: 'Multi-format ingest with hybrid AI. PDFs, transcripts, web clips, Slack threads — structured and searchable.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9.75m3 0v3.375m0-3.375h3.375M6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+      </svg>
+    ),
+    href: '/services#pipelines',
+    tag: 'Data',
+  },
+  {
+    title: 'Build in Public',
+    description: 'Open source contributions, technical blog posts, and transparent engineering. Follow the journey.',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+    href: '/blog',
+    tag: 'Community',
+  },
+];
+
 export default function HomePage() {
-  // Define the FAQ data for schema markup
-  const faqItems = [
-    {
-      question: "What is AI-First SEO?",
-      answer: "AI-First SEO is the practice of optimizing content specifically for AI platforms like ChatGPT, Claude, and Google's AI Overview. It focuses on semantic understanding, structured data, and content organization that helps AI systems comprehend and reference your content."
-    },
-    {
-      question: "How does SpotCircuit help local service businesses?",
-      answer: "SpotCircuit helps local service businesses by implementing automated marketing systems, optimizing for local search visibility, managing customer reviews, and creating AI-driven lead nurturing processes that convert more inquiries into booked jobs."
-    },
-    {
-      question: "What is AnswerCircuit?",
-      answer: "AnswerCircuit is SpotCircuit's proprietary AI optimization system for SaaS companies. It ensures your brand and products are prominently featured when potential customers use AI assistants to research solutions in your category, increasing visibility and lead generation."
-    }
-  ];
-  
   return (
-    <div className="min-h-screen bg-black text-white">      
-      {/* Schema Markup */}
-      <HomePageSchema />
-      <ServiceSchema 
-        name="AI-First SEO & LLM Optimization"
-        description="SpotCircuit provides AI-First SEO and LLM optimization services to help businesses be found and cited by AI platforms like ChatGPT, Claude, and Google's AI Overview."
-        url="https://www.spotcircuit.com"
-        serviceType="SEOService"
-      />
-      <SpeakableSchema cssSelectors={[".page-summary", "#faq"]} />
-      <FaqSchema faqs={faqItems} />
-      <ImageObjectSchema 
-        url="https://www.spotcircuit.com/static/images/seo20.webp"
-        name="SEO 2.0: The AI-First Revolution"
-        description="A visual representation of how AI is transforming search and content discovery, showing the evolution from traditional SEO to AI-First optimization."
-        width={400}
-        height={300}
-      />
-      <BreadcrumbSchema 
-        items={[
-          { name: "Home", url: "https://www.spotcircuit.com", position: 1 }
-        ]} 
-      />
-      <EntitySchema 
-        type="Thing"
-        name="AI-First SEO"
-        description="A modern approach to search engine optimization focused on making content discoverable and citable by AI platforms like ChatGPT, Claude, and Google's AI Overview."
-        url="https://www.spotcircuit.com"
-        sameAs={[
-          { url: "https://en.wikipedia.org/wiki/Search_engine_optimization" },
-          { url: "https://schema.org/Thing" }
-        ]}
-        relatedEntities={[
-          {
-            name: "Local Service Marketing",
-            url: "https://www.spotcircuit.com/local-services",
-            description: "AI-powered marketing solutions for local service businesses like HVAC, plumbing, and electrical contractors.",
-            type: "Service"
-          },
-          {
-            name: "AnswerCircuit",
-            url: "https://www.spotcircuit.com/answercircuit",
-            description: "A proprietary AI optimization system for SaaS companies to ensure visibility when potential customers research solutions.",
-            type: "SoftwareApplication"
-          }
-        ]}
-      />
-      <ReviewSchema 
-        itemReviewed={{
-          type: "Service",
-          name: "SpotCircuit AI-First SEO Services",
-          description: "Professional SEO services focused on optimizing for AI platforms and large language models",
-          url: "https://www.spotcircuit.com/services"
-        }}
-        reviewRating={{
-          ratingValue: 4.9,
-          bestRating: 5,
-          worstRating: 1
-        }}
-        author={{
-          name: "TechCorp Solutions",
-          type: "Organization"
-        }}
-        reviewBody="SpotCircuit's AI-First SEO approach completely transformed our online presence. We've seen a 215% increase in AI snippet appearances and a significant boost in qualified leads. Their understanding of how AI systems interpret content is unmatched."
-      />
-      
-      {/* Hero Section - Updated according to checklist */}
-      <PageContent noPadding className="text-center relative overflow-hidden">
-        <section className="py-12 sm:py-16 md:py-20">
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
-            AI-Powered SEO & Automation
-            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 sm:mt-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              For Service Businesses
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-            Unlock smarter growth strategies with automation, analytics, and AI-tailored marketing.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4">
-            <Link href="/booking" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
-              Get a Free Growth Audit
-            </Link>
-            <Link href="/process" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
-              See How It Works
-            </Link>
-          </div>
-          
-          {/* AI Workflow Visualization */}
-          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 mx-4 sm:mx-auto">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="text-center md:text-left mb-6 md:mb-0 md:mr-8">
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">AI + Workflow Automation</h3>
-                <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
-                  Our AI analyzes, optimizes, and automates your marketing workflows for maximum efficiency and results.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-blue-900/50 text-blue-300 text-sm rounded-full">AI Analysis</span>
-                  <span className="px-3 py-1 bg-teal-900/50 text-teal-300 text-sm rounded-full">Workflow Automation</span>
-                  <span className="px-3 py-1 bg-purple-900/50 text-purple-300 text-sm rounded-full">Real-time Insights</span>
-                </div>
-              </div>
-              <div className="relative w-full md:w-64 h-48 bg-gradient-to-br from-blue-900/30 to-teal-900/30 rounded-lg border border-gray-800 flex items-center justify-center">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full opacity-20 animate-pulse"></div>
-                </div>
-                <div className="relative z-10 text-center p-4">
-                  <div className="text-4xl mb-2">🤖</div>
-                  <span className="text-sm font-medium text-gray-300">AI Workflow Visualization</span>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-blue-400 font-mono text-sm sm:text-base mb-4 tracking-wide">AGENTIC AI ENGINEERING</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              AI systems that
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                think, learn, and ship
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              We build agentic frameworks, implement Claude Code for engineering teams, and create knowledge systems that compound. From day-one context to self-improving pipelines.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link href="/services" className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                See What We Build
+              </Link>
+              <Link href="https://github.com/spotcircuit/clarity-framework" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 border border-gray-700">
+                View on GitHub
+              </Link>
             </div>
           </div>
-          
-          {/* Page Summary (Speakable) - Important for AI - Moved below for better flow */}
-          <div className="page-summary bg-gray-900 p-4 sm:p-6 rounded-lg max-w-3xl mx-auto mt-8 sm:mt-12 mx-4 sm:mx-auto">
-            <h2 className="text-lg sm:text-xl font-bold mb-2">TL;DR: What We Do</h2>
-            <p className="text-sm sm:text-base text-gray-300">
-              SpotCircuit specializes in AI-powered marketing automation for service businesses and AI search optimization to ensure your business is found when prospects are searching for your services.
+        </div>
+      </section>
+
+      {/* What We Do — 6 Revenue Streams */}
+      <section className="py-20 bg-gray-950">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">What We Build</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Six ways we help engineering teams ship faster with AI
             </p>
           </div>
-        </div>
-      </section>
-      </PageContent>
 
-      {/* Core Offerings Section */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 px-4">
-            Explore Our Core Offerings
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
-            Discover how our specialized services, industry-specific solutions, and powerful AI tools can be tailored to drive your business forward.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-4 sm:mb-6">
-            <Link href="/services">
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
-                <div className="text-4xl mb-4">⚙️</div>
-                <h3 className="text-2xl font-bold mb-3">Services</h3>
-                <p className="text-gray-400 text-sm">Explore our comprehensive suite of marketing and automation services.</p>
-              </div>
-            </Link>
-            
-            <Link href="/industries">
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
-                <div className="text-4xl mb-4">🏢</div>
-                <h3 className="text-2xl font-bold mb-3">Industries</h3>
-                <p className="text-gray-400 text-sm">Discover tailored strategies for your specific industry needs.</p>
-              </div>
-            </Link>
-            
-            <Link href="/solutions">
-              <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-600 transition-all h-full flex flex-col justify-center items-center text-center">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-2xl font-bold mb-3">Solutions</h3>
-                <p className="text-gray-400 text-sm">Find the perfect solution to solve your business challenges.</p>
-              </div>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
-            <Link href="/lead-generation">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
-                <div className="text-3xl mb-4">🎯</div>
-                <h3 className="text-xl font-bold mb-3">Lead Generation</h3>
-                <p className="text-gray-400 text-sm">Attract and convert high-quality leads.</p>
-              </div>
-            </Link>
-            
-            <Link href="/ai-search-visibility">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
-                <div className="text-3xl mb-4">🔍</div>
-                <h3 className="text-xl font-bold mb-3">AI Search Visibility</h3>
-                <p className="text-gray-400 text-sm">Dominate search results and be seen by your target audience.</p>
-              </div>
-            </Link>
-            
-            <Link href="/local-marketing">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
-                <div className="text-3xl mb-4">📍</div>
-                <h3 className="text-xl font-bold mb-3">Local Marketing</h3>
-                <p className="text-gray-400 text-sm">Connect with customers in your local area.</p>
-              </div>
-            </Link>
-            
-            <Link href="/ai-automation">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-all h-full text-center">
-                <div className="text-3xl mb-4">🤖</div>
-                <h3 className="text-xl font-bold mb-3">AI Automation</h3>
-                <p className="text-gray-400 text-sm">Streamline your workflows and boost efficiency.</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-      
-      {/* How It Works Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 px-4">
-            How It Works
-          </h2>
-          
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              {/* Connecting line */}
-              <div className="absolute left-8 top-10 bottom-10 w-1 bg-blue-600 hidden md:block"></div>
-              
-              <div className="space-y-12">
-                {/* Step 1 */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">1</div>
-                  <div className="bg-black rounded-xl p-6 border border-gray-800 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">Discovery & Audit</h3>
-                    <p className="text-gray-300">We analyze your current online presence, identify gaps, and uncover opportunities for growth.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {services.map((service) => (
+              <Link key={service.title} href={service.href}>
+                <div className="bg-black rounded-xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 h-full group hover:shadow-lg hover:shadow-blue-500/10">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-blue-400 group-hover:text-blue-300 transition-colors">
+                      {service.icon}
+                    </div>
+                    <span className="text-xs font-mono px-2 py-1 rounded-full bg-gray-800 text-gray-400 group-hover:text-blue-400 transition-colors">
+                      {service.tag}
+                    </span>
                   </div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{service.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
                 </div>
-                
-                {/* Step 2 */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">2</div>
-                  <div className="bg-black rounded-xl p-6 border border-gray-800 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">Strategy Design</h3>
-                    <p className="text-gray-300">We create a customized plan tailored to your specific goals and industry requirements.</p>
-                  </div>
-                </div>
-                
-                {/* Step 3 */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">3</div>
-                  <div className="bg-black rounded-xl p-6 border border-gray-800 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">Workflow & SEO Build</h3>
-                    <p className="text-gray-300">We implement AI workflows, optimization strategies, and build necessary technical components.</p>
-                  </div>
-                </div>
-                
-                {/* Step 4 */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">4</div>
-                  <div className="bg-black rounded-xl p-6 border border-gray-800 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">Automate & Optimize</h3>
-                    <p className="text-gray-300">We fine-tune automations, content strategies, and conversion pathways for maximum performance.</p>
-                  </div>
-                </div>
-                
-                {/* Step 5 */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">5</div>
-                  <div className="bg-black rounded-xl p-6 border border-gray-800 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">Report & Adjust</h3>
-                    <p className="text-gray-300">We provide transparent reporting and continuously optimize based on performance data.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Workflow Showcase Section (Optional Add-on) */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            AI Workflow Showcase
-          </h2>
-          <p className="text-xl text-gray-300 text-center mb-12">
-            See how our AI automation solutions transform your business processes
-          </p>
-          
-          <div className="max-w-5xl mx-auto">
-            {/* Workflow Diagram */}
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800 mb-12">
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-bold mb-6">Lead Generation to Customer Journey</h3>
-                <div className="w-full max-w-3xl">
-                  <div className="flex flex-col md:flex-row justify-between items-center text-center gap-4">
-                    <div className="w-20 h-20 bg-blue-900/30 rounded-lg flex items-center justify-center">
-                      <span className="text-3xl">🔍</span>
-                      <span className="text-xs absolute mt-16">Lead</span>
-                    </div>
-                    
-                    <div className="hidden md:block text-blue-400">→</div>
-                    
-                    <div className="w-20 h-20 bg-purple-900/30 rounded-lg flex items-center justify-center">
-                      <span className="text-3xl">🤖</span>
-                      <span className="text-xs absolute mt-16">AI Filter</span>
-                    </div>
-                    
-                    <div className="hidden md:block text-blue-400">→</div>
-                    
-                    <div className="w-20 h-20 bg-green-900/30 rounded-lg flex items-center justify-center">
-                      <span className="text-3xl">📊</span>
-                      <span className="text-xs absolute mt-16">CRM</span>
-                    </div>
-                    
-                    <div className="hidden md:block text-blue-400">→</div>
-                    
-                    <div className="w-20 h-20 bg-orange-900/30 rounded-lg flex items-center justify-center">
-                      <span className="text-3xl">📱</span>
-                      <span className="text-xs absolute mt-16">SMS</span>
-                    </div>
-                    
-                    <div className="hidden md:block text-blue-400">→</div>
-                    
-                    <div className="w-20 h-20 bg-teal-900/30 rounded-lg flex items-center justify-center">
-                      <span className="text-3xl">📈</span>
-                      <span className="text-xs absolute mt-16">Dashboard</span>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl">
-                  Our AI-powered workflow automatically qualifies leads, routes them to your CRM, 
-                  sends personalized follow-ups, and provides real-time reporting on your dashboard.
-                </p>
-              </div>
-            </div>
-            
-            {/* Case Studies */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="text-sm text-blue-400 mb-2">HVAC COMPANY</div>
-                <h3 className="text-lg font-bold mb-3">24% Booking Increase</h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  Automated SMS follow-ups for missed calls led to a 24% increase in service bookings.
-                </p>
-                <Link href="/case-studies/hvac">
-                  <span className="text-blue-400 text-sm hover:underline">Read Case Study →</span>
-                </Link>
-              </div>
-              
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="text-sm text-purple-400 mb-2">SAAS COMPANY</div>
-                <h3 className="text-lg font-bold mb-3">18% AI Citation Growth</h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  AI-optimized content strategy resulted in 18% more citations in ChatGPT responses.
-                </p>
-                <Link href="/case-studies/saas">
-                  <span className="text-blue-400 text-sm hover:underline">Read Case Study →</span>
-                </Link>
-              </div>
-              
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="text-sm text-green-400 mb-2">PLUMBING COMPANY</div>
-                <h3 className="text-lg font-bold mb-3">35% Lead Conversion</h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  AI-powered lead qualification and nurturing improved conversion rates by 35%.
-                </p>
-                <Link href="/case-studies/plumbing">
-                  <span className="text-blue-400 text-sm hover:underline">Read Case Study →</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Lead Magnet Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-black rounded-xl p-8 border border-gray-800">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-4">
-                  Get Your Free Personalized Growth Plan
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  Receive a custom strategy tailored to your business needs. No obligation, 
-                  just actionable insights you can implement right away.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <FaCheckCircle className="text-green-400 mr-3" />
-                    <span className="text-sm">Detailed competitive analysis</span>
-                  </li>
-                  <li className="flex items-center">
-                    <FaCheckCircle className="text-green-400 mr-3" />
-                    <span className="text-sm">Custom growth recommendations</span>
-                  </li>
-                  <li className="flex items-center">
-                    <FaCheckCircle className="text-green-400 mr-3" />
-                    <span className="text-sm">Implementation timeline</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      placeholder="John Smith"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="industry" className="block text-sm font-medium text-gray-400 mb-1">Industry</label>
-                    <select 
-                      id="industry" 
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    >
-                      <option>Select your industry</option>
-                      <option>HVAC</option>
-                      <option>Plumbing</option>
-                      <option>Electrical</option>
-                      <option>Roofing</option>
-                      <option>SaaS / Software</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  
-                  <button 
-                    type="submit" 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition"
-                  >
-                    Build My Plan
-                  </button>
-                  
-                  <p className="text-xs text-gray-500 text-center">
-                    We respect your privacy. Your information will never be shared.
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About SpotCircuit Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-1">
-                <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 p-1 rounded-full">
-                  <Image
-                    src="/static/images/businessowner.jpg"
-                    alt="Brian Pyatt - SpotCircuit Founder"
-                    width={300}
-                    height={300}
-                    className="rounded-full"
-                  />
-                </div>
-              </div>
-              
-              <div className="md:col-span-2">
-                <h2 className="text-3xl font-bold mb-4">About SpotCircuit</h2>
-                <p className="text-gray-300 mb-4">
-                  Founded by Brian Pyatt, SpotCircuit combines over two decades of marketing experience with 
-                  cutting-edge AI technology. We've helped hundreds of businesses automate their growth 
-                  and dominate their markets through intelligent systems.
-                </p>
-                <p className="text-gray-300 mb-6">
-                  Our team specializes in creating custom AI-powered workflows that generate leads, 
-                  nurture prospects, and turn more inquiries into paying customers—all while saving 
-                  you time and eliminating manual tasks.
-                </p>
-                <Link href="/process">
-                  <span className="text-blue-400 hover:underline">Learn more about our approach →</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted By Section */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            Trusted By
-          </h2>
-          <div className="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
-            <Link href="https://mrmaple.com" target="_blank" className="block w-64 h-32 bg-black/40 rounded-lg flex items-center justify-center px-4 hover:bg-black/60 transition-all">
-              <Image 
-                src="/static/images/mrmaple.jpg" 
-                alt="MrMaple.com" 
-                width={220} 
-                height={100} 
-                className="object-contain max-h-20"
-              />
-            </Link>
-            <Link href="https://starcitygames.com" target="_blank" className="block w-64 h-32 bg-black/40 rounded-lg flex items-center justify-center px-4 hover:bg-black/60 transition-all">
-              <Image 
-                src="/static/images/starcitygames.jpg" 
-                alt="StarCityGames.com" 
-                width={220} 
-                height={100} 
-                className="object-contain max-h-20"
-              />
-            </Link>
-            <Link href="https://thefixclinic.com" target="_blank" className="block w-64 h-32 bg-black/40 rounded-lg flex items-center justify-center px-4 hover:bg-black/60 transition-all">
-              <Image 
-                src="/static/images/fixclinic.jpg" 
-                alt="TheFixClinic.com" 
-                width={220} 
-                height={100} 
-                className="object-contain max-h-20"
-              />
-            </Link>
-            <Link href="https://bnbtobacco.com" target="_blank" className="block w-64 h-32 bg-black/40 rounded-lg flex items-center justify-center px-4 hover:bg-black/60 transition-all">
-              <Image 
-                src="/static/images/bnbtobacco.jpg" 
-                alt="BnBTobacco.com" 
-                width={220} 
-                height={100} 
-                className="object-contain max-h-20"
-              />
-            </Link>
-          </div>
-        </div>
-      </section>
-      
-      {/* Testimonials / Social Proof */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            What Our Clients Say
-          </h2>
-          
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
-                <div className="flex flex-col h-full">
-                  <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
-                  <p className="text-gray-300 italic mb-6 flex-grow">
-                    "SpotCircuit's AI automation has completely transformed our lead follow-up process. 
-                    We're booking 30% more jobs with the same ad spend because no leads fall through the cracks anymore."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-xl">👨‍💼</span>
-                    </div>
-                    <div>
-                      <div className="font-bold">Michael Johnson</div>
-                      <div className="text-sm text-gray-400">Johnson HVAC Services</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
-                <div className="flex flex-col h-full">
-                  <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
-                  <p className="text-gray-300 italic mb-6 flex-grow">
-                    "We've tried multiple SEO agencies, but SpotCircuit was the first to understand how AI is changing 
-                    search. Their AI-first approach has our brand appearing in ChatGPT responses consistently."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-xl">👩‍💼</span>
-                    </div>
-                    <div>
-                      <div className="font-bold">Sarah Williams</div>
-                      <div className="text-sm text-gray-400">TechFlow Solutions</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
-                <div className="flex flex-col h-full">
-                  <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
-                  <p className="text-gray-300 italic mb-6 flex-grow">
-                    "The dashboard SpotCircuit built gives me complete visibility into our marketing performance. 
-                    I can finally see which channels are driving quality leads and make informed decisions."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-green-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-xl">👨‍🔧</span>
-                    </div>
-                    <div>
-                      <div className="font-bold">Robert Garcia</div>
-                      <div className="text-sm text-gray-400">Elite Plumbing Co.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
-                <div className="flex flex-col h-full">
-                  <div className="text-yellow-400 text-xl mb-4">★★★★★</div>
-                  <p className="text-gray-300 italic mb-6 flex-grow">
-                    "Working with SpotCircuit has been a game-changer. Their expertise in AI-powered automation has 
-                    streamlined our entire customer acquisition process and dramatically improved our ROI."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-orange-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-xl">👩‍💻</span>
-                    </div>
-                    <div>
-                      <div className="font-bold">Jennifer Chen</div>
-                      <div className="text-sm text-gray-400">Maple Services LLC</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Trust Indicators */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-400">500+</div>
-              <div className="text-gray-400">Businesses Served</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-400">$4.6M</div>
-              <div className="text-gray-400">Leads Generated</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-green-400">245%</div>
-              <div className="text-gray-400">Avg Traffic Increase</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-orange-400">25+</div>
-              <div className="text-gray-400">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions
-          </h2>
-          
-          <div className="max-w-3xl mx-auto space-y-8">
-            {faqItems.map((faq, index) => (
-              <div key={index} className="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                <p className="text-gray-300">{faq.answer}</p>
-              </div>
+              </Link>
             ))}
-            
-            <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
-              <h3 className="text-xl font-bold mb-3">What makes AI-First SEO different from traditional SEO?</h3>
-              <p className="text-gray-300">
-                Traditional SEO focuses on keyword rankings in search engine results pages, while AI-First SEO optimizes content to be understood, trusted, and cited by AI platforms. This includes structured data markup, semantic content organization, FAQ formats, and creating comprehensive topic clusters that demonstrate authority.
-              </p>
-            </div>
-            
-            <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
-              <h3 className="text-xl font-bold mb-3">How do you measure success with AI optimization?</h3>
-              <p className="text-gray-300">
-                We track AI citations and mentions across platforms like ChatGPT, Claude, and Google's AI Overview. Our analytics show when your brand is recommended, how frequently your content is referenced, and when specific product features are highlighted in AI responses to relevant queries.
-              </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">How We Work</h2>
+
+            <div className="space-y-8">
+              {[
+                { step: '01', title: 'Discovery', desc: 'We audit your current stack, workflows, and pain points. Identify where agentic AI creates the most leverage.' },
+                { step: '02', title: 'Architecture', desc: 'Design the system — framework selection, knowledge structure, pipeline topology, integration points.' },
+                { step: '03', title: 'Build & Ship', desc: 'Implement iteratively. Working code in days, not months. Every deliverable is production-ready.' },
+                { step: '04', title: 'Compound', desc: 'Your system gets smarter over time. Self-learn loops, wiki growth, observation validation. Knowledge compounds.' },
+              ].map((item) => (
+                <div key={item.step} className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 flex items-center justify-center">
+                    <span className="text-blue-400 font-mono text-sm font-bold">{item.step}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+                    <p className="text-gray-400">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Let's Build Your Growth Engine
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Ready to leverage AI and automation to transform your business growth?
-            Let's discuss how we can help you achieve your goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block">
-                Schedule a Call
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl transition duration-300 inline-block border border-gray-700">
-                Send Us a Message
-              </span>
-            </Link>
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-b from-gray-950 to-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to build?</h2>
+            <p className="text-gray-400 text-lg mb-8">
+              Whether you need a full framework implementation or just want to talk agentic AI — let&apos;s connect.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link href="/contact" className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105">
+                Get in Touch
+              </Link>
+              <Link href="/clarity" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 border border-gray-700">
+                Explore Clarity Framework
+              </Link>
+            </div>
           </div>
         </div>
-      </section>    </div>
+      </section>
+    </div>
   );
 }
