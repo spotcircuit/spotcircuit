@@ -1,284 +1,97 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import ContactForm from '@/components/ContactForm';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FaCalendarAlt, FaEnvelope, FaArrowRight } from 'react-icons/fa';
-import Script from 'next/script';
-import BreadcrumbSchema from '../components/BreadcrumbSchema';
-import SpeakableSchema from '../components/SpeakableSchema';
-import FaqSchema from '../components/FaqSchema';
-import EntitySchema from '../components/EntitySchema';
 
 export const metadata: Metadata = {
-  title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
-  description: 'Contact SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business growth.',
-  keywords: 'contact SpotCircuit, free consultation, AI marketing contact, business automation contact, SEO consultation',
+  title: 'Contact - SpotCircuit | Agentic AI Engineering',
+  description: 'Get in touch with SpotCircuit. Let\'s talk about agentic AI frameworks, Claude Code implementation, knowledge bases, and data pipelines.',
   alternates: {
     canonical: 'https://www.spotcircuit.com/contact',
-    languages: {
-      'x-default': 'https://www.spotcircuit.com/contact',
-      'en': 'https://www.spotcircuit.com/contact',
-    },
   },
   openGraph: {
-    title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
-    description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business.',
+    title: 'Contact - SpotCircuit | Agentic AI Engineering',
+    description: 'Get in touch with SpotCircuit about agentic AI engineering.',
     url: 'https://www.spotcircuit.com/contact',
     siteName: 'SpotCircuit',
     type: 'website',
-    locale: 'en_US',
-    images: [{
-      url: '/static/images/contact-og.webp',
-      width: 1200,
-      height: 630,
-      alt: 'Contact SpotCircuit',
-    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact SpotCircuit | AI Marketing Solutions & Free Consultation',
-    description: 'Get in touch with SpotCircuit for AI-powered marketing solutions and business automation. Schedule a free consultation to transform your business.',
-    images: ['/static/images/contact-og.webp'],
+    title: 'Contact - SpotCircuit',
+    description: 'Get in touch with SpotCircuit about agentic AI engineering.',
     creator: '@spotcircuit',
   },
 };
 
-const ContactPage = () => {
-  // Define FAQ items for schema markup
-  const faqItems = [
-    {
-      question: "How quickly can you implement solutions for my business?",
-      answer: "Our implementation timeline varies based on your specific needs and the complexity of the solutions required. Typically, we can begin showing results within 2-4 weeks, with full implementation completed within 1-3 months."
-    },
-    {
-      question: "Do I need technical knowledge to use your services?",
-      answer: "Not at all. We handle all the technical aspects, and our solutions are designed with user-friendly interfaces. Our team provides comprehensive training and ongoing support to ensure you can easily use and benefit from our systems."
-    },
-    {
-      question: "How do you price your services?",
-      answer: "We offer flexible pricing models based on your business size and specific needs. After an initial consultation, we'll provide a customized quote that aligns with your budget and expected ROI. We believe in transparent pricing with no hidden fees."
-    },
-    {
-      question: "Can you integrate with my existing software and tools?",
-      answer: "Yes, we specialize in integrating with popular home service business software like ServiceTitan, Jobber, Housecall Pro, and many others. Our solutions are designed to enhance your existing tech stack, not replace it."
-    },
-    {
-      question: "What kind of support do you provide after implementation?",
-      answer: "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
-    }
-  ];
-
-  // Organization schema with contactPoint
-  const organizationContactSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://www.spotcircuit.com/#organization",
-    "name": "SpotCircuit",
-    "url": "https://www.spotcircuit.com",
-    "logo": "https://www.spotcircuit.com/spotcircuit-logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-800-123-4567",
-      "contactType": "customer service",
-      "contactOption": "TollFree",
-      "areaServed": "US",
-      "availableLanguage": "English"
-    }
-  };
-
+export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      {/* Schema Markup */}
-      <Script id="organization-contact-schema" type="application/ld+json">
-        {JSON.stringify(organizationContactSchema)}
-      </Script>
-      <BreadcrumbSchema 
-        items={[
-          { name: "Home", url: "https://www.spotcircuit.com", position: 1 },
-          { name: "Contact", url: "https://www.spotcircuit.com/contact", position: 2 }
-        ]} 
-      />
-      <SpeakableSchema cssSelectors={["p.text-xl.text-gray-300"]} />
-      <FaqSchema faqs={faqItems} />
-      <EntitySchema 
-        name="SpotCircuit Contact Information"
-        description="Get in touch with SpotCircuit for AI-powered automation and SEO solutions for your home service business."
-        url="https://www.spotcircuit.com/contact"
-        type="ContactPage"
-        relatedEntities={[
-          {
-            name: "Home Service Business Automation",
-            url: "https://www.spotcircuit.com/services",
-            description: "AI-powered automation solutions for home service businesses."
-          },
-          {
-            name: "Free Consultation",
-            url: "https://calendar.app.google/Lh8TY5PBrDSZvjR87",
-            description: "Schedule a free consultation with our team."
-          }
-        ]}
-      />      <main className="flex-grow">
-        {/* Header Image Section */}
-        <img
-          src="/static/images/contact.webp"
-          alt="Contact SpotCircuit"
-          className="h-[75px] w-full object-cover overflow-hidden"
-        />
-        
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+    <div className="min-h-screen bg-black text-white pt-28 pb-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <p className="text-blue-400 font-mono text-sm mb-4">CONTACT</p>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">Let&apos;s talk</h1>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Whether you need a full framework implementation, Claude Code setup for your team, or just want to explore what agentic AI can do — reach out.
+            </p>
           </div>
-          
-          <div className="container mx-auto text-center relative z-10">
-            <div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in <span className="gradient-text">Touch</span></h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-                Ready to transform your home service business with AI-powered automation? We're here to help you get started.
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* Contact Options Section */}
-        <section id="contact-options" className="py-16 px-4 bg-gray-900 overflow-hidden relative">
-          <div className="container mx-auto relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {/* Contact Form */}
-              <div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 shadow-xl"
-              >
-                <div className="mb-8 text-center">
-                  <div className="inline-flex items-center justify-center p-3 mb-4 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
-                    <FaEnvelope className="text-white text-2xl" />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Send Us a Message</h2>
-                  <p className="text-gray-300">
-                    Fill out the form below and our team will get back to you within 24 hours.
-                  </p>
-                </div>
-                <ContactForm />
-              </div>
-              
-              {/* Schedule a Call */}
-              <div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 shadow-xl flex flex-col"
-              >
-                <div className="mb-8 text-center">
-                  <div className="inline-flex items-center justify-center p-3 mb-4 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20">
-                    <FaCalendarAlt className="text-white text-2xl" />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Schedule a Call</h2>
-                  <p className="text-gray-300">
-                    Book a 30-minute consultation with our team to discuss your specific needs and how we can help.
-                  </p>
-                </div>
-                
-                <div className="flex-grow flex flex-col justify-center items-center">
-                  <div className="relative w-48 h-48 mb-8 opacity-80">
-                    <Image
-                      src="/static/images/calendar-illustration.svg"
-                      alt="Schedule a call"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  
-                  <div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full"
-                  >
-                    <a 
-                      href="https://calendar.app.google/Lh8TY5PBrDSZvjR87" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-                    >
-                      Book a Free Consultation
-                      <FaArrowRight className="ml-2" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* FAQ Section */}
-        <section id="faq" className="py-16 px-4 bg-white overflow-hidden relative">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/4 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl"></div>
-          </div>
-          
-          <div className="container mx-auto relative z-10">
-            <div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Frequently Asked <span className="gradient-text">Questions</span></h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Get answers to common questions about working with SpotCircuit.
-              </p>
-            </div>
-            
-            <div className="max-w-3xl mx-auto">
-              {[
-                {
-                  question: "How quickly can you implement solutions for my business?",
-                  answer: "Our implementation timeline varies based on your specific needs and the complexity of the solutions required. Typically, we can begin showing results within 2-4 weeks, with full implementation completed within 1-3 months."
-                },
-                {
-                  question: "Do I need technical knowledge to use your services?",
-                  answer: "Not at all. We handle all the technical aspects, and our solutions are designed with user-friendly interfaces. Our team provides comprehensive training and ongoing support to ensure you can easily use and benefit from our systems."
-                },
-                {
-                  question: "How do you price your services?",
-                  answer: "We offer flexible pricing models based on your business size and specific needs. After an initial consultation, we'll provide a customized quote that aligns with your budget and expected ROI. We believe in transparent pricing with no hidden fees."
-                },
-                {
-                  question: "Can you integrate with my existing software and tools?",
-                  answer: "Yes, we specialize in integrating with popular home service business software like ServiceTitan, Jobber, Housecall Pro, and many others. Our solutions are designed to enhance your existing tech stack, not replace it."
-                },
-                {
-                  question: "What kind of support do you provide after implementation?",
-                  answer: "We offer ongoing support including regular check-ins, performance monitoring, troubleshooting, and system updates. Our team is available via email, phone, and chat to address any questions or concerns that arise."
-                }
-              ].map((faq, index) => (
-                <div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="mb-6 bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>    </div>
-  );
-};
 
-export default ContactPage;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div className="bg-gray-950 p-8 rounded-xl border border-gray-800">
+              <h2 className="text-xl font-bold mb-6">Send a message</h2>
+              <ContactForm />
+            </div>
+
+            {/* Other ways to connect */}
+            <div className="space-y-6">
+              {/* Schedule a Call */}
+              <div className="bg-gray-950 p-8 rounded-xl border border-gray-800">
+                <h2 className="text-xl font-bold mb-4">Schedule a call</h2>
+                <p className="text-gray-400 mb-6">
+                  Book a 30-minute conversation to discuss your needs.
+                </p>
+                <a
+                  href="https://calendar.app.google/Lh8TY5PBrDSZvjR87"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium rounded-lg transition-all"
+                >
+                  Book Free Consultation
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Direct Links */}
+              <div className="bg-gray-950 p-8 rounded-xl border border-gray-800">
+                <h2 className="text-xl font-bold mb-4">Connect directly</h2>
+                <div className="space-y-3">
+                  <a href="mailto:info@spotcircuit.com" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                    <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    info@spotcircuit.com
+                  </a>
+                  <a href="https://github.com/spotcircuit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                    <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/company/spotcircuit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                    <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.76-1.38-1.76-.74 0-1.62.44-1.62 1.72V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.4.86 3.4 4.2z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
