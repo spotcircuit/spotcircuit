@@ -24,18 +24,18 @@ export type Metadata = {
 };
 
 export const siteMetadata: Metadata = {
-  title: 'SpotCircuit - AI-First SEO & LLM Optimization Platform',
-  description: 'SpotCircuit helps businesses optimize content for large language models and AI search engines with a focus on semantic understanding and structured data.',
+  title: 'SpotCircuit - Agentic AI Engineering',
+  description: 'Agentic AI engineering for teams that ship. Framework licensing, Claude Code implementation, knowledge bases, and data pipelines.',
   openGraph: {
-    title: 'SpotCircuit - AI-First SEO & LLM Optimization Platform',
-    description: 'SpotCircuit helps businesses optimize content for large language models and AI search engines with a focus on semantic understanding and structured data.',
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship. Frameworks, Claude Code, knowledge bases, and data pipelines.',
     type: 'website',
     siteName: 'SpotCircuit',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpotCircuit - AI-First SEO & LLM Optimization Platform',
-    description: 'SpotCircuit helps businesses optimize content for large language models and AI search engines with a focus on semantic understanding and structured data.',
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship.',
   },
 };
 

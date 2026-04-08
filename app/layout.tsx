@@ -23,10 +23,7 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   applicationName: 'SpotCircuit',
   alternates: {
-    languages: {
-      'x-default': '/',
-      'en': '/',
-    },
+    canonical: '/',
   },
   openGraph: {
     title: 'SpotCircuit - Agentic AI Engineering',

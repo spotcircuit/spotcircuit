@@ -3,24 +3,20 @@ import { Metadata } from 'next';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spotcircuit.com';
 
 export const metadata: Metadata = {
-  title: 'SpotCircuit - AI-Powered Local SEO & Marketing',
-  description: 'Optimize your local business with AI-powered SEO and marketing solutions from SpotCircuit. Increase visibility, attract more customers, and grow your business.',
-  keywords: ['local SEO', 'digital marketing', 'AI marketing', 'business growth', 'online visibility'],
-  authors: [{ name: 'SpotCircuit Team' }],
+  title: 'SpotCircuit - Agentic AI Engineering',
+  description: 'Agentic AI engineering for teams that ship. Framework licensing, Claude Code implementation, knowledge bases, and data pipelines.',
+  keywords: ['agentic AI', 'AI engineering', 'Claude Code', 'knowledge base', 'LLM framework', 'Clarity Framework'],
+  authors: [{ name: 'Brian Pyatt' }],
   creator: 'SpotCircuit',
   publisher: 'SpotCircuit',
   generator: 'Next.js',
   applicationName: 'SpotCircuit',
   alternates: {
     canonical: 'https://www.spotcircuit.com/',
-    languages: {
-      'x-default': '/',
-      'en': '/',
-    },
   },
   openGraph: {
-    title: 'SpotCircuit - AI-Powered Local SEO & Marketing',
-    description: 'Optimize your local business with AI-powered SEO and marketing solutions',
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship. Frameworks, Claude Code, knowledge bases, and data pipelines.',
     url: baseUrl,
     siteName: 'SpotCircuit',
     images: [
@@ -28,7 +24,7 @@ export const metadata: Metadata = {
         url: new URL('/og-image.jpg', baseUrl).toString(),
         width: 1200,
         height: 630,
-        alt: 'SpotCircuit - AI-Powered Local SEO & Marketing',
+        alt: 'SpotCircuit - Agentic AI Engineering',
       },
     ],
     locale: 'en_US',
@@ -36,11 +32,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpotCircuit - AI-Powered Local SEO & Marketing',
-    description: 'Optimize your local business with AI-powered SEO and marketing solutions',
+    title: 'SpotCircuit - Agentic AI Engineering',
+    description: 'Agentic AI engineering for teams that ship.',
     images: [{
       url: new URL('/og-image.jpg', baseUrl).toString(),
-      alt: 'SpotCircuit - AI-Powered Local SEO & Marketing',
+      alt: 'SpotCircuit - Agentic AI Engineering',
     }],
     creator: '@spotcircuit',
   },
