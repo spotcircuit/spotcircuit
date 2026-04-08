@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'Clarity Framework', href: '/clarity' },
+  { name: 'Wiki', href: 'https://spotcircuit.github.io/clarity-wiki-site/' },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },

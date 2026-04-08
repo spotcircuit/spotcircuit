@@ -122,6 +122,9 @@ export default function HomePage() {
               <Link href="https://github.com/spotcircuit/clarity-framework" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 border border-gray-700">
                 View on GitHub
               </Link>
+              <Link href="https://spotcircuit.github.io/clarity-wiki-site/" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 border border-gray-700">
+                Knowledge Wiki
+              </Link>
             </div>
           </div>
         </div>
