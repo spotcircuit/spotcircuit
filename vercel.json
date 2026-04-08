@@ -35,6 +35,10 @@
     { "source": "/integrations", "destination": "/services", "permanent": true },
     { "source": "/integrations/:path*", "destination": "/services", "permanent": true },
     { "source": "/services/ai-seo-implementation", "destination": "/services", "permanent": true },
-    { "source": "/local-services", "destination": "/services", "permanent": true }
+    { "source": "/local-services", "destination": "/services", "permanent": true },
+    { "source": "/blog/seo-isnt-dead", "destination": "/blog", "permanent": true },
+    { "source": "/blog/ai-transforming-service-businesses", "destination": "/blog", "permanent": true },
+    { "source": "/accessibility", "destination": "/", "permanent": true },
+    { "source": "/cookies", "destination": "/privacy", "permanent": true }
   ]
 }
