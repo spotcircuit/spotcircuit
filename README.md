@@ -8,15 +8,17 @@ I build systems that give engineers full project context on day one.
 
 ### What I'm Building
 
-**[Clarity Framework](https://github.com/spotcircuit/clarity-framework-public)** -- an agentic intelligence framework for technical engagements. 19 slash commands, self-learn loop, Obsidian-compatible wiki, structured expertise files. Based on Karpathy's LLM Wiki pattern, extended with operational data and behavioral memory.
+**[Rebar](https://github.com/spotcircuit/rebar)** -- structural memory for Claude Code, Cursor, Windsurf, or any AI agent. 23 slash commands, self-learn loop, Obsidian-compatible wiki, 8 autonomous agents via Paperclip. Based on Karpathy's LLM Wiki pattern, extended with operational data and behavioral memory.
+
+**[Rebar MCP](https://github.com/spotcircuit/rebar-mcp)** -- MCP server that serves project expertise to any AI editor. Search, observe, promote, discard -- the full self-learn loop over MCP.
 
 **Production Apps** -- 16+ deployed tools including:
 - **[Site Builder](https://github.com/spotcircuit/site-builder)** -- Google Maps listing to full React site in 60 seconds
+- **GetRankedLocal** -- Google Maps ranking analysis with 169-point grid searches, 6,511 leads
 - **AIRecruiter** -- automated candidate sourcing and outreach pipeline
-- **Atlasly** -- location intelligence and lead generation (6,511 leads, 169-point grid search)
-- **GetRankedLocal** -- local SEO automation platform
+- **Atlasly** -- location intelligence and lead generation
 
-**Chrome Extension** -- AI-powered social media engagement across LinkedIn, Reddit, and Facebook. Context-aware reply generation, auto-posting, flair detection.
+**Scout System** -- AI-powered social engagement across LinkedIn, Reddit, Facebook, and Discord. Chrome extension with context-aware reply generation, service fit classification, and humanized drafts.
 
 ---
 
@@ -39,9 +41,9 @@ I build systems that give engineers full project context on day one.
 
 | Repo | Description |
 |------|-------------|
-| [clarity-framework-public](https://github.com/spotcircuit/clarity-framework-public) | Agentic intelligence framework -- self-learn loop, 19 commands, wiki |
+| [rebar](https://github.com/spotcircuit/rebar) | Structural memory for AI agents -- 23 commands, self-learn loop, wiki, 8 autonomous agents |
+| [rebar-mcp](https://github.com/spotcircuit/rebar-mcp) | MCP server -- serve project expertise to any AI editor |
 | [site-builder](https://github.com/spotcircuit/site-builder) | Google Maps to production React site in 60s |
-| [spotcircuit-portfolio](https://github.com/spotcircuit/spotcircuit-portfolio) | Portfolio site |
 
 ---
 
