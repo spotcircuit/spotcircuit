@@ -5,7 +5,7 @@ import Link from 'next/link';
 const navigation = {
   main: [
     { name: 'Services', href: '/services' },
-    { name: 'Clarity Framework', href: '/clarity' },
+    { name: 'Rebar', href: '/clarity' },
     { name: 'Wiki', href: 'https://spotcircuit.github.io/clarity-wiki-site/' },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
