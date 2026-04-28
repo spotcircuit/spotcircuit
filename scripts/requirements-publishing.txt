@@ -1,0 +1,4 @@
+# CDP-based platform publishers (publish-*-cdp.py).
+# patchright is a stealth fork of playwright with the same async API —
+# cdp_common.py falls back to plain playwright if patchright isn't installed.
+patchright>=1.40
